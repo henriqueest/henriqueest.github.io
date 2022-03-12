@@ -5,7 +5,7 @@ theme: "starter-hugo-academic"
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 title: "Henrique JP Alves" # Website name
-baseurl: 'https://henriqueest.github.io/henriqueest.github.io/' # Website URL
+baseurl: 'https://henriqueest.github.io/' # Website URL
 copyright: '' # Footer text, e.g. '© {year} Me'
 publishDIR: "docs/"
 

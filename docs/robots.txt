@@ -1,3 +1,3 @@
 User-agent: *
 
-Sitemap: https://henriqueest.github.io/henriqueest.github.io/sitemap.xml
+Sitemap: https://henriqueest.github.io/sitemap.xml
