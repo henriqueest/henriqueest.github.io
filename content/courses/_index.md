@@ -2,7 +2,7 @@
 header:
   caption: ""
   image: ""
-title: Courses
+title: "Courses taught"
 type: page
 view: 2
 ---

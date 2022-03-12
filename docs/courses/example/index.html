@@ -53,14 +53,14 @@
   
   
 
-  <meta name="author" content="Alice Bighetti (吳恩達)" />
+  <meta name="author" content="Henrique José de Paula Alves" />
 
   
   
   
     
   
-  <meta name="description" content="An example of using Wowchemy&#39;s Book layout for publishing online courses." />
+  <meta name="description" content="Handling and graphical data outputs in R." />
 
   
   <link rel="alternate" hreflang="en-us" href="https://henriqueest.github.io/courses/example/" />
@@ -301,12 +301,12 @@
   
   <meta property="og:site_name" content="Henrique JP Alves" />
   <meta property="og:url" content="https://henriqueest.github.io/courses/example/" />
-  <meta property="og:title" content="📊 Learn Data Science | Henrique JP Alves" />
-  <meta property="og:description" content="An example of using Wowchemy&#39;s Book layout for publishing online courses." /><meta property="og:image" content="https://henriqueest.github.io/courses/example/featured.jpg" />
-    <meta property="twitter:image" content="https://henriqueest.github.io/courses/example/featured.jpg" /><meta property="og:locale" content="en-us" />
+  <meta property="og:title" content="📊 ggplot2 package: an introductory course | Henrique JP Alves" />
+  <meta property="og:description" content="Handling and graphical data outputs in R." /><meta property="og:image" content="https://henriqueest.github.io/courses/example/featured%20%282%29.jpg" />
+    <meta property="twitter:image" content="https://henriqueest.github.io/courses/example/featured%20%282%29.jpg" /><meta property="og:locale" content="en-us" />
   
     
-      <meta property="og:updated_time" content="2021-01-24T00:00:00&#43;00:00" />
+      <meta property="og:updated_time" content="2021-03-21T00:00:00&#43;00:00" />
     
   
 
@@ -322,7 +322,7 @@
 
 
 
-  <title>📊 Learn Data Science | Henrique JP Alves</title>
+  <title>📊 ggplot2 package: an introductory course | Henrique JP Alves</title>
 </head>
 
 
@@ -691,8 +691,8 @@
           
             
             <li class="nav-item d-none d-lg-inline-flex">
-              <a class="nav-link" href="https://twitter.com/GeorgeCushen" data-toggle="tooltip" data-placement="bottom" title="Follow me on Twitter" target="_blank" rel="noopener" aria-label="Follow me on Twitter">
-                <i class="fab fa-twitter" aria-hidden="true"></i>
+              <a class="nav-link" href="/"  aria-label="">
+                <i class="fas fa-" aria-hidden="true"></i>
               </a>
             </li>
           
@@ -744,168 +744,86 @@
 
 
 
-<div class="container-fluid docs">
-  <div class="row flex-xl-nowrap">
-    <div class="col-12 col-md-3 col-xl-2 docs-sidebar">
-      <form class="docs-search d-flex align-items-center">
-  <button class="btn docs-toggle d-md-none p-0 mr-md-3 w-100" type="button" data-toggle="collapse" data-target="#docs-nav" aria-controls="docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    <div class="d-flex">
-      <span class="d-md-none pl-1 flex-grow-1 text-left overflow-hidden">
-        
-          Courses
-        
-      </span>
-      <span><i class="fas fa-chevron-down"></i></span>
-    </div>
-  </button>
 
-  
-  <button class="form-control sidebar-search js-search d-none d-md-flex">
-    <i class="fas fa-search pr-2"></i>
-    <span class="sidebar-search-text">Search...</span>
-    <span class="sidebar-search-shortcut">/</span>
-  </button>
-  
-</form>
 
-<nav class="collapse docs-links" id="docs-nav">
-  
-  
-  
-  
-  
-  
 
-  
-  
-    
 
-    
-      
 
-      <ul class="nav docs-sidenav">
-        <li><a href="/courses/"><i class="fas fa-arrow-left pr-1"></i>Courses</a></li>
-      </ul>
 
-      
-      
+
+
+
+
+
+
+
+
 
 
   
-    
-    
+  
+
+
+<div class="article-container pt-3">
+  <h1>📊 ggplot2 package: an introductory course</h1>
+
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
     
     
       
     
-    
-
-    
-      <div class="docs-toc-item">
-        <a class="docs-toc-link  active" href="/courses/example/">Data Science</a>
-    
-      
-        <ul class="nav docs-sidenav">
-      
-
-
-  <li class=""><a href="/courses/example/python/">Python basics</a></li>
-
-
-
-  <li class=""><a href="/courses/example/visualization/">Visualization</a></li>
-
-
-
-  <li class=""><a href="/courses/example/stats/">Statistics</a></li>
-
-      
-        </ul>
-      
-    
-
-    
-      </div>
-    
-
-    
-  
-</nav>
-
-    </div>
-
-    
-    
-    <div class="d-none d-xl-block col-xl-2 docs-toc">
-      
-
-      <ul class="nav toc-top">
-        <li><a href="#" id="back_to_top" class="docs-toc-title">Contents</a></li>
-      </ul>
-
-      <nav id="TableOfContents">
-  <ul>
-    <li><a href="#what-you-will-learn">What you will learn</a></li>
-    <li><a href="#program-overview">Program overview</a></li>
-    <li><a href="#courses-in-this-program">Courses in this program</a></li>
-    <li><a href="#meet-your-instructor">Meet your instructor</a></li>
-    <li><a href="#faqs">FAQs</a></li>
-  </ul>
-</nav>
-
-      
-    </div>
-    
-
-    <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 docs-content" role="main">
-
-      <article class="article">
-
-        <div class="docs-article-container">
-          
-            
-  <nav class="d-none d-md-flex" aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      
-  
-    
-  
-    
+    Mar 21, 2021
+  </span>
   
 
-    <li class="breadcrumb-item">
-      <a href="/">
-        
-          Home
-        
-      </a>
-    </li>
   
 
-    <li class="breadcrumb-item">
-      <a href="/courses/">
-        
-          Courses
-        
-      </a>
-    </li>
   
 
-      <li class="breadcrumb-item active" aria-current="page">
-        Data Science
-      </li>
-    </ol>
-  </nav>
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
 
 
 
 
-          
 
-          <h1>📊 Learn Data Science</h1>
+</div>
 
-          <div class="article-style">
-            
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 240px; max-height: 278px;">
+  <div style="position: relative">
+    <img src="/courses/example/featured%20%282%29_hu9920bdb24e65f80820182c09d8d61471_38516_720x2500_fit_q75_h2_lanczos.webp" width="240" height="278" alt="" class="featured-image">
+    
+  </div>
+</div>
+
+
+
+<div class="universal-wrapper">
+  
+    <div class="article-style">
 
 
 
@@ -921,14 +839,7 @@
 
 <figure  >
   <div class="d-flex justify-content-center">
-    <div class="w-100" ><img alt="" srcset="
-               /courses/example/featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_e081f3cb64ac5f53b66ffaff3e12d201.webp 400w,
-               /courses/example/featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_6d986ee3f4d1802f62dca9b23cdfb090.webp 760w,
-               /courses/example/featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_1200x1200_fit_q75_h2_lanczos.webp 1200w"
-               src="/courses/example/featured_hu76eaa58daf827988c1005eeac201f4e9_1602413_e081f3cb64ac5f53b66ffaff3e12d201.webp"
-               width="760"
-               height="507"
-               loading="lazy" data-zoomable /></div>
+    <div class="w-100" ><img src="featured%282%29.jpg" alt="" loading="lazy" data-zoomable /></div>
   </div></figure>
 <details class="toc-inpage d-print-none d-xl-none " open>
   <summary class="font-weight-bold">Table of Contents</summary>
@@ -945,32 +856,20 @@
 
 <h2 id="what-you-will-learn">What you will learn</h2>
 <ul>
-<li>Fundamental <mark>Python programming skills</mark></li>
-<li><mark>Statistical concepts</mark> and how to apply them in practice</li>
-<li>Gain experience with the <mark>Scikit</mark>, including data visualization with <mark>Plotly</mark> and data wrangling with <mark>Pandas</mark></li>
+<li>Fundamental <mark>R programming skills</mark></li>
+<li><mark>Statistical concepts and graphical outputs</mark>,  and how to apply them in practice</li>
+<li>Gain experience with the <mark>R</mark>, including data visualization with the <mark>ggplot2</mark> package and data manipulation with the <mark>tidyverse</mark> package</li>
 </ul>
 <h2 id="program-overview">Program overview</h2>
-<p>The demand for skilled data science practitioners is rapidly growing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi.</p>
+<p>The demand for qualified professionals in Applied Statistics is growing rapidly. Visualizing and manipulating data is a key step in this area. In this sense, this course aims to introduce interested parties to two important tools for visualizing and manipulating data available in R software: the ggplot2 and tidyverse packages.</p>
 <h2 id="courses-in-this-program">Courses in this program</h2>
 
 
   <ul class="list-unstyled">
     
       <li>
-        <h5><a href="/courses/example/python/">Python basics</a></h5>
-        <p>Build a foundation in Python.
-</p>
-      </li>
-    
-      <li>
-        <h5><a href="/courses/example/visualization/">Visualization</a></h5>
-        <p>Learn how to visualize data with Plotly.
-</p>
-      </li>
-    
-      <li>
-        <h5><a href="/courses/example/stats/">Statistics</a></h5>
-        <p>Introduction to statistics for data science.
+        <h5><a href="/courses/example/python/">Pacote ggplot2: um curso introdutório</a></h5>
+        <p>Construído baseado no pacote ggplot2 do R.
 </p>
       </li>
     
@@ -978,11 +877,11 @@
 
 
 <h2 id="meet-your-instructor">Meet your instructor</h2>
-<a href="/author/alice-bighetti-%E5%90%B3%E6%81%A9%E9%81%94/">Alice Bighetti (吳恩達)</a>
+<a href="/author/henrique-jose-de-paula-alves/">Henrique José de Paula Alves</a>
 <h2 id="faqs">FAQs</h2>
 <details class="spoiler "  id="spoiler-9">
   <summary>Are there prerequisites?</summary>
-  <p>There are no prerequisites for the first course.</p>
+  <p>It is desirable that the student has some knowledge of programming in R language. It is also desirable that the student has basic knowledge of Statistics and Probability, having attended the Basic Statistics subject at some University.</p>
 </details>
 <details class="spoiler "  id="spoiler-10">
   <summary>How often do the courses run?</summary>
@@ -997,52 +896,105 @@
   
 </ul>
 
+</div>
+  
 
-          </div>
-
-          
-
-
-
-          
-          
-          <div class="article-widget">
-            
-<div class="post-nav">
   
   
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="media stream-item view-compact">
+  <div class="media-body">
+
+    <div class="section-subheading article-title mb-0 mt-0">
+      <a href="/courses/example/python/" >Pacote ggplot2: um curso introdutório</a>
+    </div>
+
+    
+    <a href="/courses/example/python/"  class="summary-link">
+      <div class="article-style">
+        <p>Construído baseado no pacote ggplot2 do R.</p>
+      </div>
+    </a>
+    
+
+    <div class="stream-meta article-metadata">
+
+      
+
+      
+        
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jan 1, 2021
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
 </div>
 
-          </div>
-          
-        </div>
+      
+    </div>
 
-        <div class="body-footer">
-          <p>Last updated on Jan 24, 2021</p>
+    
 
-          
-
-
-
-
-
-          
-
-
-
-
-          
-
+  </div>
+  <div class="ml-3">
+    
+    
+  </div>
+</div>
 
   
+
   
 
+</div>
+  </div>
 
-
-        </div>
-
-      </article>
-
+  <div class="page-footer">
+    
+    
+    <div class="container">
       <footer class="site-footer">
 
   
@@ -1078,15 +1030,7 @@
   </p>
 </footer>
 
-
-    </main>
-  </div>
-</div>
-
-  </div>
-
-  <div class="page-footer">
-    
+    </div>
     
   </div>
 
@@ -1158,11 +1102,6 @@
 
     
     
-    <script src="https://cdn.jsdelivr.net/gh/bryanbraun/anchorjs@4.2.2/anchor.min.js" integrity="sha512-I7w3ZdSFzw5j3jU3ZkNikBNeIrl3i+hEuEdwNmqUJvwNcaBUNcijnP2gd9DtGlgVYDplfjGoD8vTNsID+lCjqg==" crossorigin="anonymous"></script>
-    <script>
-      anchors.add();
-    </script>
-    
 
     
     
@@ -1209,10 +1148,11 @@
     
     
     
-    <script id="page-data" type="application/json">{"use_headroom":false}</script>
+    <script id="page-data" type="application/json">{"use_headroom":true}</script>
 
     
     
+      <script src="/js/wowchemy-headroom.208bf5db800f4a4e5a38cf3b67a99a51.js" type="module"></script>
     
     
     
