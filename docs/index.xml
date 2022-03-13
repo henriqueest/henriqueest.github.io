@@ -17,7 +17,7 @@
       <link>https://henriqueest.github.io/courses/example/python/</link>
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
       <guid>https://henriqueest.github.io/courses/example/python/</guid>
-      <description>&lt;p&gt;Construído baseado no pacote ggplot2 do R.&lt;/p&gt;
+      <description>&lt;p&gt;Construído baseado nos pacotes tidyverse e ggplot2 do R.&lt;/p&gt;
 &lt;p&gt;
   &lt;i class=&#34;fas fa-clock  pr-1 fa-fw&#34;&gt;&lt;/i&gt; 2 horas por dia, por 2 dias&lt;/p&gt;
 &lt;style&gt;
@@ -433,7 +433,7 @@ tabela
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;glimpse(data)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Rows: 28,323
+&lt;pre&gt;&lt;code&gt;## Rows: 28,350
 ## Columns: 12
 ## $ region       &amp;lt;chr&amp;gt; &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;No~
 ## $ state        &amp;lt;chr&amp;gt; &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO~
@@ -559,11 +559,11 @@ tabela
 ##     4:  North    AC 2020-02-28        9        0          0         0
 ##     5:  North    AC 2020-02-29        9        0          0         0
 ##    ---                                                               
-## 28319:  North    TO 2022-03-07       10      156     299547         0
-## 28320:  North    TO 2022-03-08       10      299     299846         3
-## 28321:  North    TO 2022-03-09       10      268     300114         5
-## 28322:  North    TO 2022-03-10       10      385     300499         4
-## 28323:  North    TO 2022-03-11       10      218     300717         4
+## 28346:  North    TO 2022-03-08       10      299     299846         3
+## 28347:  North    TO 2022-03-09       10      268     300114         5
+## 28348:  North    TO 2022-03-10       10      385     300499         4
+## 28349:  North    TO 2022-03-11       10      218     300717         4
+## 28350:  North    TO 2022-03-12       10      226     300943         3
 ##        accumDeaths newRecovered newFollowup     pop state_code
 ##     1:           0           NA          NA  881935         12
 ##     2:           0           NA          NA  881935         12
@@ -571,11 +571,11 @@ tabela
 ##     4:           0           NA          NA  881935         12
 ##     5:           0           NA          NA  881935         12
 ##    ---                                                        
-## 28319:        4112           NA          NA 1572866         17
-## 28320:        4115           NA          NA 1572866         17
-## 28321:        4120           NA          NA 1572866         17
-## 28322:        4124           NA          NA 1572866         17
-## 28323:        4128           NA          NA 1572866         17
+## 28346:        4115           NA          NA 1572866         17
+## 28347:        4120           NA          NA 1572866         17
+## 28348:        4124           NA          NA 1572866         17
+## 28349:        4128           NA          NA 1572866         17
+## 28350:        4131           NA          NA 1572866         17
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;select(data, region , date,  state, newCases, accumCases)
 &lt;/code&gt;&lt;/pre&gt;
@@ -586,11 +586,11 @@ tabela
 ##     4:  North 2020-02-28    RO        0          0
 ##     5:  North 2020-02-29    RO        0          0
 ##    ---                                            
-## 28319:  North 2022-02-19    RO        0          0
-## 28320:  North 2022-02-20    RO        0          0
-## 28321:  North 2022-02-21    RO        0          0
-## 28322:  North 2022-02-22    RO        0          0
-## 28323:  North 2022-02-23    RO        0          0
+## 28346:  North 2022-02-19    RO        0          0
+## 28347:  North 2022-02-20    RO        0          0
+## 28348:  North 2022-02-21    RO        0          0
+## 28349:  North 2022-02-22    RO        0          0
+## 28350:  North 2022-02-23    RO        0          0
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mutate(data, rate_newcases = newCases/pop*100000)
 &lt;/code&gt;&lt;/pre&gt;
@@ -601,11 +601,11 @@ tabela
 ##     4:  North    RO 2020-02-28        9        0          0         0
 ##     5:  North    RO 2020-02-29        9        0          0         0
 ##    ---                                                               
-## 28319:  North    RO 2022-02-19        7        0          0         0
-## 28320:  North    RO 2022-02-20        8        0          0         0
-## 28321:  North    RO 2022-02-21        8        0          0         0
-## 28322:  North    RO 2022-02-22        8        0          0         0
-## 28323:  North    RO 2022-02-23        8        0          0         0
+## 28346:  North    RO 2022-02-19        7        0          0         0
+## 28347:  North    RO 2022-02-20        8        0          0         0
+## 28348:  North    RO 2022-02-21        8        0          0         0
+## 28349:  North    RO 2022-02-22        8        0          0         0
+## 28350:  North    RO 2022-02-23        8        0          0         0
 ##        accumDeaths newRecovered newFollowup     pop state_code rate_newcases
 ##     1:           0           NA          NA 1777225         11             0
 ##     2:           0           NA          NA 1777225         11             0
@@ -613,21 +613,21 @@ tabela
 ##     4:           0           NA          NA 1777225         11             0
 ##     5:           0           NA          NA 1777225         11             0
 ##    ---                                                                      
-## 28319:           0           NA          NA      NA         11            NA
-## 28320:           0           NA          NA      NA         11            NA
-## 28321:           0           NA          NA      NA         11            NA
-## 28322:           0           NA          NA      NA         11            NA
-## 28323:           0           NA          NA      NA         11            NA
+## 28346:           0           NA          NA      NA         11            NA
+## 28347:           0           NA          NA      NA         11            NA
+## 28348:           0           NA          NA      NA         11            NA
+## 28349:           0           NA          NA      NA         11            NA
+## 28350:           0           NA          NA      NA         11            NA
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;summarize(data, mean_newdeaths=mean(newDeaths), desv_pad= sd(newDeaths),
                   standard_error=desv_pad/sqrt(length(data)))
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##   mean_newdeaths desv_pad standard_error
-## 1       23.27518  64.2568       18.54934
+## 1       23.26674 64.23099       18.54189
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;group_by(data, region, epi_week)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## # A tibble: 28,323 x 12
+&lt;pre&gt;&lt;code&gt;## # A tibble: 28,350 x 12
 ## # Groups:   region, epi_week [265]
 ##    region state date       epi_week newCases accumCases newDeaths accumDeaths
 ##    &amp;lt;chr&amp;gt;  &amp;lt;chr&amp;gt; &amp;lt;date&amp;gt;        &amp;lt;int&amp;gt;    &amp;lt;int&amp;gt;      &amp;lt;int&amp;gt;     &amp;lt;int&amp;gt;       &amp;lt;int&amp;gt;
@@ -641,7 +641,7 @@ tabela
 ##  8 North  RO    2020-03-03       10        0          0         0           0
 ##  9 North  RO    2020-03-04       10        0          0         0           0
 ## 10 North  RO    2020-03-05       10        0          0         0           0
-## # ... with 28,313 more rows, and 4 more variables: newRecovered &amp;lt;int&amp;gt;,
+## # ... with 28,340 more rows, and 4 more variables: newRecovered &amp;lt;int&amp;gt;,
 ## #   newFollowup &amp;lt;int&amp;gt;, pop &amp;lt;dbl&amp;gt;, state_code &amp;lt;int&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Esse pacote é muito útil quando desejamos realizar uma análise exploratória de nossos dados. Vamos então construir alguns gráficos utilizando os recursos desse pacote e também do &lt;strong&gt;ggplot2&lt;/strong&gt;.&lt;/p&gt;
@@ -950,7 +950,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-431268975&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-716953284&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -960,7 +960,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-431268975&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-716953284&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
