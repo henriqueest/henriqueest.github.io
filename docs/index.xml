@@ -433,7 +433,7 @@ tabela
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;glimpse(data)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Rows: 28,350
+&lt;pre&gt;&lt;code&gt;## Rows: 28,377
 ## Columns: 12
 ## $ region       &amp;lt;chr&amp;gt; &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;No~
 ## $ state        &amp;lt;chr&amp;gt; &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO~
@@ -559,11 +559,11 @@ tabela
 ##     4:  North    AC 2020-02-28        9        0          0         0
 ##     5:  North    AC 2020-02-29        9        0          0         0
 ##    ---                                                               
-## 28346:  North    TO 2022-03-08       10      299     299846         3
-## 28347:  North    TO 2022-03-09       10      268     300114         5
-## 28348:  North    TO 2022-03-10       10      385     300499         4
-## 28349:  North    TO 2022-03-11       10      218     300717         4
-## 28350:  North    TO 2022-03-12       10      226     300943         3
+## 28373:  North    TO 2022-03-09       10      268     300114         5
+## 28374:  North    TO 2022-03-10       10      385     300499         4
+## 28375:  North    TO 2022-03-11       10      218     300717         4
+## 28376:  North    TO 2022-03-12       10      226     300943         3
+## 28377:  North    TO 2022-03-13       11        0     300943         0
 ##        accumDeaths newRecovered newFollowup     pop state_code
 ##     1:           0           NA          NA  881935         12
 ##     2:           0           NA          NA  881935         12
@@ -571,11 +571,11 @@ tabela
 ##     4:           0           NA          NA  881935         12
 ##     5:           0           NA          NA  881935         12
 ##    ---                                                        
-## 28346:        4115           NA          NA 1572866         17
-## 28347:        4120           NA          NA 1572866         17
-## 28348:        4124           NA          NA 1572866         17
-## 28349:        4128           NA          NA 1572866         17
-## 28350:        4131           NA          NA 1572866         17
+## 28373:        4120           NA          NA 1572866         17
+## 28374:        4124           NA          NA 1572866         17
+## 28375:        4128           NA          NA 1572866         17
+## 28376:        4131           NA          NA 1572866         17
+## 28377:        4131           NA          NA 1572866         17
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;select(data, region , date,  state, newCases, accumCases)
 &lt;/code&gt;&lt;/pre&gt;
@@ -586,11 +586,11 @@ tabela
 ##     4:  North 2020-02-28    RO        0          0
 ##     5:  North 2020-02-29    RO        0          0
 ##    ---                                            
-## 28346:  North 2022-02-19    RO        0          0
-## 28347:  North 2022-02-20    RO        0          0
-## 28348:  North 2022-02-21    RO        0          0
-## 28349:  North 2022-02-22    RO        0          0
-## 28350:  North 2022-02-23    RO        0          0
+## 28373:  North 2022-02-19    RO        0          0
+## 28374:  North 2022-02-20    RO        0          0
+## 28375:  North 2022-02-21    RO        0          0
+## 28376:  North 2022-02-22    RO        0          0
+## 28377:  North 2022-02-23    RO        0          0
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mutate(data, rate_newcases = newCases/pop*100000)
 &lt;/code&gt;&lt;/pre&gt;
@@ -601,11 +601,11 @@ tabela
 ##     4:  North    RO 2020-02-28        9        0          0         0
 ##     5:  North    RO 2020-02-29        9        0          0         0
 ##    ---                                                               
-## 28346:  North    RO 2022-02-19        7        0          0         0
-## 28347:  North    RO 2022-02-20        8        0          0         0
-## 28348:  North    RO 2022-02-21        8        0          0         0
-## 28349:  North    RO 2022-02-22        8        0          0         0
-## 28350:  North    RO 2022-02-23        8        0          0         0
+## 28373:  North    RO 2022-02-19        7        0          0         0
+## 28374:  North    RO 2022-02-20        8        0          0         0
+## 28375:  North    RO 2022-02-21        8        0          0         0
+## 28376:  North    RO 2022-02-22        8        0          0         0
+## 28377:  North    RO 2022-02-23        8        0          0         0
 ##        accumDeaths newRecovered newFollowup     pop state_code rate_newcases
 ##     1:           0           NA          NA 1777225         11             0
 ##     2:           0           NA          NA 1777225         11             0
@@ -613,21 +613,21 @@ tabela
 ##     4:           0           NA          NA 1777225         11             0
 ##     5:           0           NA          NA 1777225         11             0
 ##    ---                                                                      
-## 28346:           0           NA          NA      NA         11            NA
-## 28347:           0           NA          NA      NA         11            NA
-## 28348:           0           NA          NA      NA         11            NA
-## 28349:           0           NA          NA      NA         11            NA
-## 28350:           0           NA          NA      NA         11            NA
+## 28373:           0           NA          NA      NA         11            NA
+## 28374:           0           NA          NA      NA         11            NA
+## 28375:           0           NA          NA      NA         11            NA
+## 28376:           0           NA          NA      NA         11            NA
+## 28377:           0           NA          NA      NA         11            NA
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;summarize(data, mean_newdeaths=mean(newDeaths), desv_pad= sd(newDeaths),
                   standard_error=desv_pad/sqrt(length(data)))
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##   mean_newdeaths desv_pad standard_error
-## 1       23.26674 64.23099       18.54189
+## 1       23.24929 64.20351       18.53396
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;group_by(data, region, epi_week)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## # A tibble: 28,350 x 12
+&lt;pre&gt;&lt;code&gt;## # A tibble: 28,377 x 12
 ## # Groups:   region, epi_week [265]
 ##    region state date       epi_week newCases accumCases newDeaths accumDeaths
 ##    &amp;lt;chr&amp;gt;  &amp;lt;chr&amp;gt; &amp;lt;date&amp;gt;        &amp;lt;int&amp;gt;    &amp;lt;int&amp;gt;      &amp;lt;int&amp;gt;     &amp;lt;int&amp;gt;       &amp;lt;int&amp;gt;
@@ -641,7 +641,7 @@ tabela
 ##  8 North  RO    2020-03-03       10        0          0         0           0
 ##  9 North  RO    2020-03-04       10        0          0         0           0
 ## 10 North  RO    2020-03-05       10        0          0         0           0
-## # ... with 28,340 more rows, and 4 more variables: newRecovered &amp;lt;int&amp;gt;,
+## # ... with 28,367 more rows, and 4 more variables: newRecovered &amp;lt;int&amp;gt;,
 ## #   newFollowup &amp;lt;int&amp;gt;, pop &amp;lt;dbl&amp;gt;, state_code &amp;lt;int&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Esse pacote é muito útil quando desejamos realizar uma análise exploratória de nossos dados. Vamos então construir alguns gráficos utilizando os recursos desse pacote e também do &lt;strong&gt;ggplot2&lt;/strong&gt;.&lt;/p&gt;
@@ -950,7 +950,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-716953284&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-845123697&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -960,7 +960,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-716953284&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-845123697&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -1269,44 +1269,144 @@ date: 2019-09-01
       <link>https://henriqueest.github.io/slides/example/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
       <guid>https://henriqueest.github.io/slides/example/</guid>
-      <description>&lt;h1 id=&#34;create-slides-in-markdown-with-wowchemy&#34;&gt;Create slides in Markdown with Wowchemy&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wowchemy&lt;/a&gt; | &lt;a href=&#34;https://owchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;h1 id=&#34;pacote-ggplot2-um-curso-introdutório&#34;&gt;Pacote ggplot2: um curso introdutório&lt;/h1&gt;
+&lt;p&gt;Henrique José de Paula Alves&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:4321/courses/example/python/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Material&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;h2 id=&#34;o-que-você-vai-aprender&#34;&gt;O que você vai aprender&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Efficiently write slides in Markdown&lt;/li&gt;
-&lt;li&gt;3-in-1: Create, Present, and Publish your slides&lt;/li&gt;
-&lt;li&gt;Supports speaker notes&lt;/li&gt;
-&lt;li&gt;Mobile friendly slides&lt;/li&gt;
+&lt;li&gt;Habilidades fundamentais de programação R&lt;/li&gt;
+&lt;li&gt;Conceitos estatísticos e resultados gráficos: como aplicá-los&lt;/li&gt;
+&lt;li&gt;Ganhe experiência com o R:  visualização de dados com o pacote ggplot2 e mineração de dados com o pacote tidyverse&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
+&lt;h2 id=&#34;visão-geral-do-curso&#34;&gt;Visão geral do curso&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Next: &lt;code&gt;Right Arrow&lt;/code&gt; or &lt;code&gt;Space&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Previous: &lt;code&gt;Left Arrow&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Start: &lt;code&gt;Home&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Finish: &lt;code&gt;End&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Overview: &lt;code&gt;Esc&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Speaker notes: &lt;code&gt;S&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Fullscreen: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Zoom: &lt;code&gt;Alt + Click&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/hakimel/reveal.js#pdf-export&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Grande demanda por profissionais em estatística aplicada&lt;/li&gt;
+&lt;li&gt;Mineração de dados e as saídas gráficas: passo fundamental em estatística aplicada&lt;/li&gt;
+&lt;li&gt;Objetivo:  apresentar duas importantes ferramentas disponíveis no software R: os pacotes tidyverse e ggplot2&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;code-highlighting&#34;&gt;Code Highlighting&lt;/h2&gt;
-&lt;p&gt;Inline code: &lt;code&gt;variable&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Code block:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;porridge = &amp;quot;blueberry&amp;quot;
-if porridge == &amp;quot;blueberry&amp;quot;:
-    print(&amp;quot;Eating...&amp;quot;)
+&lt;h2 id=&#34;pré-requisitos&#34;&gt;Pré-requisitos&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;É desejável que o aluno tenha algum conhecimento de programação em linguagem R&lt;/li&gt;
+&lt;li&gt;É também desejável que o aluno tenha conhecimentos básicos de Estatística e Probabilidades&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;controles&#34;&gt;Controles&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Próximo: &lt;code&gt;Seta para a direita ou Espaço&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Anterior: &lt;code&gt;Seta para a esquerda&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Início: &lt;code&gt;Home&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fim: &lt;code&gt;End&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Visão geral: &lt;code&gt;Esc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Tela cheia: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Zoom: &amp;lsquo;Alt + Clique&amp;rsquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Todo e qualquer resultado estatístico deve ser bem compreendido&lt;/li&gt;
+&lt;li&gt;Saídas gráficas representam um resultado estatístico&lt;/li&gt;
+&lt;li&gt;Apresentação do comportamento dos dados de forma resumida&lt;/li&gt;
+&lt;li&gt;Não é uma tarefa fácil nem corriqueira&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;introdução-1&#34;&gt;Introdução&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Uma forma direta de obter saídas gráficas: pacotes esquisse e ggplotgui&lt;/li&gt;
+&lt;li&gt;Esse não é o nosso objetivo&lt;/li&gt;
+&lt;li&gt;Apresentar o pacote ggplot2 de forma lenta e gradativa&lt;/li&gt;
+&lt;li&gt;O seu diferencial com relação a outros pacotes&lt;/li&gt;
+&lt;li&gt;Funções de saídas gráficas: base do R&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;pacotes-necessários&#34;&gt;Pacotes necessários&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Instalação e carregamento dos pacotes no R&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Código:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#nomes dos pacotes
+packages &amp;lt;- c(&amp;quot;dplyr&amp;quot;,&amp;quot;tidyverse&amp;quot;,&amp;quot;lattice&amp;quot;,  &amp;quot;rgdal&amp;quot;, &amp;quot;rgeos&amp;quot;, 
+&amp;quot;maptools&amp;quot;, &amp;quot;plyr&amp;quot;, &amp;quot;sf&amp;quot;, &amp;quot;covid19br&amp;quot;, &amp;quot;RColorBrewer&amp;quot;)
+
+# instala os pacotes que não estão instalados
+installed_packages &amp;lt;- packages %in% rownames(installed.packages())
+if (any(installed_packages == FALSE)) {
+  install.packages(packages[!installed_packages])
+}
+
+# carrega os pacotes
+invisible(lapply(packages, library, character.only = TRUE))
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
-&lt;p&gt;In-line math: $x + y = z$&lt;/p&gt;
-&lt;p&gt;Block math:&lt;/p&gt;
-&lt;p&gt;$$
-f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
-$$&lt;/p&gt;
+&lt;h2 id=&#34;base-de-dados&#34;&gt;Base de dados&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Base de dados disponível no R: &lt;a href=&#34;https://gist.github.com/seankross/a412dfbd88b3db70b74b&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;mtcars&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Coletados da revista &amp;ldquo;Motor Trend US (1974)&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;32 modelos de automóveis: consumo de combustível e outros 10 aspectos de design e desempenho&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;base-de-dados-1&#34;&gt;Base de dados&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Preparando a base de dados&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Código:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mtcars &amp;lt;- within(mtcars, {
+   vs &amp;lt;- factor(vs, labels = c(&amp;quot;V&amp;quot;, &amp;quot;S&amp;quot;))
+   am &amp;lt;- factor(am, labels = c(&amp;quot;automatica&amp;quot;, &amp;quot;manual&amp;quot;))
+   cyl  &amp;lt;- ordered(cyl)
+   gear &amp;lt;- ordered(gear)
+   carb &amp;lt;- ordered(carb)
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;base-de-dados-2&#34;&gt;Base de dados&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Preparando a base de dados&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Código:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;summary(mtcars)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##       mpg        cyl         disp             hp             drat      
+##  Min.   :10.40   4:11   Min.   : 71.1   Min.   : 52.0   Min.   :2.760  
+##  1st Qu.:15.43   6: 7   1st Qu.:120.8   1st Qu.: 96.5   1st Qu.:3.080  
+##  Median :19.20   8:14   Median :196.3   Median :123.0   Median :3.695  
+##  Mean   :20.09          Mean   :230.7   Mean   :146.7   Mean   :3.597  
+##  3rd Qu.:22.80          3rd Qu.:326.0   3rd Qu.:180.0   3rd Qu.:3.920  
+##  Max.   :33.90          Max.   :472.0   Max.   :335.0   Max.   :4.930  
+##        wt             qsec       vs              am     gear   carb  
+##  Min.   :1.513   Min.   :14.50   V:18   automatica:19   3:15   1: 7  
+##  1st Qu.:2.581   1st Qu.:16.89   S:14   manual    :13   4:12   2:10  
+##  Median :3.325   Median :17.71                          5: 5   3: 3  
+##  Mean   :3.217   Mean   :17.85                                 4:10  
+##  3rd Qu.:3.610   3rd Qu.:18.90                                 6: 1  
+##  Max.   :5.424   Max.   :22.90                                 8: 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;porque-o-pacote-ggplot2&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Vamos construir algumas saídas gráficas&lt;/li&gt;
+&lt;li&gt;Utilzar as funções do pacote graphics: base do R&lt;/li&gt;
+&lt;li&gt;Pacote lattice&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;porque-o-pacote-ggplot2-1&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Variável mpg (milhas percorrida por galão de combustível)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Código:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;hist(mtcars$mpg, col = &amp;quot;lightblue&amp;quot;, main = &amp;quot;Função hist (base)&amp;quot;, 
+     xlab = &amp;quot;Milhas por galão (mpg)&amp;quot;, ylab = &amp;quot;Frequência absoluta&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;h1 id=&#34;in-line-math-x--y--z&#34;&gt;In-line math: &lt;code&gt;\(x + y = z\)&lt;/code&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;block-math&#34;&gt;Block math:&lt;/h1&gt;
+&lt;h1 id=&#34;heading-1&#34;&gt;&lt;/h1&gt;
+&lt;h1 id=&#34;heading-2&#34;&gt;$$&lt;/h1&gt;
+&lt;h1 id=&#34;fleft-x-right--frac2left-x--4-rightleft-x---4-rightleft-x--4-rightleft-x--1-right&#34;&gt;f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}&lt;/h1&gt;
+&lt;h1 id=&#34;heading-3&#34;&gt;$$&lt;/h1&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
 &lt;p&gt;Make content appear incrementally&lt;/p&gt;

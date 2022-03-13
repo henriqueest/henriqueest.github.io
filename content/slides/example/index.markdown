@@ -1,0 +1,270 @@
+---
+authors: []
+categories: []
+date: "2019-02-05T00:00:00Z"
+slides:
+  highlight_style: dracula
+  theme: black
+summary: An introduction to using Wowchemy's Slides feature.
+tags: []
+title: Slides
+---
+
+
+# Pacote ggplot2: um curso introdutório
+
+Henrique José de Paula Alves 
+
+[Material](http://localhost:4321/courses/example/python/)
+
+---
+## O que você vai aprender
+
+- Habilidades fundamentais de programação R
+- Conceitos estatísticos e resultados gráficos: como aplicá-los
+- Ganhe experiência com o R:  visualização de dados com o pacote ggplot2 e mineração de dados com o pacote tidyverse
+
+---
+## Visão geral do curso
+
+- Grande demanda por profissionais em estatística aplicada  
+- Mineração de dados e as saídas gráficas: passo fundamental em estatística aplicada
+- Objetivo:  apresentar duas importantes ferramentas disponíveis no software R: os pacotes tidyverse e ggplot2
+
+---
+## Pré-requisitos
+
+- É desejável que o aluno tenha algum conhecimento de programação em linguagem R 
+- É também desejável que o aluno tenha conhecimentos básicos de Estatística e Probabilidades
+
+---
+
+## Controles
+
+- Próximo: `Seta para a direita ou Espaço`
+- Anterior: `Seta para a esquerda`
+- Início: `Home`
+- Fim: `End`
+- Visão geral: `Esc`
+- Tela cheia: `F`
+- Zoom: 'Alt + Clique'
+
+
+---
+
+## Introdução
+
+- Todo e qualquer resultado estatístico deve ser bem compreendido
+- Saídas gráficas representam um resultado estatístico
+- Apresentação do comportamento dos dados de forma resumida
+- Não é uma tarefa fácil nem corriqueira
+
+---
+## Introdução
+
+- Uma forma direta de obter saídas gráficas: pacotes esquisse e ggplotgui
+- Esse não é o nosso objetivo
+- Apresentar o pacote ggplot2 de forma lenta e gradativa
+- O seu diferencial com relação a outros pacotes
+- Funções de saídas gráficas: base do R
+
+---
+
+## Pacotes necessários
+
+- Instalação e carregamento dos pacotes no R
+
+Código:
+
+```r
+#nomes dos pacotes
+packages <- c("dplyr","tidyverse","lattice",  "rgdal", "rgeos", 
+"maptools", "plyr", "sf", "covid19br", "RColorBrewer")
+
+# instala os pacotes que não estão instalados
+installed_packages <- packages %in% rownames(installed.packages())
+if (any(installed_packages == FALSE)) {
+  install.packages(packages[!installed_packages])
+}
+
+# carrega os pacotes
+invisible(lapply(packages, library, character.only = TRUE))
+```
+---
+
+## Base de dados
+
+- Base de dados disponível no R: [mtcars](https://gist.github.com/seankross/a412dfbd88b3db70b74b)
+- Coletados da revista "Motor Trend US (1974)" 
+- 32 modelos de automóveis: consumo de combustível e outros 10 aspectos de design e desempenho 
+
+--- 
+
+## Base de dados
+
+- Preparando a base de dados
+
+Código:
+
+```r
+mtcars <- within(mtcars, {
+   vs <- factor(vs, labels = c("V", "S"))
+   am <- factor(am, labels = c("automatica", "manual"))
+   cyl  <- ordered(cyl)
+   gear <- ordered(gear)
+   carb <- ordered(carb)
+})
+```
+
+--- 
+
+## Base de dados
+
+- Preparando a base de dados
+
+Código:
+
+```r
+summary(mtcars)
+```
+
+```
+##       mpg        cyl         disp             hp             drat      
+##  Min.   :10.40   4:11   Min.   : 71.1   Min.   : 52.0   Min.   :2.760  
+##  1st Qu.:15.43   6: 7   1st Qu.:120.8   1st Qu.: 96.5   1st Qu.:3.080  
+##  Median :19.20   8:14   Median :196.3   Median :123.0   Median :3.695  
+##  Mean   :20.09          Mean   :230.7   Mean   :146.7   Mean   :3.597  
+##  3rd Qu.:22.80          3rd Qu.:326.0   3rd Qu.:180.0   3rd Qu.:3.920  
+##  Max.   :33.90          Max.   :472.0   Max.   :335.0   Max.   :4.930  
+##        wt             qsec       vs              am     gear   carb  
+##  Min.   :1.513   Min.   :14.50   V:18   automatica:19   3:15   1: 7  
+##  1st Qu.:2.581   1st Qu.:16.89   S:14   manual    :13   4:12   2:10  
+##  Median :3.325   Median :17.71                          5: 5   3: 3  
+##  Mean   :3.217   Mean   :17.85                                 4:10  
+##  3rd Qu.:3.610   3rd Qu.:18.90                                 6: 1  
+##  Max.   :5.424   Max.   :22.90                                 8: 1
+```
+
+---
+
+## Porque o pacote ggplot2
+
+- Vamos construir algumas saídas gráficas 
+- Utilzar as funções do pacote graphics: base do R
+- Pacote lattice
+
+---
+
+## Porque o pacote ggplot2
+
+- Variável mpg (milhas percorrida por galão de combustível)
+
+Código:
+
+
+```r
+hist(mtcars$mpg, col = "lightblue", main = "Função hist (base)", 
+     xlab = "Milhas por galão (mpg)", ylab = "Frequência absoluta")
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="40%" style="display: block; margin: auto;" />
+
+---
+
+## Fragments
+
+Make content appear incrementally
+
+```
+{{%/* fragment */%}} One {{%/* /fragment */%}}
+{{%/* fragment */%}} **Two** {{%/* /fragment */%}}
+{{%/* fragment */%}} Three {{%/* /fragment */%}}
+```
+
+Press `Space` to play!
+
+{{% fragment %}} One {{% /fragment %}}
+{{% fragment %}} **Two** {{% /fragment %}}
+{{% fragment %}} Three {{% /fragment %}}
+
+---
+
+A fragment can accept two optional parameters:
+
+- `class`: use a custom style (requires definition in custom CSS)
+- `weight`: sets the order in which a fragment appears
+
+---
+
+## Speaker Notes
+
+Add speaker notes to your presentation
+
+```markdown
+{{%/* speaker_note */%}}
+- Only the speaker can read these notes
+- Press `S` key to view
+{{%/* /speaker_note */%}}
+```
+
+Press the `S` key to view the speaker notes!
+
+{{< speaker_note >}}
+- Only the speaker can read these notes
+- Press `S` key to view
+{{< /speaker_note >}}
+
+---
+
+## Themes
+
+- black: Black background, white text, blue links (default)
+- white: White background, black text, blue links
+- league: Gray background, white text, blue links
+- beige: Beige background, dark text, brown links
+- sky: Blue background, thin dark text, blue links
+
+---
+
+- night: Black background, thick white text, orange links
+- serif: Cappuccino background, gray text, brown links
+- simple: White background, black text, blue links
+- solarized: Cream-colored background, dark green text, blue links
+
+---
+
+{{< slide background-image="/media/boards.jpg" >}}
+
+## Custom Slide
+
+Customize the slide style and background
+
+```markdown
+{{</* slide background-image="/media/boards.jpg" */>}}
+{{</* slide background-color="#0000FF" */>}}
+{{</* slide class="my-style" */>}}
+```
+
+---
+
+## Custom CSS Example
+
+Let's make headers navy colored.
+
+Create `assets/css/reveal_custom.css` with:
+
+```css
+.reveal section h1,
+.reveal section h2,
+.reveal section h3 {
+  color: navy;
+}
+```
+
+---
+
+# Questions?
+
+[Ask](https://github.com/wowchemy/wowchemy-hugo-modules/discussions)
+
+[Documentation](https://wowchemy.com/docs/managing-content/#create-slides)
