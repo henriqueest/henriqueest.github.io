@@ -4,6 +4,7 @@ linkTitle: Data Science
 summary: "Data mining and graphical outputs in R."
 title: "\U0001F4CA ggplot2 package: an introductory course"
 type: course
+slides: example
 ---
 
 {{< figure src="featured(2).jpg" >}}
@@ -20,9 +21,6 @@ type: course
 
 The demand for qualified professionals in Applied Statistics is growing rapidly. Data mining and graphical outputs in R is a key step in this area. In this sense, this course aims to introduce interested parties to two important tools for data mining and graphical outputs available in R software: the tidyverse and ggplot2 packages.
 
-## Courses in this program
-
-{{< list_children >}}
 
 ## Meet your instructor
 
@@ -38,4 +36,7 @@ It is desirable that the student has some knowledge of programming in R language
 Continuously, at your own pace.
 {{< /spoiler >}}
 
-{{< cta cta_text="Begin the course" cta_link="python" >}}
+
+
+
+

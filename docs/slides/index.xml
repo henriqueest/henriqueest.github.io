@@ -11,7 +11,7 @@
       <link>https://henriqueest.github.io/slides/example/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
       <guid>https://henriqueest.github.io/slides/example/</guid>
-      <description>&lt;h1 id=&#34;pacote-ggplot2-um-curso-introdutório&#34;&gt;Pacote ggplot2: um curso introdutório&lt;/h1&gt;
+      <description>&lt;h2 id=&#34;pacote-ggplot2-um-curso-introdutório&#34;&gt;Pacote ggplot2: um curso introdutório&lt;/h2&gt;
 &lt;p&gt;Henrique José de Paula Alves&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://localhost:4321/courses/example/python/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Material&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
@@ -68,6 +68,8 @@
 &lt;li&gt;Instalação e carregamento dos pacotes no R&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Código:&lt;/p&gt;
+&lt;div style=&#34;display: flex; font-size: 8&#34;&gt;
+&lt;div&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#nomes dos pacotes
 packages &amp;lt;- c(&amp;quot;dplyr&amp;quot;,&amp;quot;tidyverse&amp;quot;,&amp;quot;lattice&amp;quot;,  &amp;quot;rgdal&amp;quot;, &amp;quot;rgeos&amp;quot;, 
 &amp;quot;maptools&amp;quot;, &amp;quot;plyr&amp;quot;, &amp;quot;sf&amp;quot;, &amp;quot;covid19br&amp;quot;, &amp;quot;RColorBrewer&amp;quot;)
@@ -77,8 +79,10 @@ installed_packages &amp;lt;- packages %in% rownames(installed.packages())
 if (any(installed_packages == FALSE)) {
   install.packages(packages[!installed_packages])
 }
-
-# carrega os pacotes
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# carrega os pacotes
 invisible(lapply(packages, library, character.only = TRUE))
 &lt;/code&gt;&lt;/pre&gt;
 &lt;hr&gt;
@@ -134,38 +138,68 @@ invisible(lapply(packages, library, character.only = TRUE))
 &lt;/ul&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;porque-o-pacote-ggplot2-1&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Variável mpg (milhas percorrida por galão de combustível)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Código:&lt;/p&gt;
+&lt;p&gt;Código (graphics):&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;hist(mtcars$mpg, col = &amp;quot;lightblue&amp;quot;, main = &amp;quot;Função hist (base)&amp;quot;, 
      xlab = &amp;quot;Milhas por galão (mpg)&amp;quot;, ylab = &amp;quot;Frequência absoluta&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
-&lt;h1 id=&#34;in-line-math-x--y--z&#34;&gt;In-line math: &lt;code&gt;\(x + y = z\)&lt;/code&gt;&lt;/h1&gt;
-&lt;h1 id=&#34;heading&#34;&gt;&lt;/h1&gt;
-&lt;h1 id=&#34;block-math&#34;&gt;Block math:&lt;/h1&gt;
-&lt;h1 id=&#34;heading-1&#34;&gt;&lt;/h1&gt;
-&lt;h1 id=&#34;heading-2&#34;&gt;$$&lt;/h1&gt;
-&lt;h1 id=&#34;fleft-x-right--frac2left-x--4-rightleft-x---4-rightleft-x--4-rightleft-x--1-right&#34;&gt;f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}&lt;/h1&gt;
-&lt;h1 id=&#34;heading-3&#34;&gt;$$&lt;/h1&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
-&lt;p&gt;Make content appear incrementally&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;{{% fragment %}} One {{% /fragment %}}
-{{% fragment %}} **Two** {{% /fragment %}}
-{{% fragment %}} Three {{% /fragment %}}
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;50%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+---
+&lt;h2 id=&#34;porque-o-pacote-ggplot2-2&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
+&lt;p&gt;Código (lattice):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(lattice)
+histogram(~mpg,data=mtcars,
+       type =&amp;quot;count&amp;quot;,
+       xlab =&amp;quot;Milhas por galão (mpg)&amp;quot;,
+       ylab = &amp;quot;Frequência absoluta&amp;quot;,
+       main =&amp;quot;Função histogram (lattice)&amp;quot;,
+       col = &amp;quot;lightblue&amp;quot;,
+       breaks = 5)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
-&lt;span class=&#34;fragment &#34; &gt;
-   One 
-&lt;/span&gt;
-&lt;span class=&#34;fragment &#34; &gt;
-   **Two** 
-&lt;/span&gt;
-&lt;span class=&#34;fragment &#34; &gt;
-   Three 
-&lt;/span&gt;
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;45%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;porque-o-pacote-ggplot2-3&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
+&lt;p&gt;Código (base):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;tab &amp;lt;- table(mtcars$cyl);tab
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+##  4  6  8 
+## 11  7 14
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;barplot(tab, col = &amp;quot;lightblue&amp;quot;, main = &amp;quot;Função barplot (base)&amp;quot;, xlab = &amp;quot;Número de cilindros por motor (cyl)&amp;quot;, ylab = &amp;quot;Frequência absoluta&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;45%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;porque-o-pacote-ggplot2-4&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
+&lt;p&gt;Código (lattice):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(lattice)
+tabela &amp;lt;- xtabs(~cyl, data = mtcars);tabela
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## cyl
+##  4  6  8 
+## 11  7 14
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;barchart(tabela,
+         horizontal = FALSE,
+         main = &amp;quot;Função barchart (lattice)&amp;quot;,
+         xlab = &amp;quot;Número de cilindros por motor (cyl)&amp;quot;,
+         ylab = &amp;quot;Frequência absoluta&amp;quot;,
+         col = &amp;quot;lightblue&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;45%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;porque-o-pacote-ggplot2-5&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
+&lt;p&gt;Não é necessário:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;comandos específicos para cada gráfico gerado&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;utilização de funções adicionais (table ou xtabs)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;conhecimento prévio de cada uma das funções&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr&gt;
 &lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
 &lt;ul&gt;

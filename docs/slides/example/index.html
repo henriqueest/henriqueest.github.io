@@ -24,7 +24,7 @@
 
   <title>Slides | Henrique JP Alves</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.2.1/dist/reveal.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.2.1/dist/theme/black.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" id="highlight-theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.2.1/dist/reveal.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.2.1/dist/theme/sky.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" id="highlight-theme">
 
   
   
@@ -53,7 +53,7 @@
     
     <section>
     
-      <h1 id="pacote-ggplot2-um-curso-introdutório">Pacote ggplot2: um curso introdutório</h1>
+      <h2 id="pacote-ggplot2-um-curso-introdutório">Pacote ggplot2: um curso introdutório</h2>
 <p>Henrique José de Paula Alves</p>
 <p><a href="http://localhost:4321/courses/example/python/" target="_blank" rel="noopener">Material</a></p>
 
@@ -173,6 +173,8 @@
 <li>Instalação e carregamento dos pacotes no R</li>
 </ul>
 <p>Código:</p>
+<div style="display: flex; font-size: 8">
+<div>
 <pre><code class="language-r">#nomes dos pacotes
 packages &lt;- c(&quot;dplyr&quot;,&quot;tidyverse&quot;,&quot;lattice&quot;,  &quot;rgdal&quot;, &quot;rgeos&quot;, 
 &quot;maptools&quot;, &quot;plyr&quot;, &quot;sf&quot;, &quot;covid19br&quot;, &quot;RColorBrewer&quot;)
@@ -182,8 +184,10 @@ installed_packages &lt;- packages %in% rownames(installed.packages())
 if (any(installed_packages == FALSE)) {
   install.packages(packages[!installed_packages])
 }
-
-# carrega os pacotes
+</code></pre>
+</div>
+<div>
+<pre><code class="language-r"># carrega os pacotes
 invisible(lapply(packages, library, character.only = TRUE))
 </code></pre>
 
@@ -284,21 +288,24 @@ invisible(lapply(packages, library, character.only = TRUE))
     
       
 <h2 id="porque-o-pacote-ggplot2-1">Porque o pacote ggplot2</h2>
-<ul>
-<li>Variável mpg (milhas percorrida por galão de combustível)</li>
-</ul>
-<p>Código:</p>
+<p>Código (graphics):</p>
 <pre><code class="language-r">hist(mtcars$mpg, col = &quot;lightblue&quot;, main = &quot;Função hist (base)&quot;, 
      xlab = &quot;Milhas por galão (mpg)&quot;, ylab = &quot;Frequência absoluta&quot;)
 </code></pre>
-<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" />
-<h1 id="in-line-math-x--y--z">In-line math: <code>\(x + y = z\)</code></h1>
-<h1 id="heading"></h1>
-<h1 id="block-math">Block math:</h1>
-<h1 id="heading-1"></h1>
-<h1 id="heading-2">$$</h1>
-<h1 id="fleft-x-right--frac2left-x--4-rightleft-x---4-rightleft-x--4-rightleft-x--1-right">f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}</h1>
-<h1 id="heading-3">$$</h1>
+<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-4-1.png" width="50%" style="display: block; margin: auto;" />
+---
+<h2 id="porque-o-pacote-ggplot2-2">Porque o pacote ggplot2</h2>
+<p>Código (lattice):</p>
+<pre><code class="language-r">library(lattice)
+histogram(~mpg,data=mtcars,
+       type =&quot;count&quot;,
+       xlab =&quot;Milhas por galão (mpg)&quot;,
+       ylab = &quot;Frequência absoluta&quot;,
+       main =&quot;Função histogram (lattice)&quot;,
+       col = &quot;lightblue&quot;,
+       breaks = 5)
+</code></pre>
+<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-5-1.png" width="45%" style="display: block; margin: auto;" />
 
     </section>
     
@@ -309,22 +316,67 @@ invisible(lapply(packages, library, character.only = TRUE))
     <section>
     
       
-<h2 id="fragments">Fragments</h2>
-<p>Make content appear incrementally</p>
-<pre><code>{{% fragment %}} One {{% /fragment %}}
-{{% fragment %}} **Two** {{% /fragment %}}
-{{% fragment %}} Three {{% /fragment %}}
+<h2 id="porque-o-pacote-ggplot2-3">Porque o pacote ggplot2</h2>
+<p>Código (base):</p>
+<pre><code class="language-r">tab &lt;- table(mtcars$cyl);tab
 </code></pre>
-<p>Press <code>Space</code> to play!</p>
-<span class="fragment " >
-   One 
-</span>
-<span class="fragment " >
-   **Two** 
-</span>
-<span class="fragment " >
-   Three 
-</span>
+<pre><code>## 
+##  4  6  8 
+## 11  7 14
+</code></pre>
+<pre><code class="language-r">barplot(tab, col = &quot;lightblue&quot;, main = &quot;Função barplot (base)&quot;, xlab = &quot;Número de cilindros por motor (cyl)&quot;, ylab = &quot;Frequência absoluta&quot;)
+</code></pre>
+<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-6-1.png" width="45%" style="display: block; margin: auto;" />
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="porque-o-pacote-ggplot2-4">Porque o pacote ggplot2</h2>
+<p>Código (lattice):</p>
+<pre><code class="language-r">library(lattice)
+tabela &lt;- xtabs(~cyl, data = mtcars);tabela
+</code></pre>
+<pre><code>## cyl
+##  4  6  8 
+## 11  7 14
+</code></pre>
+<pre><code class="language-r">barchart(tabela,
+         horizontal = FALSE,
+         main = &quot;Função barchart (lattice)&quot;,
+         xlab = &quot;Número de cilindros por motor (cyl)&quot;,
+         ylab = &quot;Frequência absoluta&quot;,
+         col = &quot;lightblue&quot;)
+</code></pre>
+<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-7-1.png" width="45%" style="display: block; margin: auto;" />
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="porque-o-pacote-ggplot2-5">Porque o pacote ggplot2</h2>
+<p>Não é necessário:</p>
+<ul>
+<li>
+<p>comandos específicos para cada gráfico gerado</p>
+</li>
+<li>
+<p>utilização de funções adicionais (table ou xtabs)</p>
+</li>
+<li>
+<p>conhecimento prévio de cada uma das funções</p>
+</li>
+</ul>
 
     </section>
     
