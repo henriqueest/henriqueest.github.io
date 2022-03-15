@@ -168,7 +168,7 @@ data.head()
 &lt;p&gt;Demo:&lt;/p&gt;
 
 
-&lt;div id=&#34;chart-314869527&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
+&lt;div id=&#34;chart-632418795&#34; class=&#34;chart&#34;&gt;&lt;/div&gt;
 &lt;script&gt;
   (function() {
     let a = setInterval( function() {
@@ -178,7 +178,7 @@ data.head()
       clearInterval( a );
 
       Plotly.d3.json(&#34;./line-chart.json&#34;, function(chart) {
-        Plotly.plot(&#39;chart-314869527&#39;, chart.data, chart.layout, {responsive: true});
+        Plotly.plot(&#39;chart-632418795&#39;, chart.data, chart.layout, {responsive: true});
       });
     }, 500 );
   })();
@@ -415,6 +415,389 @@ You found me!
   &lt;/div&gt;
 &lt;/div&gt;
 &lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code, math, and images&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://henriqueest.github.io/slides/example/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/slides/example/</guid>
+      <description>&lt;h1 id=&#34;pacote-ggplot2-um-curso-introdutório&#34;&gt;Pacote ggplot2: um curso introdutório&lt;/h1&gt;
+&lt;p&gt;Henrique José de Paula Alves&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:4321/courses/example/python/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Material&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;o-que-você-vai-aprender&#34;&gt;O que você vai aprender&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Habilidades fundamentais de programação R&lt;/li&gt;
+&lt;li&gt;Conceitos estatísticos e resultados gráficos: como aplicá-los&lt;/li&gt;
+&lt;li&gt;Ganhe experiência com o R:  visualização de dados com o pacote ggplot2 e mineração de dados com o pacote tidyverse&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;visão-geral-do-curso&#34;&gt;Visão geral do curso&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Grande demanda por profissionais em estatística aplicada&lt;/li&gt;
+&lt;li&gt;Mineração de dados e as saídas gráficas: passo fundamental em estatística aplicada&lt;/li&gt;
+&lt;li&gt;Objetivo:  apresentar duas importantes ferramentas disponíveis no software R: os pacotes tidyverse e ggplot2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;pré-requisitos&#34;&gt;Pré-requisitos&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;É desejável que o aluno tenha algum conhecimento de programação em linguagem R&lt;/li&gt;
+&lt;li&gt;É também desejável que o aluno tenha conhecimentos básicos de Estatística e Probabilidades&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;controles&#34;&gt;Controles&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Próximo: &lt;code&gt;Seta para a direita ou Espaço&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Anterior: &lt;code&gt;Seta para a esquerda&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Início: &lt;code&gt;Home&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fim: &lt;code&gt;End&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Visão geral: &lt;code&gt;Esc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Tela cheia: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Zoom: &amp;lsquo;Alt + Clique&amp;rsquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Todo e qualquer resultado estatístico deve ser bem compreendido&lt;/li&gt;
+&lt;li&gt;Saídas gráficas representam um resultado estatístico&lt;/li&gt;
+&lt;li&gt;Apresentação do comportamento dos dados de forma resumida&lt;/li&gt;
+&lt;li&gt;Não é uma tarefa fácil nem corriqueira&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;introdução-1&#34;&gt;Introdução&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Uma forma direta de obter saídas gráficas: pacotes esquisse e ggplotgui&lt;/li&gt;
+&lt;li&gt;Esse não é o nosso objetivo&lt;/li&gt;
+&lt;li&gt;Apresentar o pacote ggplot2 de forma lenta e gradativa&lt;/li&gt;
+&lt;li&gt;O seu diferencial com relação a outros pacotes&lt;/li&gt;
+&lt;li&gt;Funções de saídas gráficas: base do R&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;pacotes-necessários&#34;&gt;Pacotes necessários&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Instalação e carregamento dos pacotes no R&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Código:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#nomes dos pacotes
+packages &amp;lt;- c(&amp;quot;dplyr&amp;quot;,&amp;quot;tidyverse&amp;quot;,&amp;quot;lattice&amp;quot;,  &amp;quot;rgdal&amp;quot;, &amp;quot;rgeos&amp;quot;, 
+&amp;quot;maptools&amp;quot;, &amp;quot;plyr&amp;quot;, &amp;quot;sf&amp;quot;, &amp;quot;covid19br&amp;quot;, &amp;quot;RColorBrewer&amp;quot;)
+
+# instala os pacotes que não estão instalados
+installed_packages &amp;lt;- packages %in% rownames(installed.packages())
+if (any(installed_packages == FALSE)) {
+  install.packages(packages[!installed_packages])
+}
+
+# carrega os pacotes
+invisible(lapply(packages, library, character.only = TRUE))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;base-de-dados&#34;&gt;Base de dados&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Base de dados disponível no R: &lt;a href=&#34;https://gist.github.com/seankross/a412dfbd88b3db70b74b&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;mtcars&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Coletados da revista &amp;ldquo;Motor Trend US (1974)&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;32 modelos de automóveis: consumo de combustível e outros 10 aspectos de design e desempenho&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;base-de-dados-1&#34;&gt;Base de dados&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Preparando a base de dados&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Código:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mtcars &amp;lt;- within(mtcars, {
+   vs &amp;lt;- factor(vs, labels = c(&amp;quot;V&amp;quot;, &amp;quot;S&amp;quot;))
+   am &amp;lt;- factor(am, labels = c(&amp;quot;automatica&amp;quot;, &amp;quot;manual&amp;quot;))
+   cyl  &amp;lt;- ordered(cyl)
+   gear &amp;lt;- ordered(gear)
+   carb &amp;lt;- ordered(carb)})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;base-de-dados-2&#34;&gt;Base de dados&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Preparando a base de dados&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Código:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;summary(mtcars)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##       mpg        cyl         disp             hp             drat      
+##  Min.   :10.40   4:11   Min.   : 71.1   Min.   : 52.0   Min.   :2.760  
+##  1st Qu.:15.43   6: 7   1st Qu.:120.8   1st Qu.: 96.5   1st Qu.:3.080  
+##  Median :19.20   8:14   Median :196.3   Median :123.0   Median :3.695  
+##  Mean   :20.09          Mean   :230.7   Mean   :146.7   Mean   :3.597  
+##  3rd Qu.:22.80          3rd Qu.:326.0   3rd Qu.:180.0   3rd Qu.:3.920  
+##  Max.   :33.90          Max.   :472.0   Max.   :335.0   Max.   :4.930  
+##        wt             qsec       vs              am     gear   carb  
+##  Min.   :1.513   Min.   :14.50   V:18   automatica:19   3:15   1: 7  
+##  1st Qu.:2.581   1st Qu.:16.89   S:14   manual    :13   4:12   2:10  
+##  Median :3.325   Median :17.71                          5: 5   3: 3  
+##  Mean   :3.217   Mean   :17.85                                 4:10  
+##  3rd Qu.:3.610   3rd Qu.:18.90                                 6: 1  
+##  Max.   :5.424   Max.   :22.90                                 8: 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;porque-o-pacote-ggplot2&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Vamos construir algumas saídas gráficas&lt;/li&gt;
+&lt;li&gt;Utilzar as funções do pacote graphics: base do R&lt;/li&gt;
+&lt;li&gt;Pacote lattice&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;porque-o-pacote-ggplot2-1&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
+&lt;p&gt;Código (graphics):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;hist(mtcars$mpg, col = &amp;quot;lightblue&amp;quot;, main = &amp;quot;Função hist (base)&amp;quot;, 
+     xlab = &amp;quot;Milhas por galão (mpg)&amp;quot;, ylab = &amp;quot;Frequência absoluta&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;50%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;porque-o-pacote-ggplot2-2&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
+&lt;p&gt;Código (lattice):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(lattice)
+histogram(~mpg,data=mtcars,
+       type =&amp;quot;count&amp;quot;,
+       xlab =&amp;quot;Milhas por galão (mpg)&amp;quot;,
+       ylab = &amp;quot;Frequência absoluta&amp;quot;,
+       main =&amp;quot;Função histogram (lattice)&amp;quot;,
+       col = &amp;quot;lightblue&amp;quot;,
+       breaks = 5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;45%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;porque-o-pacote-ggplot2-3&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
+&lt;p&gt;Código (base):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;tab &amp;lt;- table(mtcars$cyl);tab
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+##  4  6  8 
+## 11  7 14
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;barplot(tab, col = &amp;quot;lightblue&amp;quot;, main = &amp;quot;Função barplot (base)&amp;quot;, xlab = &amp;quot;Número de cilindros por motor (cyl)&amp;quot;, ylab = &amp;quot;Frequência absoluta&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;45%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;porque-o-pacote-ggplot2-4&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
+&lt;p&gt;Código (lattice):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(lattice)
+tabela &amp;lt;- xtabs(~cyl, data = mtcars);tabela
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## cyl
+##  4  6  8 
+## 11  7 14
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;barchart(tabela,
+         horizontal = FALSE,
+         main = &amp;quot;Função barchart (lattice)&amp;quot;,
+         xlab = &amp;quot;Número de cilindros por motor (cyl)&amp;quot;,
+         ylab = &amp;quot;Frequência absoluta&amp;quot;,
+         col = &amp;quot;lightblue&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;45%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;porque-o-pacote-ggplot2-5&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
+&lt;p&gt;Não é necessário:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;comandos específicos para cada gráfico gerado&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;funções adicionais (table ou xtabs)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;conhecimento prévio de cada uma das funções&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;o-pacote-ggplot2&#34;&gt;O pacote ggplot2&lt;/h2&gt;
+&lt;p&gt;Estatístico, cientista computacional e professor adjunto norte-americano&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Leland Wilkinson (2005)&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;The grammar of Graphics&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;mapeamento dos dados em atributos estéticos (posição, cor, forma, tamanho, etc)&lt;/li&gt;
+&lt;li&gt;formas geométricas (pontos, linhas, barras, caixas, etc)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;o-pacote-ggplot2-1&#34;&gt;O pacote ggplot2&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Hadley Wickham (2008)&lt;/li&gt;
+&lt;li&gt;Respondeu a pergunta: &amp;ldquo;O que é um gráfico estatístico?&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;Livro &amp;ldquo;A Layered Grammar of Graphics&amp;rdquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;o-pacote-ggplot2-2&#34;&gt;O pacote ggplot2&lt;/h2&gt;
+&lt;p&gt;Vantagens:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Os gráficos construídos são mais bonitos e apresentáveis&lt;/li&gt;
+&lt;li&gt;Fácil personalização&lt;/li&gt;
+&lt;li&gt;Apresentam uma estrutura (sintaxe) única e padronizada&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;o-pacote-ggplot2-3&#34;&gt;O pacote ggplot2&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Elementos de um gráfico: dados, sistema de coordenadas, rótulos, anotações&lt;/li&gt;
+&lt;li&gt;Sobreposição de camadas&lt;/li&gt;
+&lt;li&gt;Criou o pacote ggplot2&lt;/li&gt;
+&lt;li&gt;Essência: construir um gráfico estatístico camada por camada&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;a-gramática-em-camada-de-gráficos&#34;&gt;A gramática em camada de gráficos&lt;/h2&gt;
+&lt;p&gt;Descrevendo um gráfico estatístico:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Elementos&lt;/th&gt;
+&lt;th&gt;Exemplos&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;aes&lt;/strong&gt;tética$^*$&lt;/td&gt;
+&lt;td&gt;cor, formato&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;geom&lt;/strong&gt;etrias$^*$&lt;/td&gt;
+&lt;td&gt;barra, ponto&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;e&lt;strong&gt;stat&lt;/strong&gt;ísticas (modelos)&lt;/td&gt;
+&lt;td&gt;mediana, máximo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;facet&lt;/strong&gt;as&lt;/td&gt;
+&lt;td&gt;facetas&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;coord&lt;/strong&gt;enadas&lt;/td&gt;
+&lt;td&gt;polar, cartesiana&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;them&lt;/strong&gt;as&lt;/td&gt;
+&lt;td&gt;eixos, títulos&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;passos&#34;&gt;Passos&lt;/h2&gt;
+&lt;p&gt;Primeiro passo:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;passos-1&#34;&gt;Passos&lt;/h2&gt;
+&lt;p&gt;Segundo passo: gráfico de dispersão&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;os-tipos-de-geometrias-geom&#34;&gt;Os tipos de geometrias (geom)&lt;/h1&gt;
+&lt;p&gt;Principais:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;point (pontos); line (dispersão);&lt;/li&gt;
+&lt;li&gt;bar (barras); col (colunas); errorbar (barra de erros)&lt;/li&gt;
+&lt;li&gt;boxplot; sf (mapas)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;argumentos-de-estética-aes&#34;&gt;Argumentos de estética (aes)&lt;/h1&gt;
+&lt;p&gt;Principais:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;variáveis (x, y, z)&lt;/li&gt;
+&lt;li&gt;cores (color, colour, fill)&lt;/li&gt;
+&lt;li&gt;tonalidade (alpha)&lt;/li&gt;
+&lt;li&gt;formas (shape, linetype)&lt;/li&gt;
+&lt;li&gt;tamanhos (size)&lt;/li&gt;
+&lt;li&gt;entre outros&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;a-escolha-das-cores&#34;&gt;A escolha das cores&lt;/h2&gt;
+&lt;p&gt;Argumento color (colour):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Objetos geométricos que não possuem área&lt;/li&gt;
+&lt;li&gt;Pontos, linhas, borda de gráficos e mapas, etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Argumento fill :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Preenchimento&lt;/li&gt;
+&lt;li&gt;Objetos geométricos que possuem área não nula&lt;/li&gt;
+&lt;li&gt;Caixas, colunas, círculos, polígonos, etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;o-argumento-color&#34;&gt;O argumento color&lt;/h3&gt;
+&lt;p&gt;Exemplo: Gráfico de dispersão&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg, color=as.factor(am)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;o-argumento-color-1&#34;&gt;O argumento color&lt;/h3&gt;
+&lt;p&gt;Exemplo: Gráfico de dispersão&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg), color=c(&amp;quot;red&amp;quot;)) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;o-argumento-fill&#34;&gt;O argumento fill&lt;/h3&gt;
+&lt;p&gt;Exemplo: gráfico de barras&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars, aes(x = as.factor(cyl))) +
+  geom_bar(aes(fill=as.factor(am)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;o-argumento-fill-1&#34;&gt;O argumento fill&lt;/h3&gt;
+&lt;p&gt;Exemplo: gráfico de barras&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars, aes(x = as.factor(cyl))) +
+  geom_bar(fill = &amp;quot;red&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;o-argumento-alpha-tonalidade-das-cores&#34;&gt;O argumento alpha (tonalidade das cores)&lt;/h2&gt;
+&lt;p&gt;Exemplo: gráfico de barras&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars, aes(x = as.factor(cyl))) +
+  geom_bar(aes(alpha = as.factor(cyl), fill = as.factor(cyl)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;o-argumento-forma-shape&#34;&gt;O argumento forma (shape)&lt;/h2&gt;
+&lt;p&gt;Exemplo: Gráfico de dispersão (Exclusivo)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg, color=as.factor(am), shape = as.factor(carb)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;o-argumento-forma-linetype&#34;&gt;O argumento forma (linetype)&lt;/h2&gt;
+&lt;p&gt;Exemplo: Gráfico de linhas (Exclusivo)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
+  geom_line(mapping = aes(x= disp, y=mpg, linetype = as.factor(am), color = as.factor(am)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;o-argumento-tamanho-size&#34;&gt;O argumento tamanho (size)&lt;/h2&gt;
+&lt;p&gt;Exemplo: Gráfico de dispersão&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg, color=as.factor(am), shape = as.factor(carb),
+                           size = as.factor(cyl)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;o-argumento-tamanho-size-1&#34;&gt;O argumento tamanho (size)&lt;/h2&gt;
+&lt;p&gt;Exemplo: Gráfico de linhas&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
+  geom_line(mapping = aes(x= disp, y=mpg, linetype = as.factor(am), color = as.factor(am), size = as.factor(cyl)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-17-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;a-escolha-dos-rótulos-dos-eixos-labs&#34;&gt;A escolha dos rótulos dos eixos (labs)&lt;/h2&gt;
+&lt;p&gt;Linha de comando: labs()&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;x  &amp;quot;&amp;quot; (eixo x); y &amp;quot;&amp;quot; (eixo y)&lt;/li&gt;
+&lt;li&gt;color = &amp;ldquo;&amp;rdquo;; colour = &amp;quot;&amp;quot;&lt;/li&gt;
+&lt;li&gt;shape = &amp;ldquo;&amp;rdquo;; size = &amp;quot;&amp;quot;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;questions&#34;&gt;Questions?&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/discussions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
 </description>
     </item>
     
@@ -662,269 +1045,6 @@ tabela &amp;lt;- xtabs(~cyl, data = mtcars);tabela
          col = &amp;quot;lightblue&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;img src=&#34;https://henriqueest.github.io/courses/example/index_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;45%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;porque-o-pacote-ggplot2-5&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
-&lt;p&gt;Não é necessário:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;comandos específicos para cada gráfico gerado&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;utilização de funções adicionais (table ou xtabs)&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;conhecimento prévio de cada uma das funções&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;class&lt;/code&gt;: use a custom style (requires definition in custom CSS)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: sets the order in which a fragment appears&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;speaker-notes&#34;&gt;Speaker Notes&lt;/h2&gt;
-&lt;p&gt;Add speaker notes to your presentation&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% speaker_note %}}
-- Only the speaker can read these notes
-- Press `S` key to view
-{{% /speaker_note %}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
-&lt;aside class=&#34;notes&#34;&gt;
-  &lt;ul&gt;
-&lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
-&lt;li&gt;Press &lt;code&gt;S&lt;/code&gt; key to view&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/aside&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;black: Black background, white text, blue links (default)&lt;/li&gt;
-&lt;li&gt;white: White background, black text, blue links&lt;/li&gt;
-&lt;li&gt;league: Gray background, white text, blue links&lt;/li&gt;
-&lt;li&gt;beige: Beige background, dark text, brown links&lt;/li&gt;
-&lt;li&gt;sky: Blue background, thin dark text, blue links&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;night: Black background, thick white text, orange links&lt;/li&gt;
-&lt;li&gt;serif: Cappuccino background, gray text, brown links&lt;/li&gt;
-&lt;li&gt;simple: White background, black text, blue links&lt;/li&gt;
-&lt;li&gt;solarized: Cream-colored background, dark green text, blue links&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-
-&lt;section data-noprocess data-shortcode-slide
-  
-      
-      data-background-image=&#34;/media/boards.jpg&#34;
-  &gt;
-
-&lt;h2 id=&#34;custom-slide&#34;&gt;Custom Slide&lt;/h2&gt;
-&lt;p&gt;Customize the slide style and background&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; slide background-image=&amp;quot;/media/boards.jpg&amp;quot; &amp;gt;}}
-{{&amp;lt; slide background-color=&amp;quot;#0000FF&amp;quot; &amp;gt;}}
-{{&amp;lt; slide class=&amp;quot;my-style&amp;quot; &amp;gt;}}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
-&lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
-&lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.reveal section h1,
-.reveal section h2,
-.reveal section h3 {
-  color: navy;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;hr&gt;
-&lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/discussions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Slides</title>
-      <link>https://henriqueest.github.io/slides/example/</link>
-      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://henriqueest.github.io/slides/example/</guid>
-      <description>&lt;h2 id=&#34;pacote-ggplot2-um-curso-introdutório&#34;&gt;Pacote ggplot2: um curso introdutório&lt;/h2&gt;
-&lt;p&gt;Henrique José de Paula Alves&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;http://localhost:4321/courses/example/python/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Material&lt;/a&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;o-que-você-vai-aprender&#34;&gt;O que você vai aprender&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Habilidades fundamentais de programação R&lt;/li&gt;
-&lt;li&gt;Conceitos estatísticos e resultados gráficos: como aplicá-los&lt;/li&gt;
-&lt;li&gt;Ganhe experiência com o R:  visualização de dados com o pacote ggplot2 e mineração de dados com o pacote tidyverse&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;visão-geral-do-curso&#34;&gt;Visão geral do curso&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Grande demanda por profissionais em estatística aplicada&lt;/li&gt;
-&lt;li&gt;Mineração de dados e as saídas gráficas: passo fundamental em estatística aplicada&lt;/li&gt;
-&lt;li&gt;Objetivo:  apresentar duas importantes ferramentas disponíveis no software R: os pacotes tidyverse e ggplot2&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;pré-requisitos&#34;&gt;Pré-requisitos&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;É desejável que o aluno tenha algum conhecimento de programação em linguagem R&lt;/li&gt;
-&lt;li&gt;É também desejável que o aluno tenha conhecimentos básicos de Estatística e Probabilidades&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;controles&#34;&gt;Controles&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Próximo: &lt;code&gt;Seta para a direita ou Espaço&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Anterior: &lt;code&gt;Seta para a esquerda&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Início: &lt;code&gt;Home&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Fim: &lt;code&gt;End&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Visão geral: &lt;code&gt;Esc&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Tela cheia: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Zoom: &amp;lsquo;Alt + Clique&amp;rsquo;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Todo e qualquer resultado estatístico deve ser bem compreendido&lt;/li&gt;
-&lt;li&gt;Saídas gráficas representam um resultado estatístico&lt;/li&gt;
-&lt;li&gt;Apresentação do comportamento dos dados de forma resumida&lt;/li&gt;
-&lt;li&gt;Não é uma tarefa fácil nem corriqueira&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;introdução-1&#34;&gt;Introdução&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Uma forma direta de obter saídas gráficas: pacotes esquisse e ggplotgui&lt;/li&gt;
-&lt;li&gt;Esse não é o nosso objetivo&lt;/li&gt;
-&lt;li&gt;Apresentar o pacote ggplot2 de forma lenta e gradativa&lt;/li&gt;
-&lt;li&gt;O seu diferencial com relação a outros pacotes&lt;/li&gt;
-&lt;li&gt;Funções de saídas gráficas: base do R&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;pacotes-necessários&#34;&gt;Pacotes necessários&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Instalação e carregamento dos pacotes no R&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Código:&lt;/p&gt;
-&lt;div style=&#34;display: flex; font-size: 8&#34;&gt;
-&lt;div&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#nomes dos pacotes
-packages &amp;lt;- c(&amp;quot;dplyr&amp;quot;,&amp;quot;tidyverse&amp;quot;,&amp;quot;lattice&amp;quot;,  &amp;quot;rgdal&amp;quot;, &amp;quot;rgeos&amp;quot;, 
-&amp;quot;maptools&amp;quot;, &amp;quot;plyr&amp;quot;, &amp;quot;sf&amp;quot;, &amp;quot;covid19br&amp;quot;, &amp;quot;RColorBrewer&amp;quot;)
-
-# instala os pacotes que não estão instalados
-installed_packages &amp;lt;- packages %in% rownames(installed.packages())
-if (any(installed_packages == FALSE)) {
-  install.packages(packages[!installed_packages])
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# carrega os pacotes
-invisible(lapply(packages, library, character.only = TRUE))
-&lt;/code&gt;&lt;/pre&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;base-de-dados&#34;&gt;Base de dados&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Base de dados disponível no R: &lt;a href=&#34;https://gist.github.com/seankross/a412dfbd88b3db70b74b&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;mtcars&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Coletados da revista &amp;ldquo;Motor Trend US (1974)&amp;rdquo;&lt;/li&gt;
-&lt;li&gt;32 modelos de automóveis: consumo de combustível e outros 10 aspectos de design e desempenho&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;base-de-dados-1&#34;&gt;Base de dados&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Preparando a base de dados&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Código:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mtcars &amp;lt;- within(mtcars, {
-   vs &amp;lt;- factor(vs, labels = c(&amp;quot;V&amp;quot;, &amp;quot;S&amp;quot;))
-   am &amp;lt;- factor(am, labels = c(&amp;quot;automatica&amp;quot;, &amp;quot;manual&amp;quot;))
-   cyl  &amp;lt;- ordered(cyl)
-   gear &amp;lt;- ordered(gear)
-   carb &amp;lt;- ordered(carb)
-})
-&lt;/code&gt;&lt;/pre&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;base-de-dados-2&#34;&gt;Base de dados&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Preparando a base de dados&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Código:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;summary(mtcars)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##       mpg        cyl         disp             hp             drat      
-##  Min.   :10.40   4:11   Min.   : 71.1   Min.   : 52.0   Min.   :2.760  
-##  1st Qu.:15.43   6: 7   1st Qu.:120.8   1st Qu.: 96.5   1st Qu.:3.080  
-##  Median :19.20   8:14   Median :196.3   Median :123.0   Median :3.695  
-##  Mean   :20.09          Mean   :230.7   Mean   :146.7   Mean   :3.597  
-##  3rd Qu.:22.80          3rd Qu.:326.0   3rd Qu.:180.0   3rd Qu.:3.920  
-##  Max.   :33.90          Max.   :472.0   Max.   :335.0   Max.   :4.930  
-##        wt             qsec       vs              am     gear   carb  
-##  Min.   :1.513   Min.   :14.50   V:18   automatica:19   3:15   1: 7  
-##  1st Qu.:2.581   1st Qu.:16.89   S:14   manual    :13   4:12   2:10  
-##  Median :3.325   Median :17.71                          5: 5   3: 3  
-##  Mean   :3.217   Mean   :17.85                                 4:10  
-##  3rd Qu.:3.610   3rd Qu.:18.90                                 6: 1  
-##  Max.   :5.424   Max.   :22.90                                 8: 1
-&lt;/code&gt;&lt;/pre&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;porque-o-pacote-ggplot2&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Vamos construir algumas saídas gráficas&lt;/li&gt;
-&lt;li&gt;Utilzar as funções do pacote graphics: base do R&lt;/li&gt;
-&lt;li&gt;Pacote lattice&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;porque-o-pacote-ggplot2-1&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
-&lt;p&gt;Código (graphics):&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;hist(mtcars$mpg, col = &amp;quot;lightblue&amp;quot;, main = &amp;quot;Função hist (base)&amp;quot;, 
-     xlab = &amp;quot;Milhas por galão (mpg)&amp;quot;, ylab = &amp;quot;Frequência absoluta&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;50%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
----
-&lt;h2 id=&#34;porque-o-pacote-ggplot2-2&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
-&lt;p&gt;Código (lattice):&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(lattice)
-histogram(~mpg,data=mtcars,
-       type =&amp;quot;count&amp;quot;,
-       xlab =&amp;quot;Milhas por galão (mpg)&amp;quot;,
-       ylab = &amp;quot;Frequência absoluta&amp;quot;,
-       main =&amp;quot;Função histogram (lattice)&amp;quot;,
-       col = &amp;quot;lightblue&amp;quot;,
-       breaks = 5)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;45%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;porque-o-pacote-ggplot2-3&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
-&lt;p&gt;Código (base):&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;tab &amp;lt;- table(mtcars$cyl);tab
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## 
-##  4  6  8 
-## 11  7 14
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;barplot(tab, col = &amp;quot;lightblue&amp;quot;, main = &amp;quot;Função barplot (base)&amp;quot;, xlab = &amp;quot;Número de cilindros por motor (cyl)&amp;quot;, ylab = &amp;quot;Frequência absoluta&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;45%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;porque-o-pacote-ggplot2-4&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
-&lt;p&gt;Código (lattice):&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(lattice)
-tabela &amp;lt;- xtabs(~cyl, data = mtcars);tabela
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## cyl
-##  4  6  8 
-## 11  7 14
-&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;barchart(tabela,
-         horizontal = FALSE,
-         main = &amp;quot;Função barchart (lattice)&amp;quot;,
-         xlab = &amp;quot;Número de cilindros por motor (cyl)&amp;quot;,
-         ylab = &amp;quot;Frequência absoluta&amp;quot;,
-         col = &amp;quot;lightblue&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;45%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;porque-o-pacote-ggplot2-5&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
 &lt;p&gt;Não é necessário:&lt;/p&gt;

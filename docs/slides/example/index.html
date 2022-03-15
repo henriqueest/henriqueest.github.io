@@ -22,9 +22,9 @@
 
   <link rel="canonical" href="https://henriqueest.github.io/slides/example/">
 
-  <title>Slides | Henrique JP Alves</title>
+  <title> | Henrique JP Alves</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.2.1/dist/reveal.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.2.1/dist/theme/sky.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" id="highlight-theme">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.2.1/dist/reveal.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.2.1/dist/theme/black.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" id="highlight-theme">
 
   
   
@@ -53,7 +53,7 @@
     
     <section>
     
-      <h2 id="pacote-ggplot2-um-curso-introdutório">Pacote ggplot2: um curso introdutório</h2>
+      <h1 id="pacote-ggplot2-um-curso-introdutório">Pacote ggplot2: um curso introdutório</h1>
 <p>Henrique José de Paula Alves</p>
 <p><a href="http://localhost:4321/courses/example/python/" target="_blank" rel="noopener">Material</a></p>
 
@@ -173,8 +173,6 @@
 <li>Instalação e carregamento dos pacotes no R</li>
 </ul>
 <p>Código:</p>
-<div style="display: flex; font-size: 8">
-<div>
 <pre><code class="language-r">#nomes dos pacotes
 packages &lt;- c(&quot;dplyr&quot;,&quot;tidyverse&quot;,&quot;lattice&quot;,  &quot;rgdal&quot;, &quot;rgeos&quot;, 
 &quot;maptools&quot;, &quot;plyr&quot;, &quot;sf&quot;, &quot;covid19br&quot;, &quot;RColorBrewer&quot;)
@@ -184,10 +182,8 @@ installed_packages &lt;- packages %in% rownames(installed.packages())
 if (any(installed_packages == FALSE)) {
   install.packages(packages[!installed_packages])
 }
-</code></pre>
-</div>
-<div>
-<pre><code class="language-r"># carrega os pacotes
+
+# carrega os pacotes
 invisible(lapply(packages, library, character.only = TRUE))
 </code></pre>
 
@@ -226,8 +222,7 @@ invisible(lapply(packages, library, character.only = TRUE))
    am &lt;- factor(am, labels = c(&quot;automatica&quot;, &quot;manual&quot;))
    cyl  &lt;- ordered(cyl)
    gear &lt;- ordered(gear)
-   carb &lt;- ordered(carb)
-})
+   carb &lt;- ordered(carb)})
 </code></pre>
 
     </section>
@@ -292,8 +287,17 @@ invisible(lapply(packages, library, character.only = TRUE))
 <pre><code class="language-r">hist(mtcars$mpg, col = &quot;lightblue&quot;, main = &quot;Função hist (base)&quot;, 
      xlab = &quot;Milhas por galão (mpg)&quot;, ylab = &quot;Frequência absoluta&quot;)
 </code></pre>
-<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-4-1.png" width="50%" style="display: block; margin: auto;" />
----
+<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-3-1.png" width="50%" style="display: block; margin: auto;" />
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
 <h2 id="porque-o-pacote-ggplot2-2">Porque o pacote ggplot2</h2>
 <p>Código (lattice):</p>
 <pre><code class="language-r">library(lattice)
@@ -305,7 +309,7 @@ histogram(~mpg,data=mtcars,
        col = &quot;lightblue&quot;,
        breaks = 5)
 </code></pre>
-<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-5-1.png" width="45%" style="display: block; margin: auto;" />
+<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-4-1.png" width="45%" style="display: block; margin: auto;" />
 
     </section>
     
@@ -326,7 +330,7 @@ histogram(~mpg,data=mtcars,
 </code></pre>
 <pre><code class="language-r">barplot(tab, col = &quot;lightblue&quot;, main = &quot;Função barplot (base)&quot;, xlab = &quot;Número de cilindros por motor (cyl)&quot;, ylab = &quot;Frequência absoluta&quot;)
 </code></pre>
-<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-6-1.png" width="45%" style="display: block; margin: auto;" />
+<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-5-1.png" width="45%" style="display: block; margin: auto;" />
 
     </section>
     
@@ -353,7 +357,7 @@ tabela &lt;- xtabs(~cyl, data = mtcars);tabela
          ylab = &quot;Frequência absoluta&quot;,
          col = &quot;lightblue&quot;)
 </code></pre>
-<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-7-1.png" width="45%" style="display: block; margin: auto;" />
+<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-6-1.png" width="45%" style="display: block; margin: auto;" />
 
     </section>
     
@@ -371,7 +375,7 @@ tabela &lt;- xtabs(~cyl, data = mtcars);tabela
 <p>comandos específicos para cada gráfico gerado</p>
 </li>
 <li>
-<p>utilização de funções adicionais (table ou xtabs)</p>
+<p>funções adicionais (table ou xtabs)</p>
 </li>
 <li>
 <p>conhecimento prévio de cada uma das funções</p>
@@ -387,10 +391,13 @@ tabela &lt;- xtabs(~cyl, data = mtcars);tabela
     <section>
     
       
-<p>A fragment can accept two optional parameters:</p>
+<h2 id="o-pacote-ggplot2">O pacote ggplot2</h2>
+<p>Estatístico, cientista computacional e professor adjunto norte-americano</p>
 <ul>
-<li><code>class</code>: use a custom style (requires definition in custom CSS)</li>
-<li><code>weight</code>: sets the order in which a fragment appears</li>
+<li>Leland Wilkinson (2005)</li>
+<li>&ldquo;The grammar of Graphics&rdquo;</li>
+<li>mapeamento dos dados em atributos estéticos (posição, cor, forma, tamanho, etc)</li>
+<li>formas geométricas (pontos, linhas, barras, caixas, etc)</li>
 </ul>
 
     </section>
@@ -402,38 +409,11 @@ tabela &lt;- xtabs(~cyl, data = mtcars);tabela
     <section>
     
       
-<h2 id="speaker-notes">Speaker Notes</h2>
-<p>Add speaker notes to your presentation</p>
-<pre><code class="language-markdown">{{% speaker_note %}}
-- Only the speaker can read these notes
-- Press `S` key to view
-{{% /speaker_note %}}
-</code></pre>
-<p>Press the <code>S</code> key to view the speaker notes!</p>
-<aside class="notes">
-  <ul>
-<li>Only the speaker can read these notes</li>
-<li>Press <code>S</code> key to view</li>
-</ul>
-
-</aside>
-
-    </section>
-    
-
-    
-    
-    
-    <section>
-    
-      
-<h2 id="themes">Themes</h2>
+<h2 id="o-pacote-ggplot2-1">O pacote ggplot2</h2>
 <ul>
-<li>black: Black background, white text, blue links (default)</li>
-<li>white: White background, black text, blue links</li>
-<li>league: Gray background, white text, blue links</li>
-<li>beige: Beige background, dark text, brown links</li>
-<li>sky: Blue background, thin dark text, blue links</li>
+<li>Hadley Wickham (2008)</li>
+<li>Respondeu a pergunta: &ldquo;O que é um gráfico estatístico?&rdquo;</li>
+<li>Livro &ldquo;A Layered Grammar of Graphics&rdquo;</li>
 </ul>
 
     </section>
@@ -445,11 +425,12 @@ tabela &lt;- xtabs(~cyl, data = mtcars);tabela
     <section>
     
       
+<h2 id="o-pacote-ggplot2-2">O pacote ggplot2</h2>
+<p>Vantagens:</p>
 <ul>
-<li>night: Black background, thick white text, orange links</li>
-<li>serif: Cappuccino background, gray text, brown links</li>
-<li>simple: White background, black text, blue links</li>
-<li>solarized: Cream-colored background, dark green text, blue links</li>
+<li>Os gráficos construídos são mais bonitos e apresentáveis</li>
+<li>Fácil personalização</li>
+<li>Apresentam uma estrutura (sintaxe) única e padronizada</li>
 </ul>
 
     </section>
@@ -458,20 +439,16 @@ tabela &lt;- xtabs(~cyl, data = mtcars);tabela
     
     
     
+    <section>
+    
       
-
-<section data-noprocess data-shortcode-slide
-  
-      
-      data-background-image="/media/boards.jpg"
-  >
-
-<h2 id="custom-slide">Custom Slide</h2>
-<p>Customize the slide style and background</p>
-<pre><code class="language-markdown">{{&lt; slide background-image=&quot;/media/boards.jpg&quot; &gt;}}
-{{&lt; slide background-color=&quot;#0000FF&quot; &gt;}}
-{{&lt; slide class=&quot;my-style&quot; &gt;}}
-</code></pre>
+<h2 id="o-pacote-ggplot2-3">O pacote ggplot2</h2>
+<ul>
+<li>Elementos de um gráfico: dados, sistema de coordenadas, rótulos, anotações</li>
+<li>Sobreposição de camadas</li>
+<li>Criou o pacote ggplot2</li>
+<li>Essência: construir um gráfico estatístico camada por camada</li>
+</ul>
 
     </section>
     
@@ -482,15 +459,42 @@ tabela &lt;- xtabs(~cyl, data = mtcars);tabela
     <section>
     
       
-<h2 id="custom-css-example">Custom CSS Example</h2>
-<p>Let&rsquo;s make headers navy colored.</p>
-<p>Create <code>assets/css/reveal_custom.css</code> with:</p>
-<pre><code class="language-css">.reveal section h1,
-.reveal section h2,
-.reveal section h3 {
-  color: navy;
-}
-</code></pre>
+<h2 id="a-gramática-em-camada-de-gráficos">A gramática em camada de gráficos</h2>
+<p>Descrevendo um gráfico estatístico:</p>
+<table>
+<thead>
+<tr>
+<th>Elementos</th>
+<th>Exemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>aes</strong>tética$^*$</td>
+<td>cor, formato</td>
+</tr>
+<tr>
+<td><strong>geom</strong>etrias$^*$</td>
+<td>barra, ponto</td>
+</tr>
+<tr>
+<td>e<strong>stat</strong>ísticas (modelos)</td>
+<td>mediana, máximo</td>
+</tr>
+<tr>
+<td><strong>facet</strong>as</td>
+<td>facetas</td>
+</tr>
+<tr>
+<td><strong>coord</strong>enadas</td>
+<td>polar, cartesiana</td>
+</tr>
+<tr>
+<td><strong>them</strong>as</td>
+<td>eixos, títulos</td>
+</tr>
+</tbody>
+</table>
 
     </section>
     
@@ -501,9 +505,271 @@ tabela &lt;- xtabs(~cyl, data = mtcars);tabela
     <section>
     
       
-<h1 id="questions">Questions?</h1>
+<h2 id="passos">Passos</h2>
+<p>Primeiro passo:</p>
+<pre><code class="language-r">ggplot(mtcars)
+</code></pre>
+<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" />
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="passos-1">Passos</h2>
+<p>Segundo passo: gráfico de dispersão</p>
+<pre><code class="language-r">ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg))
+</code></pre>
+<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" />
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h1 id="os-tipos-de-geometrias-geom">Os tipos de geometrias (geom)</h1>
+<p>Principais:</p>
+<ul>
+<li>point (pontos); line (dispersão);</li>
+<li>bar (barras); col (colunas); errorbar (barra de erros)</li>
+<li>boxplot; sf (mapas)</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h1 id="argumentos-de-estética-aes">Argumentos de estética (aes)</h1>
+<p>Principais:</p>
+<ul>
+<li>variáveis (x, y, z)</li>
+<li>cores (color, colour, fill)</li>
+<li>tonalidade (alpha)</li>
+<li>formas (shape, linetype)</li>
+<li>tamanhos (size)</li>
+<li>entre outros</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="a-escolha-das-cores">A escolha das cores</h2>
+<p>Argumento color (colour):</p>
+<ul>
+<li>Objetos geométricos que não possuem área</li>
+<li>Pontos, linhas, borda de gráficos e mapas, etc</li>
+</ul>
+<p>Argumento fill :</p>
+<ul>
+<li>Preenchimento</li>
+<li>Objetos geométricos que possuem área não nula</li>
+<li>Caixas, colunas, círculos, polígonos, etc</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h3 id="o-argumento-color">O argumento color</h3>
+<p>Exemplo: Gráfico de dispersão</p>
+<pre><code class="language-r"> ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg, color=as.factor(am)))
+</code></pre>
+<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" />
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h3 id="o-argumento-color-1">O argumento color</h3>
+<p>Exemplo: Gráfico de dispersão</p>
+<pre><code class="language-r">ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg), color=c(&quot;red&quot;)) 
+</code></pre>
+<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" />
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h3 id="o-argumento-fill">O argumento fill</h3>
+<p>Exemplo: gráfico de barras</p>
+<pre><code class="language-r">ggplot(mtcars, aes(x = as.factor(cyl))) +
+  geom_bar(aes(fill=as.factor(am)))
+</code></pre>
+<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" />
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h3 id="o-argumento-fill-1">O argumento fill</h3>
+<p>Exemplo: gráfico de barras</p>
+<pre><code class="language-r">ggplot(mtcars, aes(x = as.factor(cyl))) +
+  geom_bar(fill = &quot;red&quot;)
+</code></pre>
+<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" />
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="o-argumento-alpha-tonalidade-das-cores">O argumento alpha (tonalidade das cores)</h2>
+<p>Exemplo: gráfico de barras</p>
+<pre><code class="language-r">ggplot(mtcars, aes(x = as.factor(cyl))) +
+  geom_bar(aes(alpha = as.factor(cyl), fill = as.factor(cyl)))
+</code></pre>
+<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" />
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="o-argumento-forma-shape">O argumento forma (shape)</h2>
+<p>Exemplo: Gráfico de dispersão (Exclusivo)</p>
+<pre><code class="language-r"> ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg, color=as.factor(am), shape = as.factor(carb)))
+</code></pre>
+<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" />
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="o-argumento-forma-linetype">O argumento forma (linetype)</h2>
+<p>Exemplo: Gráfico de linhas (Exclusivo)</p>
+<pre><code class="language-r"> ggplot(mtcars) +
+  geom_line(mapping = aes(x= disp, y=mpg, linetype = as.factor(am), color = as.factor(am)))
+</code></pre>
+<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" />
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="o-argumento-tamanho-size">O argumento tamanho (size)</h2>
+<p>Exemplo: Gráfico de dispersão</p>
+<pre><code class="language-r"> ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg, color=as.factor(am), shape = as.factor(carb),
+                           size = as.factor(cyl)))
+</code></pre>
+<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" />
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="o-argumento-tamanho-size-1">O argumento tamanho (size)</h2>
+<p>Exemplo: Gráfico de linhas</p>
+<pre><code class="language-r"> ggplot(mtcars) +
+  geom_line(mapping = aes(x= disp, y=mpg, linetype = as.factor(am), color = as.factor(am), size = as.factor(cyl)))
+</code></pre>
+<img src="https://henriqueest.github.io/slides/example/index_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" />
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="a-escolha-dos-rótulos-dos-eixos-labs">A escolha dos rótulos dos eixos (labs)</h2>
+<p>Linha de comando: labs()</p>
+<ul>
+<li>x  &quot;&quot; (eixo x); y &quot;&quot; (eixo y)</li>
+<li>color = &ldquo;&rdquo;; colour = &quot;&quot;</li>
+<li>shape = &ldquo;&rdquo;; size = &quot;&quot;</li>
+</ul>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
+<h2 id="questions">Questions?</h2>
 <p><a href="https://github.com/wowchemy/wowchemy-hugo-modules/discussions" target="_blank" rel="noopener">Ask</a></p>
 <p><a href="https://wowchemy.com/docs/managing-content/#create-slides" target="_blank" rel="noopener">Documentation</a></p>
+
+    </section>
+    
+
+    
+    
+    
+    <section>
+    
+      
 
     </section>
     

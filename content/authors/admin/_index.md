@@ -1,5 +1,5 @@
 ---
-bio: My research interests include distributed robotics, mobile computing and programmable
+bio: Meus interesses em pesquisa incluem Estatística Espacial com ênfase em Geoestatística, Análise Multivariada, Métodos de Reamostragem Bootstrap, Simulação Computacional Intensiva
   matter.
 education:
   courses:

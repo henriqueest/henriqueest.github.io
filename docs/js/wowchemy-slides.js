@@ -1,6 +1,6 @@
 (() => {
   // ns-params:@params
-  var slides = { highlight_style: "dracula", theme: "sky" };
+  var slides = { highlight_style: "dracula", theme: "black" };
 
   // ns-hugo:C:\Users\jpahe\Dropbox\PC\Documents\minhapagina\henriqueest.github.io\themes\github.com\wowchemy\wowchemy-hugo-modules\wowchemy\v5\assets\js\wowchemy-utils.js
   function fixMermaid(render = false) {

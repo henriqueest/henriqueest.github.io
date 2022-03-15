@@ -1,18 +1,14 @@
 ---
-title: "Slides"
+title: []
 categories: []
-date: '2022-03-21'
+date: '2019-02-05T00:00:00Z'
 slides:
   highlight_style: dracula
   theme: black
-summary: 'Pacote ggplot2: um curso introdutório.'
+summary: An introduction to using Wowchemy's Slides feature.
 tags: []
 authors: []
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 # Pacote ggplot2: um curso introdutório
 
@@ -80,7 +76,7 @@ Henrique José de Paula Alves
 
 Código:
 
-```{r , echo = TRUE, message = FALSE, warning = FALSE, out.width = "75%"}
+```{r , echo = TRUE, message = FALSE, warning = FALSE}
 #nomes dos pacotes
 packages <- c("dplyr","tidyverse","lattice",  "rgdal", "rgeos", 
 "maptools", "plyr", "sf", "covid19br", "RColorBrewer")
@@ -94,6 +90,7 @@ if (any(installed_packages == FALSE)) {
 # carrega os pacotes
 invisible(lapply(packages, library, character.only = TRUE))
 ```
+
 ---
 
 ## Base de dados
@@ -116,9 +113,7 @@ mtcars <- within(mtcars, {
    am <- factor(am, labels = c("automatica", "manual"))
    cyl  <- ordered(cyl)
    gear <- ordered(gear)
-   carb <- ordered(carb)
-})
-
+   carb <- ordered(carb)})
 ```
 
 --- 
@@ -150,6 +145,7 @@ Código (graphics):
 hist(mtcars$mpg, col = "lightblue", main = "Função hist (base)", 
      xlab = "Milhas por galão (mpg)", ylab = "Frequência absoluta")
 ```
+
 ---
 
 ## Porque o pacote ggplot2
@@ -207,6 +203,7 @@ Não é necessário:
 
 - conhecimento prévio de cada uma das funções 
 
+- sintaxe fixa e única
 
 ---
 
@@ -226,7 +223,6 @@ Estatístico, cientista computacional e professor adjunto norte-americano
 - Hadley Wickham (2008)
 - Respondeu a pergunta: "O que é um gráfico estatístico?"
 - Livro "A Layered Grammar of Graphics"
-
 
 ---
 
@@ -287,7 +283,28 @@ ggplot(mtcars) +
 
 ---
 
+# Os tipos de geometrias (geom)
+
+Principais:
+
+- point (pontos); line (dispersão); 
+- bar (barras); col (colunas); errorbar (barra de erros)
+- boxplot; histogram(histogramas), density (densidades), sf (mapas)
+
+
+---
+
 # Argumentos de estética (aes)
+
+Principais:
+- variáveis (x, y, z)
+- cores (color, colour, fill)
+- tonalidade (alpha)
+- formas (shape, linetype)
+- tamanhos (size)
+- entre outros
+
+--- 
 
 ## A escolha das cores
 
@@ -342,55 +359,226 @@ ggplot(mtcars, aes(x = as.factor(cyl))) +
 
 Exemplo: gráfico de barras
 
-
 ```{r, echo=TRUE, fig.align = 'center'}
 ggplot(mtcars, aes(x = as.factor(cyl))) +
-  geom_col(aes(y = mpg, fill=as.factor(am)))
+  geom_bar(fill = "red")
 ```
 
----
-
-### O argumento fill
-
-Exemplo: gráfico de barras
-
-
-```{r, echo=TRUE, fig.align = 'center'}
-ggplot(mtcars, aes(x = as.factor(cyl))) +
-  geom_bar(fill="red")
-```
-
-
----
-
-### O argumento fill
-
-Exemplo: gráfico de barras
-
-
-```{r, echo=TRUE, fig.align = 'center'}
-ggplot(mtcars, aes(x = as.factor(cyl))) +
-  geom_col(aes(y = mpg), fill="red")
-```
 
 ---
 
 ## O argumento alpha (tonalidade das cores)
 
-Exemplo: boxplot
+Exemplo: gráfico de barras
 
 ```{r, echo=TRUE, fig.align = 'center'}
-ggplot(mtcars, aes(x = as.factor(am), y = mpg)) +
-  geom_boxplot(aes(alpha = as.factor(am), fill = as.factor(carb),
-  color = as.factor(cyl)))
+ggplot(mtcars, aes(x = as.factor(cyl))) +
+  geom_bar(aes(alpha = as.factor(cyl), fill = as.factor(cyl)))
 ```
-
 
 
 --- 
 
-## Questions?
+## O argumento forma (shape)
 
-[Ask](https://github.com/wowchemy/wowchemy-hugo-modules/discussions)
+Exemplo: Gráfico de dispersão (Exclusivo)
 
-[Documentation](https://wowchemy.com/docs/managing-content/#create-slides)
+```{r, echo=TRUE, fig.align = "center", message=FALSE, warning=FALSE}
+ ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg, color=as.factor(am), shape = as.factor(carb)))
+```
+
+--- 
+
+## O argumento forma (linetype)
+
+Exemplo: Gráfico de linhas (Exclusivo)
+
+```{r, echo=TRUE, fig.align = "center", message=FALSE, warning=FALSE}
+ ggplot(mtcars) +
+  geom_line(mapping = aes(x= disp, y=mpg, linetype = as.factor(am), color = as.factor(am)))
+```
+
+
+---
+
+## O argumento tamanho (size)
+
+Exemplo: Gráfico de dispersão
+
+```{r, echo=TRUE, fig.align = "center", message=FALSE, warning=FALSE}
+ ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg, color=as.factor(am), shape = as.factor(carb),
+                           size = as.factor(cyl)))
+```
+
+---
+
+## O argumento tamanho (size)
+
+Exemplo: Gráfico de linhas 
+
+```{r, echo=TRUE, fig.align = "center", message=FALSE, warning=FALSE}
+ ggplot(mtcars) +
+  geom_line(mapping = aes(x= disp, y=mpg, linetype = as.factor(am), color = as.factor(am), size = as.factor(cyl)))
+```
+
+---
+
+# Retirando variáveis da legenda (guides)
+
+Linha de comando: guides(nome = "none)
+- guides(color = "none")
+- guides(fill = "none)
+- guides(shape = "none")
+- guides(size = "none")
+
+
+---
+
+
+# A escolha dos rótulos dos eixos (labs)
+
+Linha de comando: labs()
+
+- x = "nome" (eixo x); y = "nome" (eixo y)
+- color = "nome"; colour = "nome"
+- shape = "nome"; size = "nome"
+
+---
+
+# A escala dos eixos (scale)
+
+Linha de comando: scale_eixo_tipo
+
+- eixo x, variável discreta: scale_x_discrete
+- eixo y, variável discreta: scale_y_discrete
+- eixo x, variável contínua: scale_x_continuous
+- eixo y, variável contínua: scale_y_continuous
+
+---
+
+# A escolha dos temas (theme)
+
+Linha de comando: theme_nome()
+
+- theme_gray; theme_bw()
+- theme_linedraw(); theme_light
+- theme_dark(); theme_minimal
+- theme_classic(); heme_void()
+
+---
+
+# A escolha do título (ggtitle)
+
+Linha de comando: ggtitle("nome")
+
+Exemplo:
+- ggtitle("Média de casos de COVID-19 - Brasil - 2021")
+
+---
+
+# Gráficos mais elaborados 
+
+## Exemplos
+
+---
+
+Gráfico de dispersão
+
+```{r, echo=TRUE, fig.align = "center"}
+ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg, color = as.factor(am),
+                           shape = as.factor(am)))+
+  guides(shape = "none")+
+  labs(x = "Distância percorrida (disp)", y = "Milhas percorridas por galão de combustível (mpg)", color = "Tipo de Transmissão", 
+       size ="Número de Carburadores (motor)")+
+  theme_classic()+
+  ggtitle("mpg vs disp: tipo de transmissão")
+```
+
+
+---
+
+Gráfico de barras
+
+```{r, echo=TRUE, fig.align = "center"}
+ggplot(mtcars) +
+  geom_bar(mapping = aes(x= as.factor(carb), y = (..count..), fill = as.factor(am)),
+         position = "dodge", color = "black")+
+  scale_y_continuous(limits = c(0,8))+
+  labs(x = "Número de Carburadores (motor)", y = "Frequência absoluta", fill = "Tipo de Transmissão")+
+  theme_classic()+
+  ggtitle("Número de carburadores (motor): tipo de transmissão")
+```
+
+
+---
+
+Histograma
+
+```{r, echo=TRUE, fig.align = "center"}
+ggplot(mtcars) +
+  geom_histogram(mapping = aes(x = mpg, y = (..count..)/100, fill = as.factor(carb)),
+           bins= 5, color = "black") +
+  labs(x = "Milhas percorridas por galão (mpg)", y = "Frequência relativa", fill = "Número de carburadores")+
+  theme_classic()+
+  ggtitle("Milhas percorrida por galão (mpg)")
+```
+
+
+---
+
+Histograma
+
+```{r, echo=TRUE, fig.align = "center"}
+ggplot(mtcars) +
+  geom_histogram(mapping = aes(x = mpg, y = (..count..)/100, fill = as.factor(carb)),
+           bins= 5, color = "black") +
+  labs(x = "Milhas percorridas por galão (mpg)", y = "Frequência relativa", fill = "Número de carburadores")+
+  theme_classic()+
+  ggtitle("Milhas percorrida por galão (mpg)")+
+  facet_wrap(~as.factor(carb))# facetas
+```
+
+
+---
+
+Box-plot
+
+```{r, echo=TRUE, fig.align = "center"}
+ggplot(mtcars) +
+  geom_boxplot(mapping = aes(x = as.factor(carb), y=mpg, fill = as.factor(am)), color = "black") +
+  labs(x = "Número de carburadores (carb)", y = "Milhas percorridas por galão (mpg)", fill = "Tipo de transmissão")+
+  theme_classic()+
+  ggtitle("Distribuição mpg por carb: tipo de transmissão")
+```
+
+
+---
+
+Densidades
+
+```{r, echo=TRUE, fig.align = "center", message=FALSE, warning=FALSE}
+ggplot(mtcars) +
+  geom_density(mapping = aes(x = mpg, fill = as.factor(carb)), color = "black", alpha = 0.1) +
+  labs(x = "Milhas percorridas por galão (mpg)", y = "Densidades", fill = "Número de carburadores")+
+  theme_classic()+
+  ggtitle("Densidade mpg")
+```
+
+---
+
+# Segunda parte
+
+---
+
+# Material de apoio
+
+[ggplot2: elegant graphics for data analysis](https://ggplot2-book.org/)
+
+[R for Data Science](https://r4ds.had.co.nz/)
+
+[R Graphics Cookbook](https://r-graphics.org/)
+
+---

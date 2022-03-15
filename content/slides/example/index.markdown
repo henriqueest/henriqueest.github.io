@@ -1,18 +1,16 @@
 ---
-authors: []
+title: []
 categories: []
-date: "2019-02-05T00:00:00Z"
+date: '2019-02-05T00:00:00Z'
 slides:
   highlight_style: dracula
-  theme: sky
+  theme: black
 summary: An introduction to using Wowchemy's Slides feature.
 tags: []
-title: Slides
+authors: []
 ---
 
-
-
-## Pacote ggplot2: um curso introdutório
+# Pacote ggplot2: um curso introdutório
 
 Henrique José de Paula Alves 
 
@@ -61,6 +59,7 @@ Henrique José de Paula Alves
 - Não é uma tarefa fácil nem corriqueira
 
 ---
+
 ## Introdução
 
 - Uma forma direta de obter saídas gráficas: pacotes esquisse e ggplotgui
@@ -77,10 +76,6 @@ Henrique José de Paula Alves
 
 Código:
 
-<div style="display: flex; font-size: 8">
-
-<div>
-
 
 ```r
 #nomes dos pacotes
@@ -92,16 +87,11 @@ installed_packages <- packages %in% rownames(installed.packages())
 if (any(installed_packages == FALSE)) {
   install.packages(packages[!installed_packages])
 }
-```
-</div>
 
-<div>
-
-
-```r
 # carrega os pacotes
 invisible(lapply(packages, library, character.only = TRUE))
 ```
+
 ---
 
 ## Base de dados
@@ -125,8 +115,7 @@ mtcars <- within(mtcars, {
    am <- factor(am, labels = c("automatica", "manual"))
    cyl  <- ordered(cyl)
    gear <- ordered(gear)
-   carb <- ordered(carb)
-})
+   carb <- ordered(carb)})
 ```
 
 --- 
@@ -178,7 +167,8 @@ hist(mtcars$mpg, col = "lightblue", main = "Função hist (base)",
      xlab = "Milhas por galão (mpg)", ylab = "Frequência absoluta")
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="50%" style="display: block; margin: auto;" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="50%" style="display: block; margin: auto;" />
+
 ---
 
 ## Porque o pacote ggplot2
@@ -197,7 +187,7 @@ histogram(~mpg,data=mtcars,
        breaks = 5)
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="45%" style="display: block; margin: auto;" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="45%" style="display: block; margin: auto;" />
 
 ---
 
@@ -220,7 +210,7 @@ tab <- table(mtcars$cyl);tab
 barplot(tab, col = "lightblue", main = "Função barplot (base)", xlab = "Número de cilindros por motor (cyl)", ylab = "Frequência absoluta")
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="45%" style="display: block; margin: auto;" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-5-1.png" width="45%" style="display: block; margin: auto;" />
 
 ---
 
@@ -249,7 +239,7 @@ barchart(tabela,
          col = "lightblue")
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" width="45%" style="display: block; margin: auto;" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-6-1.png" width="45%" style="display: block; margin: auto;" />
 
 ---
 
@@ -259,88 +249,437 @@ Não é necessário:
 
 - comandos específicos para cada gráfico gerado
 
-- utilização de funções adicionais (table ou xtabs) 
+- funções adicionais (table ou xtabs) 
 
 - conhecimento prévio de cada uma das funções 
 
----
-
-A fragment can accept two optional parameters:
-
-- `class`: use a custom style (requires definition in custom CSS)
-- `weight`: sets the order in which a fragment appears
+- sintaxe fixa e única
 
 ---
 
-## Speaker Notes
+## O pacote ggplot2
 
-Add speaker notes to your presentation
+Estatístico, cientista computacional e professor adjunto norte-americano
 
-```markdown
-{{%/* speaker_note */%}}
-- Only the speaker can read these notes
-- Press `S` key to view
-{{%/* /speaker_note */%}}
+- Leland Wilkinson (2005)
+- "The grammar of Graphics"
+- mapeamento dos dados em atributos estéticos (posição, cor, forma, tamanho, etc)
+- formas geométricas (pontos, linhas, barras, caixas, etc)
+
+---
+
+## O pacote ggplot2
+
+- Hadley Wickham (2008)
+- Respondeu a pergunta: "O que é um gráfico estatístico?"
+- Livro "A Layered Grammar of Graphics"
+
+---
+
+## O pacote ggplot2
+
+Vantagens:
+
+- Os gráficos construídos são mais bonitos e apresentáveis
+- Fácil personalização
+- Apresentam uma estrutura (sintaxe) única e padronizada
+
+
+---
+
+## O pacote ggplot2
+
+- Elementos de um gráfico: dados, sistema de coordenadas, rótulos, anotações
+- Sobreposição de camadas
+- Criou o pacote ggplot2
+- Essência: construir um gráfico estatístico camada por camada
+
+
+---
+
+## A gramática em camada de gráficos
+
+Descrevendo um gráfico estatístico:
+
+| Elementos | Exemplos | 
+|----------------|-----------------------------------------------------------------------|
+| **aes**tética$^*$ | cor, formato|
+| **geom**etrias$^*$ | barra, ponto|
+| e**stat**ísticas (modelos) | mediana, máximo|
+| **facet**as | facetas|
+| **coord**enadas | polar, cartesiana|
+| **them**as | eixos, títulos|
+
+---
+
+## Passos 
+
+Primeiro passo:
+
+
+```r
+ggplot(mtcars)
 ```
 
-Press the `S` key to view the speaker notes!
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" />
 
-{{< speaker_note >}}
-- Only the speaker can read these notes
-- Press `S` key to view
-{{< /speaker_note >}}
+--- 
 
----
+## Passos
 
-## Themes
+Segundo passo: gráfico de dispersão
 
-- black: Black background, white text, blue links (default)
-- white: White background, black text, blue links
-- league: Gray background, white text, blue links
-- beige: Beige background, dark text, brown links
-- sky: Blue background, thin dark text, blue links
 
----
-
-- night: Black background, thick white text, orange links
-- serif: Cappuccino background, gray text, brown links
-- simple: White background, black text, blue links
-- solarized: Cream-colored background, dark green text, blue links
-
----
-
-{{< slide background-image="/media/boards.jpg" >}}
-
-## Custom Slide
-
-Customize the slide style and background
-
-```markdown
-{{</* slide background-image="/media/boards.jpg" */>}}
-{{</* slide background-color="#0000FF" */>}}
-{{</* slide class="my-style" */>}}
+```r
+ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg))
 ```
 
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" />
+
 ---
 
-## Custom CSS Example
+# Os tipos de geometrias (geom)
 
-Let's make headers navy colored.
+Principais:
 
-Create `assets/css/reveal_custom.css` with:
+- point (pontos); line (dispersão); 
+- bar (barras); col (colunas); errorbar (barra de erros)
+- boxplot; histogram(histogramas), density (densidades), sf (mapas)
 
-```css
-.reveal section h1,
-.reveal section h2,
-.reveal section h3 {
-  color: navy;
-}
+
+---
+
+# Argumentos de estética (aes)
+
+Principais:
+- variáveis (x, y, z)
+- cores (color, colour, fill)
+- tonalidade (alpha)
+- formas (shape, linetype)
+- tamanhos (size)
+- entre outros
+
+--- 
+
+## A escolha das cores
+
+Argumento color (colour):
+
+- Objetos geométricos que não possuem área
+- Pontos, linhas, borda de gráficos e mapas, etc
+
+Argumento fill :
+
+- Preenchimento
+- Objetos geométricos que possuem área não nula
+- Caixas, colunas, círculos, polígonos, etc
+
+---
+
+### O argumento color
+
+Exemplo: Gráfico de dispersão
+
+
+```r
+ ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg, color=as.factor(am)))
 ```
 
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" />
+
 ---
 
-# Questions?
+### O argumento color
 
-[Ask](https://github.com/wowchemy/wowchemy-hugo-modules/discussions)
+Exemplo: Gráfico de dispersão
 
-[Documentation](https://wowchemy.com/docs/managing-content/#create-slides)
+
+```r
+ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg), color=c("red")) 
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" />
+
+---
+
+### O argumento fill
+
+Exemplo: gráfico de barras
+
+
+
+```r
+ggplot(mtcars, aes(x = as.factor(cyl))) +
+  geom_bar(aes(fill=as.factor(am)))
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" />
+
+---
+
+### O argumento fill
+
+Exemplo: gráfico de barras
+
+
+```r
+ggplot(mtcars, aes(x = as.factor(cyl))) +
+  geom_bar(fill = "red")
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" />
+
+
+---
+
+## O argumento alpha (tonalidade das cores)
+
+Exemplo: gráfico de barras
+
+
+```r
+ggplot(mtcars, aes(x = as.factor(cyl))) +
+  geom_bar(aes(alpha = as.factor(cyl), fill = as.factor(cyl)))
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" />
+
+
+--- 
+
+## O argumento forma (shape)
+
+Exemplo: Gráfico de dispersão (Exclusivo)
+
+
+```r
+ ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg, color=as.factor(am), shape = as.factor(carb)))
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" />
+
+--- 
+
+## O argumento forma (linetype)
+
+Exemplo: Gráfico de linhas (Exclusivo)
+
+
+```r
+ ggplot(mtcars) +
+  geom_line(mapping = aes(x= disp, y=mpg, linetype = as.factor(am), color = as.factor(am)))
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" />
+
+
+---
+
+## O argumento tamanho (size)
+
+Exemplo: Gráfico de dispersão
+
+
+```r
+ ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg, color=as.factor(am), shape = as.factor(carb),
+                           size = as.factor(cyl)))
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" />
+
+---
+
+## O argumento tamanho (size)
+
+Exemplo: Gráfico de linhas 
+
+
+```r
+ ggplot(mtcars) +
+  geom_line(mapping = aes(x= disp, y=mpg, linetype = as.factor(am), color = as.factor(am), size = as.factor(cyl)))
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" />
+
+---
+
+# Retirando variáveis da legenda (guides)
+
+Linha de comando: guides(nome = "none)
+- guides(color = "none")
+- guides(fill = "none)
+- guides(shape = "none")
+- guides(size = "none")
+
+
+---
+
+
+# A escolha dos rótulos dos eixos (labs)
+
+Linha de comando: labs()
+
+- x = "nome" (eixo x); y = "nome" (eixo y)
+- color = "nome"; colour = "nome"
+- shape = "nome"; size = "nome"
+
+---
+
+# A escala dos eixos (scale)
+
+Linha de comando: scale_eixo_tipo
+
+- eixo x, variável discreta: scale_x_discrete
+- eixo y, variável discreta: scale_y_discrete
+- eixo x, variável contínua: scale_x_continuous
+- eixo y, variável contínua: scale_y_continuous
+
+---
+
+# A escolha dos temas (theme)
+
+Linha de comando: theme_nome()
+
+- theme_gray; theme_bw()
+- theme_linedraw(); theme_light
+- theme_dark(); theme_minimal
+- theme_classic(); heme_void()
+
+---
+
+# A escolha do título (ggtitle)
+
+Linha de comando: ggtitle("nome")
+
+Exemplo:
+- ggtitle("Média de casos de COVID-19 - Brasil - 2021")
+
+---
+
+# Gráficos mais elaborados 
+
+## Exemplos
+
+---
+
+Gráfico de dispersão
+
+
+```r
+ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg, color = as.factor(am),
+                           shape = as.factor(am)))+
+  guides(shape = "none")+
+  labs(x = "Distância percorrida (disp)", y = "Milhas percorridas por galão de combustível (mpg)", color = "Tipo de Transmissão", 
+       size ="Número de Carburadores (motor)")+
+  theme_classic()+
+  ggtitle("mpg vs disp: tipo de transmissão")
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" />
+
+
+---
+
+Gráfico de barras
+
+
+```r
+ggplot(mtcars) +
+  geom_bar(mapping = aes(x= as.factor(carb), y = (..count..), fill = as.factor(am)),
+         position = "dodge", color = "black")+
+  scale_y_continuous(limits = c(0,8))+
+  labs(x = "Número de Carburadores (motor)", y = "Frequência absoluta", fill = "Tipo de Transmissão")+
+  theme_classic()+
+  ggtitle("Número de carburadores (motor): tipo de transmissão")
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" />
+
+
+---
+
+Histograma
+
+
+```r
+ggplot(mtcars) +
+  geom_histogram(mapping = aes(x = mpg, y = (..count..)/100, fill = as.factor(carb)),
+           bins= 5, color = "black") +
+  labs(x = "Milhas percorridas por galão (mpg)", y = "Frequência relativa", fill = "Número de carburadores")+
+  theme_classic()+
+  ggtitle("Milhas percorrida por galão (mpg)")
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-20-1.png" width="672" style="display: block; margin: auto;" />
+
+
+---
+
+Histograma
+
+
+```r
+ggplot(mtcars) +
+  geom_histogram(mapping = aes(x = mpg, y = (..count..)/100, fill = as.factor(carb)),
+           bins= 5, color = "black") +
+  labs(x = "Milhas percorridas por galão (mpg)", y = "Frequência relativa", fill = "Número de carburadores")+
+  theme_classic()+
+  ggtitle("Milhas percorrida por galão (mpg)")+
+  facet_wrap(~as.factor(carb))# facetas
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-21-1.png" width="672" style="display: block; margin: auto;" />
+
+
+---
+
+Box-plot
+
+
+```r
+ggplot(mtcars) +
+  geom_boxplot(mapping = aes(x = as.factor(carb), y=mpg, fill = as.factor(am)), color = "black") +
+  labs(x = "Número de carburadores (carb)", y = "Milhas percorridas por galão (mpg)", fill = "Tipo de transmissão")+
+  theme_classic()+
+  ggtitle("Distribuição mpg por carb: tipo de transmissão")
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-22-1.png" width="672" style="display: block; margin: auto;" />
+
+
+---
+
+Densidades
+
+
+```r
+ggplot(mtcars) +
+  geom_density(mapping = aes(x = mpg, fill = as.factor(carb)), color = "black", alpha = 0.1) +
+  labs(x = "Milhas percorridas por galão (mpg)", y = "Densidades", fill = "Número de carburadores")+
+  theme_classic()+
+  ggtitle("Densidade mpg")
+```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-23-1.png" width="672" style="display: block; margin: auto;" />
+
+---
+
+# Segunda parte
+
+---
+
+# Material de apoio
+
+[ggplot2: elegant graphics for data analysis](https://ggplot2-book.org/)
+
+[R for Data Science](https://r4ds.had.co.nz/)
+
+[R Graphics Cookbook](https://r-graphics.org/)
+
+---
