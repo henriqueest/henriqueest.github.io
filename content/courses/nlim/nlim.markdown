@@ -60,7 +60,6 @@ Among the characteristic points on the abscissa axis (X) are:
 The symbol for each of these parameters will depend on the model considered. Sometimes it is faster to recognize the properties of a function by its appearance with some specific pattern. Among the most common is
 - **SIG**: sigmoid, being monotonous increasing (MC) or decreasing (MD). The curve has an inverted S or S shape. Every sigmoid has **PI**, **ASS** and **ASI**.
 
-<!-- <img src="C:/Users/jpahe/Dropbox/PC/Documents/minhapagina/henriqueest.github.io/content/courses/nlim/featured(5).jpg" style="float: left; margin-right: 10px;" /> -->
 
 <iframe width='100%' height='300' src='https://rdrr.io/snippets/embed/?code=print(%22Hello%2C%20world!%22)' frameborder='0'></iframe>
 
