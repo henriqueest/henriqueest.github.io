@@ -61,7 +61,7 @@ The symbol for each of these parameters will depend on the model considered. Som
 - **SIG**: sigmoid, being monotonous increasing (MC) or decreasing (MD). The curve has an inverted S or S shape. Every sigmoid has **PI**, **ASS** and **ASI**.
 
 
-<iframe width='100%' height='300' src='https://rdrr.io/snippets/embed/?code=print(%22Hello%2C%20world!%22)' frameborder='0'></iframe>
+<iframe width='100%' height='300' src='https://rdrr.io/snippets/embed/?code=' frameborder='0'></iframe>
 
 
 
