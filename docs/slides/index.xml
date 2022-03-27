@@ -1,0 +1,937 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Slides | Henrique JP Alves</title>
+    <link>https://henriqueest.github.io/slides/</link>
+      <atom:link href="https://henriqueest.github.io/slides/index.xml" rel="self" type="application/rss+xml" />
+    <description>Slides</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <item>
+      <title>Saídas gráficas no R</title>
+      <link>https://henriqueest.github.io/slides/example/apresentacao-main/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/slides/example/apresentacao-main/</guid>
+      <description>
+&lt;script src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
+
+
+&lt;style&gt;
+body {
+  text-align: justify;
+  }
+code.r{
+  font-size: 10px;
+}
+pre {
+  font-size: 12px
+}
+&lt;/style&gt;
+&lt;div id=&#34;material-de-apoio&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Material de apoio&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:4321/courses/example/python/&#34;&gt;Material&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;div id=&#34;o-que-você-vai-aprender&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;O que você vai aprender&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Habilidades fundamentais de programação R&lt;/li&gt;
+&lt;li&gt;Conceitos estatísticos e resultados gráficos: como aplicá-los&lt;/li&gt;
+&lt;li&gt;Ganhe experiência com o R: visualização de dados com o pacote ggplot2 e mineração de dados com o pacote tidyverse&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;visão-geral-do-curso&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Visão geral do curso&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Grande demanda por profissionais em estatística aplicada&lt;/li&gt;
+&lt;li&gt;Mineração de dados e as saídas gráficas: passo fundamental em estatística aplicada&lt;/li&gt;
+&lt;li&gt;Objetivo: apresentar duas importantes ferramentas disponíveis no software R: os pacotes tidyverse e ggplot2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;pré-requisitos&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Pré-requisitos&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;É desejável que o aluno tenha algum conhecimento de programação em linguagem R&lt;/li&gt;
+&lt;li&gt;É também desejável que o aluno tenha conhecimentos básicos de Estatística e Probabilidades&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;introdução&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introdução&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Todo e qualquer resultado estatístico deve ser bem compreendido&lt;/li&gt;
+&lt;li&gt;Saídas gráficas representam um resultado estatístico&lt;/li&gt;
+&lt;li&gt;Apresentação do comportamento dos dados de forma resumida&lt;/li&gt;
+&lt;li&gt;Não é uma tarefa fácil nem corriqueira&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;introdução-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Introdução&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Uma forma direta de obter saídas gráficas: pacotes esquisse e ggplotgui&lt;/li&gt;
+&lt;li&gt;Esse não é o nosso objetivo&lt;/li&gt;
+&lt;li&gt;Apresentar o pacote ggplot2 de forma lenta e gradativa&lt;/li&gt;
+&lt;li&gt;O seu diferencial com relação a outros pacotes&lt;/li&gt;
+&lt;li&gt;Funções de saídas gráficas: base do R&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;pacotes-necessários&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Pacotes necessários&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Instalação e carregamento dos pacotes no R&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Código:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt; #nomes dos pacotes
+ packages &amp;lt;- c(&amp;quot;dplyr&amp;quot;,&amp;quot;tidyverse&amp;quot;,&amp;quot;lattice&amp;quot;,  &amp;quot;rgdal&amp;quot;, &amp;quot;rgeos&amp;quot;,
+ &amp;quot;maptools&amp;quot;, &amp;quot;plyr&amp;quot;, &amp;quot;sf&amp;quot;, &amp;quot;covid19br&amp;quot;, &amp;quot;RColorBrewer&amp;quot;)
+
+ # instala os pacotes que não estão instalados
+ installed_packages &amp;lt;- packages %in% rownames(installed.packages())
+ if (any(installed_packages == FALSE)) {
+   install.packages(packages[!installed_packages])
+ }
+
+# carrega os pacotes
+invisible(lapply(packages, library, character.only = TRUE))&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;base-de-dados&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Base de dados&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Base de dados disponível no R: &lt;a href=&#34;https://gist.github.com/seankross/a412dfbd88b3db70b74b&#34;&gt;mtcars&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Coletados da revista “Motor Trend US (1974)”&lt;/li&gt;
+&lt;li&gt;32 modelos de automóveis: consumo de combustível e outros 10 aspectos de design e desempenho&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;base-de-dados-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Base de dados&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Preparando a base de dados&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mtcars &amp;lt;- within(mtcars, {
+   vs &amp;lt;- factor(vs, labels = c(&amp;quot;V&amp;quot;, &amp;quot;S&amp;quot;))
+   am &amp;lt;- factor(am, labels = c(&amp;quot;automatica&amp;quot;, &amp;quot;manual&amp;quot;))
+   cyl  &amp;lt;- ordered(cyl)
+   gear &amp;lt;- ordered(gear)
+   carb &amp;lt;- ordered(carb)})
+summary(mtcars)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##       mpg        cyl         disp             hp             drat      
+##  Min.   :10.40   4:11   Min.   : 71.1   Min.   : 52.0   Min.   :2.760  
+##  1st Qu.:15.43   6: 7   1st Qu.:120.8   1st Qu.: 96.5   1st Qu.:3.080  
+##  Median :19.20   8:14   Median :196.3   Median :123.0   Median :3.695  
+##  Mean   :20.09          Mean   :230.7   Mean   :146.7   Mean   :3.597  
+##  3rd Qu.:22.80          3rd Qu.:326.0   3rd Qu.:180.0   3rd Qu.:3.920  
+##  Max.   :33.90          Max.   :472.0   Max.   :335.0   Max.   :4.930  
+##        wt             qsec       vs              am     gear   carb  
+##  Min.   :1.513   Min.   :14.50   V:18   automatica:19   3:15   1: 7  
+##  1st Qu.:2.581   1st Qu.:16.89   S:14   manual    :13   4:12   2:10  
+##  Median :3.325   Median :17.71                          5: 5   3: 3  
+##  Mean   :3.217   Mean   :17.85                                 4:10  
+##  3rd Qu.:3.610   3rd Qu.:18.90                                 6: 1  
+##  Max.   :5.424   Max.   :22.90                                 8: 1&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;porque-o-pacote-ggplot2&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Porque o pacote ggplot2&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Vamos construir algumas saídas gráficas&lt;/li&gt;
+&lt;li&gt;Utilzar as funções do pacote graphics: base do R&lt;/li&gt;
+&lt;li&gt;Pacote lattice&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;porque-o-pacote-ggplot2-base&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Porque o pacote ggplot2 (base)&lt;/h2&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig1-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;porque-o-pacote-ggplot2-lattice&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Porque o pacote ggplot2 (lattice)&lt;/h2&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig2-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;porque-o-pacote-ggplot2-base-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Porque o pacote ggplot2 (base)&lt;/h2&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig3-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;porque-o-pacote-ggplot2-lattice-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Porque o pacote ggplot2 (lattice)&lt;/h2&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig4-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;porque-o-pacote-ggplot2-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Porque o pacote ggplot2&lt;/h2&gt;
+&lt;p&gt;Não é necessário:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;comandos específicos para cada gráfico gerado&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;funções adicionais (table ou xtabs)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;conhecimento prévio de cada uma das funções&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;sintaxe fixa e única&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;o-pacote-ggplot2&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;O pacote ggplot2&lt;/h2&gt;
+&lt;p&gt;Estatístico, cientista computacional e professor adjunto norte-americano&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Leland Wilkinson (2005)&lt;/li&gt;
+&lt;li&gt;“The grammar of Graphics”&lt;/li&gt;
+&lt;li&gt;mapeamento dos dados em atributos estéticos (posição, cor, forma, tamanho, etc)&lt;/li&gt;
+&lt;li&gt;formas geométricas (pontos, linhas, barras, caixas, etc)&lt;/li&gt;
+&lt;li&gt;Hadley Wickham (2008)&lt;/li&gt;
+&lt;li&gt;Respondeu a pergunta: “O que é um gráfico estatístico?”&lt;/li&gt;
+&lt;li&gt;Livro “A Layered Grammar of Graphics”&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;o-pacote-ggplot2-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;O pacote ggplot2&lt;/h2&gt;
+&lt;p&gt;Vantagens:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Os gráficos construídos são mais bonitos e apresentáveis&lt;/li&gt;
+&lt;li&gt;Fácil personalização&lt;/li&gt;
+&lt;li&gt;Apresentam uma estrutura (sintaxe) única e padronizada&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;o-pacote-ggplot2-2&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;O pacote ggplot2&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Elementos de um gráfico: dados, sistema de coordenadas, rótulos, anotações&lt;/li&gt;
+&lt;li&gt;Sobreposição de camadas&lt;/li&gt;
+&lt;li&gt;Criou o pacote ggplot2&lt;/li&gt;
+&lt;li&gt;Essência: construir um gráfico estatístico camada por camada&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;a-gramática-em-camada-de-gráficos&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;A gramática em camada de gráficos&lt;/h2&gt;
+&lt;p&gt;Descrevendo um gráfico estatístico:&lt;/p&gt;
+&lt;table&gt;
+&lt;colgroup&gt;
+&lt;col width=&#34;18%&#34; /&gt;
+&lt;col width=&#34;81%&#34; /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;Elementos&lt;/th&gt;
+&lt;th&gt;Exemplos&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;strong&gt;aes&lt;/strong&gt;tética&lt;span class=&#34;math inline&#34;&gt;\(^*\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;cor, formato&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;strong&gt;geom&lt;/strong&gt;etrias&lt;span class=&#34;math inline&#34;&gt;\(^*\)&lt;/span&gt;&lt;/td&gt;
+&lt;td&gt;barra, ponto&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;e&lt;strong&gt;stat&lt;/strong&gt;ísticas (modelos)&lt;/td&gt;
+&lt;td&gt;mediana, máximo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;strong&gt;facet&lt;/strong&gt;as&lt;/td&gt;
+&lt;td&gt;facetas&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&lt;strong&gt;coord&lt;/strong&gt;enadas&lt;/td&gt;
+&lt;td&gt;polar, cartesiana&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&lt;strong&gt;them&lt;/strong&gt;as&lt;/td&gt;
+&lt;td&gt;eixos, títulos&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;passos&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Passos&lt;/h2&gt;
+&lt;p&gt;Primeiro passo:&lt;/p&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig5-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;passos-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Passos&lt;/h2&gt;
+&lt;p&gt;Segundo passo: gráfico de dispersão&lt;/p&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig6-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;os-tipos-de-geometrias-geom&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Os tipos de geometrias (geom)&lt;/h2&gt;
+&lt;p&gt;Principais:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;point (pontos); line (dispersão);&lt;/li&gt;
+&lt;li&gt;bar (barras); col (colunas); errorbar (barra de erros)&lt;/li&gt;
+&lt;li&gt;boxplot; histogram(histogramas), density (densidades), sf (mapas)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;argumentos-de-estética-aes&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Argumentos de estética (aes)&lt;/h2&gt;
+&lt;p&gt;Principais:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;variáveis (x, y, z)&lt;/li&gt;
+&lt;li&gt;cores (color, colour, fill)&lt;/li&gt;
+&lt;li&gt;tonalidade (alpha)&lt;/li&gt;
+&lt;li&gt;formas (shape, linetype)&lt;/li&gt;
+&lt;li&gt;tamanhos (size)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;a-escolha-das-cores&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;A escolha das cores&lt;/h2&gt;
+&lt;p&gt;Argumento color (colour):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Objetos geométricos que não possuem área&lt;/li&gt;
+&lt;li&gt;Pontos, linhas, borda de gráficos e mapas, etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Argumento fill :&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Preenchimento&lt;/li&gt;
+&lt;li&gt;Objetos geométricos que possuem área não nula&lt;/li&gt;
+&lt;li&gt;Caixas, colunas, círculos, polígonos, etc&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;o-argumento-color&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;O argumento color&lt;/h2&gt;
+&lt;p&gt;Exemplo: Gráfico de dispersão&lt;/p&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig7-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;o-argumento-color-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;O argumento color&lt;/h2&gt;
+&lt;p&gt;Exemplo: Gráfico de dispersão&lt;/p&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig8-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;o-argumento-fill&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;O argumento fill&lt;/h2&gt;
+&lt;p&gt;Exemplo: gráfico de barras&lt;/p&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig9-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;o-argumento-fill-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;O argumento fill&lt;/h2&gt;
+&lt;p&gt;Exemplo: gráfico de barras&lt;/p&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig10-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;o-argumento-alpha-tonalidade-das-cores&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;O argumento alpha (tonalidade das cores)&lt;/h2&gt;
+&lt;p&gt;Exemplo: gráfico de barras&lt;/p&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig11-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;o-argumento-forma-shape&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;O argumento forma (shape)&lt;/h2&gt;
+&lt;p&gt;Exemplo: Gráfico de dispersão (Exclusivo)&lt;/p&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig12-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;o-argumento-forma-linetype&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;O argumento forma (linetype)&lt;/h2&gt;
+&lt;p&gt;Exemplo: Gráfico de linhas (Exclusivo)&lt;/p&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig13-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;o-argumento-tamanho-size&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;O argumento tamanho (size)&lt;/h2&gt;
+&lt;p&gt;Exemplo: Gráfico de dispersão&lt;/p&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig14-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;o-argumento-tamanho-size-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;O argumento tamanho (size)&lt;/h2&gt;
+&lt;p&gt;Exemplo: Gráfico de linhas&lt;/p&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig15-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;retirando-variáveis-da-legenda-guides&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Retirando variáveis da legenda (guides)&lt;/h2&gt;
+&lt;p&gt;Linha de comando: guides(nome = “none)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;guides(color = “none”)&lt;/li&gt;
+&lt;li&gt;guides(fill = “none)&lt;/li&gt;
+&lt;li&gt;guides(shape = “none”)&lt;/li&gt;
+&lt;li&gt;guides(size = “none”)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;a-escolha-dos-rótulos-dos-eixos-labs&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;A escolha dos rótulos dos eixos (labs)&lt;/h2&gt;
+&lt;p&gt;Linha de comando: labs()&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;labs(x=“nome”, y= “nome”, color=“nome”, fill=“nome”,…)&lt;/li&gt;
+&lt;li&gt;labs(size=“none”) (não rotula)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;a-escala-dos-eixos-scale&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;A escala dos eixos (scale)&lt;/h2&gt;
+&lt;p&gt;Linha de comando: scale_eixo_tipo&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;eixo x: scale_x_discrete&lt;/li&gt;
+&lt;li&gt;eixo y: scale_y_discrete&lt;/li&gt;
+&lt;li&gt;eixo x: scale_x_continuous&lt;/li&gt;
+&lt;li&gt;eixo y: scale_y_continuous&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;a-escolha-dos-temas-theme&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;A escolha dos temas (theme)&lt;/h2&gt;
+&lt;p&gt;Linha de comando: theme_nome()&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;theme_gray; theme_bw()&lt;/li&gt;
+&lt;li&gt;theme_linedraw(); theme_light&lt;/li&gt;
+&lt;li&gt;theme_dark(); theme_minimal&lt;/li&gt;
+&lt;li&gt;theme_classic(); theme_void()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;a-escolha-do-título-ggtitle&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;A escolha do título (ggtitle)&lt;/h2&gt;
+&lt;p&gt;Linha de comando: ggtitle(“nome”)&lt;/p&gt;
+&lt;p&gt;Exemplo:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ggtitle(“Média de casos de COVID-19 - Brasil - 2021”)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;gráficos-mais-elaborados&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Gráficos mais elaborados&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;div id=&#34;exemplo-gráfico-de-dispersão&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Exemplo (Gráfico de dispersão)&lt;/h2&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig16-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;gráfico-de-barras&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Gráfico de barras&lt;/h2&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig17-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;histograma&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Histograma&lt;/h2&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig18-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;histograma-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Histograma&lt;/h2&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig19-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;box-plot&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Box-plot&lt;/h2&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig20-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;densidades&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Densidades&lt;/h2&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig21-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;segunda-parte&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Segunda parte&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;div id=&#34;data-mining&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Data mining&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Minerar um conjunto de dados original&lt;/li&gt;
+&lt;li&gt;pacotes tydyverse, tibble e dplyr do R.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;pacote-covid19br&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Pacote covid19br&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Criado por pesquisadores da UFMG&lt;/li&gt;
+&lt;li&gt;permite a coleta, em tempo real, de algumas informações sobre a doença COVID-19&lt;/li&gt;
+&lt;li&gt;nas unidades de saúde do Brasil&lt;/li&gt;
+&lt;li&gt;unidade de federação (states), por municípios (cities), regiões (regions)&lt;/li&gt;
+&lt;li&gt;no mundo por país (country)&lt;/li&gt;
+&lt;li&gt;informações como número de casos e mortes novos e acumulados diários&lt;/li&gt;
+&lt;li&gt;separadas por semana epidemiológica, datas, entre outros&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;apresentando-o-conjunto-de-dados&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Apresentando o conjunto de dados&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;data &amp;lt;- downloadCovid19(&amp;quot;states&amp;quot;)# dados por municípios brasileiros
+glimpse(data)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Rows: 28,539
+## Columns: 12
+## $ region       &amp;lt;chr&amp;gt; &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;No~
+## $ state        &amp;lt;chr&amp;gt; &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO~
+## $ date         &amp;lt;date&amp;gt; 2020-02-25, 2020-02-26, 2020-02-27, 2020-02-28, 2020-02-~
+## $ epi_week     &amp;lt;int&amp;gt; 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11~
+## $ newCases     &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ accumCases   &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ newDeaths    &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ accumDeaths  &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ newRecovered &amp;lt;int&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ newFollowup  &amp;lt;int&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ pop          &amp;lt;dbl&amp;gt; 1777225, 1777225, 1777225, 1777225, 1777225, 1777225, 177~
+## $ state_code   &amp;lt;int&amp;gt; 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 1~&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;a-estrutura-tibble&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;A estrutura (tibble)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;um data frame com algumas particularidades&lt;/li&gt;
+&lt;li&gt;dimensão dos dados&lt;/li&gt;
+&lt;li&gt;o tipo de variável (categórica, inteiro, caractere, etc.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;colgroup&gt;
+&lt;col width=&#34;18%&#34; /&gt;
+&lt;col width=&#34;81%&#34; /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;Representação&lt;/th&gt;
+&lt;th&gt;Tipo de variável&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;int&lt;/td&gt;
+&lt;td&gt;números inteiros&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;dbl&lt;/td&gt;
+&lt;td&gt;doubles (números reais)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;chr&lt;/td&gt;
+&lt;td&gt;vetores de caracteres (strings)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;dttm&lt;/td&gt;
+&lt;td&gt;datas-tempos (uma data + um horário)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;fctr&lt;/td&gt;
+&lt;td&gt;valores lógicos (TRUE ou FALSE)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;date&lt;/td&gt;
+&lt;td&gt;datas&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;caracteres-lógicos-necessários&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Caracteres lógicos necessários&lt;/h2&gt;
+&lt;table&gt;
+&lt;colgroup&gt;
+&lt;col width=&#34;18%&#34; /&gt;
+&lt;col width=&#34;81%&#34; /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;Caractere lógico&lt;/th&gt;
+&lt;th&gt;Representação&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;==&lt;/td&gt;
+&lt;td&gt;igual&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&amp;amp;&lt;/td&gt;
+&lt;td&gt;conectivo “e” (interseção)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;\&lt;/td&gt;
+&lt;td&gt;conectivo “ou” (união)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&amp;gt;&lt;/td&gt;
+&lt;td&gt;maior do que&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&amp;lt;&lt;/td&gt;
+&lt;td&gt;menor do que&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;&amp;gt;=&lt;/td&gt;
+&lt;td&gt;maior do que ou igual a&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;&amp;lt;=&lt;/td&gt;
+&lt;td&gt;menor do que ou igual a&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;!=&lt;/td&gt;
+&lt;td&gt;diferente&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;%in%&lt;/td&gt;
+&lt;td&gt;concatenar&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;funções-básicas-do-pacote-dplyr&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Funções básicas do pacote dplyr&lt;/h2&gt;
+&lt;table&gt;
+&lt;colgroup&gt;
+&lt;col width=&#34;18%&#34; /&gt;
+&lt;col width=&#34;81%&#34; /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th&gt;Funções&lt;/th&gt;
+&lt;th&gt;Resultados&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;filter()&lt;/td&gt;
+&lt;td&gt;seleciona observações das variáveis por seus valores assumidos&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;arrange()&lt;/td&gt;
+&lt;td&gt;reordena as linhas (observações)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;select()&lt;/td&gt;
+&lt;td&gt;seleciona variáveis por seus nomes (rótulos)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;mutate()&lt;/td&gt;
+&lt;td&gt;cria novas variáveis com funções de variáveis existentes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td&gt;summarize()&lt;/td&gt;
+&lt;td&gt;reune muitos valores em um único resumo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td&gt;group_by()&lt;/td&gt;
+&lt;td&gt;muda o escopo de cada função anterior em todo o conjunto de dados para operar grupo por grupo.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exemplificando&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Exemplificando&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;filter(data, 
+       date &amp;gt;= &amp;quot;2022-02-20&amp;quot; &amp;amp;  state == &amp;quot;SP&amp;quot; &amp;amp; epi_week == 8)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##       region state       date epi_week newCases accumCases newDeaths
+## 1: Southeast    SP 2022-02-20        8     6424    4935771        26
+## 2: Southeast    SP 2022-02-21        8     2470    4938241        23
+## 3: Southeast    SP 2022-02-22        8    15999    4954240       310
+## 4: Southeast    SP 2022-02-23        8    15427    4969667       298
+## 5: Southeast    SP 2022-02-24        8    15228    4984895       303
+## 6: Southeast    SP 2022-02-25        8    14764    4999659       211
+## 7: Southeast    SP 2022-02-26        8    11290    5010949       211
+##    accumDeaths newRecovered newFollowup      pop state_code
+## 1:      163160           NA          NA 45919049         35
+## 2:      163183           NA          NA 45919049         35
+## 3:      163493           NA          NA 45919049         35
+## 4:      163791           NA          NA 45919049         35
+## 5:      164094           NA          NA 45919049         35
+## 6:      164305           NA          NA 45919049         35
+## 7:      164516           NA          NA 45919049         35&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exemplificando-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Exemplificando&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;arrange(data, 
+        state)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##        region state       date epi_week newCases accumCases newDeaths
+##     1:  North    AC 2020-02-25        9        0          0         0
+##     2:  North    AC 2020-02-26        9        0          0         0
+##     3:  North    AC 2020-02-27        9        0          0         0
+##     4:  North    AC 2020-02-28        9        0          0         0
+##     5:  North    AC 2020-02-29        9        0          0         0
+##    ---                                                               
+## 28535:  North    TO 2022-03-15       11      215     301172         2
+## 28536:  North    TO 2022-03-16       11      124     301296         0
+## 28537:  North    TO 2022-03-17       11      128     301424         2
+## 28538:  North    TO 2022-03-18       11      116     301540         2
+## 28539:  North    TO 2022-03-19       11      107     301647         2
+##        accumDeaths newRecovered newFollowup     pop state_code
+##     1:           0           NA          NA  881935         12
+##     2:           0           NA          NA  881935         12
+##     3:           0           NA          NA  881935         12
+##     4:           0           NA          NA  881935         12
+##     5:           0           NA          NA  881935         12
+##    ---                                                        
+## 28535:        4134           NA          NA 1572866         17
+## 28536:        4134           NA          NA 1572866         17
+## 28537:        4136           NA          NA 1572866         17
+## 28538:        4138           NA          NA 1572866         17
+## 28539:        4140           NA          NA 1572866         17&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exemplificando-2&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Exemplificando&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;select(data, 
+       region,
+       date,
+       state,
+       newCases,
+       accumCases)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##        region       date state newCases accumCases
+##     1:  North 2020-02-25    RO        0          0
+##     2:  North 2020-02-26    RO        0          0
+##     3:  North 2020-02-27    RO        0          0
+##     4:  North 2020-02-28    RO        0          0
+##     5:  North 2020-02-29    RO        0          0
+##    ---                                            
+## 28535:  North 2022-02-19    RO        0          0
+## 28536:  North 2022-02-20    RO        0          0
+## 28537:  North 2022-02-21    RO        0          0
+## 28538:  North 2022-02-22    RO        0          0
+## 28539:  North 2022-02-23    RO        0          0&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exemplificando-3&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Exemplificando&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mutate(data, 
+       rate_newcases = newCases/pop*100000)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##        region state       date epi_week newCases accumCases newDeaths
+##     1:  North    RO 2020-02-25        9        0          0         0
+##     2:  North    RO 2020-02-26        9        0          0         0
+##     3:  North    RO 2020-02-27        9        0          0         0
+##     4:  North    RO 2020-02-28        9        0          0         0
+##     5:  North    RO 2020-02-29        9        0          0         0
+##    ---                                                               
+## 28535:  North    RO 2022-02-19        7        0          0         0
+## 28536:  North    RO 2022-02-20        8        0          0         0
+## 28537:  North    RO 2022-02-21        8        0          0         0
+## 28538:  North    RO 2022-02-22        8        0          0         0
+## 28539:  North    RO 2022-02-23        8        0          0         0
+##        accumDeaths newRecovered newFollowup     pop state_code rate_newcases
+##     1:           0           NA          NA 1777225         11             0
+##     2:           0           NA          NA 1777225         11             0
+##     3:           0           NA          NA 1777225         11             0
+##     4:           0           NA          NA 1777225         11             0
+##     5:           0           NA          NA 1777225         11             0
+##    ---                                                                      
+## 28535:           0           NA          NA      NA         11            NA
+## 28536:           0           NA          NA      NA         11            NA
+## 28537:           0           NA          NA      NA         11            NA
+## 28538:           0           NA          NA      NA         11            NA
+## 28539:           0           NA          NA      NA         11            NA&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exemplificando-4&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Exemplificando&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summarize(data, 
+          mean_newdeaths=mean(newDeaths), 
+          desv_pad= sd(newDeaths),
+          standard_error=desv_pad/sqrt(length(data)))&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   mean_newdeaths desv_pad standard_error
+## 1       23.18823 64.04652       18.48864&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;exemplificando-5&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Exemplificando&lt;/h2&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;group_by(data, 
+         region,
+         epi_week)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 28,539 x 12
+## # Groups:   region, epi_week [265]
+##    region state date       epi_week newCases accumCases newDeaths accumDeaths
+##    &amp;lt;chr&amp;gt;  &amp;lt;chr&amp;gt; &amp;lt;date&amp;gt;        &amp;lt;int&amp;gt;    &amp;lt;int&amp;gt;      &amp;lt;int&amp;gt;     &amp;lt;int&amp;gt;       &amp;lt;int&amp;gt;
+##  1 North  RO    2020-02-25        9        0          0         0           0
+##  2 North  RO    2020-02-26        9        0          0         0           0
+##  3 North  RO    2020-02-27        9        0          0         0           0
+##  4 North  RO    2020-02-28        9        0          0         0           0
+##  5 North  RO    2020-02-29        9        0          0         0           0
+##  6 North  RO    2020-03-01       10        0          0         0           0
+##  7 North  RO    2020-03-02       10        0          0         0           0
+##  8 North  RO    2020-03-03       10        0          0         0           0
+##  9 North  RO    2020-03-04       10        0          0         0           0
+## 10 North  RO    2020-03-05       10        0          0         0           0
+## # ... with 28,529 more rows, and 4 more variables: newRecovered &amp;lt;int&amp;gt;,
+## #   newFollowup &amp;lt;int&amp;gt;, pop &amp;lt;dbl&amp;gt;, state_code &amp;lt;int&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;situação-real&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Situação real&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Conhecer quantas mortes por COVID-19&lt;/li&gt;
+&lt;li&gt;Cada uma das UF’s brasileiras&lt;/li&gt;
+&lt;li&gt;dia 20-02-2022 e na oitava semana epidemiológica&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;saída-gráfica&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Saída gráfica&lt;/h2&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig23-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;o-operador-pipe&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;O operador pipe (%&amp;gt;%)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;atribuímos dois labels: Dados e resultados&lt;/li&gt;
+&lt;li&gt;para um único gráfico&lt;/li&gt;
+&lt;li&gt;pacote magrittr&lt;/li&gt;
+&lt;li&gt;Informalmente: %&amp;gt;% pode ser entendido como “vem mais coisas por ai”&lt;/li&gt;
+&lt;li&gt;Formalmente: f(a) = y, então: g(.) tem como primeiro argumento de entrada f(a)&lt;/li&gt;
+&lt;li&gt;g(f(a),…)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;saída-gráfica-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Saída gráfica&lt;/h2&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig24-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;comprações-entre-as-ufs&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Comprações entre as UF’s&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;taxas de novas mortes&lt;/li&gt;
+&lt;li&gt;devido a heterogeneidade populacional&lt;/li&gt;
+&lt;li&gt;mutate: criar a variável rate_newDeaths&lt;/li&gt;
+&lt;li&gt;constante IBGE: 100000&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;saída-gráfica-2&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Saída gráfica&lt;/h2&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig25-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;situação-real-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Situação real&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;conhecer a evolução diária dos novos casos&lt;/li&gt;
+&lt;li&gt;entre as semanas epidemiológicas 1 e 8&lt;/li&gt;
+&lt;li&gt;anos: 2021 e 2022&lt;/li&gt;
+&lt;li&gt;região: sudeste&lt;/li&gt;
+&lt;li&gt;UF’s&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;saída-gráfica-3&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Saída gráfica&lt;/h2&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig26-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;produção-de-mapas&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Produção de mapas&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;pacote geobr: Ipea&lt;/li&gt;
+&lt;li&gt;mapas: representam o meio onde estamos&lt;/li&gt;
+&lt;li&gt;arquivo que contenha as coordenadas da região estudada&lt;/li&gt;
+&lt;li&gt;shape.file, raster&lt;/li&gt;
+&lt;li&gt;formato dos dados: sf (simple features ou recursos simples)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;preparando-os-dados&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Preparando os dados&lt;/h2&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;produção-mapa-taxa-de-novos-casos&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Produção mapa (Taxa de novos casos)&lt;/h2&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig28-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;produção-mapa-taxa-de-novas-mortes&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Produção mapa (Taxa de novas mortes)&lt;/h2&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig29-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;produção-mapa-taxa-de-casos-acumulados&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Produção mapa (Taxa de casos acumulados)&lt;/h2&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig30-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;div id=&#34;produção-mapa-taxa-de-casos-acumulados-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Produção mapa (Taxa de casos acumulados)&lt;/h2&gt;
+&lt;p&gt;.pull-left[]&lt;/p&gt;
+&lt;p&gt;.pull-right[
+&lt;img src=&#34;https://henriqueest.github.io/slides/example/apresentacao-main/index_files/figure-html/fig31-1.svg&#34; width=&#34;100%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;]&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id=&#34;material-de-apoio-1&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Material de apoio&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://ggplot2-book.org/&#34;&gt;ggplot2: elegant graphics for data analysis&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://r4ds.had.co.nz/&#34;&gt;R for Data Science&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://r-graphics.org/&#34;&gt;R Graphics Cookbook&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

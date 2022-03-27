@@ -1,0 +1,1061 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>📊 Saídas gráficas no R: introdução ao pacote ggplot2 | Henrique JP Alves</title>
+    <link>https://henriqueest.github.io/courses/example/</link>
+      <atom:link href="https://henriqueest.github.io/courses/example/index.xml" rel="self" type="application/rss+xml" />
+    <description>📊 Saídas gráficas no R: introdução ao pacote ggplot2</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://henriqueest.github.io/courses/example/featured%20%282%29.jpg</url>
+      <title>📊 Saídas gráficas no R: introdução ao pacote ggplot2</title>
+      <link>https://henriqueest.github.io/courses/example/</link>
+    </image>
+    
+    <item>
+      <title>Pacote ggplot2: um curso introdutório</title>
+      <link>https://henriqueest.github.io/courses/example/python/</link>
+      <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/courses/example/python/</guid>
+      <description>&lt;p&gt;Construído baseado nos pacotes tidyverse e ggplot2 do R.&lt;/p&gt;
+&lt;p&gt;
+  &lt;i class=&#34;fas fa-clock  pr-1 fa-fw&#34;&gt;&lt;/i&gt; 2 horas por dia, por 2 dias&lt;/p&gt;
+&lt;style&gt;
+body {
+  text-align: justify;
+  font-size: 12pt;
+  }
+code.r{
+  font-size: 10px;
+}
+pre {
+  font-size: 12px
+}
+&lt;/style&gt;
+&lt;h2 id=&#34;primeira-parte&#34;&gt;&lt;strong&gt;PRIMEIRA PARTE&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;Primeiramente, todo e qualquer resultado estatístico obtido em qualquer software estatístico deve ser bem compreendido antes de sua apresentação. As saídas gráficas desses resultados compreendem uma importante ferramenta resumidora do comportamento dos dados amostrais observados e até mesmo de poulações inteiras, envolvendo diversos fenômenos que podem ser compreendidos usando essas ferramentas estatísticas. As saídas gráficas do &lt;strong&gt;R&lt;/strong&gt; e do &lt;strong&gt;rstudio&lt;/strong&gt; não são diferentes.&lt;/p&gt;
+&lt;p&gt;Aqui nessas notas nós poderíamos simplesmente selecionar alguns pacotes disponíveis no &lt;strong&gt;rstudio&lt;/strong&gt; que fornecem uma guia interativa para a produção de gráficos no pacote &lt;strong&gt;ggplot2&lt;/strong&gt; e apresentá-los, tais como os pacotes &lt;strong&gt;esquisse&lt;/strong&gt; e &lt;strong&gt;ggplotgui&lt;/strong&gt;. Mas esse não é o nosso objetivo.&lt;/p&gt;
+&lt;p&gt;Portanto, nós iremos apresentar o pacote &lt;strong&gt;ggplot2&lt;/strong&gt; de forma lenta e gradativa, apresentando o seu diferencial com relação a outros pacotes e também outras funções de saídas gráficas do &lt;strong&gt;R&lt;/strong&gt; e do &lt;strong&gt;rstudio&lt;/strong&gt;, além de mostrar o passo a passo de como se dá a construção de saídas gráficas desse pacote no &lt;strong&gt;rstudio&lt;/strong&gt;, entendo suas funções internas e seus argumentos.&lt;/p&gt;
+&lt;p&gt;Antes de iniciarmos a apresentação desse pacote, apresentamos um conjunto de funções que verificrá se os pacotes aqui necessários estão instalados no &lt;strong&gt;rstudio&lt;/strong&gt; e, em seguida, fará o carregamento desses pacotes no mesmo.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;packages &amp;lt;- c(&amp;quot;dplyr&amp;quot;,&amp;quot;tidyverse&amp;quot;,&amp;quot;lattice&amp;quot;,  &amp;quot;rgdal&amp;quot;, &amp;quot;rgeos&amp;quot;, &amp;quot;maptools&amp;quot;, &amp;quot;plyr&amp;quot;, &amp;quot;sf&amp;quot;, &amp;quot;covid19br&amp;quot;, &amp;quot;RColorBrewer&amp;quot;)
+
+# instala os pacotes que não estão instalados
+installed_packages &amp;lt;- packages %in% rownames(installed.packages())
+if (any(installed_packages == FALSE)) {
+  install.packages(packages[!installed_packages])
+}
+
+# carrega os pacotes
+invisible(lapply(packages, library, character.only = TRUE))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;
+&lt;p&gt;Não é incomum em qualquer análise estatítica de um conjunto de dados, nos depararmos com a necessidade da utilização de recursos gráficos para representar e conhecer, de forma resumida, o comportamento das variáveis de interesse do mesmo. O &lt;strong&gt;R&lt;/strong&gt; possui algumas funções implementadas em sua base (não é necessário a instalação de pacotes), tais como as funções &lt;em&gt;plot&lt;/em&gt;, &lt;em&gt;hist&lt;/em&gt;, &lt;em&gt;barplot&lt;/em&gt;, &lt;em&gt;boxplot&lt;/em&gt;, &lt;em&gt;pie&lt;/em&gt;, entre outras e também, alguns pacotes de recursos gráficos, como o &lt;strong&gt;lattice&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Vamos agora exemplificar como construir um histograma e um gráfico de barras utilizando as respectivas funções disponíveis na base do &lt;strong&gt;R&lt;/strong&gt; e também o pacote mencionado utilizando o conjunto de dados &lt;a href=&#34;https://gist.github.com/seankross/a412dfbd88b3db70b74b&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;mtcars&lt;/a&gt; disponível no &lt;strong&gt;R&lt;/strong&gt;. Os dados foram coletados da revista &amp;ldquo;Motor Trend US (1974)&amp;rdquo; e diz respeito ao consumo de combustível e também outros 10 aspectos de design e desempenho de 32 modelos de automóveis compreendidos entre os anos de 1973 e 1974.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mtcars &amp;lt;- within(mtcars, {
+   vs &amp;lt;- factor(vs, labels = c(&amp;quot;V&amp;quot;, &amp;quot;S&amp;quot;))
+   am &amp;lt;- factor(am, labels = c(&amp;quot;automatica&amp;quot;, &amp;quot;manual&amp;quot;))
+   cyl  &amp;lt;- ordered(cyl)
+   gear &amp;lt;- ordered(gear)
+   carb &amp;lt;- ordered(carb)
+})
+summary(mtcars)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##       mpg        cyl         disp             hp             drat      
+##  Min.   :10.40   4:11   Min.   : 71.1   Min.   : 52.0   Min.   :2.760  
+##  1st Qu.:15.43   6: 7   1st Qu.:120.8   1st Qu.: 96.5   1st Qu.:3.080  
+##  Median :19.20   8:14   Median :196.3   Median :123.0   Median :3.695  
+##  Mean   :20.09          Mean   :230.7   Mean   :146.7   Mean   :3.597  
+##  3rd Qu.:22.80          3rd Qu.:326.0   3rd Qu.:180.0   3rd Qu.:3.920  
+##  Max.   :33.90          Max.   :472.0   Max.   :335.0   Max.   :4.930  
+##        wt             qsec       vs              am     gear   carb  
+##  Min.   :1.513   Min.   :14.50   V:18   automatica:19   3:15   1: 7  
+##  1st Qu.:2.581   1st Qu.:16.89   S:14   manual    :13   4:12   2:10  
+##  Median :3.325   Median :17.71                          5: 5   3: 3  
+##  Mean   :3.217   Mean   :17.85                                 4:10  
+##  3rd Qu.:3.610   3rd Qu.:18.90                                 6: 1  
+##  Max.   :5.424   Max.   :22.90                                 8: 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Vamos escolher a variável mpg (milhas percorrida por galão de combustível), que é de natureza numérica e contínua para gerarmos um histograma (frequência absoluta) utilizando a  função &lt;em&gt;hist&lt;/em&gt; da base do &lt;strong&gt;R&lt;/strong&gt; e também utilizando o pacote &lt;strong&gt;lattice&lt;/strong&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;hist(mtcars$mpg, col = &amp;quot;lightblue&amp;quot;, main = &amp;quot;Função hist (base)&amp;quot;, 
+     xlab = &amp;quot;Milhas por galão (mpg)&amp;quot;, ylab = &amp;quot;Frequência absoluta&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(lattice)
+histogram(~mpg,data=mtcars,
+       type =&amp;quot;count&amp;quot;,
+       xlab =&amp;quot;Milhas por galão (mpg)&amp;quot;,
+       ylab = &amp;quot;Frequência absoluta&amp;quot;,
+       main =&amp;quot;Função histogram (lattice)&amp;quot;,
+       col = &amp;quot;lightblue&amp;quot;,
+       breaks = 5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;p&gt;Vamos agora utilizar a variável cyl (número de cilindros) para construírmos um gráfico de barras (frequência absoluta) utilizando a função &lt;em&gt;barplot&lt;/em&gt; da base do &lt;strong&gt;R&lt;/strong&gt; e também o pacote &lt;strong&gt;lattice&lt;/strong&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;tab &amp;lt;- table(mtcars$cyl)
+tab
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+##  4  6  8 
+## 11  7 14
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;barplot(tab, col = &amp;quot;lightblue&amp;quot;, main = &amp;quot;Função barplot (base)&amp;quot;, xlab = &amp;quot;Número de cilindros por motor (cyl)&amp;quot;, ylab = &amp;quot;Frequência absoluta&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(lattice)
+tabela &amp;lt;- xtabs(~cyl, data = mtcars)
+tabela
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## cyl
+##  4  6  8 
+## 11  7 14
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;barchart(tabela,
+         horizontal = FALSE,
+         main = &amp;quot;Função barchart (lattice)&amp;quot;,
+         xlab = &amp;quot;Número de cilindros por motor (cyl)&amp;quot;,
+         ylab = &amp;quot;Frequência absoluta&amp;quot;,
+         col = &amp;quot;lightblue&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;p&gt;Bastam esses dois exemplos para percebermos algumas situações: para cada tipo de gráfico escolhido de acordo com a natureza da variável, o conjunto de linhas de comandos necessários para gerá-los no &lt;strong&gt;R&lt;/strong&gt; é único e particular; é necessário também a utilização de funções adicionais (table) e funções específicas do pacote &lt;strong&gt;lattice&lt;/strong&gt; (xtabs) para a construção dos gráficos de barras. Essas situações forçam o usuário a ter conhecimento de cada uma dessas funções particulares e também seus argumentos.&lt;/p&gt;
+&lt;p&gt;Essas justificativas são suficientes para pensarmos em algum pacote que torne mais fácil ao usuário a construção de gráficos no &lt;strong&gt;R&lt;/strong&gt;. Esse pacote existe e é o pacote &lt;strong&gt;ggplot2&lt;/strong&gt;, que é o objetivo desse curso. Vamos conhecer um pouco mais desse pacote e observar suas vantagens.&lt;/p&gt;
+&lt;h2 id=&#34;o-pacote-ggplot2&#34;&gt;&lt;em&gt;O pacote ggplot2&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;No ano de 2005, o estatístico, cientista computacional e professor adjunto norte-americano Leland Wilkinson, da University of Illinois (Chicago), publicou o livro &amp;ldquo;The grammar of Graphics&amp;rdquo;, que trata de uma fonte de princípios fundamentais para a construção de gráficos estatísticos. O autor defende a ideia que um gráfico é uma mapeamento dos dados em atributos estéticos (posição, cor, forma, tamanho, etc) de formas geométricas (pontos, linhas, barras, caixas, etc).&lt;/p&gt;
+&lt;p&gt;Em sua tese de doutorado (2008), Hadley Wickham adotou a filosofia defendida por Leland para responder a pergunta &amp;ldquo;O que é um gráfico estatístico?&amp;rdquo;, criando, então, o pacote &lt;strong&gt;ggplot2&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Hadley então, escreveu o livro &amp;ldquo;A Layered Grammar of Graphics&amp;rdquo;, onde incrementou às ideias de Leland a visão de que os elementos de um gráfico (dados, sistema de coordenadas, rótulos, anotações, entre outros) são as suas camadas e que a construção de um gráfico se dá pela sobreposição dessas camadas. Essa é a essência do pacote &lt;strong&gt;ggplot2&lt;/strong&gt;: construir um gráfico camada por camada.&lt;/p&gt;
+&lt;p&gt;Aliado a essa filosofia bem fundamentada, esse pacote ainda traz algumas vantagens: geralmente os gráficos construídos são mais bonitos e apresentáveis, são de fácil personalização e apresentam uma estrutura (sintaxe) padronizada.&lt;/p&gt;
+&lt;h2 id=&#34;a-gramática-em-camadas-de-gráficos&#34;&gt;A gramática em camadas de gráficos&lt;/h2&gt;
+&lt;p&gt;Basicamente podemos descrever individualmente qualquer gráfico estatístico como uma combinação de um conjunto de dados, um geom, um conjunto de mapeamentos, um stat, um ajuste de posição, um sistema de coordenadas e um esquema de facetas.&lt;/p&gt;
+&lt;p&gt;Abaixo apresentamos os seis elementos que envolvem a construção de gráficos estatísticos no ggplot2. Os elementos marcados com * são essenciais e obrigatórios. Os termos em negrito, como em &lt;strong&gt;aes&lt;/strong&gt;, representam as funções a serem utilizadas no ggplot2 para a construção dos gráficos estatísticos.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Elementos&lt;/th&gt;
+&lt;th&gt;Exemplos&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;aes&lt;/strong&gt;tética$^*$&lt;/td&gt;
+&lt;td&gt;cor, formato&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;geom&lt;/strong&gt;etrias$^*$&lt;/td&gt;
+&lt;td&gt;barra, ponto&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;e&lt;strong&gt;stat&lt;/strong&gt;ísticas (modelos)&lt;/td&gt;
+&lt;td&gt;mediana, máximo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;facet&lt;/strong&gt;as&lt;/td&gt;
+&lt;td&gt;facetas&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;coord&lt;/strong&gt;enadas&lt;/td&gt;
+&lt;td&gt;polar, cartesiana&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;them&lt;/strong&gt;as&lt;/td&gt;
+&lt;td&gt;eixos, títulos&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Vamos agora realizar essa construção passo a passo no &lt;strong&gt;R&lt;/strong&gt;. Os dados devem ser um data.frame. Essa condição é obrigatória para o uso do ggplot2. Primeiramente vamos instalar e carregar o pacote &lt;strong&gt;ggplot2&lt;/strong&gt;. Depois, vamos colocar o conjunto de dados &lt;em&gt;mtcars&lt;/em&gt;, disponível no &lt;strong&gt;R&lt;/strong&gt;, em data.frame. Feito isso, nós estamos em condições de iniciar a construção de gráficos no &lt;strong&gt;ggplot2&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;A primeira camada (layer) necessária para a criação de gráficos no &lt;strong&gt;ggplot2&lt;/strong&gt; é dada pelo comando ggplot(dados). Neste comando, estamos criando a área onde o gráfico será construído e, ainda, informando ao &lt;strong&gt;ggplot2&lt;/strong&gt; qual o conjunto de dados que contém as variáveis de interesse.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;p&gt;Nós notamos que é criado uma área (em cinza) onde será construído o gráfico. Essa área ainda não contém nenhum formato geométrico (geom_tipo) como, por exemplo, pontos, barras, caixas, etc. Falta também a informação da estética do gráfico desejado juntamente com as variáveis de interesse aes(x,y,cores). Esse é o próximo passo. Note também que a cada acréscimo de camada utilzamos o sinal &lt;code&gt;+&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;A variável mpg já foi apresentada e utilizada nos gráficos anteriores. A variável disp significa quantas cilindradas o motor do veículo possui. Note que ainda não escolhemos a cor dos pontos do gráfico nem rotulamos seus eixos. Nosso gráfico ainda está incompleto.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;p&gt;No pacote &lt;strong&gt;gplot2&lt;/strong&gt; nós também temos a liberdade de escolher a escala de cores que iram compor o nosso gráfico. Para isso temos três argumentos: color e colour, que se diferem devido a lingua ingleza e fill. Os dois primeiros são utilizados em entes geométricos que não possuem área, tais como pontos e linhas, sendo necessário utilizar apenas um deles e a escolha fica a critério do usuário. Já o comando fill é utilizado naquele ente geométrico que possui área, sendo responsável pelo preenchimento dessa área com a cor desejada. Ambos devem ser utilizados junto ao comando geom_tipo.&lt;/p&gt;
+&lt;p&gt;Vamos agora ver dois exemplos de utilização desses argumentos.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg, color=as.factor(am))) +
+  labs(x=&amp;quot;Cilindradas&amp;quot;, y=&amp;quot;Milhas/galão&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-8-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg), color=c(&amp;quot;red&amp;quot;)) +
+  labs(x=&amp;quot;Cilindradas&amp;quot;, y=&amp;quot;Milhas/galão&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-8-2.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;p&gt;Nós notamos que se utilizarmos o argumento para a escolha das cores dentro da função aes, este deve estar relaciondo a alguma variável específica. No nosso exemplo, é o tipo de transmissão do carro a variável em questão. Caso esse argumento seja utilizado fora da função aes, nós temos a liberdade de escolha das cores, pois ela não estão relacionadas as variáveis em questão.&lt;/p&gt;
+&lt;p&gt;Tente utilizar o argumento de cores relacionado a variávies fora da função aes e verá que o &lt;strong&gt;R&lt;/strong&gt; retornará uma mensagem de erro, dizendo que não reconhece a variável.&lt;/p&gt;
+&lt;p&gt;Vamos agora apresentar um gráfico de barras onde o interesse é apresentar as frequências absolutas, relativas e percentual da quantidade de cilindros que o motor do carro possui (cyl) separados por tipo de transmissão (am) .&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars, aes(x = as.factor(cyl))) +
+  geom_bar(aes(y = (..count..), fill=as.factor(am)), 
+            position = &amp;quot;dodge&amp;quot;, colour=&amp;quot;black&amp;quot;, alpha=0.45)+
+    labs(x = &amp;quot;Número de cilindros por motor&amp;quot;, y = &amp;quot;Frequência absoluta&amp;quot;, fill = &amp;quot;Tipo de transmissão&amp;quot;) +
+  theme_bw() +
+  theme(legend.position=&amp;quot;bottom&amp;quot;, 
+        legend.box = &amp;quot;horizontal&amp;quot;,legend.title=element_text(size=15), 
+        legend.text=element_text(size=15), axis.text=element_text(size=20),
+        axis.title=element_text(size=20), axis.line = element_line(colour = &amp;quot;black&amp;quot;),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars, aes(x = as.factor(cyl))) +
+  geom_bar(aes(y = (..count..)/sum(..count..), fill=as.factor(am)), 
+            position = &amp;quot;dodge&amp;quot;, colour=&amp;quot;black&amp;quot;, alpha=0.45)+
+  labs(x = &amp;quot;Número de cilindros por motor&amp;quot;, y = &amp;quot;Frequência relativa&amp;quot;, fill = &amp;quot;Tipo de transmissão&amp;quot;) +
+  theme_bw() +
+  theme(legend.position=&amp;quot;bottom&amp;quot;, 
+        legend.box = &amp;quot;horizontal&amp;quot;,legend.title=element_text(size=15), 
+        legend.text=element_text(size=15), axis.text=element_text(size=20),
+        axis.title=element_text(size=20), axis.line = element_line(colour = &amp;quot;black&amp;quot;),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank()) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-9-2.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars, aes(x = as.factor(cyl))) +
+  geom_bar(aes(y = (..count..)/sum(..count..)*100, fill=as.factor(am)), 
+            position = &amp;quot;dodge&amp;quot;, colour=&amp;quot;black&amp;quot;, alpha=0.45)+
+  labs(x = &amp;quot;Número de cilindros por motor&amp;quot;, y = &amp;quot;Frequência percentual&amp;quot;, fill = &amp;quot;Tipo de transmissão&amp;quot;) +
+  theme_bw() +
+  theme(legend.position=&amp;quot;bottom&amp;quot;, 
+        legend.box = &amp;quot;horizontal&amp;quot;,legend.title=element_text(size=15), 
+        legend.text=element_text(size=15), axis.text=element_text(size=20),
+        axis.title=element_text(size=20), axis.line = element_line(colour = &amp;quot;black&amp;quot;),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-9-3.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;p&gt;Vamos agora construir um gráfico do tipo boxplot utilizando o pacote &lt;strong&gt;ggplot2&lt;/strong&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
+  geom_boxplot(aes(x = as.factor(cyl), y = mpg, fill=as.factor(am)), colour=&amp;quot;brown&amp;quot;, alpha=0.2) +
+  labs(x = &amp;quot;Número de cilindros&amp;quot;, y = &amp;quot;Milhas/galão&amp;quot;, fill = &amp;quot;Tipo de transmissão&amp;quot;) +
+  theme_bw() +
+  theme(legend.position=&amp;quot;top&amp;quot;, 
+        legend.box = &amp;quot;horizontal&amp;quot;,legend.title=element_text(size=15), 
+        legend.text=element_text(size=15), axis.text=element_text(size=20),
+        axis.title=element_text(size=20), axis.line = element_line(colour = &amp;quot;black&amp;quot;),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-10-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
+  geom_boxplot(aes(x = as.factor(cyl), y = mpg, fill=as.factor(am)), colour=&amp;quot;brown&amp;quot;, alpha=0.2) +
+  labs(x = &amp;quot;Número de cilindros&amp;quot;, y = &amp;quot;Milhas/galão&amp;quot;, fill = &amp;quot;Tipo de transmissão&amp;quot;) +
+  theme_bw() +
+  theme(legend.position=&amp;quot;bottom&amp;quot;, 
+        legend.box = &amp;quot;horizontal&amp;quot;,legend.title=element_text(size=15), 
+        legend.text=element_text(size=15), axis.text=element_text(size=20),
+        axis.title=element_text(size=20), axis.line = element_line(colour = &amp;quot;black&amp;quot;),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank()) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
+  geom_boxplot(aes(x = as.factor(cyl), y = mpg, fill=as.factor(am)), colour=&amp;quot;brown&amp;quot;, alpha=0.2) +
+  labs(x = &amp;quot;Número de cilindros&amp;quot;, y = &amp;quot;Milhas/galão&amp;quot;) +
+  theme_bw() +
+  theme(legend.position=&amp;quot;left&amp;quot;, 
+        legend.box = &amp;quot;horizontal&amp;quot;,legend.title=element_text(size=15), 
+        legend.text=element_text(size=15), axis.text=element_text(size=20),
+        axis.title=element_text(size=20), axis.line = element_line(colour = &amp;quot;black&amp;quot;),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank()) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-12-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; cor &amp;lt;- gray(0:2 / 2)
+ ggplot(mtcars) +
+  geom_boxplot(aes(x = as.factor(cyl), y = mpg, fill=as.factor(am)), colour=&amp;quot;brown&amp;quot;, 
+               alpha=0.2) +
+  labs(x = &amp;quot;Número de cilindros&amp;quot;, y = &amp;quot;Milhas/galão&amp;quot;, fill = &amp;quot;Tipo de transmisão&amp;quot;) +
+  theme_bw() +
+  theme(legend.position=&amp;quot;right&amp;quot;, 
+        legend.box = &amp;quot;horizontal&amp;quot;,legend.title=element_text(size=15), 
+        legend.text=element_text(size=15), axis.text=element_text(size=20),
+        axis.title=element_text(size=20), axis.line = element_line(colour = &amp;quot;black&amp;quot;),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank()) +
+  scale_fill_manual(values=cor)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-13-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;p&gt;Vamos agora construir alguns histogramas com frequências absolutas, relativas e percentuais, nessa ordem. Note que o comando &lt;code&gt;bins&lt;/code&gt; define o número de classes a ser escolhido. Neste exemplo escolhemos arbitrariamente &lt;code&gt;bins&lt;/code&gt; igual a 5, mas o usuário pode fazer os cálculos manualmente e utilizá-lo. Nós também definimos a escala dos eixos &lt;code&gt;x&lt;/code&gt; e &lt;code&gt;y&lt;/code&gt; manualmente, através dos comandos &lt;code&gt;scale_x_continuous&lt;/code&gt; e &lt;code&gt;scale_y_continuous&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
+  geom_histogram(aes(x = mpg, y = (..count..)/sum(..count..), fill=as.factor(am)), 
+                 bins=5, colour=&amp;quot;brown&amp;quot;, alpha=0.2)+
+  labs(x = &amp;quot;Milhas/galão&amp;quot;, y = &amp;quot;Frequência relativa&amp;quot;, fill = &amp;quot;Tipo de transmissão&amp;quot;) +
+  scale_y_continuous(breaks = c(seq(0,1,0.1)))+
+  scale_x_continuous(breaks = c(seq(8.8,38.3,5.9))) +
+  theme_bw() +
+  theme(legend.position=&amp;quot;bottom&amp;quot;, 
+        legend.box = &amp;quot;horizontal&amp;quot;,legend.title=element_text(size=15), 
+        legend.text=element_text(size=15), axis.text=element_text(size=20),
+        axis.title=element_text(size=20), axis.line = element_line(colour = &amp;quot;black&amp;quot;),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank()) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-14-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
+  geom_histogram(aes(x = mpg, y = (..count..), fill=as.factor(am)), bins=5,  
+                 colour=&amp;quot;brown&amp;quot;, alpha=0.2)+
+  labs(x = &amp;quot;Milhas/galão&amp;quot;, y = &amp;quot;Frequência absoluta&amp;quot;, fill = &amp;quot;Tipo de transmissão&amp;quot;) +
+  scale_y_continuous(breaks = c(seq(0,15,3.5))) +
+  scale_x_continuous(breaks = c(seq(8.8,38.3,5.9))) +
+  theme_bw() +
+  theme(legend.position=&amp;quot;bottom&amp;quot;, 
+        legend.box = &amp;quot;horizontal&amp;quot;,legend.title=element_text(size=15), 
+        legend.text=element_text(size=15), axis.text=element_text(size=20),
+        axis.title=element_text(size=20), axis.line = element_line(colour = &amp;quot;black&amp;quot;),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-15-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
+  geom_histogram(aes(x = mpg, y = (..count..), fill=as.factor(am)), bins=5,  
+                 colour=&amp;quot;brown&amp;quot;, alpha=0.2)+
+  labs(x = &amp;quot;Milhas/galão&amp;quot;, y = &amp;quot;Frequência absoluta&amp;quot;, fill = &amp;quot;Tipo de transmissão&amp;quot;) +
+  scale_y_continuous(breaks = c(seq(0,15,3.5))) +
+  scale_x_continuous(breaks = c(seq(8.8,38.3,5.9))) +
+  theme_bw() +
+  theme(legend.position=&amp;quot;bottom&amp;quot;, 
+        legend.box = &amp;quot;horizontal&amp;quot;,legend.title=element_text(size=15), 
+        legend.text=element_text(size=15), axis.text=element_text(size=20),
+        axis.title=element_text(size=20), axis.line = element_line(colour = &amp;quot;black&amp;quot;),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-16-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;p&gt;Antes de construírmos o próximo histograma, precisamos apresentar a função &lt;code&gt;facet&lt;/code&gt; do ggplot2. Esta função permite a construção de gráficos em &lt;code&gt;facetas&lt;/code&gt;. O que é isso? Suponha que estamos interessados em construírmos um histograma baseado no anteriormente apresentado. Mas o nosso interesse maior é apresentar um histograma individual para cada tipo de transmissão &lt;code&gt;am&lt;/code&gt; considerando a variável contínua &lt;code&gt;mpg&lt;/code&gt;. Abaixo apresentamos a construção deste histograma.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; cor &amp;lt;- gray(0:1 / 2)
+ ggplot(mtcars) +
+  geom_histogram(aes(x = mpg, y = (..count..)/sum(..count..)*100, fill=as.factor(am)), 
+                 bins=5, colour=&amp;quot;brown&amp;quot;, alpha=0.2)+
+  facet_wrap(~am)+
+  labs(x = &amp;quot;Milhas/galão&amp;quot;, y = &amp;quot;Frequência percentual&amp;quot;, fill = &amp;quot;Tipo de transmissão&amp;quot;) +
+  scale_y_continuous(breaks = c(seq(0,60,10))) +
+  scale_x_continuous(breaks = c(seq(8.8,38.3,5.9))) +
+  theme_bw() +
+  theme(legend.position=&amp;quot;bottom&amp;quot;, 
+        legend.box = &amp;quot;horizontal&amp;quot;,legend.title=element_text(size=20), 
+        legend.text=element_text(size=20), axis.text=element_text(size=12),
+        axis.title=element_text(size=20), axis.line = element_line(colour = &amp;quot;black&amp;quot;),
+        strip.text.x = element_text(size=0),
+        strip.background = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-17-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;p&gt;Vamos agora apresentar um exemplo de como construir um gráfico de tendência destacando-se os pontos de dispersão dos dados.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars, aes(x = disp, y = mpg)) +
+  geom_point(aes(colour=as.factor(am)), alpha=0.6, size=1.7)+
+  geom_line(aes(colour=as.factor(am)), alpha=0.2, size=1.7, linetype=1)+
+  labs(x = &amp;quot;Cilindradas&amp;quot;, y = &amp;quot;Milhas/galão&amp;quot;, colour = &amp;quot;Tipo de transmissão&amp;quot;) +
+  theme_bw() +
+  theme(legend.position=&amp;quot;bottom&amp;quot;, 
+        legend.box = &amp;quot;horizontal&amp;quot;,legend.title=element_text(size=15), 
+        legend.text=element_text(size=15), axis.text=element_text(size=20),
+        axis.title=element_text(size=20), axis.line = element_line(colour = &amp;quot;black&amp;quot;),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank()) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-18-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;p&gt;Como o usuário faria para construir estes histogramas e gráficos de tendência sem utilizar a classificação por níveis da variável &lt;strong&gt;am&lt;/strong&gt;? A construção destes gráficos fica como exercício para o usuário.&lt;/p&gt;
+&lt;h2 id=&#34;segunda-parte&#34;&gt;&lt;strong&gt;Segunda parte&lt;/strong&gt;&lt;/h2&gt;
+&lt;h2 id=&#34;construindo-gráficos-a-partir-de-um-conjunto-de-dados-original-usando-os-pacotes-tydeverse-tibble-e-dplyr-do-r&#34;&gt;Construindo gráficos a partir de um conjunto de dados original usando os pacotes tydeverse, tibble e dplyr do R.&lt;/h2&gt;
+&lt;p&gt;O que preciso saber do pacote &lt;strong&gt;dplyr&lt;/strong&gt;:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Funções&lt;/th&gt;
+&lt;th&gt;Resultados&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;filter()&lt;/td&gt;
+&lt;td&gt;seleciona observações das variáveis por seus valores assumidos&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;arrange()&lt;/td&gt;
+&lt;td&gt;reordena as linhas (observações)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;select()&lt;/td&gt;
+&lt;td&gt;seleciona variáveis por seus nomes (rótulos)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;mutate()&lt;/td&gt;
+&lt;td&gt;cria novas variáveis com funções de variáveis existentes&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;summarize()&lt;/td&gt;
+&lt;td&gt;reune muitos valores em um único resumo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;group_by()&lt;/td&gt;
+&lt;td&gt;muda o escopo de cada função anterior em todo o conjunto de dados para operar grupo por grupo.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Uma vez apresentado as funções do pacote &lt;strong&gt;dplyr&lt;/strong&gt;, vamos agora apresentar os argumentos dessas funções. O primeiro argumento é um data frame. Os argumentos subsequentes descrevem o que fazer com o data frame usando os nomes das variáveis sem aspas.&lt;/p&gt;
+&lt;p&gt;O pacote &lt;strong&gt;covid19br&lt;/strong&gt; foi criado por pesquisadores da UFMG e permite ao usuário a coleta, em tempo real, de algumas informações sobre a doença &lt;strong&gt;COVID-19&lt;/strong&gt; nas unidades de saúde do Brasil, apresentando informações como número de casos e mortes novos e acumulados, diariamente, no Brasil e no mundo. Ainda, essas informações estão separadas por estado, região, municípios, por semana epidemiológica, datas, entre outros.&lt;/p&gt;
+&lt;p&gt;Nós vamos aproveitar esse pacote para apresentarmos as funções do pacote &lt;strong&gt;dplyr&lt;/strong&gt; e também construir gráficos com o pacote &lt;strong&gt;ggplot2&lt;/strong&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;data &amp;lt;- downloadCovid19(&amp;quot;states&amp;quot;)# dados por municípios brasileiros
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Downloading COVID-19 data from the official Brazilian repository: https://covid.saude.gov.br/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Please, be patient...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  Done!
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;glimpse(data)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Rows: 28,512
+## Columns: 12
+## $ region       &amp;lt;chr&amp;gt; &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;No~
+## $ state        &amp;lt;chr&amp;gt; &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO~
+## $ date         &amp;lt;date&amp;gt; 2020-02-25, 2020-02-26, 2020-02-27, 2020-02-28, 2020-02-~
+## $ epi_week     &amp;lt;int&amp;gt; 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11~
+## $ newCases     &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ accumCases   &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ newDeaths    &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ accumDeaths  &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ newRecovered &amp;lt;int&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ newFollowup  &amp;lt;int&amp;gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ pop          &amp;lt;dbl&amp;gt; 1777225, 1777225, 1777225, 1777225, 1777225, 1777225, 177~
+## $ state_code   &amp;lt;int&amp;gt; 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 1~
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Não se preocupe com a estrutura apresentada nesse conjunto de dados. Trata-se de um &lt;strong&gt;tibble&lt;/strong&gt;, um data frame com algumas particularidades. Note que essas estrutura de data frame traz algumas informações, como a dimensão dos dados, o tipo de variável que está em cada uma das colunas (categórica, inteiro, caractere, etc.), entre outras.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Representação&lt;/th&gt;
+&lt;th&gt;Tipo de variável&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;int&lt;/td&gt;
+&lt;td&gt;números inteiros&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;dbl&lt;/td&gt;
+&lt;td&gt;doubles (números reais)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;chr&lt;/td&gt;
+&lt;td&gt;vetores de caracteres (strings)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;dttm&lt;/td&gt;
+&lt;td&gt;datas-tempos (uma data + um horário)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fctr&lt;/td&gt;
+&lt;td&gt;valores lógicos (TRUE ou FALSE)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;date&lt;/td&gt;
+&lt;td&gt;datas&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Antes de apresentarmos as funções do pacote &lt;strong&gt;dplyr&lt;/strong&gt; precisamos conhecer alguns caracteres lógicos e suas representações.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Caractere lógico&lt;/th&gt;
+&lt;th&gt;Representação&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;==&lt;/td&gt;
+&lt;td&gt;igual&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;amp;&lt;/td&gt;
+&lt;td&gt;conectivo &lt;code&gt;e&lt;/code&gt; (interseção)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;|&lt;/td&gt;
+&lt;td&gt;conectivo &lt;code&gt;ou&lt;/code&gt; (união)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;gt;&lt;/td&gt;
+&lt;td&gt;maior do que&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;lt;&lt;/td&gt;
+&lt;td&gt;menor do que&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;gt;=&lt;/td&gt;
+&lt;td&gt;maior do que ou igual a&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;lt;=&lt;/td&gt;
+&lt;td&gt;menor do que ou igual a&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;!=&lt;/td&gt;
+&lt;td&gt;diferente&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;%in%&lt;/td&gt;
+&lt;td&gt;concatenar&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;As funções do pacote &lt;strong&gt;dplyr&lt;/strong&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;filter(data, date &amp;gt;= &amp;quot;2022-02-20&amp;quot; &amp;amp; state == &amp;quot;SP&amp;quot; &amp;amp; epi_week == 8)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##       region state       date epi_week newCases accumCases newDeaths
+## 1: Southeast    SP 2022-02-20        8     6424    4935771        26
+## 2: Southeast    SP 2022-02-21        8     2470    4938241        23
+## 3: Southeast    SP 2022-02-22        8    15999    4954240       310
+## 4: Southeast    SP 2022-02-23        8    15427    4969667       298
+## 5: Southeast    SP 2022-02-24        8    15228    4984895       303
+## 6: Southeast    SP 2022-02-25        8    14764    4999659       211
+## 7: Southeast    SP 2022-02-26        8    11290    5010949       211
+##    accumDeaths newRecovered newFollowup      pop state_code
+## 1:      163160           NA          NA 45919049         35
+## 2:      163183           NA          NA 45919049         35
+## 3:      163493           NA          NA 45919049         35
+## 4:      163791           NA          NA 45919049         35
+## 5:      164094           NA          NA 45919049         35
+## 6:      164305           NA          NA 45919049         35
+## 7:      164516           NA          NA 45919049         35
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;arrange(data, state)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##        region state       date epi_week newCases accumCases newDeaths
+##     1:  North    AC 2020-02-25        9        0          0         0
+##     2:  North    AC 2020-02-26        9        0          0         0
+##     3:  North    AC 2020-02-27        9        0          0         0
+##     4:  North    AC 2020-02-28        9        0          0         0
+##     5:  North    AC 2020-02-29        9        0          0         0
+##    ---                                                               
+## 28508:  North    TO 2022-03-14       11       14     300957         1
+## 28509:  North    TO 2022-03-15       11      215     301172         2
+## 28510:  North    TO 2022-03-16       11      124     301296         0
+## 28511:  North    TO 2022-03-17       11      128     301424         2
+## 28512:  North    TO 2022-03-18       11      116     301540         2
+##        accumDeaths newRecovered newFollowup     pop state_code
+##     1:           0           NA          NA  881935         12
+##     2:           0           NA          NA  881935         12
+##     3:           0           NA          NA  881935         12
+##     4:           0           NA          NA  881935         12
+##     5:           0           NA          NA  881935         12
+##    ---                                                        
+## 28508:        4132           NA          NA 1572866         17
+## 28509:        4134           NA          NA 1572866         17
+## 28510:        4134           NA          NA 1572866         17
+## 28511:        4136           NA          NA 1572866         17
+## 28512:        4138           NA          NA 1572866         17
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;select(data, region , date,  state, newCases, accumCases)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##        region       date state newCases accumCases
+##     1:  North 2020-02-25    RO        0          0
+##     2:  North 2020-02-26    RO        0          0
+##     3:  North 2020-02-27    RO        0          0
+##     4:  North 2020-02-28    RO        0          0
+##     5:  North 2020-02-29    RO        0          0
+##    ---                                            
+## 28508:  North 2022-02-19    RO        0          0
+## 28509:  North 2022-02-20    RO        0          0
+## 28510:  North 2022-02-21    RO        0          0
+## 28511:  North 2022-02-22    RO        0          0
+## 28512:  North 2022-02-23    RO        0          0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mutate(data, rate_newcases = newCases/pop*100000)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##        region state       date epi_week newCases accumCases newDeaths
+##     1:  North    RO 2020-02-25        9        0          0         0
+##     2:  North    RO 2020-02-26        9        0          0         0
+##     3:  North    RO 2020-02-27        9        0          0         0
+##     4:  North    RO 2020-02-28        9        0          0         0
+##     5:  North    RO 2020-02-29        9        0          0         0
+##    ---                                                               
+## 28508:  North    RO 2022-02-19        7        0          0         0
+## 28509:  North    RO 2022-02-20        8        0          0         0
+## 28510:  North    RO 2022-02-21        8        0          0         0
+## 28511:  North    RO 2022-02-22        8        0          0         0
+## 28512:  North    RO 2022-02-23        8        0          0         0
+##        accumDeaths newRecovered newFollowup     pop state_code rate_newcases
+##     1:           0           NA          NA 1777225         11             0
+##     2:           0           NA          NA 1777225         11             0
+##     3:           0           NA          NA 1777225         11             0
+##     4:           0           NA          NA 1777225         11             0
+##     5:           0           NA          NA 1777225         11             0
+##    ---                                                                      
+## 28508:           0           NA          NA      NA         11            NA
+## 28509:           0           NA          NA      NA         11            NA
+## 28510:           0           NA          NA      NA         11            NA
+## 28511:           0           NA          NA      NA         11            NA
+## 28512:           0           NA          NA      NA         11            NA
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;summarize(data, mean_newdeaths=mean(newDeaths), desv_pad= sd(newDeaths),
+                  standard_error=desv_pad/sqrt(length(data)))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   mean_newdeaths desv_pad standard_error
+## 1       23.19953 64.07262       18.49617
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;group_by(data, region, epi_week)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 28,512 x 12
+## # Groups:   region, epi_week [265]
+##    region state date       epi_week newCases accumCases newDeaths accumDeaths
+##    &amp;lt;chr&amp;gt;  &amp;lt;chr&amp;gt; &amp;lt;date&amp;gt;        &amp;lt;int&amp;gt;    &amp;lt;int&amp;gt;      &amp;lt;int&amp;gt;     &amp;lt;int&amp;gt;       &amp;lt;int&amp;gt;
+##  1 North  RO    2020-02-25        9        0          0         0           0
+##  2 North  RO    2020-02-26        9        0          0         0           0
+##  3 North  RO    2020-02-27        9        0          0         0           0
+##  4 North  RO    2020-02-28        9        0          0         0           0
+##  5 North  RO    2020-02-29        9        0          0         0           0
+##  6 North  RO    2020-03-01       10        0          0         0           0
+##  7 North  RO    2020-03-02       10        0          0         0           0
+##  8 North  RO    2020-03-03       10        0          0         0           0
+##  9 North  RO    2020-03-04       10        0          0         0           0
+## 10 North  RO    2020-03-05       10        0          0         0           0
+## # ... with 28,502 more rows, and 4 more variables: newRecovered &amp;lt;int&amp;gt;,
+## #   newFollowup &amp;lt;int&amp;gt;, pop &amp;lt;dbl&amp;gt;, state_code &amp;lt;int&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Esse pacote é muito útil quando desejamos realizar uma análise exploratória de nossos dados. Vamos então construir alguns gráficos utilizando os recursos desse pacote e também do &lt;strong&gt;ggplot2&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Suponha que estamos interessados em conhecer, “a priori”, quantas mortes por COVID-19 ocorreram em cada uma das unidades federativas brasileiras, no dia 20-02-2022. Como proceder?&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;Dados &amp;lt;- select(data, epi_week , state, newDeaths, date)
+resultados &amp;lt;- filter(Dados, epi_week == 8 &amp;amp; date == &amp;quot;2022-02-20&amp;quot;)
+ggplot(resultados)+
+geom_col(aes(x=as.factor(state), y=newDeaths, fill=as.factor(state)),
+alpha=0.65, position = &amp;quot;stack&amp;quot;)+
+labs(x = &amp;quot;Unidades da federação&amp;quot;, y = &amp;quot;Novas mortes - semana 30&amp;quot;)+
+theme_bw()+
+theme(legend.position=&amp;quot;none&amp;quot;,
+legend.box = &amp;quot;vertical&amp;quot;,legend.title=element_text(size=8),
+legend.text=element_text(size=8), axis.text=element_text(size=8),
+axis.title=element_text(size=8), axis.line = element_line(colour = &amp;quot;black&amp;quot;),
+strip.text.x = element_text(size=0),
+strip.background = element_blank(),
+panel.grid.major = element_blank(),
+panel.grid.minor = element_blank(),
+panel.border = element_blank(),
+panel.background = element_blank())+
+scale_fill_discrete(name=&amp;quot;UF&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-21-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;p&gt;Um fato curioso deve ser notado: quando manipulamos o conto de dados data com as funções select e filter, nós atribuímos a cada tibble gerado por essas funções um rótulo. Agora, imagine que, dentro do mesmo conjunto de dados, nós precisamos utilizar todas as seis funções do pacote &lt;strong&gt;dplyr&lt;/strong&gt;. Seria inviável proceder como da forma anterior. Para corrigir esse problema, foi criado o pacote &lt;strong&gt;magrittr&lt;/strong&gt; onde foi criado o operador pipe %&amp;gt;%. Essa ferramenta é utilizada para expressar claramente uma sequência de múltiplas operações. Este pacote já é carregado automaticamente com o &lt;strong&gt;dplyr&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Em nosso próximo exemplo, suponha que deseja-se conhecer a evolução diária das novas mortes considerando o tempo de infecção por COVID-19 da semana 1 até a semana 8 de 2021 e 2022, para as unidades federativas da região sudeste. Entretanto, para efeitos de comparação, as populações de cada uma das UF&amp;rsquo;s se difere, o que torna a comparação entre elas inviável. Esse é o motivo pelo qual calculamos algumas medidas auxiliares quando há heterogeneidade populacional. Uma dessas medidas é denominada de taxa e seu cálculo é oriundo da razão entre o número de casos favoráveis e o total de indivíduos da população de cada uma das áreas estudas, multiplicado por alguma constante de padronização. Nós vamos respeitar as regras utilizadas pelo Instituto Brasileiro de Geografia e Estatística (IBGE) e considerar essa constante igual a 100,000. Desse modo:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;cor &amp;lt;- heat.colors(4, rev = TRUE)
+resultados &amp;lt;- data %&amp;gt;%
+mutate(year = as.numeric(format(date, &amp;quot;%Y&amp;quot;)),
+       rate = newDeaths/pop*100000)%&amp;gt;%
+select(newDeaths, epi_week, state, year, rate)%&amp;gt;%
+filter(epi_week&amp;gt;= 1 &amp;amp; epi_week &amp;lt;= 8 &amp;amp; state %in% c(&amp;quot;SP&amp;quot;, &amp;quot;RJ&amp;quot;, &amp;quot;MG&amp;quot;, &amp;quot;ES&amp;quot;) &amp;amp; year %in% c(2021, 2022))
+ggplot(resultados, aes(x=as.factor(epi_week), y = rate, fill=as.factor(state)))+
+facet_wrap(~year)+
+geom_bar(stat=&amp;quot;identity&amp;quot;, position = &amp;quot;dodge&amp;quot;, alpha=0.45) +
+labs(x = &amp;quot;Semana de infecção&amp;quot;, y = &amp;quot;Novas mortes - Sudeste&amp;quot;) +
+theme_bw()+
+theme(legend.position=&amp;quot;right&amp;quot;,
+legend.box = &amp;quot;vertical&amp;quot;,legend.title=element_text(size=8),
+legend.text=element_text(size=8), axis.text=element_text(size=8),
+axis.title=element_text(size=8), axis.line = element_line(colour = &amp;quot;black&amp;quot;),
+strip.text.x = element_text(size=0),
+strip.background = element_blank(),
+panel.grid.major = element_blank(),
+panel.grid.minor = element_blank(),
+panel.border = element_blank(),
+panel.background = element_blank())+
+scale_fill_manual(name=&amp;quot;UF&amp;quot;, values = cor)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-22-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;p&gt;Nós também podemos produzir mapas utilizando o pacote &lt;strong&gt;ggplot2&lt;/strong&gt;. Entretanto, nós precisamos de algum arquivo que contenha as coordenadas do mapa desejado em forma de polígonos ou até mesmo imagens (raster). Para tal, nós vamos utilizar o pacote &lt;strong&gt;geobr&lt;/strong&gt;, que foi criado pelo Instituto de Pesquisa Econômica Aplicada - Ipea. Vejamos:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;uf &amp;lt;- data %&amp;gt;%
+  select(state, newDeaths, newCases, accumDeaths, accumCases, 
+         pop, date)%&amp;gt;%
+  filter(date == &amp;quot;2022-02-23&amp;quot;)%&amp;gt;%
+  mutate(ratenewcases = newCases/pop*100000,
+            rateaccumcases = accumCases/pop*100000,
+            ratenewdeaths = newDeaths/pop*100000,
+            rateaccumdeaths = accumDeaths/pop*100000)
+library(geobr)
+dados_mapa &amp;lt;- read_state(year=2019, showProgress = FALSE)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Using year 2019
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Loading data for the whole country
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;colnames(dados_mapa)[2] &amp;lt;- &amp;quot;state&amp;quot;
+dados_final &amp;lt;- left_join(dados_mapa, uf, &amp;quot;state&amp;quot;)
+glimpse(dados_final)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Rows: 28
+## Columns: 16
+## $ code_state      &amp;lt;dbl&amp;gt; 11, 11, 12, 13, 14, 15, 16, 17, 21, 22, 23, 24, 25, 26~
+## $ state           &amp;lt;chr&amp;gt; &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;AC&amp;quot;, &amp;quot;AM&amp;quot;, &amp;quot;RR&amp;quot;, &amp;quot;PA&amp;quot;, &amp;quot;AP&amp;quot;, &amp;quot;TO&amp;quot;, &amp;quot;MA&amp;quot;, ~
+## $ name_state      &amp;lt;chr&amp;gt; &amp;quot;Rondônia&amp;quot;, &amp;quot;Rondônia&amp;quot;, &amp;quot;Acre&amp;quot;, &amp;quot;Amazônas&amp;quot;, &amp;quot;Roraima&amp;quot;,~
+## $ code_region     &amp;lt;dbl&amp;gt; 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, ~
+## $ name_region     &amp;lt;chr&amp;gt; &amp;quot;Norte&amp;quot;, &amp;quot;Norte&amp;quot;, &amp;quot;Norte&amp;quot;, &amp;quot;Norte&amp;quot;, &amp;quot;Norte&amp;quot;, &amp;quot;Norte&amp;quot;, ~
+## $ newDeaths       &amp;lt;int&amp;gt; 16, 0, 4, 3, 1, 17, 2, 2, 14, 5, 57, 7, 9, 15, 12, 4, ~
+## $ newCases        &amp;lt;int&amp;gt; 2741, 0, 654, 575, 361, 2476, 52, 723, 1283, 645, 1907~
+## $ accumDeaths     &amp;lt;int&amp;gt; 7036, 0, 1966, 14101, 2126, 17716, 2100, 4095, 10739, ~
+## $ accumCases      &amp;lt;int&amp;gt; 366864, 0, 119090, 571174, 152146, 709489, 160025, 296~
+## $ pop             &amp;lt;dbl&amp;gt; 1777225, NA, 881935, 4144597, 605761, 8602865, 845731,~
+## $ date            &amp;lt;date&amp;gt; 2022-02-23, 2022-02-23, 2022-02-23, 2022-02-23, 2022-~
+## $ ratenewcases    &amp;lt;dbl&amp;gt; 154.229206, NA, 74.155125, 13.873484, 59.594461, 28.78~
+## $ rateaccumcases  &amp;lt;dbl&amp;gt; 20642.519, NA, 13503.263, 13781.171, 25116.506, 8247.1~
+## $ ratenewdeaths   &amp;lt;dbl&amp;gt; 0.90027993, NA, 0.45354816, 0.07238339, 0.16508161, 0.~
+## $ rateaccumdeaths &amp;lt;dbl&amp;gt; 395.8981, NA, 222.9189, 340.2261, 350.9635, 205.9314, ~
+## $ geom            &amp;lt;MULTIPOLYGON [°]&amp;gt; MULTIPOLYGON (((-65.3815 -1..., MULTIPOLY~
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#plotar os mapas
+dados_final %&amp;gt;%
+  ggplot() +
+  geom_sf(aes(fill = ratenewcases), color = &amp;quot;black&amp;quot;) +
+  geom_sf_text(aes(label = state), size = 2, color = &amp;quot;white&amp;quot;)+
+  labs(title = &amp;quot;Novos casos - COVID-19 - Brasil - 23-02-2022&amp;quot;, fill = &amp;quot;Taxa&amp;quot;) +
+  theme_minimal()+
+  theme(axis.title = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
+## give correct results for longitude/latitude data
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-23-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dados_final %&amp;gt;%
+  ggplot() +
+  geom_sf(aes(fill = ratenewdeaths), color = &amp;quot;black&amp;quot;) +
+  geom_sf_text(aes(label = state), size = 2, color = &amp;quot;white&amp;quot;)+
+  labs(title = &amp;quot;Novas mortes - COVID-19 - Brasil - 23-02-2022&amp;quot;, fill = &amp;quot;Taxa&amp;quot;) +
+  theme_minimal()+
+  theme(axis.title = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
+## give correct results for longitude/latitude data
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-24-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dados_final %&amp;gt;%
+  ggplot() +
+  geom_sf(aes(fill = rateaccumcases), color = &amp;quot;black&amp;quot;) +
+  geom_sf_text(aes(label = state), size = 2, color = &amp;quot;white&amp;quot;)+
+  labs(title = &amp;quot;Casos acumulados - COVID-19 - Brasil - 23-02-2022&amp;quot;, fill = &amp;quot;Taxa&amp;quot;) +
+  theme_minimal()+
+  theme(axis.title = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
+## give correct results for longitude/latitude data
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-25-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dados_final %&amp;gt;%
+  ggplot() +
+  geom_sf(aes(fill = rateaccumdeaths), color = &amp;quot;black&amp;quot;) +
+  geom_sf_text(aes(label = state), size = 2, color = &amp;quot;white&amp;quot;)+
+  labs(title = &amp;quot;Mortes acumuladas - COVID-19 - Brasil - 23-02-2022&amp;quot;, fill = &amp;quot;Taxa&amp;quot;) +
+  theme_minimal()+
+  theme(axis.title = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
+## give correct results for longitude/latitude data
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/python_files/figure-html/unnamed-chunk-26-1.png&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;</description>
+    </item>
+    
+    <item>
+      <title>Slides</title>
+      <link>https://henriqueest.github.io/courses/example/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/courses/example/</guid>
+      <description>&lt;h2 id=&#34;pacote-ggplot2-um-curso-introdutório&#34;&gt;Pacote ggplot2: um curso introdutório&lt;/h2&gt;
+&lt;p&gt;Henrique José de Paula Alves&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://localhost:4321/courses/example/python/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Material&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;o-que-você-vai-aprender&#34;&gt;O que você vai aprender&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Habilidades fundamentais de programação R&lt;/li&gt;
+&lt;li&gt;Conceitos estatísticos e resultados gráficos: como aplicá-los&lt;/li&gt;
+&lt;li&gt;Ganhe experiência com o R:  visualização de dados com o pacote ggplot2 e mineração de dados com o pacote tidyverse&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;visão-geral-do-curso&#34;&gt;Visão geral do curso&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Grande demanda por profissionais em estatística aplicada&lt;/li&gt;
+&lt;li&gt;Mineração de dados e as saídas gráficas: passo fundamental em estatística aplicada&lt;/li&gt;
+&lt;li&gt;Objetivo:  apresentar duas importantes ferramentas disponíveis no software R: os pacotes tidyverse e ggplot2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;pré-requisitos&#34;&gt;Pré-requisitos&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;É desejável que o aluno tenha algum conhecimento de programação em linguagem R&lt;/li&gt;
+&lt;li&gt;É também desejável que o aluno tenha conhecimentos básicos de Estatística e Probabilidades&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;controles&#34;&gt;Controles&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Próximo: &lt;code&gt;Seta para a direita ou Espaço&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Anterior: &lt;code&gt;Seta para a esquerda&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Início: &lt;code&gt;Home&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fim: &lt;code&gt;End&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Visão geral: &lt;code&gt;Esc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Tela cheia: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Zoom: &amp;lsquo;Alt + Clique&amp;rsquo;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;introdução&#34;&gt;Introdução&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Todo e qualquer resultado estatístico deve ser bem compreendido&lt;/li&gt;
+&lt;li&gt;Saídas gráficas representam um resultado estatístico&lt;/li&gt;
+&lt;li&gt;Apresentação do comportamento dos dados de forma resumida&lt;/li&gt;
+&lt;li&gt;Não é uma tarefa fácil nem corriqueira&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;introdução-1&#34;&gt;Introdução&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Uma forma direta de obter saídas gráficas: pacotes esquisse e ggplotgui&lt;/li&gt;
+&lt;li&gt;Esse não é o nosso objetivo&lt;/li&gt;
+&lt;li&gt;Apresentar o pacote ggplot2 de forma lenta e gradativa&lt;/li&gt;
+&lt;li&gt;O seu diferencial com relação a outros pacotes&lt;/li&gt;
+&lt;li&gt;Funções de saídas gráficas: base do R&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;pacotes-necessários&#34;&gt;Pacotes necessários&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Instalação e carregamento dos pacotes no R&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Código:&lt;/p&gt;
+&lt;div style=&#34;display: flex; font-size: 8&#34;&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#nomes dos pacotes
+packages &amp;lt;- c(&amp;quot;dplyr&amp;quot;,&amp;quot;tidyverse&amp;quot;,&amp;quot;lattice&amp;quot;,  &amp;quot;rgdal&amp;quot;, &amp;quot;rgeos&amp;quot;, 
+&amp;quot;maptools&amp;quot;, &amp;quot;plyr&amp;quot;, &amp;quot;sf&amp;quot;, &amp;quot;covid19br&amp;quot;, &amp;quot;RColorBrewer&amp;quot;)
+
+# instala os pacotes que não estão instalados
+installed_packages &amp;lt;- packages %in% rownames(installed.packages())
+if (any(installed_packages == FALSE)) {
+  install.packages(packages[!installed_packages])
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;# carrega os pacotes
+invisible(lapply(packages, library, character.only = TRUE))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;base-de-dados&#34;&gt;Base de dados&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Base de dados disponível no R: &lt;a href=&#34;https://gist.github.com/seankross/a412dfbd88b3db70b74b&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;mtcars&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Coletados da revista &amp;ldquo;Motor Trend US (1974)&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;32 modelos de automóveis: consumo de combustível e outros 10 aspectos de design e desempenho&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;base-de-dados-1&#34;&gt;Base de dados&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Preparando a base de dados&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Código:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mtcars &amp;lt;- within(mtcars, {
+   vs &amp;lt;- factor(vs, labels = c(&amp;quot;V&amp;quot;, &amp;quot;S&amp;quot;))
+   am &amp;lt;- factor(am, labels = c(&amp;quot;automatica&amp;quot;, &amp;quot;manual&amp;quot;))
+   cyl  &amp;lt;- ordered(cyl)
+   gear &amp;lt;- ordered(gear)
+   carb &amp;lt;- ordered(carb)
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;base-de-dados-2&#34;&gt;Base de dados&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Preparando a base de dados&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Código:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;summary(mtcars)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##       mpg        cyl         disp             hp             drat      
+##  Min.   :10.40   4:11   Min.   : 71.1   Min.   : 52.0   Min.   :2.760  
+##  1st Qu.:15.43   6: 7   1st Qu.:120.8   1st Qu.: 96.5   1st Qu.:3.080  
+##  Median :19.20   8:14   Median :196.3   Median :123.0   Median :3.695  
+##  Mean   :20.09          Mean   :230.7   Mean   :146.7   Mean   :3.597  
+##  3rd Qu.:22.80          3rd Qu.:326.0   3rd Qu.:180.0   3rd Qu.:3.920  
+##  Max.   :33.90          Max.   :472.0   Max.   :335.0   Max.   :4.930  
+##        wt             qsec       vs              am     gear   carb  
+##  Min.   :1.513   Min.   :14.50   V:18   automatica:19   3:15   1: 7  
+##  1st Qu.:2.581   1st Qu.:16.89   S:14   manual    :13   4:12   2:10  
+##  Median :3.325   Median :17.71                          5: 5   3: 3  
+##  Mean   :3.217   Mean   :17.85                                 4:10  
+##  3rd Qu.:3.610   3rd Qu.:18.90                                 6: 1  
+##  Max.   :5.424   Max.   :22.90                                 8: 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;porque-o-pacote-ggplot2&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Vamos construir algumas saídas gráficas&lt;/li&gt;
+&lt;li&gt;Utilzar as funções do pacote graphics: base do R&lt;/li&gt;
+&lt;li&gt;Pacote lattice&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;porque-o-pacote-ggplot2-1&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
+&lt;p&gt;Código (graphics):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;hist(mtcars$mpg, col = &amp;quot;lightblue&amp;quot;, main = &amp;quot;Função hist (base)&amp;quot;, 
+     xlab = &amp;quot;Milhas por galão (mpg)&amp;quot;, ylab = &amp;quot;Frequência absoluta&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;50%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+---
+&lt;h2 id=&#34;porque-o-pacote-ggplot2-2&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
+&lt;p&gt;Código (lattice):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(lattice)
+histogram(~mpg,data=mtcars,
+       type =&amp;quot;count&amp;quot;,
+       xlab =&amp;quot;Milhas por galão (mpg)&amp;quot;,
+       ylab = &amp;quot;Frequência absoluta&amp;quot;,
+       main =&amp;quot;Função histogram (lattice)&amp;quot;,
+       col = &amp;quot;lightblue&amp;quot;,
+       breaks = 5)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/index_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;45%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;porque-o-pacote-ggplot2-3&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
+&lt;p&gt;Código (base):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;tab &amp;lt;- table(mtcars$cyl);tab
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+##  4  6  8 
+## 11  7 14
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;barplot(tab, col = &amp;quot;lightblue&amp;quot;, main = &amp;quot;Função barplot (base)&amp;quot;, xlab = &amp;quot;Número de cilindros por motor (cyl)&amp;quot;, ylab = &amp;quot;Frequência absoluta&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/index_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;45%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;porque-o-pacote-ggplot2-4&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
+&lt;p&gt;Código (lattice):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(lattice)
+tabela &amp;lt;- xtabs(~cyl, data = mtcars);tabela
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## cyl
+##  4  6  8 
+## 11  7 14
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;barchart(tabela,
+         horizontal = FALSE,
+         main = &amp;quot;Função barchart (lattice)&amp;quot;,
+         xlab = &amp;quot;Número de cilindros por motor (cyl)&amp;quot;,
+         ylab = &amp;quot;Frequência absoluta&amp;quot;,
+         col = &amp;quot;lightblue&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/courses/example/index_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;45%&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;porque-o-pacote-ggplot2-5&#34;&gt;Porque o pacote ggplot2&lt;/h2&gt;
+&lt;p&gt;Não é necessário:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;comandos específicos para cada gráfico gerado&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;utilização de funções adicionais (table ou xtabs)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;conhecimento prévio de cada uma das funções&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;class&lt;/code&gt;: use a custom style (requires definition in custom CSS)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: sets the order in which a fragment appears&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;speaker-notes&#34;&gt;Speaker Notes&lt;/h2&gt;
+&lt;p&gt;Add speaker notes to your presentation&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% speaker_note %}}
+- Only the speaker can read these notes
+- Press `S` key to view
+{{% /speaker_note %}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
+&lt;aside class=&#34;notes&#34;&gt;
+  &lt;ul&gt;
+&lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
+&lt;li&gt;Press &lt;code&gt;S&lt;/code&gt; key to view&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/aside&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;black: Black background, white text, blue links (default)&lt;/li&gt;
+&lt;li&gt;white: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;league: Gray background, white text, blue links&lt;/li&gt;
+&lt;li&gt;beige: Beige background, dark text, brown links&lt;/li&gt;
+&lt;li&gt;sky: Blue background, thin dark text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;night: Black background, thick white text, orange links&lt;/li&gt;
+&lt;li&gt;serif: Cappuccino background, gray text, brown links&lt;/li&gt;
+&lt;li&gt;simple: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;solarized: Cream-colored background, dark green text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+
+&lt;section data-noprocess data-shortcode-slide
+  
+      
+      data-background-image=&#34;/media/boards.jpg&#34;
+  &gt;
+
+&lt;h2 id=&#34;custom-slide&#34;&gt;Custom Slide&lt;/h2&gt;
+&lt;p&gt;Customize the slide style and background&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; slide background-image=&amp;quot;/media/boards.jpg&amp;quot; &amp;gt;}}
+{{&amp;lt; slide background-color=&amp;quot;#0000FF&amp;quot; &amp;gt;}}
+{{&amp;lt; slide class=&amp;quot;my-style&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
+&lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.reveal section h1,
+.reveal section h2,
+.reveal section h3 {
+  color: navy;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/discussions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

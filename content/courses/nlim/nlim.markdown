@@ -9,19 +9,6 @@ output:
 weight: 20
 ---
 
-<style>
-body {
-  text-align: justify;
-  font-size: 12pt;
-  }
-code.r{
-  font-size: 10px;
-}
-pre {
-  font-size: 12px
-}
-</style>
-
 
 
 
@@ -30,7 +17,7 @@ pre {
 
 Nonlinear models (NLM) usually go back to obtaining some information about the relationship between variables Y and X. Such information is linked to different degrees of knowledge as
 - an analysis of a scatterplot of Y v.s. X
-- shape constraints of the function (to be monotone, to be sigmoid)
+- shape constraints of the function (monotone, sigmoid)
 - the solution of a differential equation supported by some
 principle or theory
 - the interpretation of its parameters.
