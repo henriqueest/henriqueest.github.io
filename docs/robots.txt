@@ -1,3 +1,0 @@
-User-agent: *
-
-Sitemap: https://henriqueest.github.io/sitemap.xml
