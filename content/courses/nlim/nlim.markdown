@@ -9,6 +9,19 @@ output:
 weight: 20
 ---
 
+<style>
+body {
+  text-align: justify;
+  font-size: 12pt;
+  }
+code.r{
+  font-size: 10px;
+}
+pre {
+  font-size: 12px
+}
+</style>
+
 
 
 
@@ -60,54 +73,71 @@ Among the characteristic points on the abscissa axis (X) are:
 The symbol for each of these parameters will depend on the model considered. Sometimes it is faster to recognize the properties of a function by its appearance with some specific pattern. Among the most common is
 - **SIG**: sigmoid, being monotonous increasing (MC) or decreasing (MD). The curve has an inverted S or S shape. Every sigmoid has **PI**, **ASS** and **ASI**.
 
+<img src="C:/Users/jpahe/Dropbox/PC/Documents/minhapagina/henriqueest.github.io/content/courses/nlim/featured(5).jpg" style="float: left; margin-right: 10px;" /> 
 
 
 
-### Installation and loading
+## Code R 
 
 To install and load it in IDE's R or rstudio, just run the following command lines.
 
 
 
 ```r
-#install.packages("growthmodels")
-library(growthmodels)
+library(covid19br)
+library(tidyverse)
+library(dplyr)
 ```
-
-## Brody growth model
-
-
-The Brody model is an example of a non-linear model that does not present sigmoidal behavior, does not have an inflection point and presents a concavity facing downwards, being characterized as a model of restricted growth. Its expression is given by
-
-$$
-y(t)=\alpha -(\alpha - w_0)exp(-kt),
-$$
-onde
-
-`\(t\)` corresponde ao tempo, `\(\alpha\)` é a assíntota superior, `\(w-0\)` é o valor em `\(t=0\)` e `\(k\)` é a taxa de crescimento.
-
-### Usage
-
-*brody(t, alpha, w0, k)*
-
-
-### References
-
-M. M. Kaps, W. O. W. Herring, and W. R. W. Lamberson, "Genetic and environmental parameters for traits derived from the Brody growth curve and their relationships with weaning weight in Angus cattle.," Journal of Animal Science, vol. 78, no. 6, pp. 1436-1442, May 2000.
-
-###Example and run
 
 
 ```r
-growth <- brody(0:10, 10, 5, 0.3)
-growth
+data <- downloadCovid19("world") %>%
+  filter(country == "Italy")%>%
+  select(date, country, accumCases, accumDeaths)
+glimpse(data)
 ```
 
 ```
-##  [1] 5.000000 6.295909 7.255942 7.967152 8.494029 8.884349 9.173506 9.387718
-##  [9] 9.546410 9.663972 9.751065
+## Rows: 795
+## Columns: 4
+## $ date        <date> 2020-01-22, 2020-01-23, 2020-01-24, 2020-01-25, 2020-01-2~
+## $ country     <chr> "Italy", "Italy", "Italy", "Italy", "Italy", "Italy", "Ita~
+## $ accumCases  <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3~
+## $ accumDeaths <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
 ```
 
+### Behavior of accumulated deaths (Italy)
+
+
+```r
+ggplot(data)+
+  geom_point(aes(x = as.Date(date), y = accumDeaths), colour = "steelblue")+
+  labs(x = "Date (day)", y = "Accumulated deaths")+
+  theme_classic()
+```
+
+<img src="/courses/nlim/nlim_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+
+
+Suggests double sigmoid model
+
+
+```r
+ggplot(data)+
+  geom_point(aes(x = as.Date(date), y = accumDeaths), colour = "steelblue")+
+  geom_vline(aes(x = as.Date(date), y = accumDeaths, xintercept = as.Date("2020-10-20")),
+             colour="brown", linetype = "longdash")+
+  geom_vline(aes(x = as.Date(date), y = accumDeaths, xintercept = as.Date("2021-12-15")),
+             colour="brown", linetype = "longdash")+
+ annotate("text", label = "sigmoid behavior", x = as.Date("2020-05-1"), y = 100000, size = 5,
+          colour = "gray")+
+ annotate("text", label = "sigmoid behavior", x = as.Date("2021-08-1"), y = 100000, size = 5, 
+          colour = "gray")+
+  labs(x = "Date (day)", y = "Accumulated deaths")+
+  theme_classic()
+```
+
+<img src="/courses/nlim/nlim_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
 
 
