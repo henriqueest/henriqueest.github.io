@@ -1,0 +1,1470 @@
+---
+title: "Saídas gráficas no R"
+subtitle: "introdução ao pacote ggplot2"
+author: "Henrique José de Paula Alves"
+institute: "Diest - Ipea"
+date: "21-03-2022"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+<style>
+body {
+  text-align: justify;
+  }
+code.r{
+  font-size: 10px;
+}
+pre {
+  font-size: 12px
+}
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+packages <- c("dplyr","tidyverse","lattice",  "rgdal", "rgeos",
+ "maptools", "plyr", "sf", "covid19br", "RColorBrewer")
+lapply(packages, library, character.only = TRUE)
+```
+
+
+# Material de apoio
+
+
+[Material](http://localhost:4321/courses/example/python/)
+
+---
+
+## O que você vai aprender
+
+- Habilidades fundamentais de programação R
+- Conceitos estatísticos e resultados gráficos: como aplicá-los
+- Ganhe experiência com o R:  visualização de dados com o pacote ggplot2 e mineração de dados com o pacote tidyverse
+
+---
+
+
+## Visão geral do curso
+
+- Grande demanda por profissionais em estatística aplicada
+- Mineração de dados e as saídas gráficas: passo fundamental em estatística aplicada
+- Objetivo:  apresentar duas importantes ferramentas disponíveis no software R: os pacotes tidyverse e ggplot2
+
+---
+
+## Pré-requisitos
+
+- É desejável que o aluno tenha algum conhecimento de programação em linguagem R
+- É também desejável que o aluno tenha conhecimentos básicos de Estatística e Probabilidades
+
+---
+
+## Introdução
+
+- Todo e qualquer resultado estatístico deve ser bem compreendido
+- Saídas gráficas representam um resultado estatístico
+- Apresentação do comportamento dos dados de forma resumida
+- Não é uma tarefa fácil nem corriqueira
+
+---
+
+## Introdução
+
+- Uma forma direta de obter saídas gráficas: pacotes esquisse e ggplotgui
+- Esse não é o nosso objetivo
+- Apresentar o pacote ggplot2 de forma lenta e gradativa
+- O seu diferencial com relação a outros pacotes
+- Funções de saídas gráficas: base do R
+
+---
+
+## Pacotes necessários
+
+- Instalação e carregamento dos pacotes no R
+
+Código:
+
+
+```{r , echo = TRUE, eval=FALSE, message = FALSE, warning = FALSE}
+ #nomes dos pacotes
+ packages <- c("dplyr","tidyverse","lattice",  "rgdal", "rgeos",
+ "maptools", "plyr", "sf", "covid19br", "RColorBrewer")
+
+ # instala os pacotes que não estão instalados
+ installed_packages <- packages %in% rownames(installed.packages())
+ if (any(installed_packages == FALSE)) {
+   install.packages(packages[!installed_packages])
+ }
+
+# carrega os pacotes
+invisible(lapply(packages, library, character.only = TRUE))
+```
+
+---
+
+## Base de dados
+
+- Base de dados disponível no R: [mtcars](https://gist.github.com/seankross/a412dfbd88b3db70b74b)
+- Coletados da revista "Motor Trend US (1974)"
+- 32 modelos de automóveis: consumo de combustível e outros 10 aspectos de design e desempenho
+
+---
+
+## Base de dados
+
+- Preparando a base de dados
+
+```{r ,mtcars, echo =TRUE}
+mtcars <- within(mtcars, {
+   vs <- factor(vs, labels = c("V", "S"))
+   am <- factor(am, labels = c("automatica", "manual"))
+   cyl  <- ordered(cyl)
+   gear <- ordered(gear)
+   carb <- ordered(carb)})
+summary(mtcars)
+```
+
+
+---
+
+
+## Porque o pacote ggplot2
+
+- Vamos construir algumas saídas gráficas
+- Utilzar as funções do pacote graphics: base do R
+- Pacote lattice
+
+---
+
+## Porque o pacote ggplot2 (base)
+
+.pull-left[
+```{r , echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+hist(mtcars$mpg,
+     col = "lightblue",
+     main = "Função hist (base)",
+     xlab = "Milhas por galão (mpg)",
+     ylab = "Frequência absoluta")
+```
+]
+
+.pull-right[
+```{r fig1, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+hist(mtcars$mpg,
+     col = "lightblue",
+     main = "Função hist (base)",
+     xlab = "Milhas por galão (mpg)",
+     ylab = "Frequência absoluta")
+```
+]
+
+---
+
+## Porque o pacote ggplot2 (lattice)
+
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+library(lattice)
+histogram(~mpg,data=mtcars, 
+          type ="count", 
+          xlab ="Milhas por galão (mpg)",
+       ylab = "Frequência absoluta", 
+       main ="Função histogram (lattice)",
+       col = "lightblue", breaks = 5)
+```
+]
+
+.pull-right[
+```{r fig2, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+library(lattice)
+histogram(~mpg,data=mtcars, type ="count",  xlab ="Milhas por galão (mpg)",
+       ylab = "Frequência absoluta", main ="Função histogram (lattice)",
+       col = "lightblue", breaks = 5)
+```
+]
+
+---
+
+## Porque o pacote ggplot2 (base)
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+tab <- table(mtcars$cyl)
+barplot(tab, 
+        col = "lightblue",
+        main = "Função barplot (base)", 
+  xlab = "Número de cilindros por motor (cyl)", 
+  ylab = "Frequência absoluta")
+```
+]
+
+.pull-right[
+```{r fig3, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+tab <- table(mtcars$cyl)
+barplot(tab, 
+        col = "lightblue", 
+        main = "Função barplot (base)", 
+       xlab = "Número de cilindros por motor (cyl)", 
+       ylab = "Frequência absoluta")
+```
+]
+
+---
+
+## Porque o pacote ggplot2 (lattice)
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+library(lattice)
+tabela <- xtabs(~cyl, data = mtcars)
+barchart(tabela,
+         horizontal = FALSE, 
+         main = "Função barchart (lattice)",
+         xlab = "Número de cilindros por motor (cyl)", 
+         ylab = "Frequência absoluta", 
+         col = "lightblue")
+```
+]
+
+.pull-right[
+```{r fig4, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+library(lattice)
+tabela <- xtabs(~cyl, data = mtcars)
+barchart(tabela, horizontal = FALSE, main = "Função barchart (lattice)",
+         xlab = "Número de cilindros por motor (cyl)", ylab = "Frequência absoluta", 
+         col = "lightblue")
+```
+]
+
+---
+
+## Porque o pacote ggplot2
+
+Não é necessário:
+
+- comandos específicos para cada gráfico gerado
+
+- funções adicionais (table ou xtabs)
+
+- conhecimento prévio de cada uma das funções
+
+- sintaxe fixa e única
+
+---
+
+## O pacote ggplot2
+
+Estatístico, cientista computacional e professor adjunto norte-americano
+
+- Leland Wilkinson (2005)
+- "The grammar of Graphics"
+- mapeamento dos dados em atributos estéticos (posição, cor, forma, tamanho, etc)
+- formas geométricas (pontos, linhas, barras, caixas, etc)
+- Hadley Wickham (2008)
+- Respondeu a pergunta: "O que é um gráfico estatístico?"
+- Livro "A Layered Grammar of Graphics"
+
+---
+
+## O pacote ggplot2
+
+Vantagens:
+
+- Os gráficos construídos são mais bonitos e apresentáveis
+- Fácil personalização
+- Apresentam uma estrutura (sintaxe) única e padronizada
+
+---
+
+## O pacote ggplot2
+
+- Elementos de um gráfico: dados, sistema de coordenadas, rótulos, anotações
+- Sobreposição de camadas
+- Criou o pacote ggplot2
+- Essência: construir um gráfico estatístico camada por camada
+
+---
+
+## A gramática em camada de gráficos
+
+Descrevendo um gráfico estatístico:
+
+| Elementos | Exemplos |
+|----------------|-----------------------------------------------------------------------|
+| **aes**tética$^*$ | cor, formato|
+| **geom**etrias$^*$ | barra, ponto|
+| e**stat**ísticas (modelos) | mediana, máximo|
+| **facet**as | facetas|
+| **coord**enadas | polar, cartesiana|
+| **them**as | eixos, títulos|
+
+---
+
+## Passos
+
+Primeiro passo:
+
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+ggplot(mtcars)
+```
+]
+
+.pull-right[
+```{r fig5, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+library(ggplot2)
+ ggplot(mtcars)
+```
+]
+
+---
+
+## Passos
+
+Segundo passo: gráfico de dispersão
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg))
+```
+]
+
+.pull-right[
+```{r fig6, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+ ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg))
+```
+]
+
+---
+
+## Os tipos de geometrias (geom)
+
+Principais:
+
+- point (pontos); line (dispersão);
+- bar (barras); col (colunas); errorbar (barra de erros)
+- boxplot; histogram(histogramas), density (densidades), sf (mapas)
+
+---
+
+## Argumentos de estética (aes)
+
+Principais:
+
+- variáveis (x, y, z)
+- cores (color, colour, fill)
+- tonalidade (alpha)
+- formas (shape, linetype)
+- tamanhos (size)
+
+---
+
+## A escolha das cores
+
+Argumento color (colour):
+
+- Objetos geométricos que não possuem área
+- Pontos, linhas, borda de gráficos e mapas, etc
+
+Argumento fill :
+
+- Preenchimento
+- Objetos geométricos que possuem área não nula
+- Caixas, colunas, círculos, polígonos, etc
+
+---
+
+## O argumento color
+
+Exemplo: Gráfico de dispersão
+
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, 
+                           y=mpg, 
+                           color=as.factor(am)))
+```
+]
+
+.pull-right[
+```{r fig7, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+ ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg, color=as.factor(am)))
+```
+]
+
+---
+
+## O argumento color
+
+Exemplo: Gráfico de dispersão
+
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, 
+                           y=mpg),
+             color=c("red"))
+```
+]
+
+.pull-right[
+```{r fig8, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+ ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg), color=c("red"))
+```
+]
+
+---
+
+## O argumento fill
+
+Exemplo: gráfico de barras
+
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+ggplot(mtcars, aes(x = as.factor(cyl))) +
+  geom_bar(aes(fill=as.factor(am)))
+```
+]
+
+.pull-right[
+```{r fig9, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+ ggplot(mtcars, aes(x = as.factor(cyl))) +
+  geom_bar(aes(fill=as.factor(am)))
+```
+]
+
+---
+
+## O argumento fill
+
+Exemplo: gráfico de barras
+
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+ggplot(mtcars, aes(x = as.factor(cyl))) +
+  geom_bar(fill = "red")
+```
+]
+
+.pull-right[
+```{r fig10, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+ ggplot(mtcars, aes(x = as.factor(cyl))) +
+  geom_bar(fill = "red")
+```
+]
+
+---
+
+## O argumento alpha (tonalidade das cores)
+
+Exemplo: gráfico de barras
+
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+ggplot(mtcars, aes(x = as.factor(cyl))) +
+  geom_bar(aes(alpha = as.factor(cyl),
+               fill = as.factor(cyl)))
+```
+]
+
+.pull-right[
+```{r fig11, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+ ggplot(mtcars, aes(x = as.factor(cyl))) +
+  geom_bar(aes(alpha = as.factor(cyl), fill = as.factor(cyl)))
+```
+]
+
+---
+
+## O argumento forma (shape)
+
+Exemplo: Gráfico de dispersão (Exclusivo)
+
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, 
+                           y=mpg,
+                           color=as.factor(am), 
+                           shape = as.factor(carb)))
+```
+]
+
+.pull-right[
+```{r fig12, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+ ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, 
+                           y=mpg, 
+                           color=as.factor(am), 
+                           shape = as.factor(carb)))
+```
+]
+
+---
+
+## O argumento forma (linetype)
+
+Exemplo: Gráfico de linhas (Exclusivo)
+
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+ggplot(mtcars) +
+  geom_line(mapping = aes(x= disp, 
+                          y=mpg, 
+                          linetype = as.factor(am), 
+                          color = as.factor(am)))
+```
+]
+
+.pull-right[
+```{r fig13, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+ ggplot(mtcars) +
+  geom_line(mapping = aes(x= disp, 
+                          y=mpg, 
+                          linetype = as.factor(am), 
+                          color = as.factor(am)))
+```
+]
+
+
+---
+
+## O argumento tamanho (size)
+
+Exemplo: Gráfico de dispersão
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, 
+                           y=mpg, 
+                           color=as.factor(am), 
+        shape = as.factor(carb), 
+        size = as.factor(cyl)))
+```
+]
+
+.pull-right[
+```{r fig14, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+ ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, 
+                           y=mpg, 
+                           color=as.factor(am), 
+        shape = as.factor(carb), 
+        size = as.factor(cyl)))
+```
+]
+
+---
+
+## O argumento tamanho (size)
+
+Exemplo: Gráfico de linhas
+
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+ggplot(mtcars) +
+  geom_line(mapping = aes(x= disp,
+                          y=mpg, 
+                          linetype = as.factor(am), 
+              color = as.factor(am), 
+              size = as.factor(cyl)))
+```
+]
+
+.pull-right[
+```{r fig15, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+ ggplot(mtcars) +
+  geom_line(mapping = aes(x= disp, y=mpg, linetype = as.factor(am), 
+              color = as.factor(am), size = as.factor(cyl)))
+```
+]
+
+
+---
+
+## Retirando variáveis da legenda (guides)
+
+Linha de comando: guides(nome = "none)
+
+- guides(color = "none")
+- guides(fill = "none)
+- guides(shape = "none")
+- guides(size = "none")
+
+---
+
+## A escolha dos rótulos dos eixos (labs)
+
+Linha de comando: labs()
+
+- labs(x="nome", y= "nome", color="nome", fill="nome",...)
+- labs(size="none") (não rotula)
+
+---
+
+
+## A escala dos eixos (scale)
+
+Linha de comando: scale_eixo_tipo
+
+- eixo x: scale_x_discrete
+- eixo y: scale_y_discrete
+- eixo x: scale_x_continuous
+- eixo y: scale_y_continuous
+
+---
+
+
+## A escolha dos temas (theme)
+
+Linha de comando: theme_nome()
+
+- theme_gray; theme_bw()
+- theme_linedraw(); theme_light
+- theme_dark(); theme_minimal
+- theme_classic(); theme_void()
+
+---
+
+
+## A escolha do título (ggtitle)
+
+Linha de comando: ggtitle("nome")
+
+Exemplo:
+
+- ggtitle("Média de casos de COVID-19 - Brasil - 2021")
+
+---
+
+
+# Gráficos mais elaborados
+
+---
+
+## Exemplo (Gráfico de dispersão)
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, 
+                           y=mpg, 
+                           color = as.factor(am),
+                           shape = as.factor(am)))+
+  guides(shape = "none")+
+  labs(x = "Distância percorrida (disp)", 
+       y = "Milhas percorridas por galão (mpg)", 
+    color = "Tipo de Transmissão", 
+    size ="Número de Carburadores (motor)")+
+  theme_classic()+
+  ggtitle("mpg vs disp: tipo de transmissão")
+```
+]
+
+.pull-right[
+```{r fig16, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+ ggplot(mtcars) +
+  geom_point(mapping = aes(x= disp, y=mpg, color = as.factor(am),
+                           shape = as.factor(am)))+
+  guides(shape = "none")+
+  labs(x = "Distância percorrida (disp)", y = "Milhas percorridas por galão (mpg)", 
+    color = "Tipo de Transmissão", size ="Número de Carburadores (motor)")+
+  theme_classic()+
+  ggtitle("mpg vs disp: tipo de transmissão")
+```
+]
+
+---
+
+## Gráfico de barras
+
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+ggplot(mtcars) +
+  geom_bar(mapping = aes(x= as.factor(carb), 
+                         y = (..count..), 
+                         fill = as.factor(am)),
+         position = "dodge", 
+         color = "black")+
+  scale_y_continuous(limits = c(0,8))+
+  labs(x = "Número de Carburadores (motor)", 
+       y = "Frequência absoluta", 
+       fill = "Tipo de Transmissão")+
+  theme_classic()+
+  ggtitle("Número de carburadores (motor): tipo de transmissão")
+```
+]
+
+.pull-right[
+```{r fig17, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+ ggplot(mtcars) +
+  geom_bar(mapping = aes(x= as.factor(carb), 
+                         y = (..count..), 
+                         fill = as.factor(am)),
+         position = "dodge", color = "black")+
+  scale_y_continuous(limits = c(0,8))+
+  labs(x = "Número de Carburadores (motor)", 
+       y = "Frequência absoluta", 
+       fill = "Tipo de Transmissão")+
+  theme_classic()+
+  ggtitle("Número de carburadores (motor): tipo de transmissão")
+```
+]
+
+---
+
+## Histograma
+
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+ggplot(mtcars) +
+  geom_histogram(mapping = aes(x = mpg, 
+                               y = (..count..)/100, 
+                               fill = as.factor(carb)),
+           bins= 5, color = "black") +
+  labs(x = "Milhas percorridas por galão (mpg)",
+       y = "Frequência relativa",
+       fill = "Número de carburadores")+
+  theme_classic()+
+  ggtitle("Milhas percorrida por galão (mpg)")
+```
+]
+
+.pull-right[
+```{r fig18, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+ ggplot(mtcars) +
+  geom_histogram(mapping = aes(x = mpg, y = (..count..)/100, fill = as.factor(carb)),
+           bins= 5, color = "black") +
+  labs(x = "Milhas percorridas por galão (mpg)", y = "Frequência relativa",
+       fill = "Número de carburadores")+
+  theme_classic()+
+  ggtitle("Milhas percorrida por galão (mpg)")
+```
+]
+
+---
+
+## Histograma
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+ggplot(mtcars) +
+  geom_histogram(mapping = aes(x = mpg, 
+                               y = (..count..)/100, 
+                               fill = as.factor(carb)),
+           bins= 5, color = "black") +
+  labs(x = "Milhas percorridas por galão (mpg)",
+       y = "Frequência relativa",
+       fill = "Número de carburadores")+
+  theme_classic()+
+  ggtitle("Milhas percorrida por galão (mpg)")+
+  facet_wrap(~as.factor(carb))# facetas
+```
+]
+
+.pull-right[
+```{r fig19, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+ ggplot(mtcars) +
+  geom_histogram(mapping = aes(x = mpg, y = (..count..)/100, fill = as.factor(carb)),
+           bins= 5, color = "black") +
+  labs(x = "Milhas percorridas por galão (mpg)", y = "Frequência relativa",
+       fill = "Número de carburadores")+
+  theme_classic()+
+  ggtitle("Milhas percorrida por galão (mpg)")+
+  facet_wrap(~as.factor(carb))# facetas
+```
+]
+
+---
+
+## Box-plot
+
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+ggplot(mtcars) +
+  geom_boxplot(mapping = aes(x = as.factor(carb),
+                             y=mpg, 
+                             fill = as.factor(am)),
+               color = "black")+
+  labs(x = "Número de carburadores (carb)", 
+       y = "Milhas percorridas v.s. galão (mpg)", 
+       fill = "Tipo de transmissão")+
+  theme_classic()+
+  ggtitle("Distribuição mpg por carb: tipo de transmissão")
+```
+]
+
+.pull-right[
+```{r fig20, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+ ggplot(mtcars) +
+  geom_boxplot(mapping = aes(x = as.factor(carb),y=mpg, fill = as.factor(am)),color = "black")+
+  labs(x = "Número de carburadores (carb)", y = "Milhas percorridas v.s. galão (mpg)", 
+       fill = "Tipo de transmissão")+
+  theme_classic()+
+  ggtitle("Distribuição mpg por carb: tipo de transmissão")
+```
+]
+
+---
+
+## Densidades
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+ggplot(mtcars) +
+  geom_density(mapping = aes(x = mpg, 
+                             fill = as.factor(carb)), 
+               color = "black", 
+               alpha = 0.1) +
+  labs(x = "Milhas percorridas por galão (mpg)", y = "Densidades", 
+       fill = "Número de carburadores")+
+  theme_classic()+
+  ggtitle("Densidade mpg")
+```
+]
+
+.pull-right[
+```{r fig21, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+ ggplot(mtcars) +
+  geom_density(mapping = aes(x = mpg, fill = as.factor(carb)), color = "black", alpha = 0.1) +
+  labs(x = "Milhas percorridas por galão (mpg)", y = "Densidades", 
+       fill = "Número de carburadores")+
+  theme_classic()+
+  ggtitle("Densidade mpg")
+```
+]
+
+---
+
+# Segunda parte
+
+---
+
+## Data mining
+
+- Minerar um conjunto de dados original 
+- pacotes tydyverse, tibble e dplyr do R.
+
+---
+
+## Pacote covid19br
+
+- Criado por pesquisadores da UFMG
+- permite a coleta, em tempo real, de algumas informações sobre a doença COVID-19
+- nas unidades de saúde do Brasil
+- unidade de federação (states), por municípios (cities), regiões (regions)
+- no mundo por país (country)
+- informações como número de casos e mortes novos e acumulados diários
+- separadas por semana epidemiológica, datas, entre outros
+
+---
+
+## Apresentando o conjunto de dados
+
+```{r, echo=TRUE, warning=FALSE, message=FALSE}
+data <- downloadCovid19("states")# dados por municípios brasileiros
+glimpse(data)
+```
+
+---
+
+## A estrutura (tibble)
+
+- um data frame com algumas particularidades
+- dimensão dos dados
+- o tipo de variável (categórica, inteiro, caractere, etc.)
+
+| Representação | Tipo de variável | 
+|----------------|-----------------------------------------------------------------------|
+| int | números inteiros|
+| dbl | doubles (números reais)|
+| chr | vetores de caracteres (strings)|
+| dttm | datas-tempos (uma data + um horário)|
+| fctr | valores lógicos (TRUE ou FALSE)|
+| date | datas|
+
+---
+
+## Caracteres lógicos necessários
+
+| Caractere lógico | Representação |
+|----------------|-----------------------------------------------------------------------|
+| == | igual|
+| & | conectivo "e" (interseção)|
+| \ | conectivo "ou" (união)|
+| > | maior do que|
+| < | menor do que|
+| >= | maior do que ou igual a|
+| <= | menor do que ou igual a|
+| != | diferente|
+| %in% | concatenar|
+
+---
+
+## Funções básicas do pacote dplyr
+
+| Funções | Resultados |
+|----------------|-----------------------------------------------------------------------|
+| filter() | seleciona observações das variáveis por seus valores assumidos|
+| arrange() | reordena as linhas (observações)|
+| select() | seleciona variáveis por seus nomes (rótulos)|
+| mutate() | cria novas variáveis com funções de variáveis existentes|
+| summarize() | reune muitos valores em um único resumo|
+| group_by() | muda o escopo de cada função anterior em todo o conjunto de dados para operar grupo por grupo.|
+
+---
+
+## Exemplificando
+
+```{r, echo=TRUE}
+filter(data, 
+       date >= "2022-02-20" &  state == "SP" & epi_week == 8)
+```
+
+---
+
+## Exemplificando
+
+```{r, echo=TRUE}
+arrange(data, 
+        state)
+```
+
+---
+
+## Exemplificando
+
+```{r, echo=TRUE}
+select(data, 
+       region,
+       date,
+       state,
+       newCases,
+       accumCases)
+```
+
+---
+
+## Exemplificando
+
+```{r, echo=TRUE}
+mutate(data, 
+       rate_newcases = newCases/pop*100000)
+```
+
+---
+
+## Exemplificando
+
+```{r, echo=TRUE}
+summarize(data, 
+          mean_newdeaths=mean(newDeaths), 
+          desv_pad= sd(newDeaths),
+          standard_error=desv_pad/sqrt(length(data)))
+```
+
+---
+
+## Exemplificando
+
+```{r, echo=TRUE}
+group_by(data, 
+         region,
+         epi_week)
+```
+
+---
+
+## Situação real
+
+- Conhecer quantas mortes por COVID-19
+- Cada uma das UF's brasileiras
+- dia 20-02-2022 e na oitava semana epidemiológica
+
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+Dados <- select(data, 
+                epi_week , 
+                state, 
+                newDeaths, 
+                date)
+resultados <- filter(Dados, 
+                     epi_week == 8 & date == "2022-02-20")
+head(resultados)
+```
+]
+
+.pull-right[
+```{r fig22, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+  Dados <- select(data, epi_week , state, newDeaths, date)
+resultados <- filter(Dados, epi_week == 8 & date == "2022-02-20")
+head(resultados)
+```
+]
+
+---
+
+## Saída gráfica
+
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+ggplot(resultados)+
+geom_col(aes(x=as.factor(state),
+             y=newDeaths,
+             fill=as.factor(state)),
+alpha=0.65, position = "stack")+
+labs(x = "Unidades da federação",
+     y = "Novas mortes",
+     fill = "UF")+
+  ggtitle("Situação COVID-19 - Brasil - 20-02-2022")+
+theme_classic()
+```
+]
+
+.pull-right[
+```{r fig23, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+  ggplot(resultados)+
+geom_col(aes(x=as.factor(state), y=newDeaths, fill=as.factor(state)),
+alpha=0.65, position = "stack")+
+labs(x = "Unidades da federação", y = "Novas mortes",
+     fill = "UF")+
+  ggtitle("Situação COVID-19 - Brasil - 20-02-2022")+
+theme_classic()
+```
+]
+
+---
+
+## O operador pipe (%>%)
+
+- atribuímos dois labels: Dados e resultados
+- para um único gráfico
+- pacote magrittr
+- Informalmente: %>% pode ser entendido como "vem mais coisas por ai"
+- Formalmente: f(a) = y, então: g(.) tem como primeiro argumento de entrada f(a)
+- g(f(a),...)
+
+---
+
+## Saída gráfica
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+Dados <- select(data, 
+                epi_week,
+                state, 
+                newDeaths, 
+                date) %>%
+  filter(epi_week == 8 & date == "2022-02-20")
+ggplot(Dados)+
+geom_col(aes(x=as.factor(state), 
+             y=newDeaths, 
+             fill=as.factor(state)),
+alpha=0.65, position = "stack")+
+labs(x = "Unidades da federação",
+     y = "Novas mortes",
+     fill = "UF")+
+  ggtitle("Situação COVID-19 - Brasil - 20-02-2022")+
+theme_classic()
+```
+]
+
+.pull-right[
+```{r fig24, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+  library(geobr)
+Dados <- select(data, epi_week , state, newDeaths, date) %>%
+  filter(epi_week == 8 & date == "2022-02-20")
+ggplot(Dados)+
+geom_col(aes(x=as.factor(state), y=newDeaths, fill=as.factor(state)),
+alpha=0.65, position = "stack")+
+labs(x = "Unidades da federação", y = "Novas mortes",
+     fill = "UF")+
+  ggtitle("Situação COVID-19 - Brasil - 20-02-2022")+
+theme_classic()
+```
+]
+
+---
+
+## Comprações entre as UF's
+
+- taxas de novas mortes
+- devido a heterogeneidade populacional
+- mutate: criar a variável rate_newDeaths
+- constante IBGE: 100000
+
+---
+
+## Saída gráfica
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+Dados <- select(data, 
+                epi_week ,
+                state, 
+                newDeaths, 
+                date, 
+                pop) %>%
+  filter(epi_week == 8 & date == "2022-02-20")%>%
+  mutate(rate_newDeaths = newDeaths/pop*100000)
+ggplot(Dados)+
+geom_col(aes(x=as.factor(state), 
+             y=rate_newDeaths, 
+             fill=as.factor(state)),
+alpha=0.65, position = "stack")+
+labs(x = "Unidades da federação", 
+     y = "Taxa de novas mortes",
+     fill = "UF")+
+  ggtitle("Situação COVID-19 - Brasil - 20-02-2022")+
+theme_classic()
+```
+
+]
+
+.pull-right[
+```{r fig25, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+  library(geobr)
+Dados <- select(data, epi_week , state, newDeaths, date, pop) %>%
+  filter(epi_week == 8 & date == "2022-02-20")%>%
+  mutate(rate_newDeaths = newDeaths/pop*100000)
+ggplot(Dados)+
+geom_col(aes(x=as.factor(state), y=rate_newDeaths, fill=as.factor(state)),
+alpha=0.65, position = "stack")+
+labs(x = "Unidades da federação", y = "Taxa de novas mortes",
+     fill = "UF")+
+  ggtitle("Situação COVID-19 - Brasil - 20-02-2022")+
+theme_classic()
+```
+]
+
+---
+
+## Situação real
+
+- conhecer a evolução diária dos novos casos
+- entre as semanas epidemiológicas 1 e 8
+- anos: 2021 e 2022
+- região: sudeste
+- UF's
+
+---
+
+## Saída gráfica
+
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+cor <- heat.colors(4, rev = TRUE)
+resultados <- data %>%
+mutate(year = as.numeric(format(date, "%Y")),
+       rate = newCases/pop*100000)%>%
+select(newDeaths, 
+       epi_week, 
+       state, 
+       year, 
+       rate)%>%
+filter(epi_week>= 1 & epi_week <= 8 & state %in% c("SP", "RJ", "MG", "ES") & year %in% c(2021, 2022))
+ggplot(resultados, 
+       aes(x=as.factor(epi_week), 
+                       y = rate, 
+                       fill=as.factor(state)))+
+facet_wrap(~year)+
+geom_bar(stat="identity", 
+         position = "dodge", 
+         alpha=0.45) +
+labs(x = "Semana de infecção", 
+     y = "Novas mortes - Sudeste") +
+  ggtitle(paste("Nvos casos: COVID-19 - Região Sudeste", 
+                "\n",
+                "semanas epidemiológicas: 1 a 8 - 2021 e 2022"))+
+theme_classic()
+```
+
+]
+
+.pull-right[
+```{r fig26, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+  library(geobr)
+cor <- heat.colors(4, rev = TRUE)
+resultados <- data %>%
+mutate(year = as.numeric(format(date, "%Y")),
+       rate = newCases/pop*100000)%>%
+select(newDeaths, 
+       epi_week, 
+       state,
+       year, 
+       rate)%>%
+filter(epi_week>= 1 & 
+         epi_week <= 8 & 
+         state %in% c("SP", "RJ", "MG", "ES") &
+         year %in% c(2021, 2022))
+ggplot(resultados, 
+       aes(x=as.factor(epi_week), 
+           y = rate, 
+           fill=as.factor(state)))+
+facet_wrap(~year)+
+geom_bar(stat="identity", 
+         position = "dodge", alpha=0.45) +
+labs(x = "Semana de infecção",
+     y = "Novas mortes - Sudeste") +
+  ggtitle(paste("Nvos casos: COVID-19 - Região Sudeste",
+                "\n", 
+                "semanas epidemiológicas: 1 a 8 - 2021 e 2022"))+
+theme_classic()
+```
+]
+
+---
+
+## Produção de mapas
+
+- pacote geobr: Ipea
+- mapas: representam o meio onde estamos
+- arquivo que contenha as coordenadas da região estudada
+- shape.file, raster
+- formato dos dados: sf (simple features ou recursos simples)
+
+---
+
+## Preparando os dados
+
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+library(geobr)
+uf <- data %>%
+  select(state, 
+         newDeaths, 
+         newCases, 
+         accumDeaths, 
+         accumCases,
+         pop, 
+         date)%>%
+  filter(date == "2022-02-23")%>%
+  mutate(ratenewcases = newCases/pop*100000,
+            rateaccumcases = accumCases/pop*100000,
+            ratenewdeaths = newDeaths/pop*100000,
+            rateaccumdeaths = accumDeaths/pop*100000)
+dados_mapa <- read_state(year=2019, showProgress = FALSE)
+colnames(dados_mapa)[2] <- "state"
+dados_final <- left_join(dados_mapa, uf, "state")
+dados_final
+```
+
+]
+
+.pull-right[
+```{r fig27, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+  library(geobr)
+uf <- data %>%
+  select(state, newDeaths, newCases, accumDeaths, accumCases, pop, date)%>%
+  filter(date == "2022-02-23")%>%
+  mutate(ratenewcases = newCases/pop*100000,
+            rateaccumcases = accumCases/pop*100000,
+            ratenewdeaths = newDeaths/pop*100000,
+            rateaccumdeaths = accumDeaths/pop*100000)
+dados_mapa <- read_state(year=2019, showProgress = FALSE)
+colnames(dados_mapa)[2] <- "state"
+dados_final <- left_join(dados_mapa, uf, "state")
+dados_final
+```
+]
+
+---
+
+## Produção mapa (Taxa de novos casos)
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+  ggplot(dados_final) +
+  geom_sf(aes(fill = ratenewcases), 
+          color = "black") +
+  geom_sf_text(aes(label = state), 
+               size = 2, 
+               color = "white")+
+  labs(title = paste("Novos casos - COVID-19", 
+                     "\n", 
+                     "Brasil - 23-02-2022"), 
+       fill = "Taxa") +
+  theme_minimal()+
+  theme(axis.title = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
+```
+]
+
+.pull-right[
+```{r fig28, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+  ggplot(dados_final) +
+  geom_sf(aes(fill = ratenewcases), color = "black") +
+  geom_sf_text(aes(label = state), size = 2, color = "white")+
+  labs(title = paste("Novos casos", "\n", "Brasil - 23-02-2022"), 
+       fill = "Taxa (Brasil)") +
+  theme_minimal()+
+  theme(axis.title = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
+```
+]
+
+---
+
+## Produção mapa (Taxa de novas mortes)
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+  ggplot(dados_final) +
+  geom_sf(aes(fill = ratenewdeaths), 
+          color = "black") +
+  geom_sf_text(aes(label = state), 
+               size = 2, 
+               color = "white")+
+  labs(title = paste("Novas mortes - COVID-19", 
+                     "\n", 
+                     "Brasil - 23-02-2022"), 
+       fill = "Taxa") +
+  theme_minimal()+
+  theme(axis.title = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
+```
+]
+
+.pull-right[
+```{r fig29, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+  ggplot(dados_final) +
+  geom_sf(aes(fill = ratenewdeaths), color = "black") +
+  geom_sf_text(aes(label = state), size = 2, color = "white")+
+  labs(title = paste("Novas mortes", "\n", "Brasil - 23-02-2022"), 
+       fill = "Taxa (Brasil)") +
+  theme_minimal()+
+  theme(axis.title = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
+```
+]
+
+
+---
+
+## Produção mapa (Taxa de casos acumulados)
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+  ggplot(dados_final) +
+  geom_sf(aes(fill = rateaccumcases), 
+          color = "black") +
+  geom_sf_text(aes(label = state), 
+               size = 2, 
+               color = "white")+
+  labs(title = paste("Casos acumulados - COVID-19", 
+                     "\n", 
+                     "Brasil - 23-02-2022"), 
+       fill = "Taxa") +
+  theme_minimal()+
+  theme(axis.title = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
+```
+]
+
+.pull-right[
+```{r fig30, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+  ggplot(dados_final) +
+  geom_sf(aes(fill = rateaccumcases), color = "black") +
+  geom_sf_text(aes(label = state), size = 2, color = "white")+
+  labs(title = paste("Casos acumulados", "\n", "Brasil - 23-02-2022"), 
+       fill = "Taxa (Brasil)") +
+  theme_minimal()+
+  theme(axis.title = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
+```
+]
+
+
+---
+
+## Produção mapa (Taxa de casos acumulados)
+
+.pull-left[
+```{r, echo=TRUE, fig.align = 'center', out.width="50%", message=FALSE, warning=FALSE, eval=FALSE}
+  ggplot(dados_final) +
+  geom_sf(aes(fill = rateaccumdeaths), 
+          color = "black") +
+  geom_sf_text(aes(label = state), 
+               size = 2, 
+               color = "white")+
+  labs(title = paste("Mortes acumuladas - COVID-19", 
+                     "\n", 
+                     "Brasil - 23-02-2022"), 
+       fill = "Taxa") +
+  theme_minimal()+
+  theme(axis.title = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
+```
+]
+
+.pull-right[
+```{r fig31, echo=FALSE, fig.align = 'center', out.width="100%", message=FALSE, warning=FALSE, dev='svg'}
+  ggplot(dados_final) +
+  geom_sf(aes(fill = rateaccumdeaths), color = "black") +
+  geom_sf_text(aes(label = state), size = 2, color = "white")+
+  labs(title = paste("Mortes acumuladas", "\n", "Brasil - 23-02-2022"), 
+       fill = "Taxa (Brasil)") +
+  theme_minimal()+
+  theme(axis.title = element_blank(),
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
+```
+]
+
+
+---
+
+# Material de apoio
+
+[ggplot2: elegant graphics for data analysis](https://ggplot2-book.org/)
+
+[R for Data Science](https://r4ds.had.co.nz/)
+
+[R Graphics Cookbook](https://r-graphics.org/)
+
+
+
+

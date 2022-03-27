@@ -1,0 +1,933 @@
+---
+title: "Saídas gráficas no R"
+subtitle: "introdução ao pacote ggplot2"
+author: "Henrique José de Paula Alves"
+institute: "Diest - Ipea"
+date: "21-03-2022"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<style>
+body {
+  text-align: justify;
+  }
+code.r{
+  font-size: 10px;
+}
+pre {
+  font-size: 12px
+}
+</style>
+<div id="material-de-apoio" class="section level1">
+<h1>Material de apoio</h1>
+<p><a href="http://localhost:4321/courses/example/python/">Material</a></p>
+<hr />
+<div id="o-que-você-vai-aprender" class="section level2">
+<h2>O que você vai aprender</h2>
+<ul>
+<li>Habilidades fundamentais de programação R</li>
+<li>Conceitos estatísticos e resultados gráficos: como aplicá-los</li>
+<li>Ganhe experiência com o R: visualização de dados com o pacote ggplot2 e mineração de dados com o pacote tidyverse</li>
+</ul>
+<hr />
+</div>
+<div id="visão-geral-do-curso" class="section level2">
+<h2>Visão geral do curso</h2>
+<ul>
+<li>Grande demanda por profissionais em estatística aplicada</li>
+<li>Mineração de dados e as saídas gráficas: passo fundamental em estatística aplicada</li>
+<li>Objetivo: apresentar duas importantes ferramentas disponíveis no software R: os pacotes tidyverse e ggplot2</li>
+</ul>
+<hr />
+</div>
+<div id="pré-requisitos" class="section level2">
+<h2>Pré-requisitos</h2>
+<ul>
+<li>É desejável que o aluno tenha algum conhecimento de programação em linguagem R</li>
+<li>É também desejável que o aluno tenha conhecimentos básicos de Estatística e Probabilidades</li>
+</ul>
+<hr />
+</div>
+<div id="introdução" class="section level2">
+<h2>Introdução</h2>
+<ul>
+<li>Todo e qualquer resultado estatístico deve ser bem compreendido</li>
+<li>Saídas gráficas representam um resultado estatístico</li>
+<li>Apresentação do comportamento dos dados de forma resumida</li>
+<li>Não é uma tarefa fácil nem corriqueira</li>
+</ul>
+<hr />
+</div>
+<div id="introdução-1" class="section level2">
+<h2>Introdução</h2>
+<ul>
+<li>Uma forma direta de obter saídas gráficas: pacotes esquisse e ggplotgui</li>
+<li>Esse não é o nosso objetivo</li>
+<li>Apresentar o pacote ggplot2 de forma lenta e gradativa</li>
+<li>O seu diferencial com relação a outros pacotes</li>
+<li>Funções de saídas gráficas: base do R</li>
+</ul>
+<hr />
+</div>
+<div id="pacotes-necessários" class="section level2">
+<h2>Pacotes necessários</h2>
+<ul>
+<li>Instalação e carregamento dos pacotes no R</li>
+</ul>
+<p>Código:</p>
+<pre class="r"><code> #nomes dos pacotes
+ packages &lt;- c(&quot;dplyr&quot;,&quot;tidyverse&quot;,&quot;lattice&quot;,  &quot;rgdal&quot;, &quot;rgeos&quot;,
+ &quot;maptools&quot;, &quot;plyr&quot;, &quot;sf&quot;, &quot;covid19br&quot;, &quot;RColorBrewer&quot;)
+
+ # instala os pacotes que não estão instalados
+ installed_packages &lt;- packages %in% rownames(installed.packages())
+ if (any(installed_packages == FALSE)) {
+   install.packages(packages[!installed_packages])
+ }
+
+# carrega os pacotes
+invisible(lapply(packages, library, character.only = TRUE))</code></pre>
+<hr />
+</div>
+<div id="base-de-dados" class="section level2">
+<h2>Base de dados</h2>
+<ul>
+<li>Base de dados disponível no R: <a href="https://gist.github.com/seankross/a412dfbd88b3db70b74b">mtcars</a></li>
+<li>Coletados da revista “Motor Trend US (1974)”</li>
+<li>32 modelos de automóveis: consumo de combustível e outros 10 aspectos de design e desempenho</li>
+</ul>
+<hr />
+</div>
+<div id="base-de-dados-1" class="section level2">
+<h2>Base de dados</h2>
+<ul>
+<li>Preparando a base de dados</li>
+</ul>
+<pre class="r"><code>mtcars &lt;- within(mtcars, {
+   vs &lt;- factor(vs, labels = c(&quot;V&quot;, &quot;S&quot;))
+   am &lt;- factor(am, labels = c(&quot;automatica&quot;, &quot;manual&quot;))
+   cyl  &lt;- ordered(cyl)
+   gear &lt;- ordered(gear)
+   carb &lt;- ordered(carb)})
+summary(mtcars)</code></pre>
+<pre><code>##       mpg        cyl         disp             hp             drat      
+##  Min.   :10.40   4:11   Min.   : 71.1   Min.   : 52.0   Min.   :2.760  
+##  1st Qu.:15.43   6: 7   1st Qu.:120.8   1st Qu.: 96.5   1st Qu.:3.080  
+##  Median :19.20   8:14   Median :196.3   Median :123.0   Median :3.695  
+##  Mean   :20.09          Mean   :230.7   Mean   :146.7   Mean   :3.597  
+##  3rd Qu.:22.80          3rd Qu.:326.0   3rd Qu.:180.0   3rd Qu.:3.920  
+##  Max.   :33.90          Max.   :472.0   Max.   :335.0   Max.   :4.930  
+##        wt             qsec       vs              am     gear   carb  
+##  Min.   :1.513   Min.   :14.50   V:18   automatica:19   3:15   1: 7  
+##  1st Qu.:2.581   1st Qu.:16.89   S:14   manual    :13   4:12   2:10  
+##  Median :3.325   Median :17.71                          5: 5   3: 3  
+##  Mean   :3.217   Mean   :17.85                                 4:10  
+##  3rd Qu.:3.610   3rd Qu.:18.90                                 6: 1  
+##  Max.   :5.424   Max.   :22.90                                 8: 1</code></pre>
+<hr />
+</div>
+<div id="porque-o-pacote-ggplot2" class="section level2">
+<h2>Porque o pacote ggplot2</h2>
+<ul>
+<li>Vamos construir algumas saídas gráficas</li>
+<li>Utilzar as funções do pacote graphics: base do R</li>
+<li>Pacote lattice</li>
+</ul>
+<hr />
+</div>
+<div id="porque-o-pacote-ggplot2-base" class="section level2">
+<h2>Porque o pacote ggplot2 (base)</h2>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig1-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="porque-o-pacote-ggplot2-lattice" class="section level2">
+<h2>Porque o pacote ggplot2 (lattice)</h2>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig2-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="porque-o-pacote-ggplot2-base-1" class="section level2">
+<h2>Porque o pacote ggplot2 (base)</h2>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig3-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="porque-o-pacote-ggplot2-lattice-1" class="section level2">
+<h2>Porque o pacote ggplot2 (lattice)</h2>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig4-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="porque-o-pacote-ggplot2-1" class="section level2">
+<h2>Porque o pacote ggplot2</h2>
+<p>Não é necessário:</p>
+<ul>
+<li><p>comandos específicos para cada gráfico gerado</p></li>
+<li><p>funções adicionais (table ou xtabs)</p></li>
+<li><p>conhecimento prévio de cada uma das funções</p></li>
+<li><p>sintaxe fixa e única</p></li>
+</ul>
+<hr />
+</div>
+<div id="o-pacote-ggplot2" class="section level2">
+<h2>O pacote ggplot2</h2>
+<p>Estatístico, cientista computacional e professor adjunto norte-americano</p>
+<ul>
+<li>Leland Wilkinson (2005)</li>
+<li>“The grammar of Graphics”</li>
+<li>mapeamento dos dados em atributos estéticos (posição, cor, forma, tamanho, etc)</li>
+<li>formas geométricas (pontos, linhas, barras, caixas, etc)</li>
+<li>Hadley Wickham (2008)</li>
+<li>Respondeu a pergunta: “O que é um gráfico estatístico?”</li>
+<li>Livro “A Layered Grammar of Graphics”</li>
+</ul>
+<hr />
+</div>
+<div id="o-pacote-ggplot2-1" class="section level2">
+<h2>O pacote ggplot2</h2>
+<p>Vantagens:</p>
+<ul>
+<li>Os gráficos construídos são mais bonitos e apresentáveis</li>
+<li>Fácil personalização</li>
+<li>Apresentam uma estrutura (sintaxe) única e padronizada</li>
+</ul>
+<hr />
+</div>
+<div id="o-pacote-ggplot2-2" class="section level2">
+<h2>O pacote ggplot2</h2>
+<ul>
+<li>Elementos de um gráfico: dados, sistema de coordenadas, rótulos, anotações</li>
+<li>Sobreposição de camadas</li>
+<li>Criou o pacote ggplot2</li>
+<li>Essência: construir um gráfico estatístico camada por camada</li>
+</ul>
+<hr />
+</div>
+<div id="a-gramática-em-camada-de-gráficos" class="section level2">
+<h2>A gramática em camada de gráficos</h2>
+<p>Descrevendo um gráfico estatístico:</p>
+<table>
+<colgroup>
+<col width="18%" />
+<col width="81%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Elementos</th>
+<th>Exemplos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>aes</strong>tética<span class="math inline">\(^*\)</span></td>
+<td>cor, formato</td>
+</tr>
+<tr class="even">
+<td><strong>geom</strong>etrias<span class="math inline">\(^*\)</span></td>
+<td>barra, ponto</td>
+</tr>
+<tr class="odd">
+<td>e<strong>stat</strong>ísticas (modelos)</td>
+<td>mediana, máximo</td>
+</tr>
+<tr class="even">
+<td><strong>facet</strong>as</td>
+<td>facetas</td>
+</tr>
+<tr class="odd">
+<td><strong>coord</strong>enadas</td>
+<td>polar, cartesiana</td>
+</tr>
+<tr class="even">
+<td><strong>them</strong>as</td>
+<td>eixos, títulos</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="passos" class="section level2">
+<h2>Passos</h2>
+<p>Primeiro passo:</p>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig5-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="passos-1" class="section level2">
+<h2>Passos</h2>
+<p>Segundo passo: gráfico de dispersão</p>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig6-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="os-tipos-de-geometrias-geom" class="section level2">
+<h2>Os tipos de geometrias (geom)</h2>
+<p>Principais:</p>
+<ul>
+<li>point (pontos); line (dispersão);</li>
+<li>bar (barras); col (colunas); errorbar (barra de erros)</li>
+<li>boxplot; histogram(histogramas), density (densidades), sf (mapas)</li>
+</ul>
+<hr />
+</div>
+<div id="argumentos-de-estética-aes" class="section level2">
+<h2>Argumentos de estética (aes)</h2>
+<p>Principais:</p>
+<ul>
+<li>variáveis (x, y, z)</li>
+<li>cores (color, colour, fill)</li>
+<li>tonalidade (alpha)</li>
+<li>formas (shape, linetype)</li>
+<li>tamanhos (size)</li>
+</ul>
+<hr />
+</div>
+<div id="a-escolha-das-cores" class="section level2">
+<h2>A escolha das cores</h2>
+<p>Argumento color (colour):</p>
+<ul>
+<li>Objetos geométricos que não possuem área</li>
+<li>Pontos, linhas, borda de gráficos e mapas, etc</li>
+</ul>
+<p>Argumento fill :</p>
+<ul>
+<li>Preenchimento</li>
+<li>Objetos geométricos que possuem área não nula</li>
+<li>Caixas, colunas, círculos, polígonos, etc</li>
+</ul>
+<hr />
+</div>
+<div id="o-argumento-color" class="section level2">
+<h2>O argumento color</h2>
+<p>Exemplo: Gráfico de dispersão</p>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig7-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="o-argumento-color-1" class="section level2">
+<h2>O argumento color</h2>
+<p>Exemplo: Gráfico de dispersão</p>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig8-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="o-argumento-fill" class="section level2">
+<h2>O argumento fill</h2>
+<p>Exemplo: gráfico de barras</p>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig9-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="o-argumento-fill-1" class="section level2">
+<h2>O argumento fill</h2>
+<p>Exemplo: gráfico de barras</p>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig10-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="o-argumento-alpha-tonalidade-das-cores" class="section level2">
+<h2>O argumento alpha (tonalidade das cores)</h2>
+<p>Exemplo: gráfico de barras</p>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig11-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="o-argumento-forma-shape" class="section level2">
+<h2>O argumento forma (shape)</h2>
+<p>Exemplo: Gráfico de dispersão (Exclusivo)</p>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig12-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="o-argumento-forma-linetype" class="section level2">
+<h2>O argumento forma (linetype)</h2>
+<p>Exemplo: Gráfico de linhas (Exclusivo)</p>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig13-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="o-argumento-tamanho-size" class="section level2">
+<h2>O argumento tamanho (size)</h2>
+<p>Exemplo: Gráfico de dispersão</p>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig14-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="o-argumento-tamanho-size-1" class="section level2">
+<h2>O argumento tamanho (size)</h2>
+<p>Exemplo: Gráfico de linhas</p>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig15-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="retirando-variáveis-da-legenda-guides" class="section level2">
+<h2>Retirando variáveis da legenda (guides)</h2>
+<p>Linha de comando: guides(nome = “none)</p>
+<ul>
+<li>guides(color = “none”)</li>
+<li>guides(fill = “none)</li>
+<li>guides(shape = “none”)</li>
+<li>guides(size = “none”)</li>
+</ul>
+<hr />
+</div>
+<div id="a-escolha-dos-rótulos-dos-eixos-labs" class="section level2">
+<h2>A escolha dos rótulos dos eixos (labs)</h2>
+<p>Linha de comando: labs()</p>
+<ul>
+<li>labs(x=“nome”, y= “nome”, color=“nome”, fill=“nome”,…)</li>
+<li>labs(size=“none”) (não rotula)</li>
+</ul>
+<hr />
+</div>
+<div id="a-escala-dos-eixos-scale" class="section level2">
+<h2>A escala dos eixos (scale)</h2>
+<p>Linha de comando: scale_eixo_tipo</p>
+<ul>
+<li>eixo x: scale_x_discrete</li>
+<li>eixo y: scale_y_discrete</li>
+<li>eixo x: scale_x_continuous</li>
+<li>eixo y: scale_y_continuous</li>
+</ul>
+<hr />
+</div>
+<div id="a-escolha-dos-temas-theme" class="section level2">
+<h2>A escolha dos temas (theme)</h2>
+<p>Linha de comando: theme_nome()</p>
+<ul>
+<li>theme_gray; theme_bw()</li>
+<li>theme_linedraw(); theme_light</li>
+<li>theme_dark(); theme_minimal</li>
+<li>theme_classic(); theme_void()</li>
+</ul>
+<hr />
+</div>
+<div id="a-escolha-do-título-ggtitle" class="section level2">
+<h2>A escolha do título (ggtitle)</h2>
+<p>Linha de comando: ggtitle(“nome”)</p>
+<p>Exemplo:</p>
+<ul>
+<li>ggtitle(“Média de casos de COVID-19 - Brasil - 2021”)</li>
+</ul>
+<hr />
+</div>
+</div>
+<div id="gráficos-mais-elaborados" class="section level1">
+<h1>Gráficos mais elaborados</h1>
+<hr />
+<div id="exemplo-gráfico-de-dispersão" class="section level2">
+<h2>Exemplo (Gráfico de dispersão)</h2>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig16-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="gráfico-de-barras" class="section level2">
+<h2>Gráfico de barras</h2>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig17-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="histograma" class="section level2">
+<h2>Histograma</h2>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig18-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="histograma-1" class="section level2">
+<h2>Histograma</h2>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig19-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="box-plot" class="section level2">
+<h2>Box-plot</h2>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig20-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="densidades" class="section level2">
+<h2>Densidades</h2>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig21-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+</div>
+<div id="segunda-parte" class="section level1">
+<h1>Segunda parte</h1>
+<hr />
+<div id="data-mining" class="section level2">
+<h2>Data mining</h2>
+<ul>
+<li>Minerar um conjunto de dados original</li>
+<li>pacotes tydyverse, tibble e dplyr do R.</li>
+</ul>
+<hr />
+</div>
+<div id="pacote-covid19br" class="section level2">
+<h2>Pacote covid19br</h2>
+<ul>
+<li>Criado por pesquisadores da UFMG</li>
+<li>permite a coleta, em tempo real, de algumas informações sobre a doença COVID-19</li>
+<li>nas unidades de saúde do Brasil</li>
+<li>unidade de federação (states), por municípios (cities), regiões (regions)</li>
+<li>no mundo por país (country)</li>
+<li>informações como número de casos e mortes novos e acumulados diários</li>
+<li>separadas por semana epidemiológica, datas, entre outros</li>
+</ul>
+<hr />
+</div>
+<div id="apresentando-o-conjunto-de-dados" class="section level2">
+<h2>Apresentando o conjunto de dados</h2>
+<pre class="r"><code>data &lt;- downloadCovid19(&quot;states&quot;)# dados por municípios brasileiros
+glimpse(data)</code></pre>
+<pre><code>## Rows: 28,539
+## Columns: 12
+## $ region       &lt;chr&gt; &quot;North&quot;, &quot;North&quot;, &quot;North&quot;, &quot;North&quot;, &quot;North&quot;, &quot;North&quot;, &quot;No~
+## $ state        &lt;chr&gt; &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO~
+## $ date         &lt;date&gt; 2020-02-25, 2020-02-26, 2020-02-27, 2020-02-28, 2020-02-~
+## $ epi_week     &lt;int&gt; 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11~
+## $ newCases     &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ accumCases   &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ newDeaths    &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ accumDeaths  &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ newRecovered &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ newFollowup  &lt;int&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
+## $ pop          &lt;dbl&gt; 1777225, 1777225, 1777225, 1777225, 1777225, 1777225, 177~
+## $ state_code   &lt;int&gt; 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 1~</code></pre>
+<hr />
+</div>
+<div id="a-estrutura-tibble" class="section level2">
+<h2>A estrutura (tibble)</h2>
+<ul>
+<li>um data frame com algumas particularidades</li>
+<li>dimensão dos dados</li>
+<li>o tipo de variável (categórica, inteiro, caractere, etc.)</li>
+</ul>
+<table>
+<colgroup>
+<col width="18%" />
+<col width="81%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Representação</th>
+<th>Tipo de variável</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>int</td>
+<td>números inteiros</td>
+</tr>
+<tr class="even">
+<td>dbl</td>
+<td>doubles (números reais)</td>
+</tr>
+<tr class="odd">
+<td>chr</td>
+<td>vetores de caracteres (strings)</td>
+</tr>
+<tr class="even">
+<td>dttm</td>
+<td>datas-tempos (uma data + um horário)</td>
+</tr>
+<tr class="odd">
+<td>fctr</td>
+<td>valores lógicos (TRUE ou FALSE)</td>
+</tr>
+<tr class="even">
+<td>date</td>
+<td>datas</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="caracteres-lógicos-necessários" class="section level2">
+<h2>Caracteres lógicos necessários</h2>
+<table>
+<colgroup>
+<col width="18%" />
+<col width="81%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Caractere lógico</th>
+<th>Representação</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>==</td>
+<td>igual</td>
+</tr>
+<tr class="even">
+<td>&amp;</td>
+<td>conectivo “e” (interseção)</td>
+</tr>
+<tr class="odd">
+<td>\</td>
+<td>conectivo “ou” (união)</td>
+</tr>
+<tr class="even">
+<td>&gt;</td>
+<td>maior do que</td>
+</tr>
+<tr class="odd">
+<td>&lt;</td>
+<td>menor do que</td>
+</tr>
+<tr class="even">
+<td>&gt;=</td>
+<td>maior do que ou igual a</td>
+</tr>
+<tr class="odd">
+<td>&lt;=</td>
+<td>menor do que ou igual a</td>
+</tr>
+<tr class="even">
+<td>!=</td>
+<td>diferente</td>
+</tr>
+<tr class="odd">
+<td>%in%</td>
+<td>concatenar</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="funções-básicas-do-pacote-dplyr" class="section level2">
+<h2>Funções básicas do pacote dplyr</h2>
+<table>
+<colgroup>
+<col width="18%" />
+<col width="81%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Funções</th>
+<th>Resultados</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>filter()</td>
+<td>seleciona observações das variáveis por seus valores assumidos</td>
+</tr>
+<tr class="even">
+<td>arrange()</td>
+<td>reordena as linhas (observações)</td>
+</tr>
+<tr class="odd">
+<td>select()</td>
+<td>seleciona variáveis por seus nomes (rótulos)</td>
+</tr>
+<tr class="even">
+<td>mutate()</td>
+<td>cria novas variáveis com funções de variáveis existentes</td>
+</tr>
+<tr class="odd">
+<td>summarize()</td>
+<td>reune muitos valores em um único resumo</td>
+</tr>
+<tr class="even">
+<td>group_by()</td>
+<td>muda o escopo de cada função anterior em todo o conjunto de dados para operar grupo por grupo.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+</div>
+<div id="exemplificando" class="section level2">
+<h2>Exemplificando</h2>
+<pre class="r"><code>filter(data, 
+       date &gt;= &quot;2022-02-20&quot; &amp;  state == &quot;SP&quot; &amp; epi_week == 8)</code></pre>
+<pre><code>##       region state       date epi_week newCases accumCases newDeaths
+## 1: Southeast    SP 2022-02-20        8     6424    4935771        26
+## 2: Southeast    SP 2022-02-21        8     2470    4938241        23
+## 3: Southeast    SP 2022-02-22        8    15999    4954240       310
+## 4: Southeast    SP 2022-02-23        8    15427    4969667       298
+## 5: Southeast    SP 2022-02-24        8    15228    4984895       303
+## 6: Southeast    SP 2022-02-25        8    14764    4999659       211
+## 7: Southeast    SP 2022-02-26        8    11290    5010949       211
+##    accumDeaths newRecovered newFollowup      pop state_code
+## 1:      163160           NA          NA 45919049         35
+## 2:      163183           NA          NA 45919049         35
+## 3:      163493           NA          NA 45919049         35
+## 4:      163791           NA          NA 45919049         35
+## 5:      164094           NA          NA 45919049         35
+## 6:      164305           NA          NA 45919049         35
+## 7:      164516           NA          NA 45919049         35</code></pre>
+<hr />
+</div>
+<div id="exemplificando-1" class="section level2">
+<h2>Exemplificando</h2>
+<pre class="r"><code>arrange(data, 
+        state)</code></pre>
+<pre><code>##        region state       date epi_week newCases accumCases newDeaths
+##     1:  North    AC 2020-02-25        9        0          0         0
+##     2:  North    AC 2020-02-26        9        0          0         0
+##     3:  North    AC 2020-02-27        9        0          0         0
+##     4:  North    AC 2020-02-28        9        0          0         0
+##     5:  North    AC 2020-02-29        9        0          0         0
+##    ---                                                               
+## 28535:  North    TO 2022-03-15       11      215     301172         2
+## 28536:  North    TO 2022-03-16       11      124     301296         0
+## 28537:  North    TO 2022-03-17       11      128     301424         2
+## 28538:  North    TO 2022-03-18       11      116     301540         2
+## 28539:  North    TO 2022-03-19       11      107     301647         2
+##        accumDeaths newRecovered newFollowup     pop state_code
+##     1:           0           NA          NA  881935         12
+##     2:           0           NA          NA  881935         12
+##     3:           0           NA          NA  881935         12
+##     4:           0           NA          NA  881935         12
+##     5:           0           NA          NA  881935         12
+##    ---                                                        
+## 28535:        4134           NA          NA 1572866         17
+## 28536:        4134           NA          NA 1572866         17
+## 28537:        4136           NA          NA 1572866         17
+## 28538:        4138           NA          NA 1572866         17
+## 28539:        4140           NA          NA 1572866         17</code></pre>
+<hr />
+</div>
+<div id="exemplificando-2" class="section level2">
+<h2>Exemplificando</h2>
+<pre class="r"><code>select(data, 
+       region,
+       date,
+       state,
+       newCases,
+       accumCases)</code></pre>
+<pre><code>##        region       date state newCases accumCases
+##     1:  North 2020-02-25    RO        0          0
+##     2:  North 2020-02-26    RO        0          0
+##     3:  North 2020-02-27    RO        0          0
+##     4:  North 2020-02-28    RO        0          0
+##     5:  North 2020-02-29    RO        0          0
+##    ---                                            
+## 28535:  North 2022-02-19    RO        0          0
+## 28536:  North 2022-02-20    RO        0          0
+## 28537:  North 2022-02-21    RO        0          0
+## 28538:  North 2022-02-22    RO        0          0
+## 28539:  North 2022-02-23    RO        0          0</code></pre>
+<hr />
+</div>
+<div id="exemplificando-3" class="section level2">
+<h2>Exemplificando</h2>
+<pre class="r"><code>mutate(data, 
+       rate_newcases = newCases/pop*100000)</code></pre>
+<pre><code>##        region state       date epi_week newCases accumCases newDeaths
+##     1:  North    RO 2020-02-25        9        0          0         0
+##     2:  North    RO 2020-02-26        9        0          0         0
+##     3:  North    RO 2020-02-27        9        0          0         0
+##     4:  North    RO 2020-02-28        9        0          0         0
+##     5:  North    RO 2020-02-29        9        0          0         0
+##    ---                                                               
+## 28535:  North    RO 2022-02-19        7        0          0         0
+## 28536:  North    RO 2022-02-20        8        0          0         0
+## 28537:  North    RO 2022-02-21        8        0          0         0
+## 28538:  North    RO 2022-02-22        8        0          0         0
+## 28539:  North    RO 2022-02-23        8        0          0         0
+##        accumDeaths newRecovered newFollowup     pop state_code rate_newcases
+##     1:           0           NA          NA 1777225         11             0
+##     2:           0           NA          NA 1777225         11             0
+##     3:           0           NA          NA 1777225         11             0
+##     4:           0           NA          NA 1777225         11             0
+##     5:           0           NA          NA 1777225         11             0
+##    ---                                                                      
+## 28535:           0           NA          NA      NA         11            NA
+## 28536:           0           NA          NA      NA         11            NA
+## 28537:           0           NA          NA      NA         11            NA
+## 28538:           0           NA          NA      NA         11            NA
+## 28539:           0           NA          NA      NA         11            NA</code></pre>
+<hr />
+</div>
+<div id="exemplificando-4" class="section level2">
+<h2>Exemplificando</h2>
+<pre class="r"><code>summarize(data, 
+          mean_newdeaths=mean(newDeaths), 
+          desv_pad= sd(newDeaths),
+          standard_error=desv_pad/sqrt(length(data)))</code></pre>
+<pre><code>##   mean_newdeaths desv_pad standard_error
+## 1       23.18823 64.04652       18.48864</code></pre>
+<hr />
+</div>
+<div id="exemplificando-5" class="section level2">
+<h2>Exemplificando</h2>
+<pre class="r"><code>group_by(data, 
+         region,
+         epi_week)</code></pre>
+<pre><code>## # A tibble: 28,539 x 12
+## # Groups:   region, epi_week [265]
+##    region state date       epi_week newCases accumCases newDeaths accumDeaths
+##    &lt;chr&gt;  &lt;chr&gt; &lt;date&gt;        &lt;int&gt;    &lt;int&gt;      &lt;int&gt;     &lt;int&gt;       &lt;int&gt;
+##  1 North  RO    2020-02-25        9        0          0         0           0
+##  2 North  RO    2020-02-26        9        0          0         0           0
+##  3 North  RO    2020-02-27        9        0          0         0           0
+##  4 North  RO    2020-02-28        9        0          0         0           0
+##  5 North  RO    2020-02-29        9        0          0         0           0
+##  6 North  RO    2020-03-01       10        0          0         0           0
+##  7 North  RO    2020-03-02       10        0          0         0           0
+##  8 North  RO    2020-03-03       10        0          0         0           0
+##  9 North  RO    2020-03-04       10        0          0         0           0
+## 10 North  RO    2020-03-05       10        0          0         0           0
+## # ... with 28,529 more rows, and 4 more variables: newRecovered &lt;int&gt;,
+## #   newFollowup &lt;int&gt;, pop &lt;dbl&gt;, state_code &lt;int&gt;</code></pre>
+<hr />
+</div>
+<div id="situação-real" class="section level2">
+<h2>Situação real</h2>
+<ul>
+<li>Conhecer quantas mortes por COVID-19</li>
+<li>Cada uma das UF’s brasileiras</li>
+<li>dia 20-02-2022 e na oitava semana epidemiológica</li>
+</ul>
+<p>.pull-left[]</p>
+<p>.pull-right[]</p>
+<hr />
+</div>
+<div id="saída-gráfica" class="section level2">
+<h2>Saída gráfica</h2>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig23-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="o-operador-pipe" class="section level2">
+<h2>O operador pipe (%&gt;%)</h2>
+<ul>
+<li>atribuímos dois labels: Dados e resultados</li>
+<li>para um único gráfico</li>
+<li>pacote magrittr</li>
+<li>Informalmente: %&gt;% pode ser entendido como “vem mais coisas por ai”</li>
+<li>Formalmente: f(a) = y, então: g(.) tem como primeiro argumento de entrada f(a)</li>
+<li>g(f(a),…)</li>
+</ul>
+<hr />
+</div>
+<div id="saída-gráfica-1" class="section level2">
+<h2>Saída gráfica</h2>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig24-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="comprações-entre-as-ufs" class="section level2">
+<h2>Comprações entre as UF’s</h2>
+<ul>
+<li>taxas de novas mortes</li>
+<li>devido a heterogeneidade populacional</li>
+<li>mutate: criar a variável rate_newDeaths</li>
+<li>constante IBGE: 100000</li>
+</ul>
+<hr />
+</div>
+<div id="saída-gráfica-2" class="section level2">
+<h2>Saída gráfica</h2>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig25-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="situação-real-1" class="section level2">
+<h2>Situação real</h2>
+<ul>
+<li>conhecer a evolução diária dos novos casos</li>
+<li>entre as semanas epidemiológicas 1 e 8</li>
+<li>anos: 2021 e 2022</li>
+<li>região: sudeste</li>
+<li>UF’s</li>
+</ul>
+<hr />
+</div>
+<div id="saída-gráfica-3" class="section level2">
+<h2>Saída gráfica</h2>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig26-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="produção-de-mapas" class="section level2">
+<h2>Produção de mapas</h2>
+<ul>
+<li>pacote geobr: Ipea</li>
+<li>mapas: representam o meio onde estamos</li>
+<li>arquivo que contenha as coordenadas da região estudada</li>
+<li>shape.file, raster</li>
+<li>formato dos dados: sf (simple features ou recursos simples)</li>
+</ul>
+<hr />
+</div>
+<div id="preparando-os-dados" class="section level2">
+<h2>Preparando os dados</h2>
+<p>.pull-left[]</p>
+<p>.pull-right[]</p>
+<hr />
+</div>
+<div id="produção-mapa-taxa-de-novos-casos" class="section level2">
+<h2>Produção mapa (Taxa de novos casos)</h2>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig28-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="produção-mapa-taxa-de-novas-mortes" class="section level2">
+<h2>Produção mapa (Taxa de novas mortes)</h2>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig29-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="produção-mapa-taxa-de-casos-acumulados" class="section level2">
+<h2>Produção mapa (Taxa de casos acumulados)</h2>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig30-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+<div id="produção-mapa-taxa-de-casos-acumulados-1" class="section level2">
+<h2>Produção mapa (Taxa de casos acumulados)</h2>
+<p>.pull-left[]</p>
+<p>.pull-right[
+<img src="{{< blogdown/postref >}}index_files/figure-html/fig31-1.svg" width="100%" style="display: block; margin: auto;" />]</p>
+<hr />
+</div>
+</div>
+<div id="material-de-apoio-1" class="section level1">
+<h1>Material de apoio</h1>
+<p><a href="https://ggplot2-book.org/">ggplot2: elegant graphics for data analysis</a></p>
+<p><a href="https://r4ds.had.co.nz/">R for Data Science</a></p>
+<p><a href="https://r-graphics.org/">R Graphics Cookbook</a></p>
+</div>

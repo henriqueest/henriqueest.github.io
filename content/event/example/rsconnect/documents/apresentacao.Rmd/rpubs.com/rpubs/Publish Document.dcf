@@ -1,0 +1,11 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/879914/57b0c307dc744fe68c332b46584e1ccb
+bundleId: https://api.rpubs.com/api/v1/document/879914/57b0c307dc744fe68c332b46584e1ccb
+url: http://rpubs.com/Henriqueufla/879914
+when: 1647740441.4226
+lastSyncTime: 1647740441.4226

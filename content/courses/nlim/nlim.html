@@ -1,0 +1,33 @@
+---
+title: 'Pacote growthmodels'
+date: "ajuste de modelos e saídas gráficas"
+type: book
+output:
+  html_document:
+    df_print: paged
+weight: 20
+---
+
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="the-growthmodels-package" class="section level2">
+<h2>The growthmodels package</h2>
+<p>The growthmodels package has been available in R Cran since February 20, 2015 and allows the compilation of some non-linear growth models, which are adopted in many areas.</p>
+<p>Among the models implemented in this package are the already widespread models brody, gompertz, logistic, Von Bertalanffy and weibull.</p>
+<div id="installation-and-loading" class="section level3">
+<h3>Installation and loading</h3>
+<p>To install and load it in IDE’s R or rstudio, just run the following command lines.</p>
+<pre class="r"><code>#install.packages(&quot;growthmodels&quot;)
+library(growthmodels)</code></pre>
+</div>
+</div>
+<div id="brody-growth-model" class="section level2">
+<h2>Brody growth model</h2>
+<p>The Brody model is an example of a non-linear model that does not present sigmoidal behavior, does not have an inflection point and presents a concavity facing downwards, being characterized as a model of restricted growth. Its expression is given by</p>
+<p><span class="math display">\[
+y(t)=\alpha -(\alpha - w_0)exp(-kt),
+\]</span>
+onde</p>
+<p><span class="math inline">\(t\)</span> corresponde ao tempo, <span class="math inline">\(\alpha\)</span> é a assíntota superior, <span class="math inline">\(w-0\)</span> é o valor em <span class="math inline">\(t=0\)</span> e <span class="math inline">\(k\)</span> é a taxa de crescimento.</p>
+</div>

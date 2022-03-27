@@ -1,7 +1,10 @@
 ---
-date: "2022-03-21"
-title: "Pacote ggplot2: um curso introdutório"
+title: 'Pacote ggplot2: um curso introdutório'
+date: '2022-03-21'
 type: book
+output:
+  html_document:
+    df_print: paged
 weight: 20
 ---
 

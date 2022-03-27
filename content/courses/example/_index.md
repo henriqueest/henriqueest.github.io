@@ -2,7 +2,7 @@
 date: "2021-03-21"
 linkTitle: Data Science
 summary: "Data mining and graphical outputs in R."
-title: "\U0001F4CA ggplot2 package: an introductory course"
+title: "\U0001F4CA Saídas gráficas no R: introdução ao pacote ggplot2"
 type: course
 slides: example
 ---

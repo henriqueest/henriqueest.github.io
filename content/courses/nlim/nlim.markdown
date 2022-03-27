@@ -1,0 +1,118 @@
+---
+title: 'Modelos não lineares de crescimento'
+subtitle: "ajustes e saídas gráficas no R"
+date: "2022-03-31"
+type: book
+output:
+  html_document:
+    df_print: paged
+weight: 20
+---
+
+
+
+
+
+## Non-linear models 
+
+Nonlinear models (NLM) usually go back to obtaining some information about the relationship between variables Y and X. Such information is linked to different degrees of knowledge as
+- an analysis of a scatterplot of Y v.s. X
+- shape constraints of the function (to be monotone, to be sigmoid)
+- the solution of a differential equation supported by some
+principle or theory
+- the interpretation of its parameters.
+
+Whatever the degree of knowledge, the choice of a nonlinear model is rarely empirical.
+
+A growing number of researchers share the feeling that relationships between biological variables are best described by nonlinear functions. Processes such as growth, decay, birth, mortality, competition and production are rarely linearly related to explanatory variables (SCHABENBERGER; PIERCE, 2002).
+
+In this sense, it can be said that MNL best
+they describe mechanistic processes and are useful in accommodating constraints regarding such processes. In summary, MNLs have the following advantages over
+linear models (ML)
+- your choice is supported by theory or mechanistic principles (physical, chemical or biological) or any other prior information
+- certain parameters are amount of interest to the researcher provided with interpretation
+- predictions can be made outside the observed domain of x
+- are parsimonious as they typically have fewer parameters
+- depart from the researcher's knowledge of the target phenomenon.
+
+On the other hand, the disadvantages are:
+- require iterative estimation procedures based on providing initial values for parameters
+ Inference methods are approximate
+- Require knowledge of the researcher about the target phenomenon.
+
+### Parameter interpretation 
+
+When assuming MNL to describe a process, it is essential to know the meaning of its parameters. In addition to dimensionality, the study of parametric space is equally important as it allows recognizing the values that a parameter assumes. Many processes involve positive variables, such as time, dose, production, speed, and limited variables, typically represented in percentage, such as content (%), concentration (%) and yield (%).
+
+Relevant properties of a function are things like having points
+characteristics (critical, inflection), their behavior (concavity, monoticity) or appear specific patterns (sigmoid, parabolic).
+
+Some of these properties, starting with the characteristic points related to the coordinate (Y) axis, are known as
+- **ASS**: upper asymptote
+- **ASI**: lower asymptote
+- **PO**: point of origin or intercept.
+
+Among the characteristic points on the abscissa axis (X) are:
+- **PC**: critical point
+- **PI**: inflection point
+- **PS**: point of symmetry
+
+The symbol for each of these parameters will depend on the model considered. Sometimes it is faster to recognize the properties of a function by its appearance with some specific pattern. Among the most common is
+- **SIG**: sigmoid, being monotonous increasing (MC) or decreasing (MD). The curve has an inverted S or S shape. Every sigmoid has **PI**, **ASS** and **ASI**.
+
+<!-- <img src="C:/Users/jpahe/Dropbox/PC/Documents/minhapagina/henriqueest.github.io/content/courses/nlim/featured(5).jpg" style="float: left; margin-right: 10px;" /> -->
+
+<iframe width='100%' height='300' src='https://rdrr.io/snippets/embed/?code=print(%22Hello%2C%20world!%22)' frameborder='0'></iframe>
+
+
+
+### Installation and loading
+
+To install and load it in IDE's R or rstudio, just run the following command lines.
+
+
+
+```r
+#install.packages("growthmodels")
+library(growthmodels)
+```
+
+## Brody growth model
+
+
+The Brody model is an example of a non-linear model that does not present sigmoidal behavior, does not have an inflection point and presents a concavity facing downwards, being characterized as a model of restricted growth. Its expression is given by
+
+$$
+y(t)=\alpha -(\alpha - w_0)exp(-kt),
+$$
+onde
+
+`\(t\)` corresponde ao tempo, `\(\alpha\)` é a assíntota superior, `\(w-0\)` é o valor em `\(t=0\)` e `\(k\)` é a taxa de crescimento.
+
+### Usage
+
+*brody(t, alpha, w0, k)*
+
+
+### References
+
+M. M. Kaps, W. O. W. Herring, and W. R. W. Lamberson, "Genetic and environmental parameters for traits derived from the Brody growth curve and their relationships with weaning weight in Angus cattle.," Journal of Animal Science, vol. 78, no. 6, pp. 1436-1442, May 2000.
+
+###Example and run
+
+
+```r
+growth <- brody(0:10, 10, 5, 0.3)
+growth
+```
+
+```
+##  [1] 5.000000 6.295909 7.255942 7.967152 8.494029 8.884349 9.173506 9.387718
+##  [9] 9.546410 9.663972 9.751065
+```
+
+
+
+
+
+
