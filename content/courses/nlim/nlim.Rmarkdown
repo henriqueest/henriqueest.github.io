@@ -1,6 +1,6 @@
 ---
-title: 'Modelos não lineares de crescimento'
-subtitle: "ajustes e saídas gráficas no R"
+title: 'Non-linear growth models'
+#subtitle: "ajustes e saídas gráficas no R"
 date: "2022-03-31"
 type: book
 output:

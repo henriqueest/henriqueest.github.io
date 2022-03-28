@@ -1,6 +1,5 @@
 ---
 date: "2021-03-31"
-linkTitle: Non-linear growth models
 summary: "Adjusting models and graphics outputs."
 title: "\U0001F4CA Non-linear growth models"
 type: course
