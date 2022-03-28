@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>📊 Modelos não lineares de crescimento | Henrique JP Alves</title>
+    <title>📊 Non-linear growth models | Henrique JP Alves</title>
     <link>https://henriqueest.github.io/courses/nlim/</link>
       <atom:link href="https://henriqueest.github.io/courses/nlim/index.xml" rel="self" type="application/rss+xml" />
-    <description>📊 Modelos não lineares de crescimento</description>
+    <description>📊 Non-linear growth models</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Wed, 31 Mar 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://henriqueest.github.io/courses/nlim/featured(4).jpg</url>
-      <title>📊 Modelos não lineares de crescimento</title>
+      <title>📊 Non-linear growth models</title>
       <link>https://henriqueest.github.io/courses/nlim/</link>
     </image>
     

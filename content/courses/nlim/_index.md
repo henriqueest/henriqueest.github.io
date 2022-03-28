@@ -1,15 +1,11 @@
 ---
 date: "2021-03-31"
-linkTitle: Modelos não lineares de crescimento
+linkTitle: Non-linear growth models
 summary: "Adjusting models and graphics outputs."
-title: "\U0001F4CA Modelos não lineares de crescimento"
+title: "\U0001F4CA Non-linear growth models"
 type: course
-slides: example
 ---
 
-{{< figure src="featured(4).jpg" >}}
-
-{{< toc hide_on="xl" >}}
 
 ## What you will learn
 

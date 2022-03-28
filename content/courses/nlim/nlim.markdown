@@ -82,7 +82,7 @@ glimpse(data)
 ```
 
 ```
-## Rows: 795
+## Rows: 796
 ## Columns: 4
 ## $ date        <date> 2020-01-22, 2020-01-23, 2020-01-24, 2020-01-25, 2020-01-2~
 ## $ country     <chr> "Italy", "Italy", "Italy", "Italy", "Italy", "Italy", "Ita~
@@ -124,6 +124,180 @@ ggplot(data)+
 <img src="/courses/nlim/nlim_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
 
+### Double sigmoid model adjustment
 
+- Transforming the date variable into numeric.
+
+
+```r
+n <- nrow(data)
+data <- data %>%
+  mutate(data = c(seq(1,n,1)))
+glimpse(data)
+```
+
+```
+## Rows: 796
+## Columns: 5
+## $ date        <date> 2020-01-22, 2020-01-23, 2020-01-24, 2020-01-25, 2020-01-2~
+## $ country     <chr> "Italy", "Italy", "Italy", "Italy", "Italy", "Italy", "Ita~
+## $ accumCases  <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3~
+## $ accumDeaths <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ data        <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,~
+```
+
+
+- Changing the data scale to avoid over/under-flow issues.
+
+
+```r
+data_mod <- data %>%
+  select(accumDeaths, data) %>%
+  mutate(accumDeathscorr = accumDeaths/10000,
+         data = data/100)
+glimpse(data_mod)
+```
+
+```
+## Rows: 796
+## Columns: 3
+## $ accumDeaths     <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ data            <dbl> 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, ~
+## $ accumDeathscorr <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+```
+
+- Behavior of the transformed data
+
+
+```r
+ggplot(data_mod)+
+  geom_point(aes(x = data, y = accumDeathscorr), colour = "steelblue")+
+  geom_vline(aes(x = data, y = accumDeathscorr, xintercept = 3),
+             colour="brown", linetype = "longdash")+
+  geom_vline(aes(x = data, y = accumDeathscorr, xintercept = 7),
+             colour="brown", linetype = "longdash")+
+ annotate("text", label = "sigmoid behavior", x = 1.5, y = 10, size = 5,
+          colour = "gray")+
+ annotate("text", label = "sigmoid behavior", x = 5.5, y = 10, size = 5, 
+          colour = "gray")+
+  labs(x = "Day", y = "Accumulated deaths corrected")+
+  theme_classic()
+```
+
+<img src="/courses/nlim/nlim_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+
+
+## Starting kicks for each sigmoid
+
+- model one: logistic model
+
+
+```r
+apropos("^SS")
+```
+
+```
+##  [1] "SSasymp"     "SSasympOff"  "SSasympOrig" "SSbiexp"     "SSD"        
+##  [6] "SSfol"       "SSfpl"       "SSgompertz"  "SSlogis"     "SSmicmen"   
+## [11] "SSweibull"
+```
+
+```r
+n0 <- nls(accumDeathscorr ~ SSlogis(data, A, M, S), data = data_mod, 
+          subset = data < 3)
+coef(n0)
+```
+
+```
+##         A         M         S 
+## 3.5857409 0.8126909 0.1364505
+```
+
+
+
+```r
+data_modn0 <- data_mod %>%
+  filter(data < 3) %>%
+  mutate(predict = predict(n0))
+ggplot(data_modn0)+
+geom_point(aes(x = data, y = accumDeathscorr, color = "blue"))+
+  geom_line(aes(x = data, y = predict, color = "red"))+
+  labs(x = "data", y = "Accumulated deaths")+
+  theme_bw()+
+  theme(legend.position="right", 
+        legend.box = "horizontal",legend.title=element_text(size=15), 
+        legend.text=element_text(size=15), axis.text=element_text(size=20),
+        axis.title=element_text(size=20), axis.line = element_line(colour = "black"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank()) +
+  scale_color_manual(values=c("blue", "red"), 
+                       name="Accumulated deaths",
+                     breaks = c("blue", "red"),
+                       labels=c("Observed", "Predict"))
+```
+
+<img src="/courses/nlim/nlim_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+
+
+
+- model two: logistic model
+
+
+```r
+apropos("^SS")
+```
+
+```
+##  [1] "SSasymp"     "SSasympOff"  "SSasympOrig" "SSbiexp"     "SSD"        
+##  [6] "SSfol"       "SSfpl"       "SSgompertz"  "SSlogis"     "SSmicmen"   
+## [11] "SSweibull"
+```
+
+```r
+n1 <- nls(accumDeathscorr ~ SSlogis(data, A, M, S), data = data_mod, 
+          subset = data > 3 & data < 7)
+coef(n1)
+```
+
+```
+##          A          M          S 
+## 13.3237430  3.3364864  0.6323343
+```
+
+
+
+```r
+data_modn1 <- data_mod %>%
+  filter(data > 3 & data < 7) %>%
+  mutate(predict = predict(n1))
+ggplot(data_modn1)+
+geom_point(aes(x = data, y = accumDeathscorr, color = "blue"))+
+  geom_line(aes(x = data, y = predict, color = "red"))+
+  labs(x = "data", y = "Accumulated deaths")+
+  theme_bw()+
+  theme(legend.position="right", 
+        legend.box = "horizontal",legend.title=element_text(size=15), 
+        legend.text=element_text(size=15), axis.text=element_text(size=20),
+        axis.title=element_text(size=20), axis.line = element_line(colour = "black"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank()) +
+  scale_color_manual(values=c("blue", "red"), 
+                       name="Accumulated deaths",
+                     breaks = c("blue", "red"),
+                       labels=c("Observed", "Predict"))
+```
+
+<img src="/courses/nlim/nlim_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+
+
+## Objetivo
+
+- encontrar modelos que possam ajustar a esses dados
+- buscar parcerias
+- publicação
 
 
