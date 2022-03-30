@@ -1,37 +1,229 @@
 ---
-title: "Hello R Markdown"
-author: "Frida Gomam"
-date: 2020-12-01T21:13:14-05:00
-categories: ["R"]
-tags: ["R Markdown", "plot", "regression"]
+title: 'Non-linear growth models'
+#subtitle: "ajustes e saídas gráficas no R"
+date: "2022-03-31"
+type: book
+output:
+  html_document:
+    df_print: paged
+weight: 20
 ---
 
+
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(collapse = TRUE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Non-linear models 
 
-You can embed an R code chunk like this:
+Nonlinear models (NLM) usually go back to obtaining some information about the relationship between variables Y and X. Such information is linked to different degrees of knowledge as
+- an analysis of a scatterplot of Y v.s. X
+- shape constraints of the function (monotone, sigmoid)
+- the solution of a differential equation supported by some
+principle or theory
+- the interpretation of its parameters.
 
-```{r cars}
-summary(cars)
-fit <- lm(dist ~ speed, data = cars)
-fit
+Whatever the degree of knowledge, the choice of a nonlinear model is rarely empirical.
+
+A growing number of researchers share the feeling that relationships between biological variables are best described by nonlinear functions. Processes such as growth, decay, birth, mortality, competition and production are rarely linearly related to explanatory variables (SCHABENBERGER; PIERCE, 2002).
+
+In this sense, it can be said that MNL best
+they describe mechanistic processes and are useful in accommodating constraints regarding such processes. In summary, MNLs have the following advantages over
+linear models (ML)
+- your choice is supported by theory or mechanistic principles (physical, chemical or biological) or any other prior information
+- certain parameters are amount of interest to the researcher provided with interpretation
+- predictions can be made outside the observed domain of x
+- are parsimonious as they typically have fewer parameters
+- depart from the researcher's knowledge of the target phenomenon.
+
+On the other hand, the disadvantages are:
+- require iterative estimation procedures based on providing initial values for parameters
+ Inference methods are approximate
+- Require knowledge of the researcher about the target phenomenon.
+
+### Parameter interpretation 
+
+When assuming MNL to describe a process, it is essential to know the meaning of its parameters. In addition to dimensionality, the study of parametric space is equally important as it allows recognizing the values that a parameter assumes. Many processes involve positive variables, such as time, dose, production, speed, and limited variables, typically represented in percentage, such as content (%), concentration (%) and yield (%).
+
+Relevant properties of a function are things like having points
+characteristics (critical, inflection), their behavior (concavity, monoticity) or appear specific patterns (sigmoid, parabolic).
+
+Some of these properties, starting with the characteristic points related to the coordinate (Y) axis, are known as
+- **ASS**: upper asymptote
+- **ASI**: lower asymptote
+- **PO**: point of origin or intercept.
+
+Among the characteristic points on the abscissa axis (X) are:
+- **PC**: critical point
+- **PI**: inflection point
+- **PS**: point of symmetry
+
+The symbol for each of these parameters will depend on the model considered. Sometimes it is faster to recognize the properties of a function by its appearance with some specific pattern. Among the most common is
+- **SIG**: sigmoid, being monotonous increasing (MC) or decreasing (MD). The curve has an inverted S or S shape. Every sigmoid has **PI**, **ASS** and **ASI**.
+
+
+## Code R 
+
+To install and load it in IDE's R or rstudio, just run the following command lines.
+
+
+```{r , echo=TRUE, warning=FALSE, message=FALSE}
+library(covid19br)
+library(tidyverse)
+library(dplyr)
 ```
 
-# Including Plots
-
-You can also embed plots. See Figure \@ref(fig:pie) for example:
-
-```{r pie, fig.cap='A fancy pie chart.', tidy=FALSE}
-par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c('Sky', 'Sunny side of pyramid', 'Shady side of pyramid'),
-  col = c('#0292D8', '#F7EA39', '#C4B632'),
-  init.angle = -50, border = NA
-)
+```{r , echo = TRUE, warning=FALSE, message=FALSE}
+data <- downloadCovid19("world") %>%
+  filter(country == "Italy")%>%
+  select(date, country, accumCases, accumDeaths)
+glimpse(data)
 ```
+
+### Behavior of accumulated deaths (Italy)
+
+```{r , echo=TRUE, warning=FALSE, message=FALSE}
+ggplot(data)+
+  geom_point(aes(x = as.Date(date), y = accumDeaths), colour = "steelblue")+
+  labs(x = "Date (day)", y = "Accumulated deaths")+
+  theme_classic()
+```
+
+
+Suggests double sigmoid model
+
+```{r , echo=TRUE, warning=FALSE, message=FALSE}
+ggplot(data)+
+  geom_point(aes(x = as.Date(date), y = accumDeaths), colour = "steelblue")+
+  geom_vline(aes(x = as.Date(date), y = accumDeaths, xintercept = as.Date("2020-10-20")),
+             colour="brown", linetype = "longdash")+
+  geom_vline(aes(x = as.Date(date), y = accumDeaths, xintercept = as.Date("2021-12-15")),
+             colour="brown", linetype = "longdash")+
+ annotate("text", label = "sigmoid behavior", x = as.Date("2020-05-1"), y = 100000, size = 5,
+          colour = "gray")+
+ annotate("text", label = "sigmoid behavior", x = as.Date("2021-08-1"), y = 100000, size = 5, 
+          colour = "gray")+
+  labs(x = "Date (day)", y = "Accumulated deaths")+
+  theme_classic()
+```
+
+
+### Double sigmoid model adjustment
+
+- Transforming the date variable into numeric.
+
+```{r , echo = TRUE}
+n <- nrow(data)
+data <- data %>%
+  mutate(data = c(seq(1,n,1)))
+glimpse(data)
+```
+
+
+- Changing the data scale to avoid over/under-flow issues.
+
+```{r , echo=TRUE}
+data_mod <- data %>%
+  select(accumDeaths, data) %>%
+  mutate(accumDeathscorr = accumDeaths/10000,
+         data = data/100)
+glimpse(data_mod)
+```
+
+- Behavior of the transformed data
+
+```{r , echo=TRUE, warning=FALSE, message=FALSE}
+ggplot(data_mod)+
+  geom_point(aes(x = data, y = accumDeathscorr), colour = "steelblue")+
+  geom_vline(aes(x = data, y = accumDeathscorr, xintercept = 3),
+             colour="brown", linetype = "longdash")+
+  geom_vline(aes(x = data, y = accumDeathscorr, xintercept = 7),
+             colour="brown", linetype = "longdash")+
+ annotate("text", label = "sigmoid behavior", x = 1.5, y = 10, size = 5,
+          colour = "gray")+
+ annotate("text", label = "sigmoid behavior", x = 5.5, y = 10, size = 5, 
+          colour = "gray")+
+  labs(x = "Day", y = "Accumulated deaths corrected")+
+  theme_classic()
+```
+
+
+## Starting kicks for each sigmoid
+
+- model one: logistic model
+
+```{r , echo = TRUE}
+apropos("^SS")
+n0 <- nls(accumDeathscorr ~ SSlogis(data, A, M, S), data = data_mod, 
+          subset = data < 3)
+coef(n0)
+```
+
+
+```{r , echo=TRUE}
+data_modn0 <- data_mod %>%
+  filter(data < 3) %>%
+  mutate(predict = predict(n0))
+ggplot(data_modn0)+
+geom_point(aes(x = data, y = accumDeathscorr, color = "blue"))+
+  geom_line(aes(x = data, y = predict, color = "red"))+
+  labs(x = "data", y = "Accumulated deaths")+
+  theme_bw()+
+  theme(legend.position="right", 
+        legend.box = "horizontal",legend.title=element_text(size=15), 
+        legend.text=element_text(size=15), axis.text=element_text(size=20),
+        axis.title=element_text(size=20), axis.line = element_line(colour = "black"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank()) +
+  scale_color_manual(values=c("blue", "red"), 
+                       name="Accumulated deaths",
+                     breaks = c("blue", "red"),
+                       labels=c("Observed", "Predict"))
+```
+
+
+
+- model two: logistic model
+
+```{r , echo = TRUE}
+apropos("^SS")
+n1 <- nls(accumDeathscorr ~ SSlogis(data, A, M, S), data = data_mod, 
+          subset = data > 3 & data < 7)
+coef(n1)
+```
+
+
+```{r , echo=TRUE}
+data_modn1 <- data_mod %>%
+  filter(data > 3 & data < 7) %>%
+  mutate(predict = predict(n1))
+ggplot(data_modn1)+
+geom_point(aes(x = data, y = accumDeathscorr, color = "blue"))+
+  geom_line(aes(x = data, y = predict, color = "red"))+
+  labs(x = "data", y = "Accumulated deaths")+
+  theme_bw()+
+  theme(legend.position="right", 
+        legend.box = "horizontal",legend.title=element_text(size=15), 
+        legend.text=element_text(size=15), axis.text=element_text(size=20),
+        axis.title=element_text(size=20), axis.line = element_line(colour = "black"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank()) +
+  scale_color_manual(values=c("blue", "red"), 
+                       name="Accumulated deaths",
+                     breaks = c("blue", "red"),
+                       labels=c("Observed", "Predict"))
+```
+
+
+## Objetivo
+
+- encontrar modelos que possam ajustar a esses dados
+- buscar parcerias
+- publicação
+
+

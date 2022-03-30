@@ -10,47 +10,15 @@
   <url>
     <loc>https://henriqueest.github.io/courses/</loc><lastmod>2022-03-21T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://henriqueest.github.io/courses/nlim/</loc><lastmod>2021-03-31T00:00:00+00:00</lastmod></url>
-  <url>
     <loc>https://henriqueest.github.io/courses/example/</loc><lastmod>2021-03-21T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/tag/academic/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/authors/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/categories/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/category/demo/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/author/henrique-jose-de-paula-alves/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/post/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/tags/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/post/getting-started/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/author/%E5%90%B3%E6%81%A9%E9%81%94/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/tag/%E5%BC%80%E6%BA%90/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/category/%E6%95%99%E7%A8%8B/</loc><lastmod>2020-12-13T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/</loc><lastmod>2020-12-01T21:13:14-05:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/tag/plot/</loc><lastmod>2020-12-01T21:13:14-05:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/category/r/</loc><lastmod>2020-12-01T21:13:14-05:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/tag/r-markdown/</loc><lastmod>2020-12-01T21:13:14-05:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/tag/regression/</loc><lastmod>2020-12-01T21:13:14-05:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/post/writing-technical-content/</loc><lastmod>2019-07-12T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://henriqueest.github.io/publication-type/3/</loc><lastmod>2019-04-07T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://henriqueest.github.io/publication/preprint/</loc><lastmod>2019-04-07T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://henriqueest.github.io/authors/</loc><lastmod>2019-04-07T00:00:00+00:00</lastmod></url>
+  <url>
+    <loc>https://henriqueest.github.io/author/henrique-jose-de-paula-alves/</loc><lastmod>2019-04-07T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://henriqueest.github.io/publication_types/</loc><lastmod>2019-04-07T00:00:00+00:00</lastmod></url>
   <url>
@@ -58,7 +26,7 @@
   <url>
     <loc>https://henriqueest.github.io/tag/source-themes/</loc><lastmod>2019-04-07T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://henriqueest.github.io/post/jupyter/</loc><lastmod>2019-09-05T00:00:00+00:00</lastmod></url>
+    <loc>https://henriqueest.github.io/tags/</loc><lastmod>2019-04-07T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://henriqueest.github.io/courses/example/</loc><lastmod>2019-02-05T00:00:00+00:00</lastmod></url>
   <url>
@@ -84,10 +52,16 @@
   <url>
     <loc>https://henriqueest.github.io/admin/</loc></url>
   <url>
+    <loc>https://henriqueest.github.io/categories/</loc></url>
+  <url>
     <loc>https://henriqueest.github.io/event/</loc></url>
+  <url>
+    <loc>https://henriqueest.github.io/post/</loc></url>
   <url>
     <loc>https://henriqueest.github.io/talk/saidas-graficas-no-r/</loc></url>
   <url>
     <loc>https://henriqueest.github.io/slides/example/apresentacao-main/</loc></url>
   <url>
-    <loc>https://henriqueest.github.io/slides/</loc></url></urlset>
+    <loc>https://henriqueest.github.io/slides/</loc></url>
+  <url>
+    <loc>https://henriqueest.github.io/author/%E5%90%B3%E6%81%A9%E9%81%94/</loc></url></urlset>
