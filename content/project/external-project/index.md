@@ -4,7 +4,7 @@ external_link: http://example.org
 image:
   caption: Photo by Toa Heftiba on Unsplash
   focal_point: Smart
-summary: Meu projeto
+summary: My project
 tags:
 - Demo
 title: External Project
