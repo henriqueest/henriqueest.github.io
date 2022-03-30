@@ -288,7 +288,7 @@ geom_point(aes(x = data, y = accumDeathscorr, color = "blue"))+
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-11-1.png" width="672" />
 
 
-## Objective
+## Aim
 - find models that can fit this data
 - seek partnerships
 - Publication

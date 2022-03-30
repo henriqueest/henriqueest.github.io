@@ -214,7 +214,7 @@ geom_point(aes(x = data, y = accumDeathscorr, color = "blue"))+
 ```
 
 
-## Objective
+## Aim
 - find models that can fit this data
 - seek partnerships
 - Publication
