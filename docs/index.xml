@@ -345,11 +345,11 @@ geom_point(aes(x = data, y = accumDeathscorr, color = &amp;quot;blue&amp;quot;))
                        labels=c(&amp;quot;Observed&amp;quot;, &amp;quot;Predict&amp;quot;))
 &lt;/code&gt;&lt;/pre&gt;
 &lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;
-&lt;h2 id=&#34;objetivo&#34;&gt;Objetivo&lt;/h2&gt;
+&lt;h2 id=&#34;objective&#34;&gt;Objective&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;encontrar modelos que possam ajustar a esses dados&lt;/li&gt;
-&lt;li&gt;buscar parcerias&lt;/li&gt;
-&lt;li&gt;publicação&lt;/li&gt;
+&lt;li&gt;find models that can fit this data&lt;/li&gt;
+&lt;li&gt;seek partnerships&lt;/li&gt;
+&lt;li&gt;Publication&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
