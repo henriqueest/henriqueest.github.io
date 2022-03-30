@@ -1,5 +1,6 @@
 ---
-summary: null
-title: null
+# Homepage SEO
+title:
+summary:
 type: widget_page
 ---

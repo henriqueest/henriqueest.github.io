@@ -5,12 +5,239 @@
     <link>https://henriqueest.github.io/post/</link>
       <atom:link href="https://henriqueest.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 12 Jul 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://henriqueest.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
       <title>Posts</title>
       <link>https://henriqueest.github.io/post/</link>
     </image>
+    
+    <item>
+      <title>Non-linear growth models</title>
+      <link>https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/</guid>
+      <description>&lt;h2 id=&#34;non-linear-models&#34;&gt;Non-linear models&lt;/h2&gt;
+&lt;p&gt;Nonlinear models (NLM) usually go back to obtaining some information about the relationship between variables Y and X. Such information is linked to different degrees of knowledge as&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;an analysis of a scatterplot of Y v.s. X&lt;/li&gt;
+&lt;li&gt;shape constraints of the function (monotone, sigmoid)&lt;/li&gt;
+&lt;li&gt;the solution of a differential equation supported by some
+principle or theory&lt;/li&gt;
+&lt;li&gt;the interpretation of its parameters.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Whatever the degree of knowledge, the choice of a nonlinear model is rarely empirical.&lt;/p&gt;
+&lt;p&gt;A growing number of researchers share the feeling that relationships between biological variables are best described by nonlinear functions. Processes such as growth, decay, birth, mortality, competition and production are rarely linearly related to explanatory variables (SCHABENBERGER; PIERCE, 2002).&lt;/p&gt;
+&lt;p&gt;In this sense, it can be said that MNL best
+they describe mechanistic processes and are useful in accommodating constraints regarding such processes. In summary, MNLs have the following advantages over
+linear models (ML)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;your choice is supported by theory or mechanistic principles (physical, chemical or biological) or any other prior information&lt;/li&gt;
+&lt;li&gt;certain parameters are amount of interest to the researcher provided with interpretation&lt;/li&gt;
+&lt;li&gt;predictions can be made outside the observed domain of x&lt;/li&gt;
+&lt;li&gt;are parsimonious as they typically have fewer parameters&lt;/li&gt;
+&lt;li&gt;depart from the researcher&amp;rsquo;s knowledge of the target phenomenon.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;On the other hand, the disadvantages are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;require iterative estimation procedures based on providing initial values for parameters
+Inference methods are approximate&lt;/li&gt;
+&lt;li&gt;Require knowledge of the researcher about the target phenomenon.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;parameter-interpretation&#34;&gt;Parameter interpretation&lt;/h3&gt;
+&lt;p&gt;When assuming MNL to describe a process, it is essential to know the meaning of its parameters. In addition to dimensionality, the study of parametric space is equally important as it allows recognizing the values that a parameter assumes. Many processes involve positive variables, such as time, dose, production, speed, and limited variables, typically represented in percentage, such as content (%), concentration (%) and yield (%).&lt;/p&gt;
+&lt;p&gt;Relevant properties of a function are things like having points
+characteristics (critical, inflection), their behavior (concavity, monoticity) or appear specific patterns (sigmoid, parabolic).&lt;/p&gt;
+&lt;p&gt;Some of these properties, starting with the characteristic points related to the coordinate (Y) axis, are known as&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ASS&lt;/strong&gt;: upper asymptote&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ASI&lt;/strong&gt;: lower asymptote&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PO&lt;/strong&gt;: point of origin or intercept.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Among the characteristic points on the abscissa axis (X) are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;PC&lt;/strong&gt;: critical point&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PI&lt;/strong&gt;: inflection point&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PS&lt;/strong&gt;: point of symmetry&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The symbol for each of these parameters will depend on the model considered. Sometimes it is faster to recognize the properties of a function by its appearance with some specific pattern. Among the most common is&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;SIG&lt;/strong&gt;: sigmoid, being monotonous increasing (MC) or decreasing (MD). The curve has an inverted S or S shape. Every sigmoid has &lt;strong&gt;PI&lt;/strong&gt;, &lt;strong&gt;ASS&lt;/strong&gt; and &lt;strong&gt;ASI&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;code-r&#34;&gt;Code R&lt;/h2&gt;
+&lt;p&gt;To install and load it in IDE&amp;rsquo;s R or rstudio, just run the following command lines.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(covid19br)
+library(tidyverse)
+library(dplyr)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;data &amp;lt;- downloadCovid19(&amp;quot;world&amp;quot;) %&amp;gt;%
+  filter(country == &amp;quot;Italy&amp;quot;)%&amp;gt;%
+  select(date, country, accumCases, accumDeaths)
+glimpse(data)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Rows: 798
+## Columns: 4
+## $ date        &amp;lt;date&amp;gt; 2020-01-22, 2020-01-23, 2020-01-24, 2020-01-25, 2020-01-2~
+## $ country     &amp;lt;chr&amp;gt; &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Ita~
+## $ accumCases  &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3~
+## $ accumDeaths &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h3 id=&#34;behavior-of-accumulated-deaths-italy&#34;&gt;Behavior of accumulated deaths (Italy)&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(data)+
+  geom_point(aes(x = as.Date(date), y = accumDeaths), colour = &amp;quot;steelblue&amp;quot;)+
+  labs(x = &amp;quot;Date (day)&amp;quot;, y = &amp;quot;Accumulated deaths&amp;quot;)+
+  theme_classic()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;p&gt;Suggests double sigmoid model&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(data)+
+  geom_point(aes(x = as.Date(date), y = accumDeaths), colour = &amp;quot;steelblue&amp;quot;)+
+  geom_vline(aes(x = as.Date(date), y = accumDeaths, xintercept = as.Date(&amp;quot;2020-10-20&amp;quot;)),
+             colour=&amp;quot;brown&amp;quot;, linetype = &amp;quot;longdash&amp;quot;)+
+  geom_vline(aes(x = as.Date(date), y = accumDeaths, xintercept = as.Date(&amp;quot;2021-12-15&amp;quot;)),
+             colour=&amp;quot;brown&amp;quot;, linetype = &amp;quot;longdash&amp;quot;)+
+ annotate(&amp;quot;text&amp;quot;, label = &amp;quot;sigmoid behavior&amp;quot;, x = as.Date(&amp;quot;2020-05-1&amp;quot;), y = 100000, size = 5,
+          colour = &amp;quot;gray&amp;quot;)+
+ annotate(&amp;quot;text&amp;quot;, label = &amp;quot;sigmoid behavior&amp;quot;, x = as.Date(&amp;quot;2021-08-1&amp;quot;), y = 100000, size = 5, 
+          colour = &amp;quot;gray&amp;quot;)+
+  labs(x = &amp;quot;Date (day)&amp;quot;, y = &amp;quot;Accumulated deaths&amp;quot;)+
+  theme_classic()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;h3 id=&#34;double-sigmoid-model-adjustment&#34;&gt;Double sigmoid model adjustment&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Transforming the date variable into numeric.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;n &amp;lt;- nrow(data)
+data &amp;lt;- data %&amp;gt;%
+  mutate(data = c(seq(1,n,1)))
+glimpse(data)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Rows: 798
+## Columns: 5
+## $ date        &amp;lt;date&amp;gt; 2020-01-22, 2020-01-23, 2020-01-24, 2020-01-25, 2020-01-2~
+## $ country     &amp;lt;chr&amp;gt; &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Ita~
+## $ accumCases  &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3~
+## $ accumDeaths &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ data        &amp;lt;dbl&amp;gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,~
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Changing the data scale to avoid over/under-flow issues.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;data_mod &amp;lt;- data %&amp;gt;%
+  select(accumDeaths, data) %&amp;gt;%
+  mutate(accumDeathscorr = accumDeaths/10000,
+         data = data/100)
+glimpse(data_mod)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Rows: 798
+## Columns: 3
+## $ accumDeaths     &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ data            &amp;lt;dbl&amp;gt; 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, ~
+## $ accumDeathscorr &amp;lt;dbl&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Behavior of the transformed data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(data_mod)+
+  geom_point(aes(x = data, y = accumDeathscorr), colour = &amp;quot;steelblue&amp;quot;)+
+  geom_vline(aes(x = data, y = accumDeathscorr, xintercept = 3),
+             colour=&amp;quot;brown&amp;quot;, linetype = &amp;quot;longdash&amp;quot;)+
+  geom_vline(aes(x = data, y = accumDeathscorr, xintercept = 7),
+             colour=&amp;quot;brown&amp;quot;, linetype = &amp;quot;longdash&amp;quot;)+
+ annotate(&amp;quot;text&amp;quot;, label = &amp;quot;sigmoid behavior&amp;quot;, x = 1.5, y = 10, size = 5,
+          colour = &amp;quot;gray&amp;quot;)+
+ annotate(&amp;quot;text&amp;quot;, label = &amp;quot;sigmoid behavior&amp;quot;, x = 5.5, y = 10, size = 5, 
+          colour = &amp;quot;gray&amp;quot;)+
+  labs(x = &amp;quot;Day&amp;quot;, y = &amp;quot;Accumulated deaths corrected&amp;quot;)+
+  theme_classic()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;h2 id=&#34;starting-kicks-for-each-sigmoid&#34;&gt;Starting kicks for each sigmoid&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;model one: logistic model&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;apropos(&amp;quot;^SS&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  [1] &amp;quot;SSasymp&amp;quot;     &amp;quot;SSasympOff&amp;quot;  &amp;quot;SSasympOrig&amp;quot; &amp;quot;SSbiexp&amp;quot;     &amp;quot;SSD&amp;quot;        
+##  [6] &amp;quot;SSfol&amp;quot;       &amp;quot;SSfpl&amp;quot;       &amp;quot;SSgompertz&amp;quot;  &amp;quot;SSlogis&amp;quot;     &amp;quot;SSmicmen&amp;quot;   
+## [11] &amp;quot;SSweibull&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;n0 &amp;lt;- nls(accumDeathscorr ~ SSlogis(data, A, M, S), data = data_mod, 
+          subset = data &amp;lt; 3)
+coef(n0)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##         A         M         S 
+## 3.5857409 0.8126909 0.1364505
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;data_modn0 &amp;lt;- data_mod %&amp;gt;%
+  filter(data &amp;lt; 3) %&amp;gt;%
+  mutate(predict = predict(n0))
+ggplot(data_modn0)+
+geom_point(aes(x = data, y = accumDeathscorr, color = &amp;quot;blue&amp;quot;))+
+  geom_line(aes(x = data, y = predict, color = &amp;quot;red&amp;quot;))+
+  labs(x = &amp;quot;data&amp;quot;, y = &amp;quot;Accumulated deaths&amp;quot;)+
+  theme_bw()+
+  theme(legend.position=&amp;quot;right&amp;quot;, 
+        legend.box = &amp;quot;horizontal&amp;quot;,legend.title=element_text(size=15), 
+        legend.text=element_text(size=15), axis.text=element_text(size=20),
+        axis.title=element_text(size=20), axis.line = element_line(colour = &amp;quot;black&amp;quot;),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank()) +
+  scale_color_manual(values=c(&amp;quot;blue&amp;quot;, &amp;quot;red&amp;quot;), 
+                       name=&amp;quot;Accumulated deaths&amp;quot;,
+                     breaks = c(&amp;quot;blue&amp;quot;, &amp;quot;red&amp;quot;),
+                       labels=c(&amp;quot;Observed&amp;quot;, &amp;quot;Predict&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;ul&gt;
+&lt;li&gt;model two: logistic model&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;apropos(&amp;quot;^SS&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##  [1] &amp;quot;SSasymp&amp;quot;     &amp;quot;SSasympOff&amp;quot;  &amp;quot;SSasympOrig&amp;quot; &amp;quot;SSbiexp&amp;quot;     &amp;quot;SSD&amp;quot;        
+##  [6] &amp;quot;SSfol&amp;quot;       &amp;quot;SSfpl&amp;quot;       &amp;quot;SSgompertz&amp;quot;  &amp;quot;SSlogis&amp;quot;     &amp;quot;SSmicmen&amp;quot;   
+## [11] &amp;quot;SSweibull&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;n1 &amp;lt;- nls(accumDeathscorr ~ SSlogis(data, A, M, S), data = data_mod, 
+          subset = data &amp;gt; 3 &amp;amp; data &amp;lt; 7)
+coef(n1)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##          A          M          S 
+## 13.3237430  3.3364864  0.6323343
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;data_modn1 &amp;lt;- data_mod %&amp;gt;%
+  filter(data &amp;gt; 3 &amp;amp; data &amp;lt; 7) %&amp;gt;%
+  mutate(predict = predict(n1))
+ggplot(data_modn1)+
+geom_point(aes(x = data, y = accumDeathscorr, color = &amp;quot;blue&amp;quot;))+
+  geom_line(aes(x = data, y = predict, color = &amp;quot;red&amp;quot;))+
+  labs(x = &amp;quot;data&amp;quot;, y = &amp;quot;Accumulated deaths&amp;quot;)+
+  theme_bw()+
+  theme(legend.position=&amp;quot;right&amp;quot;, 
+        legend.box = &amp;quot;horizontal&amp;quot;,legend.title=element_text(size=15), 
+        legend.text=element_text(size=15), axis.text=element_text(size=20),
+        axis.title=element_text(size=20), axis.line = element_line(colour = &amp;quot;black&amp;quot;),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank()) +
+  scale_color_manual(values=c(&amp;quot;blue&amp;quot;, &amp;quot;red&amp;quot;), 
+                       name=&amp;quot;Accumulated deaths&amp;quot;,
+                     breaks = c(&amp;quot;blue&amp;quot;, &amp;quot;red&amp;quot;),
+                       labels=c(&amp;quot;Observed&amp;quot;, &amp;quot;Predict&amp;quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;h2 id=&#34;objetivo&#34;&gt;Objetivo&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;encontrar modelos que possam ajustar a esses dados&lt;/li&gt;
+&lt;li&gt;buscar parcerias&lt;/li&gt;
+&lt;li&gt;publicação&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
   </channel>
 </rss>

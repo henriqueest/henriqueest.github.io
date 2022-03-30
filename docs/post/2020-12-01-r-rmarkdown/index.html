@@ -1,0 +1,1465 @@
+<!DOCTYPE html><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.4.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Henrique José de Paula Alves" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Non-linear models Nonlinear models (NLM) usually go back to obtaining some information about the relationship between variables Y and X. Such information is linked to different degrees of knowledge as" />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#1565c0" />
+  
+
+  
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.css" integrity="" crossorigin="anonymous" media="print" onload="this.media='all'">
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.512574799414e7d36471486881070b0f.css" />
+
+  
+
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Henrique JP Alves" />
+  <meta property="og:url" content="https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/" />
+  <meta property="og:title" content="Non-linear growth models | Henrique JP Alves" />
+  <meta property="og:description" content="Non-linear models Nonlinear models (NLM) usually go back to obtaining some information about the relationship between variables Y and X. Such information is linked to different degrees of knowledge as" /><meta property="og:image" content="https://henriqueest.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://henriqueest.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2019-07-12T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2019-07-12T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/"
+  },
+  "headline": "Non-linear growth models",
+  
+  "datePublished": "2019-07-12T00:00:00Z",
+  "dateModified": "2019-07-12T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Henrique José de Paula Alves"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Henrique JP Alves",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://henriqueest.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Non-linear models Nonlinear models (NLM) usually go back to obtaining some information about the relationship between variables Y and X. Such information is linked to different degrees of knowledge as"
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Non-linear growth models | Henrique JP Alves</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="085fabff6869aa3a6f39463de03c0bb9" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.13d3c1ccc66961c64e937f4e854fdd1e.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Henrique JP Alves</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Henrique JP Alves</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Projects</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#publications"><span>Publications</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#event"><span>Event</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#posts"><span>Posts</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#contact"><span>Contact</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+            
+            <li class="nav-item d-none d-lg-inline-flex">
+              <a class="nav-link" href="/"  aria-label="">
+                <i class="fas fa-" aria-hidden="true"></i>
+              </a>
+            </li>
+          
+        
+
+        
+        
+        <li class="nav-item">
+          <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+        </li>
+        
+
+        
+        
+        <li class="nav-item dropdown theme-dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </a>
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item js-set-theme-light">
+              <span>Light</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-dark">
+              <span>Dark</span>
+            </a>
+            <a href="#" class="dropdown-item js-set-theme-auto">
+              <span>Automatic</span>
+            </a>
+          </div>
+        </li>
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Non-linear growth models</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Jul 12, 2019
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    6 min read
+  </span>
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h2 id="non-linear-models">Non-linear models</h2>
+<p>Nonlinear models (NLM) usually go back to obtaining some information about the relationship between variables Y and X. Such information is linked to different degrees of knowledge as</p>
+<ul>
+<li>an analysis of a scatterplot of Y v.s. X</li>
+<li>shape constraints of the function (monotone, sigmoid)</li>
+<li>the solution of a differential equation supported by some
+principle or theory</li>
+<li>the interpretation of its parameters.</li>
+</ul>
+<p>Whatever the degree of knowledge, the choice of a nonlinear model is rarely empirical.</p>
+<p>A growing number of researchers share the feeling that relationships between biological variables are best described by nonlinear functions. Processes such as growth, decay, birth, mortality, competition and production are rarely linearly related to explanatory variables (SCHABENBERGER; PIERCE, 2002).</p>
+<p>In this sense, it can be said that MNL best
+they describe mechanistic processes and are useful in accommodating constraints regarding such processes. In summary, MNLs have the following advantages over
+linear models (ML)</p>
+<ul>
+<li>your choice is supported by theory or mechanistic principles (physical, chemical or biological) or any other prior information</li>
+<li>certain parameters are amount of interest to the researcher provided with interpretation</li>
+<li>predictions can be made outside the observed domain of x</li>
+<li>are parsimonious as they typically have fewer parameters</li>
+<li>depart from the researcher&rsquo;s knowledge of the target phenomenon.</li>
+</ul>
+<p>On the other hand, the disadvantages are:</p>
+<ul>
+<li>require iterative estimation procedures based on providing initial values for parameters
+Inference methods are approximate</li>
+<li>Require knowledge of the researcher about the target phenomenon.</li>
+</ul>
+<h3 id="parameter-interpretation">Parameter interpretation</h3>
+<p>When assuming MNL to describe a process, it is essential to know the meaning of its parameters. In addition to dimensionality, the study of parametric space is equally important as it allows recognizing the values that a parameter assumes. Many processes involve positive variables, such as time, dose, production, speed, and limited variables, typically represented in percentage, such as content (%), concentration (%) and yield (%).</p>
+<p>Relevant properties of a function are things like having points
+characteristics (critical, inflection), their behavior (concavity, monoticity) or appear specific patterns (sigmoid, parabolic).</p>
+<p>Some of these properties, starting with the characteristic points related to the coordinate (Y) axis, are known as</p>
+<ul>
+<li><strong>ASS</strong>: upper asymptote</li>
+<li><strong>ASI</strong>: lower asymptote</li>
+<li><strong>PO</strong>: point of origin or intercept.</li>
+</ul>
+<p>Among the characteristic points on the abscissa axis (X) are:</p>
+<ul>
+<li><strong>PC</strong>: critical point</li>
+<li><strong>PI</strong>: inflection point</li>
+<li><strong>PS</strong>: point of symmetry</li>
+</ul>
+<p>The symbol for each of these parameters will depend on the model considered. Sometimes it is faster to recognize the properties of a function by its appearance with some specific pattern. Among the most common is</p>
+<ul>
+<li><strong>SIG</strong>: sigmoid, being monotonous increasing (MC) or decreasing (MD). The curve has an inverted S or S shape. Every sigmoid has <strong>PI</strong>, <strong>ASS</strong> and <strong>ASI</strong>.</li>
+</ul>
+<h2 id="code-r">Code R</h2>
+<p>To install and load it in IDE&rsquo;s R or rstudio, just run the following command lines.</p>
+<pre><code class="language-r">library(covid19br)
+library(tidyverse)
+library(dplyr)
+</code></pre>
+<pre><code class="language-r">data &lt;- downloadCovid19(&quot;world&quot;) %&gt;%
+  filter(country == &quot;Italy&quot;)%&gt;%
+  select(date, country, accumCases, accumDeaths)
+glimpse(data)
+</code></pre>
+<pre><code>## Rows: 798
+## Columns: 4
+## $ date        &lt;date&gt; 2020-01-22, 2020-01-23, 2020-01-24, 2020-01-25, 2020-01-2~
+## $ country     &lt;chr&gt; &quot;Italy&quot;, &quot;Italy&quot;, &quot;Italy&quot;, &quot;Italy&quot;, &quot;Italy&quot;, &quot;Italy&quot;, &quot;Ita~
+## $ accumCases  &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3~
+## $ accumDeaths &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+</code></pre>
+<h3 id="behavior-of-accumulated-deaths-italy">Behavior of accumulated deaths (Italy)</h3>
+<pre><code class="language-r">ggplot(data)+
+  geom_point(aes(x = as.Date(date), y = accumDeaths), colour = &quot;steelblue&quot;)+
+  labs(x = &quot;Date (day)&quot;, y = &quot;Accumulated deaths&quot;)+
+  theme_classic()
+</code></pre>
+<img src="https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<p>Suggests double sigmoid model</p>
+<pre><code class="language-r">ggplot(data)+
+  geom_point(aes(x = as.Date(date), y = accumDeaths), colour = &quot;steelblue&quot;)+
+  geom_vline(aes(x = as.Date(date), y = accumDeaths, xintercept = as.Date(&quot;2020-10-20&quot;)),
+             colour=&quot;brown&quot;, linetype = &quot;longdash&quot;)+
+  geom_vline(aes(x = as.Date(date), y = accumDeaths, xintercept = as.Date(&quot;2021-12-15&quot;)),
+             colour=&quot;brown&quot;, linetype = &quot;longdash&quot;)+
+ annotate(&quot;text&quot;, label = &quot;sigmoid behavior&quot;, x = as.Date(&quot;2020-05-1&quot;), y = 100000, size = 5,
+          colour = &quot;gray&quot;)+
+ annotate(&quot;text&quot;, label = &quot;sigmoid behavior&quot;, x = as.Date(&quot;2021-08-1&quot;), y = 100000, size = 5, 
+          colour = &quot;gray&quot;)+
+  labs(x = &quot;Date (day)&quot;, y = &quot;Accumulated deaths&quot;)+
+  theme_classic()
+</code></pre>
+<img src="https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+<h3 id="double-sigmoid-model-adjustment">Double sigmoid model adjustment</h3>
+<ul>
+<li>Transforming the date variable into numeric.</li>
+</ul>
+<pre><code class="language-r">n &lt;- nrow(data)
+data &lt;- data %&gt;%
+  mutate(data = c(seq(1,n,1)))
+glimpse(data)
+</code></pre>
+<pre><code>## Rows: 798
+## Columns: 5
+## $ date        &lt;date&gt; 2020-01-22, 2020-01-23, 2020-01-24, 2020-01-25, 2020-01-2~
+## $ country     &lt;chr&gt; &quot;Italy&quot;, &quot;Italy&quot;, &quot;Italy&quot;, &quot;Italy&quot;, &quot;Italy&quot;, &quot;Italy&quot;, &quot;Ita~
+## $ accumCases  &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3~
+## $ accumDeaths &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ data        &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,~
+</code></pre>
+<ul>
+<li>Changing the data scale to avoid over/under-flow issues.</li>
+</ul>
+<pre><code class="language-r">data_mod &lt;- data %&gt;%
+  select(accumDeaths, data) %&gt;%
+  mutate(accumDeathscorr = accumDeaths/10000,
+         data = data/100)
+glimpse(data_mod)
+</code></pre>
+<pre><code>## Rows: 798
+## Columns: 3
+## $ accumDeaths     &lt;int&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ data            &lt;dbl&gt; 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, ~
+## $ accumDeathscorr &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+</code></pre>
+<ul>
+<li>Behavior of the transformed data</li>
+</ul>
+<pre><code class="language-r">ggplot(data_mod)+
+  geom_point(aes(x = data, y = accumDeathscorr), colour = &quot;steelblue&quot;)+
+  geom_vline(aes(x = data, y = accumDeathscorr, xintercept = 3),
+             colour=&quot;brown&quot;, linetype = &quot;longdash&quot;)+
+  geom_vline(aes(x = data, y = accumDeathscorr, xintercept = 7),
+             colour=&quot;brown&quot;, linetype = &quot;longdash&quot;)+
+ annotate(&quot;text&quot;, label = &quot;sigmoid behavior&quot;, x = 1.5, y = 10, size = 5,
+          colour = &quot;gray&quot;)+
+ annotate(&quot;text&quot;, label = &quot;sigmoid behavior&quot;, x = 5.5, y = 10, size = 5, 
+          colour = &quot;gray&quot;)+
+  labs(x = &quot;Day&quot;, y = &quot;Accumulated deaths corrected&quot;)+
+  theme_classic()
+</code></pre>
+<img src="https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+<h2 id="starting-kicks-for-each-sigmoid">Starting kicks for each sigmoid</h2>
+<ul>
+<li>model one: logistic model</li>
+</ul>
+<pre><code class="language-r">apropos(&quot;^SS&quot;)
+</code></pre>
+<pre><code>##  [1] &quot;SSasymp&quot;     &quot;SSasympOff&quot;  &quot;SSasympOrig&quot; &quot;SSbiexp&quot;     &quot;SSD&quot;        
+##  [6] &quot;SSfol&quot;       &quot;SSfpl&quot;       &quot;SSgompertz&quot;  &quot;SSlogis&quot;     &quot;SSmicmen&quot;   
+## [11] &quot;SSweibull&quot;
+</code></pre>
+<pre><code class="language-r">n0 &lt;- nls(accumDeathscorr ~ SSlogis(data, A, M, S), data = data_mod, 
+          subset = data &lt; 3)
+coef(n0)
+</code></pre>
+<pre><code>##         A         M         S 
+## 3.5857409 0.8126909 0.1364505
+</code></pre>
+<pre><code class="language-r">data_modn0 &lt;- data_mod %&gt;%
+  filter(data &lt; 3) %&gt;%
+  mutate(predict = predict(n0))
+ggplot(data_modn0)+
+geom_point(aes(x = data, y = accumDeathscorr, color = &quot;blue&quot;))+
+  geom_line(aes(x = data, y = predict, color = &quot;red&quot;))+
+  labs(x = &quot;data&quot;, y = &quot;Accumulated deaths&quot;)+
+  theme_bw()+
+  theme(legend.position=&quot;right&quot;, 
+        legend.box = &quot;horizontal&quot;,legend.title=element_text(size=15), 
+        legend.text=element_text(size=15), axis.text=element_text(size=20),
+        axis.title=element_text(size=20), axis.line = element_line(colour = &quot;black&quot;),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank()) +
+  scale_color_manual(values=c(&quot;blue&quot;, &quot;red&quot;), 
+                       name=&quot;Accumulated deaths&quot;,
+                     breaks = c(&quot;blue&quot;, &quot;red&quot;),
+                       labels=c(&quot;Observed&quot;, &quot;Predict&quot;))
+</code></pre>
+<img src="https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+<ul>
+<li>model two: logistic model</li>
+</ul>
+<pre><code class="language-r">apropos(&quot;^SS&quot;)
+</code></pre>
+<pre><code>##  [1] &quot;SSasymp&quot;     &quot;SSasympOff&quot;  &quot;SSasympOrig&quot; &quot;SSbiexp&quot;     &quot;SSD&quot;        
+##  [6] &quot;SSfol&quot;       &quot;SSfpl&quot;       &quot;SSgompertz&quot;  &quot;SSlogis&quot;     &quot;SSmicmen&quot;   
+## [11] &quot;SSweibull&quot;
+</code></pre>
+<pre><code class="language-r">n1 &lt;- nls(accumDeathscorr ~ SSlogis(data, A, M, S), data = data_mod, 
+          subset = data &gt; 3 &amp; data &lt; 7)
+coef(n1)
+</code></pre>
+<pre><code>##          A          M          S 
+## 13.3237430  3.3364864  0.6323343
+</code></pre>
+<pre><code class="language-r">data_modn1 &lt;- data_mod %&gt;%
+  filter(data &gt; 3 &amp; data &lt; 7) %&gt;%
+  mutate(predict = predict(n1))
+ggplot(data_modn1)+
+geom_point(aes(x = data, y = accumDeathscorr, color = &quot;blue&quot;))+
+  geom_line(aes(x = data, y = predict, color = &quot;red&quot;))+
+  labs(x = &quot;data&quot;, y = &quot;Accumulated deaths&quot;)+
+  theme_bw()+
+  theme(legend.position=&quot;right&quot;, 
+        legend.box = &quot;horizontal&quot;,legend.title=element_text(size=15), 
+        legend.text=element_text(size=15), axis.text=element_text(size=20),
+        axis.title=element_text(size=20), axis.line = element_line(colour = &quot;black&quot;),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.border = element_blank(),
+        panel.background = element_blank()) +
+  scale_color_manual(values=c(&quot;blue&quot;, &quot;red&quot;), 
+                       name=&quot;Accumulated deaths&quot;,
+                     breaks = c(&quot;blue&quot;, &quot;red&quot;),
+                       labels=c(&quot;Observed&quot;, &quot;Predict&quot;))
+</code></pre>
+<img src="https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<h2 id="objetivo">Objetivo</h2>
+<ul>
+<li>encontrar modelos que possam ajustar a esses dados</li>
+<li>buscar parcerias</li>
+<li>publicação</li>
+</ul>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/&amp;text=Non-linear%20growth%20models" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/&amp;t=Non-linear%20growth%20models" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Non-linear%20growth%20models&amp;body=https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/&amp;title=Non-linear%20growth%20models" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Non-linear%20growth%20models%20https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/&amp;title=Non-linear%20growth%20models" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://henriqueest.github.io/"><img class="avatar mr-3 avatar-circle" src="/author/henrique-jose-de-paula-alves/avatar_hu0911e860a9e22540eeedceb358086754_9387_270x270_fill_q75_lanczos_center.jpg" alt="Henrique José de Paula Alves"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://henriqueest.github.io/">Henrique José de Paula Alves</a></h5>
+      <h6 class="card-subtitle">Searcher</h6>
+      <p class="card-text">Meus interesses em pesquisa incluem Estatística Espacial com ênfase em Geoestatística, Análise Multivariada, Métodos de Reamostragem Bootstrap, Simulação Computacional Intensiva matter.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/#contact" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/" >
+        <i class="fas fa-"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.facebook.com/henriquejose.paulaalves" target="_blank" rel="noopener">
+        <i class="fab fa-facebook"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://deest.ufop.br/" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/henriqueest" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/henrique-jos%C3%A9-paula-alves-90885333/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    <script src="/js/vendor-bundle.min.3d946de2e8784a477845261d87025092.js"></script>
+
+    
+    
+    
+      
+      
+        <script src="https://cdn.jsdelivr.net/gh/desandro/imagesloaded@v4.1.4/imagesloaded.pkgd.min.js" integrity="sha512-S5PZ9GxJZO16tT9r3WJp/Safn31eu8uWrzglMahDT4dsmgqWonRY9grk3j+3tfuPr9WJNsfooOR7Gi7HL5W2jw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/metafizzy/isotope@v3.0.6/dist/isotope.pkgd.min.js" integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew==" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js" integrity="sha512-Ypjm0o7jOxAd4hpdoppSEN0TQOC19UtPAqD+4s5AlXmUvbmmS/YMxYqAqarQYyxTnB6/rqip9qcxlNB/3U9Wdg==" crossorigin="anonymous"></script>
+        
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/r.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/python.min.js" crossorigin="anonymous"></script>
+        
+        <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/languages/latex.min.js" crossorigin="anonymous"></script>
+        
+      
+
+    
+
+    
+    
+    
+      <script src="https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/leaflet.min.js" integrity="" crossorigin="anonymous"></script>
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdn.jsdelivr.net/gh/krisk/Fuse@v3.2.1/dist/fuse.min.js" integrity="sha512-o38bmzBGX+hD3JHWUFCDA09btWaqrNmoJ3RXLlrysA7PP01Kgs4UlE4MhelE1v5dJR3+cxlR4qQlotsW7jKsnw==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/julmot/mark.js@8.11.1/dist/jquery.mark.min.js" integrity="sha512-mhbv5DqBMgrWL+32MmsDOt/OAvqr/cHimk6B8y/bx/xS88MVkYGPiVv2ixKVrkywF2qHplNRUvFsAHUdxZ3Krg==" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+
+    
+    
+    
+    <script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+    
+    
+      <script src="/js/wowchemy-headroom.208bf5db800f4a4e5a38cf3b67a99a51.js" type="module"></script>
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.63639926e24ecfb8040ea052c1077969.js"></script>
+
+    
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+
+</body>
+</html>

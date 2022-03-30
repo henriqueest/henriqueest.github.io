@@ -1,10 +1,14 @@
 ---
-title: "Event"
-header:
-  caption: ''
-  image: ''
-type: page
-view: 2
----
+title: Recent & Upcoming Talks
 
-Pacote ggplot2:
+# View.
+#   1 = List
+#   2 = Compact
+#   3 = Card
+view: 2
+
+# Optional header image (relative to `static/media/` folder).
+header:
+  caption: ""
+  image: ""
+---
