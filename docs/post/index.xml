@@ -17,19 +17,7 @@
       <link>https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/</link>
       <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
       <guid>https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/</guid>
-      <description>&lt;style&gt;
-body {
-  text-align: justify;
-  font-size: 12pt;
-  }
-code.r{
-  font-size: 10px;
-}
-pre {
-  font-size: 12px
-}
-&lt;/style&gt;
-&lt;h2 id=&#34;modelos-não-lineares&#34;&gt;Modelos não lineares&lt;/h2&gt;
+      <description>&lt;h2 id=&#34;modelos-não-lineares&#34;&gt;Modelos não lineares&lt;/h2&gt;
 &lt;p&gt;Modelos não lineares (NLM) geralmente são voltados a obter algumas informações sobre a relação entre as variáveis Y e X. Tais informações estão vinculadas a diferentes graus de conhecimento como&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;uma análise de um gráfico de dispersão de Y vs. X&lt;/li&gt;
