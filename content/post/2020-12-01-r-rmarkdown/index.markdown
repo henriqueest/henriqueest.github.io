@@ -3,19 +3,6 @@ title: Modelos não lineares
 date: 2019-07-12
 ---
 
-<style>
-body {
-  text-align: justify;
-  font-size: 12pt;
-  }
-code.r{
-  font-size: 10px;
-}
-pre {
-  font-size: 12px
-}
-</style>
-
 
 
 
