@@ -813,59 +813,113 @@ dados_final %&amp;gt;%
     </item>
     
     <item>
-      <title>Non-linear growth models</title>
+      <title>Spatio-temporal geostatistical modeling of Gneiting applied to surface albedo (Brazil)</title>
+      <link>https://henriqueest.github.io/publication/journal-article-4/</link>
+      <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/publication/journal-article-4/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>The COVID-19 pandemic in Brazil: an application of the k-means clustering method</title>
+      <link>https://henriqueest.github.io/publication/journal-article-3/</link>
+      <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/publication/journal-article-3/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Proposition of new alternative tests adapted to the traditional T2 test</title>
+      <link>https://henriqueest.github.io/publication/journal-article/</link>
+      <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/publication/journal-article/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Modelos não lineares</title>
       <link>https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/</link>
       <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
       <guid>https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/</guid>
-      <description>&lt;h2 id=&#34;non-linear-models&#34;&gt;Non-linear models&lt;/h2&gt;
-&lt;p&gt;Nonlinear models (NLM) usually go back to obtaining some information about the relationship between variables Y and X. Such information is linked to different degrees of knowledge as&lt;/p&gt;
+      <description>&lt;style&gt;
+body {
+  text-align: justify;
+  font-size: 12pt;
+  }
+code.r{
+  font-size: 10px;
+}
+pre {
+  font-size: 12px
+}
+&lt;/style&gt;
+&lt;h2 id=&#34;modelos-não-lineares&#34;&gt;Modelos não lineares&lt;/h2&gt;
+&lt;p&gt;Modelos não lineares (NLM) geralmente são voltados a obter algumas informações sobre a relação entre as variáveis Y e X. Tais informações estão vinculadas a diferentes graus de conhecimento como&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;an analysis of a scatterplot of Y v.s. X&lt;/li&gt;
-&lt;li&gt;shape constraints of the function (monotone, sigmoid)&lt;/li&gt;
-&lt;li&gt;the solution of a differential equation supported by some
-principle or theory&lt;/li&gt;
-&lt;li&gt;the interpretation of its parameters.&lt;/li&gt;
+&lt;li&gt;uma análise de um gráfico de dispersão de Y vs. X&lt;/li&gt;
+&lt;li&gt;restrições de forma da função (monótona, sigmóide)&lt;/li&gt;
+&lt;li&gt;a solução de uma equação diferencial suportada por algum
+princípio ou teoria&lt;/li&gt;
+&lt;li&gt;a interpretação dos seus parâmetros.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Whatever the degree of knowledge, the choice of a nonlinear model is rarely empirical.&lt;/p&gt;
-&lt;p&gt;A growing number of researchers share the feeling that relationships between biological variables are best described by nonlinear functions. Processes such as growth, decay, birth, mortality, competition and production are rarely linearly related to explanatory variables (SCHABENBERGER; PIERCE, 2002).&lt;/p&gt;
-&lt;p&gt;In this sense, it can be said that MNL best
-they describe mechanistic processes and are useful in accommodating constraints regarding such processes. In summary, MNLs have the following advantages over
-linear models (ML)&lt;/p&gt;
+&lt;p&gt;Qualquer que seja o grau de conhecimento, a escolha de um modelo não linear raramente é empírica.&lt;/p&gt;
+&lt;p&gt;Um número crescente de pesquisadores compartilha a sensação de que as relações entre variáveis biológicas são melhor descritas por funções não lineares. Processos como crescimento, decadência, nascimento, mortalidade, competição e produção raramente são relacionados linearmente a variáveis explicativas.&lt;/p&gt;
+&lt;p&gt;Nesse sentido, pode-se dizer que o NLM descrevem melhor processos mecanicistas e são úteis para acomodar restrições relativas a tais processos. Em resumo, os NLM&amp;rsquo;Ls têm as seguintes vantagens sobre modelos lineares (ML)&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;your choice is supported by theory or mechanistic principles (physical, chemical or biological) or any other prior information&lt;/li&gt;
-&lt;li&gt;certain parameters are amount of interest to the researcher provided with interpretation&lt;/li&gt;
-&lt;li&gt;predictions can be made outside the observed domain of x&lt;/li&gt;
-&lt;li&gt;are parsimonious as they typically have fewer parameters&lt;/li&gt;
-&lt;li&gt;depart from the researcher&amp;rsquo;s knowledge of the target phenomenon.&lt;/li&gt;
+&lt;li&gt;sua escolha é apoiada por princípios teóricos ou mecanicistas (físicos, químicos ou biológicos) ou qualquer outra informação prévia&lt;/li&gt;
+&lt;li&gt;certos parâmetros são de interesse para o pesquisador desde que com interpretação&lt;/li&gt;
+&lt;li&gt;as previsões podem ser feitas fora do domínio observado de x&lt;/li&gt;
+&lt;li&gt;são parcimoniosos, pois normalmente têm menos parâmetros.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;On the other hand, the disadvantages are:&lt;/p&gt;
+&lt;p&gt;Por outro lado, as desvantagens são:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;require iterative estimation procedures based on providing initial values for parameters
-Inference methods are approximate&lt;/li&gt;
-&lt;li&gt;Require knowledge of the researcher about the target phenomenon.&lt;/li&gt;
+&lt;li&gt;exigir procedimentos de estimativa iterativa com base no fornecimento de valores iniciais para os parâmetros&lt;/li&gt;
+&lt;li&gt;Os métodos de inferência são aproximados&lt;/li&gt;
+&lt;li&gt;Exigir conhecimento do pesquisador sobre o fenômeno alvo.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;parameter-interpretation&#34;&gt;Parameter interpretation&lt;/h3&gt;
-&lt;p&gt;When assuming MNL to describe a process, it is essential to know the meaning of its parameters. In addition to dimensionality, the study of parametric space is equally important as it allows recognizing the values that a parameter assumes. Many processes involve positive variables, such as time, dose, production, speed, and limited variables, typically represented in percentage, such as content (%), concentration (%) and yield (%).&lt;/p&gt;
-&lt;p&gt;Relevant properties of a function are things like having points
-characteristics (critical, inflection), their behavior (concavity, monoticity) or appear specific patterns (sigmoid, parabolic).&lt;/p&gt;
-&lt;p&gt;Some of these properties, starting with the characteristic points related to the coordinate (Y) axis, are known as&lt;/p&gt;
+&lt;h3 id=&#34;interpretação-de-parâmetros&#34;&gt;Interpretação de parâmetros&lt;/h3&gt;
+&lt;p&gt;Ao assumir o NLM para descrever um processo, é essencial conhecer o significado de seus parâmetros. Além da dimensionalidade, o estudo do espaço paramétrico é igualmente importante, pois permite reconhecer os valores que um parâmetro assume. Muitos processos envolvem variáveis positivas, como tempo, dose, produção, velocidade e variáveis limitadas, normalmente representadas em porcentagem, como conteúdo (%), concentração (%) e rendimento (%).&lt;/p&gt;
+&lt;p&gt;Propriedades relevantes de uma função são consideradas, como ter pontos característicos (crítico, inflexão), seu comportamento (concavidade, monoticidade) ou padrões específicos (sigmóide, parabólico).&lt;/p&gt;
+&lt;p&gt;Algumas dessas propriedades, começando pelos pontos característicos relacionados ao eixo coordenado (Y), são conhecidas como&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;ASS&lt;/strong&gt;: upper asymptote&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ASI&lt;/strong&gt;: lower asymptote&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;PO&lt;/strong&gt;: point of origin or intercept.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ASS&lt;/strong&gt;: assíntota superior&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ASI&lt;/strong&gt;: assíntota inferior&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PO&lt;/strong&gt;: ponto de origem ou interceptação.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Among the characteristic points on the abscissa axis (X) are:&lt;/p&gt;
+&lt;p&gt;Entre os pontos característicos no eixo das abcissas (X) estão:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;PC&lt;/strong&gt;: critical point&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;PI&lt;/strong&gt;: inflection point&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;PS&lt;/strong&gt;: point of symmetry&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PC&lt;/strong&gt;: ponto crítico&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PI&lt;/strong&gt;: ponto de inflexão&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PS&lt;/strong&gt;: ponto de simetria&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;The symbol for each of these parameters will depend on the model considered. Sometimes it is faster to recognize the properties of a function by its appearance with some specific pattern. Among the most common is&lt;/p&gt;
+&lt;p&gt;O símbolo para cada um desses parâmetros dependerá do modelo considerado. Às vezes é mais fácil reconhecer as propriedades de uma função por sua aparência com algum padrão específico. Entre os mais comuns está&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;SIG&lt;/strong&gt;: sigmoid, being monotonous increasing (MC) or decreasing (MD). The curve has an inverted S or S shape. Every sigmoid has &lt;strong&gt;PI&lt;/strong&gt;, &lt;strong&gt;ASS&lt;/strong&gt; and &lt;strong&gt;ASI&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SIG&lt;/strong&gt;: sigmóide, sendo monótono crescente (MC) ou decrescente (MD). A curva tem uma forma de S ou S invertido. Cada sigmóide tem &lt;strong&gt;PI&lt;/strong&gt;, &lt;strong&gt;ASS&lt;/strong&gt; e &lt;strong&gt;ASI&lt;/strong&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;code-r&#34;&gt;Code R&lt;/h2&gt;
-&lt;p&gt;To install and load it in IDE&amp;rsquo;s R or rstudio, just run the following command lines.&lt;/p&gt;
+&lt;h2 id=&#34;paper-referência&#34;&gt;Paper referência&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Esse paper trata de ajustes de modelos não lineares em dados de COVID-19&lt;/li&gt;
+&lt;li&gt;Países com 20 maiores Produto Interno Bruto (PIB)&lt;/li&gt;
+&lt;li&gt;Modelagem logística na primeira onda&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://periodicos.unichristus.edu.br/jhbs/article/view/4226/1551&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Paper&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;código-r&#34;&gt;Código R&lt;/h2&gt;
+&lt;p&gt;Para carregar os pacotes necessários nas IDE&amp;rsquo;s R ou rstudio, basta executar as seguintes linhas de comando.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(covid19br)
 library(tidyverse)
 library(dplyr)
@@ -875,21 +929,21 @@ library(dplyr)
   select(date, country, accumCases, accumDeaths)
 glimpse(data)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Rows: 798
+&lt;pre&gt;&lt;code&gt;## Rows: 799
 ## Columns: 4
 ## $ date        &amp;lt;date&amp;gt; 2020-01-22, 2020-01-23, 2020-01-24, 2020-01-25, 2020-01-2~
 ## $ country     &amp;lt;chr&amp;gt; &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Ita~
 ## $ accumCases  &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3~
 ## $ accumDeaths &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
 &lt;/code&gt;&lt;/pre&gt;
-&lt;h3 id=&#34;behavior-of-accumulated-deaths-italy&#34;&gt;Behavior of accumulated deaths (Italy)&lt;/h3&gt;
+&lt;h3 id=&#34;comportamento-das-mortes-acumuladas-itália&#34;&gt;Comportamento das mortes acumuladas (Itália)&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(data)+
   geom_point(aes(x = as.Date(date), y = accumDeaths), colour = &amp;quot;steelblue&amp;quot;)+
   labs(x = &amp;quot;Date (day)&amp;quot;, y = &amp;quot;Accumulated deaths&amp;quot;)+
   theme_classic()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;
-&lt;p&gt;Suggests double sigmoid model&lt;/p&gt;
+&lt;p&gt;Sugere modelo duplo sigmóide&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(data)+
   geom_point(aes(x = as.Date(date), y = accumDeaths), colour = &amp;quot;steelblue&amp;quot;)+
   geom_vline(aes(x = as.Date(date), y = accumDeaths, xintercept = as.Date(&amp;quot;2020-10-20&amp;quot;)),
@@ -904,16 +958,16 @@ glimpse(data)
   theme_classic()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;
-&lt;h3 id=&#34;double-sigmoid-model-adjustment&#34;&gt;Double sigmoid model adjustment&lt;/h3&gt;
+&lt;h3 id=&#34;ajuste-do-modelo-duplo-sigmóide&#34;&gt;Ajuste do modelo duplo sigmóide&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Transforming the date variable into numeric.&lt;/li&gt;
+&lt;li&gt;Criando uma variável numérica para contar o tempo&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;n &amp;lt;- nrow(data)
 data &amp;lt;- data %&amp;gt;%
   mutate(data = c(seq(1,n,1)))
 glimpse(data)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Rows: 798
+&lt;pre&gt;&lt;code&gt;## Rows: 799
 ## Columns: 5
 ## $ date        &amp;lt;date&amp;gt; 2020-01-22, 2020-01-23, 2020-01-24, 2020-01-25, 2020-01-2~
 ## $ country     &amp;lt;chr&amp;gt; &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Ita~
@@ -922,7 +976,7 @@ glimpse(data)
 ## $ data        &amp;lt;dbl&amp;gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,~
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
-&lt;li&gt;Changing the data scale to avoid over/under-flow issues.&lt;/li&gt;
+&lt;li&gt;Alterando a escala de dados para evitar problemas de over/under-flow.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;data_mod &amp;lt;- data %&amp;gt;%
   select(accumDeaths, data) %&amp;gt;%
@@ -930,14 +984,14 @@ glimpse(data)
          data = data/100)
 glimpse(data_mod)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Rows: 798
+&lt;pre&gt;&lt;code&gt;## Rows: 799
 ## Columns: 3
 ## $ accumDeaths     &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
 ## $ data            &amp;lt;dbl&amp;gt; 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, ~
 ## $ accumDeathscorr &amp;lt;dbl&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
-&lt;li&gt;Behavior of the transformed data&lt;/li&gt;
+&lt;li&gt;Comportamento dos dados transformados&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(data_mod)+
   geom_point(aes(x = data, y = accumDeathscorr), colour = &amp;quot;steelblue&amp;quot;)+
@@ -953,9 +1007,9 @@ glimpse(data_mod)
   theme_classic()
 &lt;/code&gt;&lt;/pre&gt;
 &lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;
-&lt;h2 id=&#34;starting-kicks-for-each-sigmoid&#34;&gt;Starting kicks for each sigmoid&lt;/h2&gt;
+&lt;h2 id=&#34;chutes-iniciais-para-cada-sigmóide&#34;&gt;Chutes iniciais para cada sigmóide&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;model one: logistic model&lt;/li&gt;
+&lt;li&gt;modelo um: modelo logístico&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;apropos(&amp;quot;^SS&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
@@ -993,7 +1047,7 @@ geom_point(aes(x = data, y = accumDeathscorr, color = &amp;quot;blue&amp;quot;))
 &lt;/code&gt;&lt;/pre&gt;
 &lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;
 &lt;ul&gt;
-&lt;li&gt;model two: logistic model&lt;/li&gt;
+&lt;li&gt;modelo dois: modelo logístico&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;apropos(&amp;quot;^SS&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
@@ -1030,26 +1084,12 @@ geom_point(aes(x = data, y = accumDeathscorr, color = &amp;quot;blue&amp;quot;))
                        labels=c(&amp;quot;Observed&amp;quot;, &amp;quot;Predict&amp;quot;))
 &lt;/code&gt;&lt;/pre&gt;
 &lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;
-&lt;h2 id=&#34;aim&#34;&gt;Aim&lt;/h2&gt;
+&lt;h2 id=&#34;objetivos&#34;&gt;Objetivos&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;find models that can fit this data&lt;/li&gt;
-&lt;li&gt;seek partnerships&lt;/li&gt;
-&lt;li&gt;Publication&lt;/li&gt;
+&lt;li&gt;encontre modelos que possam se ajustar a esses dados&lt;/li&gt;
+&lt;li&gt;buscar parcerias&lt;/li&gt;
+&lt;li&gt;Publicação&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>An example preprint / working paper</title>
-      <link>https://henriqueest.github.io/publication/preprint/</link>
-      <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>https://henriqueest.github.io/publication/preprint/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code, math, and images&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -1204,40 +1244,15 @@ $$&lt;/p&gt;
     </item>
     
     <item>
-      <title>An example journal article</title>
-      <link>https://henriqueest.github.io/publication/journal-article/</link>
-      <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>https://henriqueest.github.io/publication/journal-article/</guid>
+      <title>Heart Rate Variability in Shift Workers: Responses to Orthostatism and Relationships with Anthropometry, Body Composition, and Blood Pressure</title>
+      <link>https://henriqueest.github.io/publication/journal-article-2/</link>
+      <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/publication/journal-article-2/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code, math, and images&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>An example conference paper</title>
-      <link>https://henriqueest.github.io/publication/conference-paper/</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
-      <guid>https://henriqueest.github.io/publication/conference-paper/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code, math, and images&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

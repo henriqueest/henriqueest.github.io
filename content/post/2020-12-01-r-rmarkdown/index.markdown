@@ -1,64 +1,79 @@
 ---
-title: Non-linear growth models
+title: Modelos não lineares
 date: 2019-07-12
 ---
 
+<style>
+body {
+  text-align: justify;
+  font-size: 12pt;
+  }
+code.r{
+  font-size: 10px;
+}
+pre {
+  font-size: 12px
+}
+</style>
 
 
 
 
-## Non-linear models 
+## Modelos não lineares
 
-Nonlinear models (NLM) usually go back to obtaining some information about the relationship between variables Y and X. Such information is linked to different degrees of knowledge as
-- an analysis of a scatterplot of Y v.s. X
-- shape constraints of the function (monotone, sigmoid)
-- the solution of a differential equation supported by some
-principle or theory
-- the interpretation of its parameters.
+Modelos não lineares (NLM) geralmente são voltados a obter algumas informações sobre a relação entre as variáveis Y e X. Tais informações estão vinculadas a diferentes graus de conhecimento como
+- uma análise de um gráfico de dispersão de Y vs. X
+- restrições de forma da função (monótona, sigmóide)
+- a solução de uma equação diferencial suportada por algum
+princípio ou teoria
+- a interpretação dos seus parâmetros.
 
-Whatever the degree of knowledge, the choice of a nonlinear model is rarely empirical.
+Qualquer que seja o grau de conhecimento, a escolha de um modelo não linear raramente é empírica.
 
-A growing number of researchers share the feeling that relationships between biological variables are best described by nonlinear functions. Processes such as growth, decay, birth, mortality, competition and production are rarely linearly related to explanatory variables (SCHABENBERGER; PIERCE, 2002).
+Um número crescente de pesquisadores compartilha a sensação de que as relações entre variáveis biológicas são melhor descritas por funções não lineares. Processos como crescimento, decadência, nascimento, mortalidade, competição e produção raramente são relacionados linearmente a variáveis explicativas.
 
-In this sense, it can be said that MNL best
-they describe mechanistic processes and are useful in accommodating constraints regarding such processes. In summary, MNLs have the following advantages over
-linear models (ML)
-- your choice is supported by theory or mechanistic principles (physical, chemical or biological) or any other prior information
-- certain parameters are amount of interest to the researcher provided with interpretation
-- predictions can be made outside the observed domain of x
-- are parsimonious as they typically have fewer parameters
-- depart from the researcher's knowledge of the target phenomenon.
+Nesse sentido, pode-se dizer que o NLM descrevem melhor processos mecanicistas e são úteis para acomodar restrições relativas a tais processos. Em resumo, os NLM'Ls têm as seguintes vantagens sobre modelos lineares (ML)
+- sua escolha é apoiada por princípios teóricos ou mecanicistas (físicos, químicos ou biológicos) ou qualquer outra informação prévia
+- certos parâmetros são de interesse para o pesquisador desde que com interpretação
+- as previsões podem ser feitas fora do domínio observado de x
+- são parcimoniosos, pois normalmente têm menos parâmetros.
 
-On the other hand, the disadvantages are:
-- require iterative estimation procedures based on providing initial values for parameters
- Inference methods are approximate
-- Require knowledge of the researcher about the target phenomenon.
+Por outro lado, as desvantagens são:
+- exigir procedimentos de estimativa iterativa com base no fornecimento de valores iniciais para os parâmetros
+- Os métodos de inferência são aproximados
+- Exigir conhecimento do pesquisador sobre o fenômeno alvo.
 
-### Parameter interpretation 
+### Interpretação de parâmetros
 
-When assuming MNL to describe a process, it is essential to know the meaning of its parameters. In addition to dimensionality, the study of parametric space is equally important as it allows recognizing the values that a parameter assumes. Many processes involve positive variables, such as time, dose, production, speed, and limited variables, typically represented in percentage, such as content (%), concentration (%) and yield (%).
+Ao assumir o NLM para descrever um processo, é essencial conhecer o significado de seus parâmetros. Além da dimensionalidade, o estudo do espaço paramétrico é igualmente importante, pois permite reconhecer os valores que um parâmetro assume. Muitos processos envolvem variáveis positivas, como tempo, dose, produção, velocidade e variáveis limitadas, normalmente representadas em porcentagem, como conteúdo (%), concentração (%) e rendimento (%).
 
-Relevant properties of a function are things like having points
-characteristics (critical, inflection), their behavior (concavity, monoticity) or appear specific patterns (sigmoid, parabolic).
+Propriedades relevantes de uma função são consideradas, como ter pontos característicos (crítico, inflexão), seu comportamento (concavidade, monoticidade) ou padrões específicos (sigmóide, parabólico).
 
-Some of these properties, starting with the characteristic points related to the coordinate (Y) axis, are known as
-- **ASS**: upper asymptote
-- **ASI**: lower asymptote
-- **PO**: point of origin or intercept.
+Algumas dessas propriedades, começando pelos pontos característicos relacionados ao eixo coordenado (Y), são conhecidas como
+- **ASS**: assíntota superior
+- **ASI**: assíntota inferior
+- **PO**: ponto de origem ou interceptação.
 
-Among the characteristic points on the abscissa axis (X) are:
-- **PC**: critical point
-- **PI**: inflection point
-- **PS**: point of symmetry
+Entre os pontos característicos no eixo das abcissas (X) estão:
+- **PC**: ponto crítico
+- **PI**: ponto de inflexão
+- **PS**: ponto de simetria
 
-The symbol for each of these parameters will depend on the model considered. Sometimes it is faster to recognize the properties of a function by its appearance with some specific pattern. Among the most common is
-- **SIG**: sigmoid, being monotonous increasing (MC) or decreasing (MD). The curve has an inverted S or S shape. Every sigmoid has **PI**, **ASS** and **ASI**.
+O símbolo para cada um desses parâmetros dependerá do modelo considerado. Às vezes é mais fácil reconhecer as propriedades de uma função por sua aparência com algum padrão específico. Entre os mais comuns está
+- **SIG**: sigmóide, sendo monótono crescente (MC) ou decrescente (MD). A curva tem uma forma de S ou S invertido. Cada sigmóide tem **PI**, **ASS** e **ASI**.
 
 
-## Code R 
+## Paper referência
 
-To install and load it in IDE's R or rstudio, just run the following command lines.
+- Esse paper trata de ajustes de modelos não lineares em dados de COVID-19
+- Países com 20 maiores Produto Interno Bruto (PIB)
+- Modelagem logística na primeira onda
+- [Paper](https://periodicos.unichristus.edu.br/jhbs/article/view/4226/1551)
 
+
+## Código R 
+
+Para carregar os pacotes necessários nas IDE's R ou rstudio, basta executar as seguintes linhas de comando.
 
 
 ```r
@@ -66,6 +81,7 @@ library(covid19br)
 library(tidyverse)
 library(dplyr)
 ```
+
 
 
 ```r
@@ -76,7 +92,7 @@ glimpse(data)
 ```
 
 ```
-## Rows: 798
+## Rows: 799
 ## Columns: 4
 ## $ date        <date> 2020-01-22, 2020-01-23, 2020-01-24, 2020-01-25, 2020-01-2~
 ## $ country     <chr> "Italy", "Italy", "Italy", "Italy", "Italy", "Italy", "Ita~
@@ -84,7 +100,7 @@ glimpse(data)
 ## $ accumDeaths <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
 ```
 
-### Behavior of accumulated deaths (Italy)
+### Comportamento das mortes acumuladas (Itália)
 
 
 ```r
@@ -97,7 +113,7 @@ ggplot(data)+
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
 
-Suggests double sigmoid model
+Sugere modelo duplo sigmóide
 
 
 ```r
@@ -118,9 +134,9 @@ ggplot(data)+
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 
 
-### Double sigmoid model adjustment
+### Ajuste do modelo duplo sigmóide
 
-- Transforming the date variable into numeric.
+- Criando uma variável numérica para contar o tempo
 
 
 ```r
@@ -131,7 +147,7 @@ glimpse(data)
 ```
 
 ```
-## Rows: 798
+## Rows: 799
 ## Columns: 5
 ## $ date        <date> 2020-01-22, 2020-01-23, 2020-01-24, 2020-01-25, 2020-01-2~
 ## $ country     <chr> "Italy", "Italy", "Italy", "Italy", "Italy", "Italy", "Ita~
@@ -141,7 +157,7 @@ glimpse(data)
 ```
 
 
-- Changing the data scale to avoid over/under-flow issues.
+- Alterando a escala de dados para evitar problemas de over/under-flow.
 
 
 ```r
@@ -153,14 +169,14 @@ glimpse(data_mod)
 ```
 
 ```
-## Rows: 798
+## Rows: 799
 ## Columns: 3
 ## $ accumDeaths     <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
 ## $ data            <dbl> 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, ~
 ## $ accumDeathscorr <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
 ```
 
-- Behavior of the transformed data
+- Comportamento dos dados transformados
 
 
 ```r
@@ -181,9 +197,9 @@ ggplot(data_mod)+
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 
 
-## Starting kicks for each sigmoid
+## Chutes iniciais para cada sigmóide
 
-- model one: logistic model
+- modelo um: modelo logístico
 
 
 ```r
@@ -235,8 +251,7 @@ geom_point(aes(x = data, y = accumDeathscorr, color = "blue"))+
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 
 
-
-- model two: logistic model
+- modelo dois: modelo logístico
 
 
 ```r
@@ -288,9 +303,10 @@ geom_point(aes(x = data, y = accumDeathscorr, color = "blue"))+
 <img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-11-1.png" width="672" />
 
 
-## Aim
-- find models that can fit this data
-- seek partnerships
-- Publication
+## Objetivos
+
+- encontre modelos que possam se ajustar a esses dados
+- buscar parcerias
+- Publicação
 
 

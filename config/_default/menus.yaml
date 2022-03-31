@@ -7,9 +7,9 @@ main:
   - name: Posts
     url: '#posts'
     weight: 60
-  - name: Projects
-    url: '#projects'
-    weight: 30
+  # - name: Projects
+  #   url: '#projects'
+  #   weight: 30
   # - name: Talks
   #   url: '#talks'
   #   weight: 40
@@ -19,9 +19,9 @@ main:
   - name: Courses
     url: courses/
     weight: 60
-  - name: Event
-    url: '#event'
-    weight: 60
+  # - name: Event
+  #   url: '#event'
+  #   weight: 60
   - name: Contact
     url: '#contact'
     weight: 70
