@@ -6,6 +6,7 @@ date: 2019-07-12
 
 
 
+
 ## Modelos não lineares
 
 Modelos não lineares (NLM) geralmente são voltados a obter algumas informações sobre a relação entre as variáveis Y e X. Tais informações estão vinculadas a diferentes graus de conhecimento como

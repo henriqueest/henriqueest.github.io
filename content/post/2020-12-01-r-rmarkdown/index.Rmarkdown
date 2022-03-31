@@ -3,6 +3,7 @@ title: Modelos não lineares
 date: 2019-07-12
 ---
 
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
