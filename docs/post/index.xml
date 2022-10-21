@@ -86,13 +86,12 @@ o tipo de variável a ser trabalhada é um ponto de partida para se determinar o
       <link>https://henriqueest.github.io/post/aula2_ufop/aula2/</link>
       <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
       <guid>https://henriqueest.github.io/post/aula2_ufop/aula2/</guid>
-      <description>&lt;style&gt;
-body {
-  text-align: justify;
-  font-size: 12pt;
-  }
-
-&lt;/style&gt;
+      <description>&lt;!-- &lt;style&gt; --&gt;
+&lt;!-- body { --&gt;
+&lt;!--   text-align: justify; --&gt;
+&lt;!--   font-size: 12pt; --&gt;
+&lt;!--   } --&gt;
+&lt;!-- &lt;/style&gt; --&gt;
 &lt;p&gt;Em uma pesquisa, coletamos dados sobre a(s) variável(is) de interesse. Muitas vezes esses dados surgem de forma desordenada através do qual não conseguimos detectar, a primeira vista, um comportamento que mereça uma explicação plausível. Uma das formas de descrever o comportamento dos dados é organizá-los em tabelas ou gráficos.&lt;/p&gt;
 &lt;h2 id=&#34;tabelas-de-distribuição-de-frequências-simples&#34;&gt;Tabelas de Distribuição de Frequências Simples&lt;/h2&gt;
 &lt;h1 id=&#34;conceitos-básicos&#34;&gt;Conceitos Básicos&lt;/h1&gt;

@@ -3,12 +3,12 @@ title: Aula 1 - Introdução a Estatística
 date: 2022-04-02
 ---
 
-<style>
-body {
-  text-align: justify;
-  font-size: 12pt;
-  }
-</style>
+<!-- <style> -->
+<!-- body { -->
+<!--   text-align: justify; -->
+<!--   font-size: 12pt; -->
+<!--   } -->
+<!-- </style> -->
 
 
 
