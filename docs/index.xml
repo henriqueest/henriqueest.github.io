@@ -433,7 +433,7 @@ tabela
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;glimpse(data)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Rows: 28,836
+&lt;pre&gt;&lt;code&gt;## Rows: 28,863
 ## Columns: 12
 ## $ region       &amp;lt;chr&amp;gt; &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;No~
 ## $ state        &amp;lt;chr&amp;gt; &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO~
@@ -559,11 +559,11 @@ tabela
 ##     4:  North    AC 2020-02-28        9        0          0         0
 ##     5:  North    AC 2020-02-29        9        0          0         0
 ##    ---                                                               
-## 28832:  North    TO 2022-03-26       12       59     302502         0
-## 28833:  North    TO 2022-03-27       13        0     302502         0
-## 28834:  North    TO 2022-03-28       13        7     302509         0
-## 28835:  North    TO 2022-03-29       13       97     302606         0
-## 28836:  North    TO 2022-03-30       13      125     302731         1
+## 28859:  North    TO 2022-03-27       13        0     302502         0
+## 28860:  North    TO 2022-03-28       13        7     302509         0
+## 28861:  North    TO 2022-03-29       13       97     302606         0
+## 28862:  North    TO 2022-03-30       13      125     302731         1
+## 28863:  North    TO 2022-03-31       13       95     302826         1
 ##        accumDeaths newRecovered newFollowup     pop state_code
 ##     1:           0           NA          NA  881935         12
 ##     2:           0           NA          NA  881935         12
@@ -571,11 +571,11 @@ tabela
 ##     4:           0           NA          NA  881935         12
 ##     5:           0           NA          NA  881935         12
 ##    ---                                                        
-## 28832:        4142           NA          NA 1572866         17
-## 28833:        4142           NA          NA 1572866         17
-## 28834:        4142           NA          NA 1572866         17
-## 28835:        4142           NA          NA 1572866         17
-## 28836:        4143           NA          NA 1572866         17
+## 28859:        4142           NA          NA 1572866         17
+## 28860:        4142           NA          NA 1572866         17
+## 28861:        4142           NA          NA 1572866         17
+## 28862:        4143           NA          NA 1572866         17
+## 28863:        4144           NA          NA 1572866         17
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;select(data, region , date,  state, newCases, accumCases)
 &lt;/code&gt;&lt;/pre&gt;
@@ -586,11 +586,11 @@ tabela
 ##     4:  North 2020-02-28    RO        0          0
 ##     5:  North 2020-02-29    RO        0          0
 ##    ---                                            
-## 28832:  North 2022-02-19    RO        0          0
-## 28833:  North 2022-02-20    RO        0          0
-## 28834:  North 2022-02-21    RO        0          0
-## 28835:  North 2022-02-22    RO        0          0
-## 28836:  North 2022-02-23    RO        0          0
+## 28859:  North 2022-02-19    RO        0          0
+## 28860:  North 2022-02-20    RO        0          0
+## 28861:  North 2022-02-21    RO        0          0
+## 28862:  North 2022-02-22    RO        0          0
+## 28863:  North 2022-02-23    RO        0          0
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mutate(data, rate_newcases = newCases/pop*100000)
 &lt;/code&gt;&lt;/pre&gt;
@@ -601,11 +601,11 @@ tabela
 ##     4:  North    RO 2020-02-28        9        0          0         0
 ##     5:  North    RO 2020-02-29        9        0          0         0
 ##    ---                                                               
-## 28832:  North    RO 2022-02-19        7        0          0         0
-## 28833:  North    RO 2022-02-20        8        0          0         0
-## 28834:  North    RO 2022-02-21        8        0          0         0
-## 28835:  North    RO 2022-02-22        8        0          0         0
-## 28836:  North    RO 2022-02-23        8        0          0         0
+## 28859:  North    RO 2022-02-19        7        0          0         0
+## 28860:  North    RO 2022-02-20        8        0          0         0
+## 28861:  North    RO 2022-02-21        8        0          0         0
+## 28862:  North    RO 2022-02-22        8        0          0         0
+## 28863:  North    RO 2022-02-23        8        0          0         0
 ##        accumDeaths newRecovered newFollowup     pop state_code rate_newcases
 ##     1:           0           NA          NA 1777225         11             0
 ##     2:           0           NA          NA 1777225         11             0
@@ -613,21 +613,21 @@ tabela
 ##     4:           0           NA          NA 1777225         11             0
 ##     5:           0           NA          NA 1777225         11             0
 ##    ---                                                                      
-## 28832:           0           NA          NA      NA         11            NA
-## 28833:           0           NA          NA      NA         11            NA
-## 28834:           0           NA          NA      NA         11            NA
-## 28835:           0           NA          NA      NA         11            NA
-## 28836:           0           NA          NA      NA         11            NA
+## 28859:           0           NA          NA      NA         11            NA
+## 28860:           0           NA          NA      NA         11            NA
+## 28861:           0           NA          NA      NA         11            NA
+## 28862:           0           NA          NA      NA         11            NA
+## 28863:           0           NA          NA      NA         11            NA
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;summarize(data, mean_newdeaths=mean(newDeaths), desv_pad= sd(newDeaths),
                   standard_error=desv_pad/sqrt(length(data)))
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##   mean_newdeaths desv_pad standard_error
-## 1        23.0327 63.75516       18.40453
+## 1       23.01992 63.72881       18.39692
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;group_by(data, region, epi_week)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## # A tibble: 28,836 x 12
+&lt;pre&gt;&lt;code&gt;## # A tibble: 28,863 x 12
 ## # Groups:   region, epi_week [265]
 ##    region state date       epi_week newCases accumCases newDeaths accumDeaths
 ##    &amp;lt;chr&amp;gt;  &amp;lt;chr&amp;gt; &amp;lt;date&amp;gt;        &amp;lt;int&amp;gt;    &amp;lt;int&amp;gt;      &amp;lt;int&amp;gt;     &amp;lt;int&amp;gt;       &amp;lt;int&amp;gt;
@@ -641,7 +641,7 @@ tabela
 ##  8 North  RO    2020-03-03       10        0          0         0           0
 ##  9 North  RO    2020-03-04       10        0          0         0           0
 ## 10 North  RO    2020-03-05       10        0          0         0           0
-## # ... with 28,826 more rows, and 4 more variables: newRecovered &amp;lt;int&amp;gt;,
+## # ... with 28,853 more rows, and 4 more variables: newRecovered &amp;lt;int&amp;gt;,
 ## #   newFollowup &amp;lt;int&amp;gt;, pop &amp;lt;dbl&amp;gt;, state_code &amp;lt;int&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Esse pacote é muito útil quando desejamos realizar uma análise exploratória de nossos dados. Vamos então construir alguns gráficos utilizando os recursos desse pacote e também do &lt;strong&gt;ggplot2&lt;/strong&gt;.&lt;/p&gt;
@@ -813,6 +813,75 @@ dados_final %&amp;gt;%
     </item>
     
     <item>
+      <title>Aula 1 - Introdução a Estatística</title>
+      <link>https://henriqueest.github.io/post/aula1_ufop/aula1/</link>
+      <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/post/aula1_ufop/aula1/</guid>
+      <description>&lt;style&gt;
+body {
+  text-align: justify;
+  font-size: 12pt;
+  }
+&lt;/style&gt;
+&lt;p&gt;Ao praticar a atividade científica, o pesquisador se depara com situações onde
+ele deve analisar e entender um conjunto de dados referente ao seu objeto de estudo. Assim, ele terá que manipular os dados para obter informações, compará-las com outros resultados, ou ainda, julgar sua adequação a alguma teoria. A estatística surge então como uma ferramenta que auxilia o pesquisador neste trabalho, fornecendo metodologias adequadas de coleta, redução, análise e modelagem dos dados.&lt;/p&gt;
+&lt;p&gt;Diante do exposto, podemos entender a estatística como a ciência que se ocupa
+com as técnicas de coleta, organização, análise e interpretação de dados, tendo um modelo por referência.&lt;/p&gt;
+&lt;h3 id=&#34;conceitos-básicos&#34;&gt;Conceitos básicos&lt;/h3&gt;
+&lt;p&gt;Entende-se por população ao conjunto de elementos que têm uma determinada característica em comum. Uma população pode ser finita quando esta possui um
+número limitado (ou enumerável) de indivíduos, ou infinita, quando não conseguimos enumerar os seus elementos, uma vez que temos um número ilimitado de indivíduos.&lt;/p&gt;
+&lt;h2 id=&#34;exemplos&#34;&gt;Exemplos&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Alunos matriculados na UFLA no 1º sem/2022 (POPULAÇÃO FINITA)&lt;/li&gt;
+&lt;li&gt;Peças produzidas por lote (POPULAÇÃO FINITA)&lt;/li&gt;
+&lt;li&gt;Plantas de uma espécie de Pinus (POPULAÇÃO INFINITA)&lt;/li&gt;
+&lt;li&gt;Clientes potenciais de uma empresa (POPULAÇÃO INFINITA)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Em complemento, quando coletamos informações de todos os elementos de uma
+população finita, dizemos que foi realizado um censo. Adotaremos, na disciplina, a notação N para representar a quantidade de
+elementos em uma população finita.&lt;/p&gt;
+&lt;h3 id=&#34;amostra&#34;&gt;Amostra&lt;/h3&gt;
+&lt;p&gt;Uma amostra corresponde a um subconjunto ou uma parte da população. A
+notação que representa o número de elementos de uma amostra é n. Na verdade, a grande maioria dos trabalhos de pesquisa é realizado através de amostras. Alguns dos motivos que levam os pesquisadores a trabalharem com amostras são&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;uma população infinita só pode ser estudada através de amostras&lt;/li&gt;
+&lt;li&gt;as populações finitas muito grandes também devem ser estudadas por meio de
+amostras&lt;/li&gt;
+&lt;li&gt;redução de tempo e custo da pesquisa&lt;/li&gt;
+&lt;li&gt;o estudo cuidadoso de uma amostra tem mais valor científico do que o estudo
+sumário de toda a população.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;variáveis&#34;&gt;Variáveis&lt;/h3&gt;
+&lt;p&gt;Quando realizamos um levantamento de dados, temos o interesse em conhecer
+ou avaliar uma determinada característica da população, como por exemplo, o peso, o diâmetro, o número de defeitos por peça, a produtividade de madeira de uma espécie de Pinus, a escolaridade dos indivíduos de uma comunidade, dentre outras. Essas características são chamadas de variáveis e visam descrever a população sob estudo. As variáveis podem ser classificadas em&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Qualitativas: Correspondem a atributos ou categorias. Elas são subdivididas em nominais quando suas categorias não são passíveis de ordenação, e ordinais, no caso de existir uma ordenação natural para seus atributos. Para as variáveis qualitativas nominais usaremos VQN e para as ordinais, usaremos VQO.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Exemplos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sexo (Masculino, Feminino) – VQN&lt;/li&gt;
+&lt;li&gt;Substâncias Químicas (Ácidos, Bases, Hidrocarbonetos, etc) - VQN&lt;/li&gt;
+&lt;li&gt;Tipos de Linguagem de programação (Java, PHP, R, Delphi, MATLAB
+dentre outros) – VQN&lt;/li&gt;
+&lt;li&gt;Escolaridade (Fundamental, Médio e Superior) – VQO&lt;/li&gt;
+&lt;li&gt;Classe Social: (Alta, Média e Baixa) - VQO&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Quantitativas: Correspondem a números resultantes de contagens ou medidas.
+Quando se trata de contagens a variável é dita discreta (sendo representada por números inteiros não-negativos). No caso de medidas, a variável é classificada como contínua (sendo que seus valores podem ser representados por quaisquer números reais). Para as variáveis quantitativas discretas usaremos VQD e para as contínuas, usaremos VQC.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Exemplos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Número de peças com defeito – VQD&lt;/li&gt;
+&lt;li&gt;Temperatura – VQC&lt;/li&gt;
+&lt;li&gt;Diâmetro de barras de aço – VQC.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Esta classificação é extremamente importante na análise de dados, uma vez que,
+o tipo de variável a ser trabalhada é um ponto de partida para se determinar os métodos de análise mais apropriados ou mesmo válidos.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Spatio-temporal geostatistical modeling of Gneiting applied to surface albedo (Brazil)</title>
       <link>https://henriqueest.github.io/publication/journal-article-4/</link>
       <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
@@ -848,6 +917,164 @@ dados_final %&amp;gt;%
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
   &lt;/div&gt;
 &lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Aula 2 - Apresentação de Dados</title>
+      <link>https://henriqueest.github.io/post/aula2_ufop/aula2/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/post/aula2_ufop/aula2/</guid>
+      <description>&lt;style&gt;
+body {
+  text-align: justify;
+  font-size: 12pt;
+  }
+  
+table {
+        width: 100%;
+    }
+    
+&lt;/style&gt;
+&lt;p&gt;Em uma pesquisa, coletamos dados sobre a(s) variável(is) de interesse. Muitas vezes esses dados surgem de forma desordenada através do qual não conseguimos detectar, a primeira vista, um comportamento que mereça uma explicação plausível. Uma das formas de descrever o comportamento dos dados é organizá-los em tabelas ou gráficos.&lt;/p&gt;
+&lt;h2 id=&#34;tabelas-de-distribuição-de-frequências-simples&#34;&gt;Tabelas de Distribuição de Frequências Simples&lt;/h2&gt;
+&lt;h1 id=&#34;conceitos-básicos&#34;&gt;Conceitos Básicos&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Frequência: Medida que quantifica a ocorrência dos valores de uma variável. Pode ser classificada em: absoluta (fa), relativa(fr) e percentual (fp)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;Frequência Absoluta: para variáveis qualitativas, nada mais é do que o número de observações ocorridas em cada classe da variável sob estudo.&lt;/li&gt;
+&lt;li&gt;Frequência Relativa: é obtida pela divisão da frequência absoluta pelo número total de dados ou observações.&lt;/li&gt;
+&lt;li&gt;Frequência Percentual: é calculada multiplicando-se o valor da frequência relativa por 100.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;construção-de-tabelas-de-distribuição-de-frequências&#34;&gt;Construção de Tabelas de Distribuição de Frequências&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Variáveis Qualitativas&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Exemplo: Em 2006 a Associação Nacional de Comerciantes de Material de Construção (ANAMACO) solicitou uma pesquisa para determinar o perfil de produtos do setor da construção civil com maior saída nas lojas. Foram visitadas 30 lojas e os produtos mais vendidos em cada uma estão no quadro abaixo.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Tintas&lt;/td&gt;
+&lt;td&gt;Tubos&lt;/td&gt;
+&lt;td&gt;Cerâmica&lt;/td&gt;
+&lt;td&gt;Cimento&lt;/td&gt;
+&lt;td&gt;Cimento&lt;/td&gt;
+&lt;td&gt;Argamassa&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Cimento&lt;/td&gt;
+&lt;td&gt;Tubos&lt;/td&gt;
+&lt;td&gt;Tintas&lt;/td&gt;
+&lt;td&gt;Tubos&lt;/td&gt;
+&lt;td&gt;Tintas&lt;/td&gt;
+&lt;td&gt;Cerâmicas&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Tubos&lt;/td&gt;
+&lt;td&gt;Cerâmca&lt;/td&gt;
+&lt;td&gt;Tintas&lt;/td&gt;
+&lt;td&gt;Cimento&lt;/td&gt;
+&lt;td&gt;Cimneto&lt;/td&gt;
+&lt;td&gt;Tintas&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Cimento&lt;/td&gt;
+&lt;td&gt;Tintas&lt;/td&gt;
+&lt;td&gt;Cimento&lt;/td&gt;
+&lt;td&gt;Cerâmica&lt;/td&gt;
+&lt;td&gt;Cimento&lt;/td&gt;
+&lt;td&gt;Tubos&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Argamassa&lt;/td&gt;
+&lt;td&gt;Cimento&lt;/td&gt;
+&lt;td&gt;Cimento&lt;/td&gt;
+&lt;td&gt;Tintas&lt;/td&gt;
+&lt;td&gt;Cimento&lt;/td&gt;
+&lt;td&gt;Cimento&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Obter:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;as frequências absolutas;&lt;/li&gt;
+&lt;li&gt;as frequências relativas;&lt;/li&gt;
+&lt;li&gt;as frequências percentuais;&lt;/li&gt;
+&lt;li&gt;montar a tabela de distribuição de frequências.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;solução&#34;&gt;Solução&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;frequências absolutas ($ f_a $):
+cimento = 12, tintas = 7, tubos = 5, cerâmica = 4, argamassa = 2.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Tabela 1: Distribuição de frequências referente aos principais produtos comercializados em 30 lojas do setor de materiais de construção &lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Produtos&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ f_a $&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ f_r= \frac{f_a}{30} $&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ f_p= f_r \times 100 $&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Cimento&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ 12 $&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ \frac{12}{30}=0,40 $&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ 0,40 \times 100 = 40 $&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Tintas&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ 7 $&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ \frac{7}{30}=0,23 $&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ 0,23 \times 100 = 23 $&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Tubos&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ 5 $&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ \frac{5}{30}=0,17 $&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ 0,17 \times 100 = 17 $&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Cerâmica&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ 4 $&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ \frac{4}{30}=0,13 $&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ 0,13 \times 100 = 13 $&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Argamassa&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ 2 $&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ \frac{2}{30}=0,07 $&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ 0,07 \times 100 = 7 $&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Total&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ 30 $&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ 1,00 $&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;$ 100 $&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 </description>
     </item>
     

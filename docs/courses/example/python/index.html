@@ -73,6 +73,9 @@
 
   
   
+    
+    <script src="/js/mathjax-config.js"></script>
+  
 
   
 
@@ -220,9 +223,9 @@
 
       
       
-        
-      
 
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
       
     
       
@@ -1223,7 +1226,7 @@ tabela
 </code></pre>
 <pre><code class="language-r">glimpse(data)
 </code></pre>
-<pre><code>## Rows: 28,836
+<pre><code>## Rows: 28,863
 ## Columns: 12
 ## $ region       &lt;chr&gt; &quot;North&quot;, &quot;North&quot;, &quot;North&quot;, &quot;North&quot;, &quot;North&quot;, &quot;North&quot;, &quot;No~
 ## $ state        &lt;chr&gt; &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO~
@@ -1349,11 +1352,11 @@ tabela
 ##     4:  North    AC 2020-02-28        9        0          0         0
 ##     5:  North    AC 2020-02-29        9        0          0         0
 ##    ---                                                               
-## 28832:  North    TO 2022-03-26       12       59     302502         0
-## 28833:  North    TO 2022-03-27       13        0     302502         0
-## 28834:  North    TO 2022-03-28       13        7     302509         0
-## 28835:  North    TO 2022-03-29       13       97     302606         0
-## 28836:  North    TO 2022-03-30       13      125     302731         1
+## 28859:  North    TO 2022-03-27       13        0     302502         0
+## 28860:  North    TO 2022-03-28       13        7     302509         0
+## 28861:  North    TO 2022-03-29       13       97     302606         0
+## 28862:  North    TO 2022-03-30       13      125     302731         1
+## 28863:  North    TO 2022-03-31       13       95     302826         1
 ##        accumDeaths newRecovered newFollowup     pop state_code
 ##     1:           0           NA          NA  881935         12
 ##     2:           0           NA          NA  881935         12
@@ -1361,11 +1364,11 @@ tabela
 ##     4:           0           NA          NA  881935         12
 ##     5:           0           NA          NA  881935         12
 ##    ---                                                        
-## 28832:        4142           NA          NA 1572866         17
-## 28833:        4142           NA          NA 1572866         17
-## 28834:        4142           NA          NA 1572866         17
-## 28835:        4142           NA          NA 1572866         17
-## 28836:        4143           NA          NA 1572866         17
+## 28859:        4142           NA          NA 1572866         17
+## 28860:        4142           NA          NA 1572866         17
+## 28861:        4142           NA          NA 1572866         17
+## 28862:        4143           NA          NA 1572866         17
+## 28863:        4144           NA          NA 1572866         17
 </code></pre>
 <pre><code class="language-r">select(data, region , date,  state, newCases, accumCases)
 </code></pre>
@@ -1376,11 +1379,11 @@ tabela
 ##     4:  North 2020-02-28    RO        0          0
 ##     5:  North 2020-02-29    RO        0          0
 ##    ---                                            
-## 28832:  North 2022-02-19    RO        0          0
-## 28833:  North 2022-02-20    RO        0          0
-## 28834:  North 2022-02-21    RO        0          0
-## 28835:  North 2022-02-22    RO        0          0
-## 28836:  North 2022-02-23    RO        0          0
+## 28859:  North 2022-02-19    RO        0          0
+## 28860:  North 2022-02-20    RO        0          0
+## 28861:  North 2022-02-21    RO        0          0
+## 28862:  North 2022-02-22    RO        0          0
+## 28863:  North 2022-02-23    RO        0          0
 </code></pre>
 <pre><code class="language-r">mutate(data, rate_newcases = newCases/pop*100000)
 </code></pre>
@@ -1391,11 +1394,11 @@ tabela
 ##     4:  North    RO 2020-02-28        9        0          0         0
 ##     5:  North    RO 2020-02-29        9        0          0         0
 ##    ---                                                               
-## 28832:  North    RO 2022-02-19        7        0          0         0
-## 28833:  North    RO 2022-02-20        8        0          0         0
-## 28834:  North    RO 2022-02-21        8        0          0         0
-## 28835:  North    RO 2022-02-22        8        0          0         0
-## 28836:  North    RO 2022-02-23        8        0          0         0
+## 28859:  North    RO 2022-02-19        7        0          0         0
+## 28860:  North    RO 2022-02-20        8        0          0         0
+## 28861:  North    RO 2022-02-21        8        0          0         0
+## 28862:  North    RO 2022-02-22        8        0          0         0
+## 28863:  North    RO 2022-02-23        8        0          0         0
 ##        accumDeaths newRecovered newFollowup     pop state_code rate_newcases
 ##     1:           0           NA          NA 1777225         11             0
 ##     2:           0           NA          NA 1777225         11             0
@@ -1403,21 +1406,21 @@ tabela
 ##     4:           0           NA          NA 1777225         11             0
 ##     5:           0           NA          NA 1777225         11             0
 ##    ---                                                                      
-## 28832:           0           NA          NA      NA         11            NA
-## 28833:           0           NA          NA      NA         11            NA
-## 28834:           0           NA          NA      NA         11            NA
-## 28835:           0           NA          NA      NA         11            NA
-## 28836:           0           NA          NA      NA         11            NA
+## 28859:           0           NA          NA      NA         11            NA
+## 28860:           0           NA          NA      NA         11            NA
+## 28861:           0           NA          NA      NA         11            NA
+## 28862:           0           NA          NA      NA         11            NA
+## 28863:           0           NA          NA      NA         11            NA
 </code></pre>
 <pre><code class="language-r">summarize(data, mean_newdeaths=mean(newDeaths), desv_pad= sd(newDeaths),
                   standard_error=desv_pad/sqrt(length(data)))
 </code></pre>
 <pre><code>##   mean_newdeaths desv_pad standard_error
-## 1        23.0327 63.75516       18.40453
+## 1       23.01992 63.72881       18.39692
 </code></pre>
 <pre><code class="language-r">group_by(data, region, epi_week)
 </code></pre>
-<pre><code>## # A tibble: 28,836 x 12
+<pre><code>## # A tibble: 28,863 x 12
 ## # Groups:   region, epi_week [265]
 ##    region state date       epi_week newCases accumCases newDeaths accumDeaths
 ##    &lt;chr&gt;  &lt;chr&gt; &lt;date&gt;        &lt;int&gt;    &lt;int&gt;      &lt;int&gt;     &lt;int&gt;       &lt;int&gt;
@@ -1431,7 +1434,7 @@ tabela
 ##  8 North  RO    2020-03-03       10        0          0         0           0
 ##  9 North  RO    2020-03-04       10        0          0         0           0
 ## 10 North  RO    2020-03-05       10        0          0         0           0
-## # ... with 28,826 more rows, and 4 more variables: newRecovered &lt;int&gt;,
+## # ... with 28,853 more rows, and 4 more variables: newRecovered &lt;int&gt;,
 ## #   newFollowup &lt;int&gt;, pop &lt;dbl&gt;, state_code &lt;int&gt;
 </code></pre>
 <p>Esse pacote é muito útil quando desejamos realizar uma análise exploratória de nossos dados. Vamos então construir alguns gráficos utilizando os recursos desse pacote e também do <strong>ggplot2</strong>.</p>
@@ -1715,6 +1718,8 @@ dados_final %&gt;%
       
       
 
+      
+        <script src="https://cdn.jsdelivr.net/gh/mermaid-js/mermaid@v8.8.4/dist/mermaid.min.js" integrity="sha512-+TNmhaRJf3jyYHTpzEq/5I6b+aGyhzWb21mGdHAjxSGSYwxN9Grug3Y3B9qVxWfKKY8MscE/6mr9walWvFLFvQ==" crossorigin="anonymous" title="mermaid"></script>
       
 
       

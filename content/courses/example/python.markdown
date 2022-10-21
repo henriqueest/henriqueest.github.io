@@ -538,7 +538,7 @@ glimpse(data)
 ```
 
 ```
-## Rows: 28,836
+## Rows: 28,863
 ## Columns: 12
 ## $ region       <chr> "North", "North", "North", "North", "North", "North", "No~
 ## $ state        <chr> "RO", "RO", "RO", "RO", "RO", "RO", "RO", "RO", "RO", "RO~
@@ -621,11 +621,11 @@ arrange(data, state)
 ##     4:  North    AC 2020-02-28        9        0          0         0
 ##     5:  North    AC 2020-02-29        9        0          0         0
 ##    ---                                                               
-## 28832:  North    TO 2022-03-26       12       59     302502         0
-## 28833:  North    TO 2022-03-27       13        0     302502         0
-## 28834:  North    TO 2022-03-28       13        7     302509         0
-## 28835:  North    TO 2022-03-29       13       97     302606         0
-## 28836:  North    TO 2022-03-30       13      125     302731         1
+## 28859:  North    TO 2022-03-27       13        0     302502         0
+## 28860:  North    TO 2022-03-28       13        7     302509         0
+## 28861:  North    TO 2022-03-29       13       97     302606         0
+## 28862:  North    TO 2022-03-30       13      125     302731         1
+## 28863:  North    TO 2022-03-31       13       95     302826         1
 ##        accumDeaths newRecovered newFollowup     pop state_code
 ##     1:           0           NA          NA  881935         12
 ##     2:           0           NA          NA  881935         12
@@ -633,11 +633,11 @@ arrange(data, state)
 ##     4:           0           NA          NA  881935         12
 ##     5:           0           NA          NA  881935         12
 ##    ---                                                        
-## 28832:        4142           NA          NA 1572866         17
-## 28833:        4142           NA          NA 1572866         17
-## 28834:        4142           NA          NA 1572866         17
-## 28835:        4142           NA          NA 1572866         17
-## 28836:        4143           NA          NA 1572866         17
+## 28859:        4142           NA          NA 1572866         17
+## 28860:        4142           NA          NA 1572866         17
+## 28861:        4142           NA          NA 1572866         17
+## 28862:        4143           NA          NA 1572866         17
+## 28863:        4144           NA          NA 1572866         17
 ```
 
 ```r
@@ -652,11 +652,11 @@ select(data, region , date,  state, newCases, accumCases)
 ##     4:  North 2020-02-28    RO        0          0
 ##     5:  North 2020-02-29    RO        0          0
 ##    ---                                            
-## 28832:  North 2022-02-19    RO        0          0
-## 28833:  North 2022-02-20    RO        0          0
-## 28834:  North 2022-02-21    RO        0          0
-## 28835:  North 2022-02-22    RO        0          0
-## 28836:  North 2022-02-23    RO        0          0
+## 28859:  North 2022-02-19    RO        0          0
+## 28860:  North 2022-02-20    RO        0          0
+## 28861:  North 2022-02-21    RO        0          0
+## 28862:  North 2022-02-22    RO        0          0
+## 28863:  North 2022-02-23    RO        0          0
 ```
 
 ```r
@@ -671,11 +671,11 @@ mutate(data, rate_newcases = newCases/pop*100000)
 ##     4:  North    RO 2020-02-28        9        0          0         0
 ##     5:  North    RO 2020-02-29        9        0          0         0
 ##    ---                                                               
-## 28832:  North    RO 2022-02-19        7        0          0         0
-## 28833:  North    RO 2022-02-20        8        0          0         0
-## 28834:  North    RO 2022-02-21        8        0          0         0
-## 28835:  North    RO 2022-02-22        8        0          0         0
-## 28836:  North    RO 2022-02-23        8        0          0         0
+## 28859:  North    RO 2022-02-19        7        0          0         0
+## 28860:  North    RO 2022-02-20        8        0          0         0
+## 28861:  North    RO 2022-02-21        8        0          0         0
+## 28862:  North    RO 2022-02-22        8        0          0         0
+## 28863:  North    RO 2022-02-23        8        0          0         0
 ##        accumDeaths newRecovered newFollowup     pop state_code rate_newcases
 ##     1:           0           NA          NA 1777225         11             0
 ##     2:           0           NA          NA 1777225         11             0
@@ -683,11 +683,11 @@ mutate(data, rate_newcases = newCases/pop*100000)
 ##     4:           0           NA          NA 1777225         11             0
 ##     5:           0           NA          NA 1777225         11             0
 ##    ---                                                                      
-## 28832:           0           NA          NA      NA         11            NA
-## 28833:           0           NA          NA      NA         11            NA
-## 28834:           0           NA          NA      NA         11            NA
-## 28835:           0           NA          NA      NA         11            NA
-## 28836:           0           NA          NA      NA         11            NA
+## 28859:           0           NA          NA      NA         11            NA
+## 28860:           0           NA          NA      NA         11            NA
+## 28861:           0           NA          NA      NA         11            NA
+## 28862:           0           NA          NA      NA         11            NA
+## 28863:           0           NA          NA      NA         11            NA
 ```
 
 ```r
@@ -697,7 +697,7 @@ summarize(data, mean_newdeaths=mean(newDeaths), desv_pad= sd(newDeaths),
 
 ```
 ##   mean_newdeaths desv_pad standard_error
-## 1        23.0327 63.75516       18.40453
+## 1       23.01992 63.72881       18.39692
 ```
 
 ```r
@@ -705,7 +705,7 @@ group_by(data, region, epi_week)
 ```
 
 ```
-## # A tibble: 28,836 x 12
+## # A tibble: 28,863 x 12
 ## # Groups:   region, epi_week [265]
 ##    region state date       epi_week newCases accumCases newDeaths accumDeaths
 ##    <chr>  <chr> <date>        <int>    <int>      <int>     <int>       <int>
@@ -719,7 +719,7 @@ group_by(data, region, epi_week)
 ##  8 North  RO    2020-03-03       10        0          0         0           0
 ##  9 North  RO    2020-03-04       10        0          0         0           0
 ## 10 North  RO    2020-03-05       10        0          0         0           0
-## # ... with 28,826 more rows, and 4 more variables: newRecovered <int>,
+## # ... with 28,853 more rows, and 4 more variables: newRecovered <int>,
 ## #   newFollowup <int>, pop <dbl>, state_code <int>
 ```
 
@@ -918,3 +918,4 @@ dados_final %>%
 ```
 
 <img src="/courses/example/python_files/figure-html/unnamed-chunk-26-1.png" width="672" style="display: block; margin: auto;" />
+

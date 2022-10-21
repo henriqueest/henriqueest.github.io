@@ -1,0 +1,80 @@
+---
+title: Aula 2 - Apresentação de Dados
+date: 2019-07-12
+---
+
+<style>
+body {
+  text-align: justify;
+  font-size: 12pt;
+  }
+
+</style>
+
+
+
+
+
+Em uma pesquisa, coletamos dados sobre a(s) variável(is) de interesse. Muitas vezes esses dados surgem de forma desordenada através do qual não conseguimos detectar, a primeira vista, um comportamento que mereça uma explicação plausível. Uma das formas de descrever o comportamento dos dados é organizá-los em tabelas ou gráficos.
+
+## Tabelas de Distribuição de Frequências Simples
+
+# Conceitos Básicos
+
+- Frequência: Medida que quantifica a ocorrência dos valores de uma variável. Pode ser classificada em: absoluta (fa), relativa(fr) e percentual (fp)
+
+1. Frequência Absoluta: para variáveis qualitativas, nada mais é do que o número de observações ocorridas em cada classe da variável sob estudo.
+2. Frequência Relativa: é obtida pela divisão da frequência absoluta pelo número total de dados ou observações. 
+3. Frequência Percentual: é calculada multiplicando-se o valor da frequência relativa por 100.
+
+## Construção de Tabelas de Distribuição de Frequências
+
+1. Variáveis Qualitativas
+
+- Exemplo: Em 2006 a Associação Nacional de Comerciantes de Material de Construção (ANAMACO) solicitou uma pesquisa para determinar o perfil de produtos do setor da construção civil com maior saída nas lojas. Foram visitadas 30 lojas e os produtos mais vendidos em cada uma estão no quadro abaixo.
+
+
+|  |  |  |  |  |  |
+|----------|-----------|----------|---------|----------|---------|
+| Tintas | Tubos | Cerâmica | Cimento | Cimento | Argamassa|
+| Cimento | Tubos | Tintas | Tubos | Tintas | Cerâmicas |
+| Tubos | Cerâmca | Tintas | Cimento | Cimneto | Tintas |
+| Cimento | Tintas | Cimento | Cerâmica | Cimento | Tubos |
+| Argamassa | Cimento | Cimento | Tintas | Cimento | Cimento|
+
+Obter:
+
+- as frequências absolutas;
+- as frequências relativas;
+- as frequências percentuais;
+- montar a tabela de distribuição de frequências.
+
+#### Solução
+
+- frequências absolutas ($ f_a $):
+cimento = 12, tintas = 7, tubos = 5, cerâmica = 4, argamassa = 2.
+
+
+Tabela 1: Distribuição de frequências referente aos principais produtos comercializados em 30 lojas do setor de materiais de construção 
+|            |              |             |          |  
+|:--      |-----------:|----------:|---------:|
+| Produtos      | $ f_a $ | $ f_r= \frac{f_a}{30} $ | $ f_p= f_r \times 100 $ | 
+| Cimento      | $ 12 $ | $ \frac{12}{30}=0,40 $  | $ 0,40 \times 100 = 40 $ |
+| Tintas      | $ 7 $ | $ \frac{7}{30}=0,23 $ | $ 0,23 \times 100 = 23 $ | 
+| Tubos      | $ 5 $ | $ \frac{5}{30}=0,17 $  | $ 0,17 \times 100 = 17 $ |
+| Cerâmica      | $ 4 $  | $ \frac{4}{30}=0,13 $ | $ 0,13 \times 100 = 13 $  |
+| Argamassa      | $ 2 $ | $ \frac{2}{30}=0,07 $ | $ 0,07 \times 100 = 7 $ |
+| Total      | $ 30 $ | $ 1,00 $ | $ 100 $ |
+
+
+
+
+
+
+
+
+
+
+
+
+

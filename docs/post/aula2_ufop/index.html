@@ -63,7 +63,7 @@
   <meta name="description" content="Modelos não lineares Modelos não lineares (NLM) geralmente são voltados a obter algumas informações sobre a relação entre as variáveis Y e X. Tais informações estão vinculadas a diferentes graus de conhecimento como" />
 
   
-  <link rel="alternate" hreflang="en-us" href="https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/" />
+  <link rel="alternate" hreflang="en-us" href="https://henriqueest.github.io/post/aula2_ufop/" />
 
   
   
@@ -72,9 +72,6 @@
   
 
   
-  
-    
-    <script src="/js/mathjax-config.js"></script>
   
 
   
@@ -223,9 +220,9 @@
 
       
       
-
+        
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" integrity="" crossorigin="anonymous" async></script>
+
       
     
       
@@ -279,7 +276,7 @@
   <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_3.png" />
   <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_3.png" />
 
-  <link rel="canonical" href="https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/" />
+  <link rel="canonical" href="https://henriqueest.github.io/post/aula2_ufop/" />
 
   
   
@@ -302,7 +299,7 @@
   <meta property="twitter:card" content="summary" />
   
   <meta property="og:site_name" content="Henrique JP Alves" />
-  <meta property="og:url" content="https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/" />
+  <meta property="og:url" content="https://henriqueest.github.io/post/aula2_ufop/" />
   <meta property="og:title" content="Modelos não lineares | Henrique JP Alves" />
   <meta property="og:description" content="Modelos não lineares Modelos não lineares (NLM) geralmente são voltados a obter algumas informações sobre a relação entre as variáveis Y e X. Tais informações estão vinculadas a diferentes graus de conhecimento como" /><meta property="og:image" content="https://henriqueest.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" />
     <meta property="twitter:image" content="https://henriqueest.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
@@ -337,7 +334,7 @@
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/"
+    "@id": "https://henriqueest.github.io/post/aula2_ufop/"
   },
   "headline": "Modelos não lineares",
   
@@ -377,7 +374,7 @@
 </head>
 
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="085fabff6869aa3a6f39463de03c0bb9" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="643d6fd2da6752ccd1c6f3098de46a9b" >
 
   
   
@@ -831,7 +828,7 @@ glimpse(data)
   labs(x = &quot;Date (day)&quot;, y = &quot;Accumulated deaths&quot;)+
   theme_classic()
 </code></pre>
-<img src="https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<img src="https://henriqueest.github.io/post/aula2_ufop/index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 <p>Sugere modelo duplo sigmóide</p>
 <pre><code class="language-r">ggplot(data)+
   geom_point(aes(x = as.Date(date), y = accumDeaths), colour = &quot;steelblue&quot;)+
@@ -846,7 +843,7 @@ glimpse(data)
   labs(x = &quot;Date (day)&quot;, y = &quot;Accumulated deaths&quot;)+
   theme_classic()
 </code></pre>
-<img src="https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+<img src="https://henriqueest.github.io/post/aula2_ufop/index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 <h3 id="ajuste-do-modelo-duplo-sigmóide">Ajuste do modelo duplo sigmóide</h3>
 <ul>
 <li>Criando uma variável numérica para contar o tempo</li>
@@ -895,7 +892,7 @@ glimpse(data_mod)
   labs(x = &quot;Day&quot;, y = &quot;Accumulated deaths corrected&quot;)+
   theme_classic()
 </code></pre>
-<img src="https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+<img src="https://henriqueest.github.io/post/aula2_ufop/index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
 <h2 id="chutes-iniciais-para-cada-sigmóide">Chutes iniciais para cada sigmóide</h2>
 <ul>
 <li>modelo um: modelo logístico</li>
@@ -934,7 +931,7 @@ geom_point(aes(x = data, y = accumDeathscorr, color = &quot;blue&quot;))+
                      breaks = c(&quot;blue&quot;, &quot;red&quot;),
                        labels=c(&quot;Observed&quot;, &quot;Predict&quot;))
 </code></pre>
-<img src="https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+<img src="https://henriqueest.github.io/post/aula2_ufop/index_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 <ul>
 <li>modelo dois: modelo logístico</li>
 </ul>
@@ -972,7 +969,7 @@ geom_point(aes(x = data, y = accumDeathscorr, color = &quot;blue&quot;))+
                      breaks = c(&quot;blue&quot;, &quot;red&quot;),
                        labels=c(&quot;Observed&quot;, &quot;Predict&quot;))
 </code></pre>
-<img src="https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<img src="https://henriqueest.github.io/post/aula2_ufop/index_files/figure-html/unnamed-chunk-11-1.png" width="672" />
 <h2 id="objetivos">Objetivos</h2>
 <ul>
 <li>encontre modelos que possam se ajustar a esses dados</li>
@@ -1002,7 +999,7 @@ geom_point(aes(x = data, y = accumDeathscorr, color = &quot;blue&quot;))+
       
       
       <li>
-        <a href="https://twitter.com/intent/tweet?url=https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/&amp;text=Modelos%20n%c3%a3o%20lineares" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+        <a href="https://twitter.com/intent/tweet?url=https://henriqueest.github.io/post/aula2_ufop/&amp;text=Modelos%20n%c3%a3o%20lineares" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
           <i class="fab fa-twitter"></i>
         </a>
       </li>
@@ -1015,7 +1012,7 @@ geom_point(aes(x = data, y = accumDeathscorr, color = &quot;blue&quot;))+
       
       
       <li>
-        <a href="https://www.facebook.com/sharer.php?u=https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/&amp;t=Modelos%20n%c3%a3o%20lineares" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+        <a href="https://www.facebook.com/sharer.php?u=https://henriqueest.github.io/post/aula2_ufop/&amp;t=Modelos%20n%c3%a3o%20lineares" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
           <i class="fab fa-facebook"></i>
         </a>
       </li>
@@ -1028,7 +1025,7 @@ geom_point(aes(x = data, y = accumDeathscorr, color = &quot;blue&quot;))+
       
       
       <li>
-        <a href="mailto:?subject=Modelos%20n%c3%a3o%20lineares&amp;body=https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+        <a href="mailto:?subject=Modelos%20n%c3%a3o%20lineares&amp;body=https://henriqueest.github.io/post/aula2_ufop/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
           <i class="fas fa-envelope"></i>
         </a>
       </li>
@@ -1041,7 +1038,7 @@ geom_point(aes(x = data, y = accumDeathscorr, color = &quot;blue&quot;))+
       
       
       <li>
-        <a href="https://www.linkedin.com/shareArticle?url=https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/&amp;title=Modelos%20n%c3%a3o%20lineares" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+        <a href="https://www.linkedin.com/shareArticle?url=https://henriqueest.github.io/post/aula2_ufop/&amp;title=Modelos%20n%c3%a3o%20lineares" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
           <i class="fab fa-linkedin-in"></i>
         </a>
       </li>
@@ -1054,7 +1051,7 @@ geom_point(aes(x = data, y = accumDeathscorr, color = &quot;blue&quot;))+
       
       
       <li>
-        <a href="whatsapp://send?text=Modelos%20n%c3%a3o%20lineares%20https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+        <a href="whatsapp://send?text=Modelos%20n%c3%a3o%20lineares%20https://henriqueest.github.io/post/aula2_ufop/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </li>
@@ -1067,7 +1064,7 @@ geom_point(aes(x = data, y = accumDeathscorr, color = &quot;blue&quot;))+
       
       
       <li>
-        <a href="https://service.weibo.com/share/share.php?url=https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/&amp;title=Modelos%20n%c3%a3o%20lineares" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+        <a href="https://service.weibo.com/share/share.php?url=https://henriqueest.github.io/post/aula2_ufop/&amp;title=Modelos%20n%c3%a3o%20lineares" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
           <i class="fab fa-weibo"></i>
         </a>
       </li>
@@ -1328,8 +1325,6 @@ geom_point(aes(x = data, y = accumDeathscorr, color = &quot;blue&quot;))+
       
       
 
-      
-        <script src="https://cdn.jsdelivr.net/gh/mermaid-js/mermaid@v8.8.4/dist/mermaid.min.js" integrity="sha512-+TNmhaRJf3jyYHTpzEq/5I6b+aGyhzWb21mGdHAjxSGSYwxN9Grug3Y3B9qVxWfKKY8MscE/6mr9walWvFLFvQ==" crossorigin="anonymous" title="mermaid"></script>
       
 
       
