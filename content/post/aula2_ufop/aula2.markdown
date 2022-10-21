@@ -1,15 +1,15 @@
 ---
-title: Aula 2 - Apresentação de Dados
-date: 2019-07-12
+title: "Aula 2 - Apresentação de Dados"
+date: '2019-07-12'
 ---
 
-<style>
-body {
-  text-align: justify;
-  font-size: 12pt;
-  }
+<!-- <style> -->
+<!-- body { -->
+<!--   text-align: justify; -->
+<!--   font-size: 12pt; -->
+<!--   } -->
 
-</style>
+<!-- </style> -->
 
 
 
