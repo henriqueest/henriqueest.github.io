@@ -883,6 +883,23 @@ o tipo de variável a ser trabalhada é um ponto de partida para se determinar o
     </item>
     
     <item>
+      <title>Shiny app - Homocídios dolosos</title>
+      <link>https://henriqueest.github.io/post/shiny_app/shine/</link>
+      <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/post/shiny_app/shine/</guid>
+      <description>&lt;!-- &lt;style&gt; --&gt;
+&lt;!-- body { --&gt;
+&lt;!--   text-align: justify; --&gt;
+&lt;!--   font-size: 12pt; --&gt;
+&lt;!--   } --&gt;
+&lt;!-- &lt;/style&gt; --&gt;
+&lt;p&gt;&lt;a href=&#34;https://henriqueest.github.io/uploads/Homicidios_populacao_taxa_media_2010a2020.xlsx&#34; target=&#34;_blank&#34;&gt;Download my Homicidios_populacao_taxa_media_2010a2020&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://henriqueest.github.io/uploads/server.R&#34; target=&#34;_blank&#34;&gt;Download my server&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://henriqueest.github.io/uploads/ui.R&#34; target=&#34;_blank&#34;&gt;Download my ui&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Spatio-temporal geostatistical modeling of Gneiting applied to surface albedo (Brazil)</title>
       <link>https://henriqueest.github.io/publication/journal-article-4/</link>
       <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
