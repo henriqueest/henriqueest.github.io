@@ -814,6 +814,35 @@ dados_final %&amp;gt;%
     </item>
     
     <item>
+      <title>App - shiny - homicídios dolosos - Sinesp</title>
+      <link>https://henriqueest.github.io/post/aplicativo_homicidios/aplicativo/</link>
+      <pubDate>Fri, 21 Oct 2022 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/post/aplicativo_homicidios/aplicativo/</guid>
+      <description>&lt;!-- &lt;style&gt; --&gt;
+&lt;!-- body { --&gt;
+&lt;!--   text-align: justify; --&gt;
+&lt;!--   font-size: 12pt; --&gt;
+&lt;!--   } --&gt;
+&lt;!-- &lt;/style&gt; --&gt;
+&lt;h2 id=&#34;histórico&#34;&gt;Histórico&lt;/h2&gt;
+&lt;p&gt;Em antecipação a promulgação da Lei nº 13.675, de 11 de junho de 2018, que institui o Sistema Único de Segurança Pública e o Sistema Nacional de Informações de Segurança Pública, Prisionais, de Rastreabilidade de Armas e Munições, de Material Genético, de Digitais e de Drogas (Sinesp), a Senasp já vinha empregando esforços na coleta de dados e informações de interesse da segurança pública desde o ano de 2001, visando a implementação de ações e políticas públicas mais qualificadas.&lt;/p&gt;
+&lt;p&gt;A coleta informatizada de dados teve origem na implantação do Sistema Nacional de Estatística de Segurança Pública e Justiça Criminal - SinespJC, em 2004. A solução reúne dados AGREGADOS oriundos das Unidades da Federação, permitindo a elaboração de relatórios e indicadores estatísticos. Seu conteúdo é gerado a partir dos boletins de ocorrência registrados pelas Polícias Civis dos Estados e Distrito Federal, reunindo assim, informações sobre o número de ocorrências, natureza do fato registrado, perfil da vítima, perfil do autor, meios empregados, dentre outras.&lt;/p&gt;
+&lt;p&gt;O primeiro módulo implantado foi o Módulo Polícia Civil, do SinespJC, em plataforma desktop e dados estatísticos dos Boletins de Ocorrência. Em 2010, a plataforma foi reformulada para a versão SinespJC Web. Nesse modelo, os dados são coletados mensalmente através de formulários eletrônicos e disponibilizados após sua consolidação pelos Gestores Estaduais do Sinesp, permitindo a produção de relatórios a partir da unidade de análise “Município”.&lt;/p&gt;
+&lt;p&gt;A partir de 2012, com a instituição do Sistema Nacional de Informações de Segurança Pública, Prisionais e sobre Drogas - SINESP, por meio da Lei n º 12.681/12, iniciaram-se os projetos para a coleta automatizada de dados e a integração dos sistemas estaduais de registro de ocorrências policiais. Em dezembro de 2014, após a conclusão da primeira etapa de planejamento e desenvolvimento da plataforma Sinesp, foi implementado o Boletim Nacional de Ocorrências Policiais - Sinesp PPE (Procedimentos Policiais Eletrônicos) no estado de Roraima, dando início à coleta de dados de registros de ocorrência em tempo real. Posteriormente, a solução foi implantada em outras Unidades da Federação.&lt;/p&gt;
+&lt;p&gt;Neste cenário, em 2015, foi desenvolvido e disponibilizado às UFs o Sinesp Integração, solução destinada à consolidação de dados e informações de múltiplas fontes em uma única Base Nacional, permitindo, dentre outras atividades, a análise de microdados e a produção de estatísticas e relatórios mais qualificados.&lt;/p&gt;
+&lt;h1 id=&#34;fontes-de-dados-e-indicadores&#34;&gt;FONTES DE DADOS E INDICADORES&lt;/h1&gt;
+&lt;p&gt;Os dados disponíveis foram extraídos das soluções SinespJC e Sinesp Integração, fontes primárias dos seguintes indicadores: Totais de Ocorrências e Totais de Vítimas de estupro, furto de veículos, homicídio doloso, lesão corporal seguida de morte, roubo à instituição financeira, roubo de carga, roubo de veículos e roubo seguido de morte.&lt;/p&gt;
+&lt;h1 id=&#34;nota&#34;&gt;NOTA&lt;/h1&gt;
+&lt;p&gt;É importante ressaltar que as informações apresentadas refletem o nível de alimentação e consolidação de cada Unidade da Federação no SinespJC e Sinesp Integração na data de sua extração, podendo ocorrer atualizações posteriores à publicação. Salientamos que se considera como último período os dados consolidados que antecedem os últimos três meses, por exemplo: Em fev/2019, serão publicados os dados de jan/2015 a out/2018; em mar/2019 os dados de jan/2015 a nov/2018; e assim sucessivamente. Isso se faz necessário para que os Gestores Estaduais possam coletar, tratar e validar os dados antes do fornecimento e consolidação via SinespJC, não sendo exigido esse processo aos entes que já utilizam o Sinesp Integração e consideram os dados transmitidos como fonte para a produção das estatísticas oficiais.&lt;/p&gt;
+&lt;p&gt;Com o avanço do Sinesp Integração, espera-se que as Unidades da Federação aprimorem seus processos de coleta de dados e substituam a alimentação manual do SinespJC pelo processo automatizado. Com isso, será possível a divulgação de dados detalhados em períodos mais curtos e com mais qualidade.&lt;/p&gt;
+&lt;h2 id=&#34;fonte&#34;&gt;Fonte&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://dados.gov.br/dataset/sistema-nacional-de-estatisticas-de-seguranca-publica&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sinesp&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;aplicativo&#34;&gt;Aplicativo&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://jpahenrique.shinyapps.io/teste/?_ga=2.94674648.551386921.1666349234-2114962546.1665406207&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sinesp - Homicídios dolosos&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Aula 1 - Introdução a Estatística</title>
       <link>https://henriqueest.github.io/post/aula1_ufop/aula1/</link>
       <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
@@ -918,6 +947,35 @@ o tipo de variável a ser trabalhada é um ponto de partida para se determinar o
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
   &lt;/div&gt;
 &lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>App - shiny - Ocorrências criminais - Sinespe</title>
+      <link>https://henriqueest.github.io/post/aplicativo_sinesp/aplicativo/</link>
+      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/post/aplicativo_sinesp/aplicativo/</guid>
+      <description>&lt;!-- &lt;style&gt; --&gt;
+&lt;!-- body { --&gt;
+&lt;!--   text-align: justify; --&gt;
+&lt;!--   font-size: 12pt; --&gt;
+&lt;!--   } --&gt;
+&lt;!-- &lt;/style&gt; --&gt;
+&lt;h2 id=&#34;histórico&#34;&gt;Histórico&lt;/h2&gt;
+&lt;p&gt;Em antecipação a promulgação da Lei nº 13.675, de 11 de junho de 2018, que institui o Sistema Único de Segurança Pública e o Sistema Nacional de Informações de Segurança Pública, Prisionais, de Rastreabilidade de Armas e Munições, de Material Genético, de Digitais e de Drogas (Sinesp), a Senasp já vinha empregando esforços na coleta de dados e informações de interesse da segurança pública desde o ano de 2001, visando a implementação de ações e políticas públicas mais qualificadas.&lt;/p&gt;
+&lt;p&gt;A coleta informatizada de dados teve origem na implantação do Sistema Nacional de Estatística de Segurança Pública e Justiça Criminal - SinespJC, em 2004. A solução reúne dados AGREGADOS oriundos das Unidades da Federação, permitindo a elaboração de relatórios e indicadores estatísticos. Seu conteúdo é gerado a partir dos boletins de ocorrência registrados pelas Polícias Civis dos Estados e Distrito Federal, reunindo assim, informações sobre o número de ocorrências, natureza do fato registrado, perfil da vítima, perfil do autor, meios empregados, dentre outras.&lt;/p&gt;
+&lt;p&gt;O primeiro módulo implantado foi o Módulo Polícia Civil, do SinespJC, em plataforma desktop e dados estatísticos dos Boletins de Ocorrência. Em 2010, a plataforma foi reformulada para a versão SinespJC Web. Nesse modelo, os dados são coletados mensalmente através de formulários eletrônicos e disponibilizados após sua consolidação pelos Gestores Estaduais do Sinesp, permitindo a produção de relatórios a partir da unidade de análise “Município”.&lt;/p&gt;
+&lt;p&gt;A partir de 2012, com a instituição do Sistema Nacional de Informações de Segurança Pública, Prisionais e sobre Drogas - SINESP, por meio da Lei n º 12.681/12, iniciaram-se os projetos para a coleta automatizada de dados e a integração dos sistemas estaduais de registro de ocorrências policiais. Em dezembro de 2014, após a conclusão da primeira etapa de planejamento e desenvolvimento da plataforma Sinesp, foi implementado o Boletim Nacional de Ocorrências Policiais - Sinesp PPE (Procedimentos Policiais Eletrônicos) no estado de Roraima, dando início à coleta de dados de registros de ocorrência em tempo real. Posteriormente, a solução foi implantada em outras Unidades da Federação.&lt;/p&gt;
+&lt;p&gt;Neste cenário, em 2015, foi desenvolvido e disponibilizado às UFs o Sinesp Integração, solução destinada à consolidação de dados e informações de múltiplas fontes em uma única Base Nacional, permitindo, dentre outras atividades, a análise de microdados e a produção de estatísticas e relatórios mais qualificados.&lt;/p&gt;
+&lt;h1 id=&#34;fontes-de-dados-e-indicadores&#34;&gt;FONTES DE DADOS E INDICADORES&lt;/h1&gt;
+&lt;p&gt;Os dados disponíveis foram extraídos das soluções SinespJC e Sinesp Integração, fontes primárias dos seguintes indicadores: Totais de Ocorrências e Totais de Vítimas de estupro, furto de veículos, homicídio doloso, lesão corporal seguida de morte, roubo à instituição financeira, roubo de carga, roubo de veículos e roubo seguido de morte.&lt;/p&gt;
+&lt;h1 id=&#34;nota&#34;&gt;NOTA&lt;/h1&gt;
+&lt;p&gt;É importante ressaltar que as informações apresentadas refletem o nível de alimentação e consolidação de cada Unidade da Federação no SinespJC e Sinesp Integração na data de sua extração, podendo ocorrer atualizações posteriores à publicação. Salientamos que se considera como último período os dados consolidados que antecedem os últimos três meses, por exemplo: Em fev/2019, serão publicados os dados de jan/2015 a out/2018; em mar/2019 os dados de jan/2015 a nov/2018; e assim sucessivamente. Isso se faz necessário para que os Gestores Estaduais possam coletar, tratar e validar os dados antes do fornecimento e consolidação via SinespJC, não sendo exigido esse processo aos entes que já utilizam o Sinesp Integração e consideram os dados transmitidos como fonte para a produção das estatísticas oficiais.&lt;/p&gt;
+&lt;p&gt;Com o avanço do Sinesp Integração, espera-se que as Unidades da Federação aprimorem seus processos de coleta de dados e substituam a alimentação manual do SinespJC pelo processo automatizado. Com isso, será possível a divulgação de dados detalhados em períodos mais curtos e com mais qualidade.&lt;/p&gt;
+&lt;h2 id=&#34;fonte&#34;&gt;Fonte&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://dados.gov.br/dataset/sistema-nacional-de-estatisticas-de-seguranca-publica&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sinesp&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;aplicativo&#34;&gt;Aplicativo&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://jpahenrique.shinyapps.io/dados_sinesp/?_ga=2.132815818.551386921.1666349234-2114962546.1665406207&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sinesp - Ocorrências criminais&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
