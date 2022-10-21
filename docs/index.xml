@@ -433,7 +433,7 @@ tabela
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;glimpse(data)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Rows: 28,863
+&lt;pre&gt;&lt;code&gt;## Rows: 26,136
 ## Columns: 12
 ## $ region       &amp;lt;chr&amp;gt; &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;North&amp;quot;, &amp;quot;No~
 ## $ state        &amp;lt;chr&amp;gt; &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;RO~
@@ -559,11 +559,11 @@ tabela
 ##     4:  North    AC 2020-02-28        9        0          0         0
 ##     5:  North    AC 2020-02-29        9        0          0         0
 ##    ---                                                               
-## 28859:  North    TO 2022-03-27       13        0     302502         0
-## 28860:  North    TO 2022-03-28       13        7     302509         0
-## 28861:  North    TO 2022-03-29       13       97     302606         0
-## 28862:  North    TO 2022-03-30       13      125     302731         1
-## 28863:  North    TO 2022-03-31       13       95     302826         1
+## 26132:  North    TO 2022-10-15       41        0     344594         0
+## 26133:  North    TO 2022-10-16       42        0     344594         0
+## 26134:  North    TO 2022-10-17       42       19     344613         0
+## 26135:  North    TO 2022-10-18       42        0     344613         0
+## 26136:  North    TO 2022-10-19       42        0     344613         0
 ##        accumDeaths newRecovered newFollowup     pop state_code
 ##     1:           0           NA          NA  881935         12
 ##     2:           0           NA          NA  881935         12
@@ -571,78 +571,79 @@ tabela
 ##     4:           0           NA          NA  881935         12
 ##     5:           0           NA          NA  881935         12
 ##    ---                                                        
-## 28859:        4142           NA          NA 1572866         17
-## 28860:        4142           NA          NA 1572866         17
-## 28861:        4142           NA          NA 1572866         17
-## 28862:        4143           NA          NA 1572866         17
-## 28863:        4144           NA          NA 1572866         17
+## 26132:        4205           NA          NA 1572866         17
+## 26133:        4205           NA          NA 1572866         17
+## 26134:        4205           NA          NA 1572866         17
+## 26135:        4205           NA          NA 1572866         17
+## 26136:        4205           NA          NA 1572866         17
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;select(data, region , date,  state, newCases, accumCases)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##        region       date state newCases accumCases
-##     1:  North 2020-02-25    RO        0          0
-##     2:  North 2020-02-26    RO        0          0
-##     3:  North 2020-02-27    RO        0          0
-##     4:  North 2020-02-28    RO        0          0
-##     5:  North 2020-02-29    RO        0          0
-##    ---                                            
-## 28859:  North 2022-02-19    RO        0          0
-## 28860:  North 2022-02-20    RO        0          0
-## 28861:  North 2022-02-21    RO        0          0
-## 28862:  North 2022-02-22    RO        0          0
-## 28863:  North 2022-02-23    RO        0          0
+&lt;pre&gt;&lt;code&gt;##         region       date state newCases accumCases
+##     1:   North 2020-02-25    RO        0          0
+##     2:   North 2020-02-26    RO        0          0
+##     3:   North 2020-02-27    RO        0          0
+##     4:   North 2020-02-28    RO        0          0
+##     5:   North 2020-02-29    RO        0          0
+##    ---                                             
+## 26132: Midwest 2022-10-15    DF        0     839752
+## 26133: Midwest 2022-10-16    DF        0     839752
+## 26134: Midwest 2022-10-17    DF        0     839752
+## 26135: Midwest 2022-10-18    DF     2235     841987
+## 26136: Midwest 2022-10-19    DF       78     842065
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;mutate(data, rate_newcases = newCases/pop*100000)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;##        region state       date epi_week newCases accumCases newDeaths
-##     1:  North    RO 2020-02-25        9        0          0         0
-##     2:  North    RO 2020-02-26        9        0          0         0
-##     3:  North    RO 2020-02-27        9        0          0         0
-##     4:  North    RO 2020-02-28        9        0          0         0
-##     5:  North    RO 2020-02-29        9        0          0         0
-##    ---                                                               
-## 28859:  North    RO 2022-02-19        7        0          0         0
-## 28860:  North    RO 2022-02-20        8        0          0         0
-## 28861:  North    RO 2022-02-21        8        0          0         0
-## 28862:  North    RO 2022-02-22        8        0          0         0
-## 28863:  North    RO 2022-02-23        8        0          0         0
+&lt;pre&gt;&lt;code&gt;##         region state       date epi_week newCases accumCases newDeaths
+##     1:   North    RO 2020-02-25        9        0          0         0
+##     2:   North    RO 2020-02-26        9        0          0         0
+##     3:   North    RO 2020-02-27        9        0          0         0
+##     4:   North    RO 2020-02-28        9        0          0         0
+##     5:   North    RO 2020-02-29        9        0          0         0
+##    ---                                                                
+## 26132: Midwest    DF 2022-10-15       41        0     839752         0
+## 26133: Midwest    DF 2022-10-16       42        0     839752         0
+## 26134: Midwest    DF 2022-10-17       42        0     839752         0
+## 26135: Midwest    DF 2022-10-18       42     2235     841987         0
+## 26136: Midwest    DF 2022-10-19       42       78     842065         0
 ##        accumDeaths newRecovered newFollowup     pop state_code rate_newcases
-##     1:           0           NA          NA 1777225         11             0
-##     2:           0           NA          NA 1777225         11             0
-##     3:           0           NA          NA 1777225         11             0
-##     4:           0           NA          NA 1777225         11             0
-##     5:           0           NA          NA 1777225         11             0
+##     1:           0           NA          NA 1777225         11      0.000000
+##     2:           0           NA          NA 1777225         11      0.000000
+##     3:           0           NA          NA 1777225         11      0.000000
+##     4:           0           NA          NA 1777225         11      0.000000
+##     5:           0           NA          NA 1777225         11      0.000000
 ##    ---                                                                      
-## 28859:           0           NA          NA      NA         11            NA
-## 28860:           0           NA          NA      NA         11            NA
-## 28861:           0           NA          NA      NA         11            NA
-## 28862:           0           NA          NA      NA         11            NA
-## 28863:           0           NA          NA      NA         11            NA
+## 26132:       11831           NA          NA 3015268         53      0.000000
+## 26133:       11831           NA          NA 3015268         53      0.000000
+## 26134:       11831           NA          NA 3015268         53      0.000000
+## 26135:       11831           NA          NA 3015268         53     74.122765
+## 26136:       11831           NA          NA 3015268         53      2.586835
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;summarize(data, mean_newdeaths=mean(newDeaths), desv_pad= sd(newDeaths),
                   standard_error=desv_pad/sqrt(length(data)))
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##   mean_newdeaths desv_pad standard_error
-## 1       23.01992 63.72881       18.39692
+## 1       26.30177 66.46069       19.18555
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;group_by(data, region, epi_week)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## # A tibble: 28,863 x 12
+&lt;pre&gt;&lt;code&gt;## # A tibble: 26,136 x 12
 ## # Groups:   region, epi_week [265]
-##    region state date       epi_week newCases accumCases newDeaths accumDeaths
-##    &amp;lt;chr&amp;gt;  &amp;lt;chr&amp;gt; &amp;lt;date&amp;gt;        &amp;lt;int&amp;gt;    &amp;lt;int&amp;gt;      &amp;lt;int&amp;gt;     &amp;lt;int&amp;gt;       &amp;lt;int&amp;gt;
-##  1 North  RO    2020-02-25        9        0          0         0           0
-##  2 North  RO    2020-02-26        9        0          0         0           0
-##  3 North  RO    2020-02-27        9        0          0         0           0
-##  4 North  RO    2020-02-28        9        0          0         0           0
-##  5 North  RO    2020-02-29        9        0          0         0           0
-##  6 North  RO    2020-03-01       10        0          0         0           0
-##  7 North  RO    2020-03-02       10        0          0         0           0
-##  8 North  RO    2020-03-03       10        0          0         0           0
-##  9 North  RO    2020-03-04       10        0          0         0           0
-## 10 North  RO    2020-03-05       10        0          0         0           0
-## # ... with 28,853 more rows, and 4 more variables: newRecovered &amp;lt;int&amp;gt;,
-## #   newFollowup &amp;lt;int&amp;gt;, pop &amp;lt;dbl&amp;gt;, state_code &amp;lt;int&amp;gt;
+##    region state date       epi_week newCases accumCases newDea~1 accum~2 newRe~3
+##    &amp;lt;chr&amp;gt;  &amp;lt;chr&amp;gt; &amp;lt;date&amp;gt;        &amp;lt;int&amp;gt;    &amp;lt;int&amp;gt;      &amp;lt;int&amp;gt;    &amp;lt;int&amp;gt;   &amp;lt;int&amp;gt;   &amp;lt;int&amp;gt;
+##  1 North  RO    2020-02-25        9        0          0        0       0      NA
+##  2 North  RO    2020-02-26        9        0          0        0       0      NA
+##  3 North  RO    2020-02-27        9        0          0        0       0      NA
+##  4 North  RO    2020-02-28        9        0          0        0       0      NA
+##  5 North  RO    2020-02-29        9        0          0        0       0      NA
+##  6 North  RO    2020-03-01       10        0          0        0       0      NA
+##  7 North  RO    2020-03-02       10        0          0        0       0      NA
+##  8 North  RO    2020-03-03       10        0          0        0       0      NA
+##  9 North  RO    2020-03-04       10        0          0        0       0      NA
+## 10 North  RO    2020-03-05       10        0          0        0       0      NA
+## # ... with 26,126 more rows, 3 more variables: newFollowup &amp;lt;int&amp;gt;, pop &amp;lt;dbl&amp;gt;,
+## #   state_code &amp;lt;int&amp;gt;, and abbreviated variable names 1: newDeaths,
+## #   2: accumDeaths, 3: newRecovered
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Esse pacote é muito útil quando desejamos realizar uma análise exploratória de nossos dados. Vamos então construir alguns gráficos utilizando os recursos desse pacote e também do &lt;strong&gt;ggplot2&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Suponha que estamos interessados em conhecer, “a priori”, quantas mortes por COVID-19 ocorreram em cada uma das unidades federativas brasileiras, no dia 20-02-2022. Como proceder?&lt;/p&gt;
@@ -710,23 +711,23 @@ dados_mapa &amp;lt;- read_state(year=2019, showProgress = FALSE)
 dados_final &amp;lt;- left_join(dados_mapa, uf, &amp;quot;state&amp;quot;)
 glimpse(dados_final)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Rows: 28
+&lt;pre&gt;&lt;code&gt;## Rows: 27
 ## Columns: 16
-## $ code_state      &amp;lt;dbl&amp;gt; 11, 11, 12, 13, 14, 15, 16, 17, 21, 22, 23, 24, 25, 26~
-## $ state           &amp;lt;chr&amp;gt; &amp;quot;RO&amp;quot;, &amp;quot;RO&amp;quot;, &amp;quot;AC&amp;quot;, &amp;quot;AM&amp;quot;, &amp;quot;RR&amp;quot;, &amp;quot;PA&amp;quot;, &amp;quot;AP&amp;quot;, &amp;quot;TO&amp;quot;, &amp;quot;MA&amp;quot;, ~
-## $ name_state      &amp;lt;chr&amp;gt; &amp;quot;Rondônia&amp;quot;, &amp;quot;Rondônia&amp;quot;, &amp;quot;Acre&amp;quot;, &amp;quot;Amazônas&amp;quot;, &amp;quot;Roraima&amp;quot;,~
-## $ code_region     &amp;lt;dbl&amp;gt; 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, ~
+## $ code_state      &amp;lt;dbl&amp;gt; 11, 12, 13, 14, 15, 16, 17, 21, 22, 23, 24, 25, 26, 27~
+## $ state           &amp;lt;chr&amp;gt; &amp;quot;RO&amp;quot;, &amp;quot;AC&amp;quot;, &amp;quot;AM&amp;quot;, &amp;quot;RR&amp;quot;, &amp;quot;PA&amp;quot;, &amp;quot;AP&amp;quot;, &amp;quot;TO&amp;quot;, &amp;quot;MA&amp;quot;, &amp;quot;PI&amp;quot;, ~
+## $ name_state      &amp;lt;chr&amp;gt; &amp;quot;Rondônia&amp;quot;, &amp;quot;Acre&amp;quot;, &amp;quot;Amazônas&amp;quot;, &amp;quot;Roraima&amp;quot;, &amp;quot;Pará&amp;quot;, &amp;quot;Am~
+## $ code_region     &amp;lt;dbl&amp;gt; 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, ~
 ## $ name_region     &amp;lt;chr&amp;gt; &amp;quot;Norte&amp;quot;, &amp;quot;Norte&amp;quot;, &amp;quot;Norte&amp;quot;, &amp;quot;Norte&amp;quot;, &amp;quot;Norte&amp;quot;, &amp;quot;Norte&amp;quot;, ~
-## $ newDeaths       &amp;lt;int&amp;gt; 16, 0, 4, 3, 1, 17, 2, 2, 14, 5, 57, 7, 9, 15, 12, 4, ~
-## $ newCases        &amp;lt;int&amp;gt; 2741, 0, 654, 575, 361, 2476, 52, 723, 1283, 645, 1907~
-## $ accumDeaths     &amp;lt;int&amp;gt; 7036, 0, 1966, 14101, 2126, 17716, 2100, 4095, 10739, ~
-## $ accumCases      &amp;lt;int&amp;gt; 366864, 0, 119090, 571174, 152146, 709489, 160025, 296~
-## $ pop             &amp;lt;dbl&amp;gt; 1777225, NA, 881935, 4144597, 605761, 8602865, 845731,~
+## $ newDeaths       &amp;lt;int&amp;gt; 16, 4, 3, 1, 17, 2, 2, 14, 5, 57, 7, 9, 15, 12, 4, 26,~
+## $ newCases        &amp;lt;int&amp;gt; 2741, 654, 575, 361, 2476, 52, 723, 1283, 645, 1907, 1~
+## $ accumDeaths     &amp;lt;int&amp;gt; 7036, 1966, 14101, 2126, 17716, 2100, 4095, 10739, 761~
+## $ accumCases      &amp;lt;int&amp;gt; 366864, 119090, 571174, 152146, 709489, 160025, 296677~
+## $ pop             &amp;lt;dbl&amp;gt; 1777225, 881935, 4144597, 605761, 8602865, 845731, 157~
 ## $ date            &amp;lt;date&amp;gt; 2022-02-23, 2022-02-23, 2022-02-23, 2022-02-23, 2022-~
-## $ ratenewcases    &amp;lt;dbl&amp;gt; 154.229206, NA, 74.155125, 13.873484, 59.594461, 28.78~
-## $ rateaccumcases  &amp;lt;dbl&amp;gt; 20642.519, NA, 13503.263, 13781.171, 25116.506, 8247.1~
-## $ ratenewdeaths   &amp;lt;dbl&amp;gt; 0.90027993, NA, 0.45354816, 0.07238339, 0.16508161, 0.~
-## $ rateaccumdeaths &amp;lt;dbl&amp;gt; 395.8981, NA, 222.9189, 340.2261, 350.9635, 205.9314, ~
+## $ ratenewcases    &amp;lt;dbl&amp;gt; 154.229206, 74.155125, 13.873484, 59.594461, 28.781110~
+## $ rateaccumcases  &amp;lt;dbl&amp;gt; 20642.519, 13503.263, 13781.171, 25116.506, 8247.125, ~
+## $ ratenewdeaths   &amp;lt;dbl&amp;gt; 0.90027993, 0.45354816, 0.07238339, 0.16508161, 0.1976~
+## $ rateaccumdeaths &amp;lt;dbl&amp;gt; 395.8981, 222.9189, 340.2261, 350.9635, 205.9314, 248.~
 ## $ geom            &amp;lt;MULTIPOLYGON [°]&amp;gt; MULTIPOLYGON (((-65.3815 -1..., MULTIPOLY~
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;#plotar os mapas
@@ -810,14 +811,6 @@ dados_final %&amp;gt;%
 &lt;/ul&gt;
 &lt;p&gt;Further event details, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;page elements&lt;/a&gt; such as image galleries, can be added to the body of this page.&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>External Project</title>
-      <link>https://henriqueest.github.io/project/external-project/</link>
-      <pubDate>Fri, 21 Oct 2022 07:00:00 +0000</pubDate>
-      <guid>https://henriqueest.github.io/project/external-project/</guid>
-      <description></description>
     </item>
     
     <item>
@@ -1437,19 +1430,6 @@ $$&lt;/p&gt;
 &lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/discussions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://wowchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Internal Project</title>
-      <link>https://henriqueest.github.io/project/internal-project/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://henriqueest.github.io/project/internal-project/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
 </description>
     </item>
     

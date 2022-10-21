@@ -569,43 +569,6 @@
           
 
           <li class="nav-item">
-            <a class="nav-link " href="/#project"><span>Project</span></a>
-          </li>
-
-          
-          
-
-          
-
-          
-          
-          
-            
-          
-
-          
-
-          
-          
-          
-          
-
-          
-            
-              
-              
-            
-            
-              
-              
-              
-                
-              
-              
-            
-          
-
-          <li class="nav-item">
             <a class="nav-link " href="/#contact"><span>Contact</span></a>
           </li>
 
@@ -1263,7 +1226,7 @@ tabela
 </code></pre>
 <pre><code class="language-r">glimpse(data)
 </code></pre>
-<pre><code>## Rows: 28,863
+<pre><code>## Rows: 26,136
 ## Columns: 12
 ## $ region       &lt;chr&gt; &quot;North&quot;, &quot;North&quot;, &quot;North&quot;, &quot;North&quot;, &quot;North&quot;, &quot;North&quot;, &quot;No~
 ## $ state        &lt;chr&gt; &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO&quot;, &quot;RO~
@@ -1389,11 +1352,11 @@ tabela
 ##     4:  North    AC 2020-02-28        9        0          0         0
 ##     5:  North    AC 2020-02-29        9        0          0         0
 ##    ---                                                               
-## 28859:  North    TO 2022-03-27       13        0     302502         0
-## 28860:  North    TO 2022-03-28       13        7     302509         0
-## 28861:  North    TO 2022-03-29       13       97     302606         0
-## 28862:  North    TO 2022-03-30       13      125     302731         1
-## 28863:  North    TO 2022-03-31       13       95     302826         1
+## 26132:  North    TO 2022-10-15       41        0     344594         0
+## 26133:  North    TO 2022-10-16       42        0     344594         0
+## 26134:  North    TO 2022-10-17       42       19     344613         0
+## 26135:  North    TO 2022-10-18       42        0     344613         0
+## 26136:  North    TO 2022-10-19       42        0     344613         0
 ##        accumDeaths newRecovered newFollowup     pop state_code
 ##     1:           0           NA          NA  881935         12
 ##     2:           0           NA          NA  881935         12
@@ -1401,78 +1364,79 @@ tabela
 ##     4:           0           NA          NA  881935         12
 ##     5:           0           NA          NA  881935         12
 ##    ---                                                        
-## 28859:        4142           NA          NA 1572866         17
-## 28860:        4142           NA          NA 1572866         17
-## 28861:        4142           NA          NA 1572866         17
-## 28862:        4143           NA          NA 1572866         17
-## 28863:        4144           NA          NA 1572866         17
+## 26132:        4205           NA          NA 1572866         17
+## 26133:        4205           NA          NA 1572866         17
+## 26134:        4205           NA          NA 1572866         17
+## 26135:        4205           NA          NA 1572866         17
+## 26136:        4205           NA          NA 1572866         17
 </code></pre>
 <pre><code class="language-r">select(data, region , date,  state, newCases, accumCases)
 </code></pre>
-<pre><code>##        region       date state newCases accumCases
-##     1:  North 2020-02-25    RO        0          0
-##     2:  North 2020-02-26    RO        0          0
-##     3:  North 2020-02-27    RO        0          0
-##     4:  North 2020-02-28    RO        0          0
-##     5:  North 2020-02-29    RO        0          0
-##    ---                                            
-## 28859:  North 2022-02-19    RO        0          0
-## 28860:  North 2022-02-20    RO        0          0
-## 28861:  North 2022-02-21    RO        0          0
-## 28862:  North 2022-02-22    RO        0          0
-## 28863:  North 2022-02-23    RO        0          0
+<pre><code>##         region       date state newCases accumCases
+##     1:   North 2020-02-25    RO        0          0
+##     2:   North 2020-02-26    RO        0          0
+##     3:   North 2020-02-27    RO        0          0
+##     4:   North 2020-02-28    RO        0          0
+##     5:   North 2020-02-29    RO        0          0
+##    ---                                             
+## 26132: Midwest 2022-10-15    DF        0     839752
+## 26133: Midwest 2022-10-16    DF        0     839752
+## 26134: Midwest 2022-10-17    DF        0     839752
+## 26135: Midwest 2022-10-18    DF     2235     841987
+## 26136: Midwest 2022-10-19    DF       78     842065
 </code></pre>
 <pre><code class="language-r">mutate(data, rate_newcases = newCases/pop*100000)
 </code></pre>
-<pre><code>##        region state       date epi_week newCases accumCases newDeaths
-##     1:  North    RO 2020-02-25        9        0          0         0
-##     2:  North    RO 2020-02-26        9        0          0         0
-##     3:  North    RO 2020-02-27        9        0          0         0
-##     4:  North    RO 2020-02-28        9        0          0         0
-##     5:  North    RO 2020-02-29        9        0          0         0
-##    ---                                                               
-## 28859:  North    RO 2022-02-19        7        0          0         0
-## 28860:  North    RO 2022-02-20        8        0          0         0
-## 28861:  North    RO 2022-02-21        8        0          0         0
-## 28862:  North    RO 2022-02-22        8        0          0         0
-## 28863:  North    RO 2022-02-23        8        0          0         0
+<pre><code>##         region state       date epi_week newCases accumCases newDeaths
+##     1:   North    RO 2020-02-25        9        0          0         0
+##     2:   North    RO 2020-02-26        9        0          0         0
+##     3:   North    RO 2020-02-27        9        0          0         0
+##     4:   North    RO 2020-02-28        9        0          0         0
+##     5:   North    RO 2020-02-29        9        0          0         0
+##    ---                                                                
+## 26132: Midwest    DF 2022-10-15       41        0     839752         0
+## 26133: Midwest    DF 2022-10-16       42        0     839752         0
+## 26134: Midwest    DF 2022-10-17       42        0     839752         0
+## 26135: Midwest    DF 2022-10-18       42     2235     841987         0
+## 26136: Midwest    DF 2022-10-19       42       78     842065         0
 ##        accumDeaths newRecovered newFollowup     pop state_code rate_newcases
-##     1:           0           NA          NA 1777225         11             0
-##     2:           0           NA          NA 1777225         11             0
-##     3:           0           NA          NA 1777225         11             0
-##     4:           0           NA          NA 1777225         11             0
-##     5:           0           NA          NA 1777225         11             0
+##     1:           0           NA          NA 1777225         11      0.000000
+##     2:           0           NA          NA 1777225         11      0.000000
+##     3:           0           NA          NA 1777225         11      0.000000
+##     4:           0           NA          NA 1777225         11      0.000000
+##     5:           0           NA          NA 1777225         11      0.000000
 ##    ---                                                                      
-## 28859:           0           NA          NA      NA         11            NA
-## 28860:           0           NA          NA      NA         11            NA
-## 28861:           0           NA          NA      NA         11            NA
-## 28862:           0           NA          NA      NA         11            NA
-## 28863:           0           NA          NA      NA         11            NA
+## 26132:       11831           NA          NA 3015268         53      0.000000
+## 26133:       11831           NA          NA 3015268         53      0.000000
+## 26134:       11831           NA          NA 3015268         53      0.000000
+## 26135:       11831           NA          NA 3015268         53     74.122765
+## 26136:       11831           NA          NA 3015268         53      2.586835
 </code></pre>
 <pre><code class="language-r">summarize(data, mean_newdeaths=mean(newDeaths), desv_pad= sd(newDeaths),
                   standard_error=desv_pad/sqrt(length(data)))
 </code></pre>
 <pre><code>##   mean_newdeaths desv_pad standard_error
-## 1       23.01992 63.72881       18.39692
+## 1       26.30177 66.46069       19.18555
 </code></pre>
 <pre><code class="language-r">group_by(data, region, epi_week)
 </code></pre>
-<pre><code>## # A tibble: 28,863 x 12
+<pre><code>## # A tibble: 26,136 x 12
 ## # Groups:   region, epi_week [265]
-##    region state date       epi_week newCases accumCases newDeaths accumDeaths
-##    &lt;chr&gt;  &lt;chr&gt; &lt;date&gt;        &lt;int&gt;    &lt;int&gt;      &lt;int&gt;     &lt;int&gt;       &lt;int&gt;
-##  1 North  RO    2020-02-25        9        0          0         0           0
-##  2 North  RO    2020-02-26        9        0          0         0           0
-##  3 North  RO    2020-02-27        9        0          0         0           0
-##  4 North  RO    2020-02-28        9        0          0         0           0
-##  5 North  RO    2020-02-29        9        0          0         0           0
-##  6 North  RO    2020-03-01       10        0          0         0           0
-##  7 North  RO    2020-03-02       10        0          0         0           0
-##  8 North  RO    2020-03-03       10        0          0         0           0
-##  9 North  RO    2020-03-04       10        0          0         0           0
-## 10 North  RO    2020-03-05       10        0          0         0           0
-## # ... with 28,853 more rows, and 4 more variables: newRecovered &lt;int&gt;,
-## #   newFollowup &lt;int&gt;, pop &lt;dbl&gt;, state_code &lt;int&gt;
+##    region state date       epi_week newCases accumCases newDea~1 accum~2 newRe~3
+##    &lt;chr&gt;  &lt;chr&gt; &lt;date&gt;        &lt;int&gt;    &lt;int&gt;      &lt;int&gt;    &lt;int&gt;   &lt;int&gt;   &lt;int&gt;
+##  1 North  RO    2020-02-25        9        0          0        0       0      NA
+##  2 North  RO    2020-02-26        9        0          0        0       0      NA
+##  3 North  RO    2020-02-27        9        0          0        0       0      NA
+##  4 North  RO    2020-02-28        9        0          0        0       0      NA
+##  5 North  RO    2020-02-29        9        0          0        0       0      NA
+##  6 North  RO    2020-03-01       10        0          0        0       0      NA
+##  7 North  RO    2020-03-02       10        0          0        0       0      NA
+##  8 North  RO    2020-03-03       10        0          0        0       0      NA
+##  9 North  RO    2020-03-04       10        0          0        0       0      NA
+## 10 North  RO    2020-03-05       10        0          0        0       0      NA
+## # ... with 26,126 more rows, 3 more variables: newFollowup &lt;int&gt;, pop &lt;dbl&gt;,
+## #   state_code &lt;int&gt;, and abbreviated variable names 1: newDeaths,
+## #   2: accumDeaths, 3: newRecovered
 </code></pre>
 <p>Esse pacote é muito útil quando desejamos realizar uma análise exploratória de nossos dados. Vamos então construir alguns gráficos utilizando os recursos desse pacote e também do <strong>ggplot2</strong>.</p>
 <p>Suponha que estamos interessados em conhecer, “a priori”, quantas mortes por COVID-19 ocorreram em cada uma das unidades federativas brasileiras, no dia 20-02-2022. Como proceder?</p>
@@ -1540,23 +1504,23 @@ dados_mapa &lt;- read_state(year=2019, showProgress = FALSE)
 dados_final &lt;- left_join(dados_mapa, uf, &quot;state&quot;)
 glimpse(dados_final)
 </code></pre>
-<pre><code>## Rows: 28
+<pre><code>## Rows: 27
 ## Columns: 16
-## $ code_state      &lt;dbl&gt; 11, 11, 12, 13, 14, 15, 16, 17, 21, 22, 23, 24, 25, 26~
-## $ state           &lt;chr&gt; &quot;RO&quot;, &quot;RO&quot;, &quot;AC&quot;, &quot;AM&quot;, &quot;RR&quot;, &quot;PA&quot;, &quot;AP&quot;, &quot;TO&quot;, &quot;MA&quot;, ~
-## $ name_state      &lt;chr&gt; &quot;Rondônia&quot;, &quot;Rondônia&quot;, &quot;Acre&quot;, &quot;Amazônas&quot;, &quot;Roraima&quot;,~
-## $ code_region     &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, ~
+## $ code_state      &lt;dbl&gt; 11, 12, 13, 14, 15, 16, 17, 21, 22, 23, 24, 25, 26, 27~
+## $ state           &lt;chr&gt; &quot;RO&quot;, &quot;AC&quot;, &quot;AM&quot;, &quot;RR&quot;, &quot;PA&quot;, &quot;AP&quot;, &quot;TO&quot;, &quot;MA&quot;, &quot;PI&quot;, ~
+## $ name_state      &lt;chr&gt; &quot;Rondônia&quot;, &quot;Acre&quot;, &quot;Amazônas&quot;, &quot;Roraima&quot;, &quot;Pará&quot;, &quot;Am~
+## $ code_region     &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, ~
 ## $ name_region     &lt;chr&gt; &quot;Norte&quot;, &quot;Norte&quot;, &quot;Norte&quot;, &quot;Norte&quot;, &quot;Norte&quot;, &quot;Norte&quot;, ~
-## $ newDeaths       &lt;int&gt; 16, 0, 4, 3, 1, 17, 2, 2, 14, 5, 57, 7, 9, 15, 12, 4, ~
-## $ newCases        &lt;int&gt; 2741, 0, 654, 575, 361, 2476, 52, 723, 1283, 645, 1907~
-## $ accumDeaths     &lt;int&gt; 7036, 0, 1966, 14101, 2126, 17716, 2100, 4095, 10739, ~
-## $ accumCases      &lt;int&gt; 366864, 0, 119090, 571174, 152146, 709489, 160025, 296~
-## $ pop             &lt;dbl&gt; 1777225, NA, 881935, 4144597, 605761, 8602865, 845731,~
+## $ newDeaths       &lt;int&gt; 16, 4, 3, 1, 17, 2, 2, 14, 5, 57, 7, 9, 15, 12, 4, 26,~
+## $ newCases        &lt;int&gt; 2741, 654, 575, 361, 2476, 52, 723, 1283, 645, 1907, 1~
+## $ accumDeaths     &lt;int&gt; 7036, 1966, 14101, 2126, 17716, 2100, 4095, 10739, 761~
+## $ accumCases      &lt;int&gt; 366864, 119090, 571174, 152146, 709489, 160025, 296677~
+## $ pop             &lt;dbl&gt; 1777225, 881935, 4144597, 605761, 8602865, 845731, 157~
 ## $ date            &lt;date&gt; 2022-02-23, 2022-02-23, 2022-02-23, 2022-02-23, 2022-~
-## $ ratenewcases    &lt;dbl&gt; 154.229206, NA, 74.155125, 13.873484, 59.594461, 28.78~
-## $ rateaccumcases  &lt;dbl&gt; 20642.519, NA, 13503.263, 13781.171, 25116.506, 8247.1~
-## $ ratenewdeaths   &lt;dbl&gt; 0.90027993, NA, 0.45354816, 0.07238339, 0.16508161, 0.~
-## $ rateaccumdeaths &lt;dbl&gt; 395.8981, NA, 222.9189, 340.2261, 350.9635, 205.9314, ~
+## $ ratenewcases    &lt;dbl&gt; 154.229206, 74.155125, 13.873484, 59.594461, 28.781110~
+## $ rateaccumcases  &lt;dbl&gt; 20642.519, 13503.263, 13781.171, 25116.506, 8247.125, ~
+## $ ratenewdeaths   &lt;dbl&gt; 0.90027993, 0.45354816, 0.07238339, 0.16508161, 0.1976~
+## $ rateaccumdeaths &lt;dbl&gt; 395.8981, 222.9189, 340.2261, 350.9635, 205.9314, 248.~
 ## $ geom            &lt;MULTIPOLYGON [°]&gt; MULTIPOLYGON (((-65.3815 -1..., MULTIPOLY~
 </code></pre>
 <pre><code class="language-r">#plotar os mapas

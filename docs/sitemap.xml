@@ -12,14 +12,6 @@
   <url>
     <loc>https://henriqueest.github.io/event/</loc><lastmod>2030-06-01T13:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://henriqueest.github.io/tag/demo/</loc><lastmod>2022-10-21T07:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/project/external-project/</loc><lastmod>2022-10-21T07:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/project/</loc><lastmod>2022-10-21T07:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/tags/</loc><lastmod>2022-10-21T07:00:00+00:00</lastmod></url>
-  <url>
     <loc>https://henriqueest.github.io/post/aula1_ufop/aula1/</loc><lastmod>2022-04-02T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://henriqueest.github.io/post/</loc><lastmod>2022-04-02T00:00:00+00:00</lastmod></url>
@@ -64,10 +56,6 @@
   <url>
     <loc>https://henriqueest.github.io/slides/example/</loc><lastmod>2019-02-05T00:00:00+00:00</lastmod></url>
   <url>
-    <loc>https://henriqueest.github.io/tag/deep-learning/</loc><lastmod>2016-04-27T00:00:00+00:00</lastmod></url>
-  <url>
-    <loc>https://henriqueest.github.io/project/internal-project/</loc><lastmod>2016-04-27T00:00:00+00:00</lastmod></url>
-  <url>
     <loc>https://henriqueest.github.io/author/breno-bernardes-souza/</loc><lastmod>2015-10-01T00:00:00+00:00</lastmod></url>
   <url>
     <loc>https://henriqueest.github.io/author/fernando-luiz-pereira-de-oliveira/</loc><lastmod>2015-10-01T00:00:00+00:00</lastmod></url>
@@ -95,5 +83,7 @@
     <loc>https://henriqueest.github.io/categories/</loc></url>
   <url>
     <loc>https://henriqueest.github.io/author/henrique-jose-de-paula-alves/</loc></url>
+  <url>
+    <loc>https://henriqueest.github.io/tags/</loc></url>
   <url>
     <loc>https://henriqueest.github.io/author/%E5%90%B3%E6%81%A9%E9%81%94/</loc></url></urlset>

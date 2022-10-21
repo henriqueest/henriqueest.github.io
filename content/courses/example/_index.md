@@ -1,8 +1,8 @@
 ---
-date: "2021-03-21"
-linkTitle: Data Science
-summary: "Data mining and graphical outputs in R."
 title: "\U0001F4CA Saídas gráficas no R: introdução ao pacote ggplot2"
+linkTitle: Data Science
+date: '2021-03-21'
+summary: Data mining and graphical outputs in R.
 type: course
 ---
 
