@@ -91,11 +91,7 @@ body {
   text-align: justify;
   font-size: 12pt;
   }
-  
-table {
-        width: 100%;
-    }
-    
+
 &lt;/style&gt;
 &lt;p&gt;Em uma pesquisa, coletamos dados sobre a(s) variável(is) de interesse. Muitas vezes esses dados surgem de forma desordenada através do qual não conseguimos detectar, a primeira vista, um comportamento que mereça uma explicação plausível. Uma das formas de descrever o comportamento dos dados é organizá-los em tabelas ou gráficos.&lt;/p&gt;
 &lt;h2 id=&#34;tabelas-de-distribuição-de-frequências-simples&#34;&gt;Tabelas de Distribuição de Frequências Simples&lt;/h2&gt;
