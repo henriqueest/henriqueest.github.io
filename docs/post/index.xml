@@ -17,12 +17,12 @@
       <link>https://henriqueest.github.io/post/aula1_ufop/aula1/</link>
       <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
       <guid>https://henriqueest.github.io/post/aula1_ufop/aula1/</guid>
-      <description>&lt;style&gt;
-body {
-  text-align: justify;
-  font-size: 12pt;
-  }
-&lt;/style&gt;
+      <description>&lt;!-- &lt;style&gt; --&gt;
+&lt;!-- body { --&gt;
+&lt;!--   text-align: justify; --&gt;
+&lt;!--   font-size: 12pt; --&gt;
+&lt;!--   } --&gt;
+&lt;!-- &lt;/style&gt; --&gt;
 &lt;p&gt;Ao praticar a atividade científica, o pesquisador se depara com situações onde
 ele deve analisar e entender um conjunto de dados referente ao seu objeto de estudo. Assim, ele terá que manipular os dados para obter informações, compará-las com outros resultados, ou ainda, julgar sua adequação a alguma teoria. A estatística surge então como uma ferramenta que auxilia o pesquisador neste trabalho, fornecendo metodologias adequadas de coleta, redução, análise e modelagem dos dados.&lt;/p&gt;
 &lt;p&gt;Diante do exposto, podemos entender a estatística como a ciência que se ocupa
