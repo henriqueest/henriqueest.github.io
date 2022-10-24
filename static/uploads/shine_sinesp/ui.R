@@ -90,7 +90,7 @@ ui <- dashboardPage(skin = "blue",
                           # column(6,
                           box(
                             title = "Evolução mensal  - Ocorrências criminais - UF - Sinesp", status = "primary", solidHeader = TRUE, collapsible = TRUE,
-                            plotOutput("plot1",width="1100",height="850")
+                            plotOutput("plot1")
                           )
                           # )
                            ,
@@ -98,7 +98,7 @@ ui <- dashboardPage(skin = "blue",
                           # column(6,
                           box(
                             title = "Missing Values - - Ocorrências criminais - UF - Sinesp", status = "primary", solidHeader = TRUE, collapsible = TRUE,
-                            plotlyOutput("plot2", width="1100", height="850"))
+                            plotlyOutput("plot2"))
                           # )
                           
                         )
