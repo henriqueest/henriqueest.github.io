@@ -18,7 +18,7 @@ type: course
 
 ## Program overview
 
-The demand for qualified professionals in Applied Statistics is growing rapidly. Data mining and graphical outputs in R is a key step in this area. In this sense, this course aims to introduce interested parties to two important tools for Production of dynamic documents via rstudio.
+The demand for qualified professionals in Applied Statistics is growing rapidly. Production of dynamic documents in R is a key step in this area. In this sense, this course aims to introduce interested parties to two important tools for production of dynamic documents via rstudio.
 
 
 ## Meet your instructor
