@@ -246,7 +246,7 @@ ui <- dashboardPage(skin = "blue",
                           
                           box(
                             title = "Mapa municípios - Brasil", status = "primary", solidHeader = TRUE, collapsible = TRUE,
-                            leafletOutput("plot",width="1100", height="800")
+                            leafletOutput("plot")
                           )
                           
                         )
