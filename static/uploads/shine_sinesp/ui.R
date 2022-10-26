@@ -90,10 +90,10 @@ ui <- dashboardPage(skin = "blue",
                           # column(6,
                           box(
                             title = "Evolução mensal  - Ocorrências criminais - UF - Sinesp", status = "primary", solidHeader = TRUE, collapsible = TRUE,
-                            plotOutput("plot1")
+                            plotlyOutput("plot1")
                           )
                           # )
-                           ,
+                          ,
                           
                           # column(6,
                           box(

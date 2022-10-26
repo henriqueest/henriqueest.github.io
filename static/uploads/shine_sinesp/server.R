@@ -144,59 +144,59 @@ server <- function(input, output, session) {
     
     switch(input$selectUF,
            "Acre" = selectInput("selectCrime", label = "Tipo de Crime",
-                             choices = choices_AC),
+                                choices = choices_AC),
            "Alagoas" = selectInput("selectCrime", label = "Tipo de Crime",
-                             choices = choices_AM),
+                                   choices = choices_AM),
            "Amapá" = selectInput("selectCrime", label = "Tipo de Crime",
-                             choices = choices_AL),
+                                 choices = choices_AL),
            "Amazonas" = selectInput("selectCrime", label = "Tipo de Crime",
-                             choices = choices_AP),
+                                    choices = choices_AP),
            "Bahia" = selectInput("selectCrime", label = "Tipo de Crime",
-                             choices = choices_BA),
+                                 choices = choices_BA),
            "Ceará" = selectInput("selectCrime", label = "Tipo de Crime",
-                             choices = choices_CE),
+                                 choices = choices_CE),
            "Distrito Federal" = selectInput("selectCrime", label = "Tipo de Crime",
-                             choices = choices_DF),
+                                            choices = choices_DF),
            "Espírito Santo" = selectInput("selectCrime", label = "Tipo de Crime",
-                             choices = choices_ES),
+                                          choices = choices_ES),
            "Goiás" = selectInput("selectCrime", label = "Tipo de Crime",
-                             choices = choices_GO),
+                                 choices = choices_GO),
            "Maranhão" = selectInput("selectCrime", label = "Tipo de Crime",
-                              choices = choices_MA),
+                                    choices = choices_MA),
            "Minas Gerais" = selectInput("selectCrime", label = "Tipo de Crime",
-                              choices = choices_MG),
+                                        choices = choices_MG),
            "Mato Grosso do Sul" = selectInput("selectCrime", label = "Tipo de Crime",
-                              choices = choices_MS),
+                                              choices = choices_MS),
            "Mato Grosso" = selectInput("selectCrime", label = "Tipo de Crime",
-                              choices = choices_MT),
+                                       choices = choices_MT),
            "Pará" = selectInput("selectCrime", label = "Tipo de Crime",
-                              choices = choices_PA),
+                                choices = choices_PA),
            "Paraíba" = selectInput("selectCrime", label = "Tipo de Crime",
-                              choices = choices_PB),
+                                   choices = choices_PB),
            "Paraná" = selectInput("selectCrime", label = "Tipo de Crime",
-                              choices = choices_PE),
+                                  choices = choices_PE),
            "Pernambuco" = selectInput("selectCrime", label = "Tipo de Crime",
-                              choices = choices_PI),
+                                      choices = choices_PI),
            "Piauí"= selectInput("selectCrime", label = "Tipo de Crime",
-                              choices = choices_PR),
+                                choices = choices_PR),
            "Rio de Janeiro" = selectInput("selectCrime", label = "Tipo de Crime",
-                              choices = choices_RJ),
+                                          choices = choices_RJ),
            "Rio Grande do Norte" = selectInput("selectCrime", label = "Tipo de Crime",
-                              choices = choices_RN),
+                                               choices = choices_RN),
            "Rio Grande do Sul" = selectInput("selectCrime", label = "Tipo de Crime",
-                              choices = choices_RO),
+                                             choices = choices_RO),
            "Rondônia" = selectInput("selectCrime", label = "Tipo de Crime",
-                              choices = choices_RR),
+                                    choices = choices_RR),
            "Roraima" = selectInput("selectCrime", label = "Tipo de Crime",
-                              choices = choices_RS),
+                                   choices = choices_RS),
            "Santa Catarina" = selectInput("selectCrime", label = "Tipo de Crime",
-                              choices = choices_SC),
+                                          choices = choices_SC),
            "São Paulo" = selectInput("selectCrime", label = "Tipo de Crime",
-                              choices = choices_SE),
+                                     choices = choices_SE),
            "Sergipe" = selectInput("selectCrime", label = "Tipo de Crime",
-                              choices = choices_SP),
+                                   choices = choices_SP),
            "Tocantins" = selectInput("selectCrime", label = "Tipo de Crime",
-                              choices = choices_TO)
+                                     choices = choices_TO)
     )
     
   })
@@ -209,36 +209,40 @@ server <- function(input, output, session) {
     # dadosFiltrados <- dados[dados$Crime == opcaoSelecionadacrime, ]
     dadosFiltrados <- data.frame(dadosFiltrados)
     
-
-    output$plot1 <-  renderPlot(
-      ggplot(dadosFiltrados, aes(fct_reorder(Mês, id, min), Ocorrências, fill = as.factor(Ano),
-                      label = Ocorrências))+
-        geom_col(alpha = 0.65,
-                 show.legend = FALSE, position = "dodge", stat="identity")+
-        geom_text(position = position_dodge(width = 0.9), vjust = -0.5)+
-        labs(x = "Mês", y = "Ocorrências")+
-        facet_wrap(. ~as.factor(Ano), ncol = 2)+
-        theme_classic()+
-        theme(axis.text.x = element_text(angle = 30, vjust = 0.5, hjust=1))+
-        scale_fill_viridis_d()
     
-      )
+    output$plot1 <-  renderPlotly({
+      ggplotly(ggplot(dadosFiltrados, aes(fct_reorder(Mês, id, min), Ocorrências,
+                                          text = paste("Ano: ", Ano, "\n",
+                                                       "Mês: ", Mês, "\n",
+                                                       "Ocorrências: ", Ocorrências)))+
+                 geom_col(aes(fill = as.factor(Ano)),alpha = 0.65,
+                          show.legend = FALSE, position = "dodge", stat="identity")+
+                 geom_point(alpha = 0.65, size =2,
+                            show.legend = FALSE, position = "dodge", stat="identity")+
+                 # geom_text(position = position_dodge(width = 0.9), vjust = -0.5)+
+                 labs(x = "Mês", y = "Ocorrências")+
+                 facet_wrap(. ~as.factor(Ano), ncol = 2)+
+                 theme_classic()+
+                 scale_fill_viridis_d()+
+                 theme(axis.text.x = element_text(angle = 30, vjust = 0.5, hjust=1)), tooltip = "text")
+    }
+    )
     
     output$plot2 <-  renderPlotly({
       ggplotly(ggplot(dadosFiltrados, aes(fct_reorder(Mês, id, min), as.factor(Ano), fill = Ocorrências,
                                           text = paste("Ano: ", Ano, "\n",
                                                        "Mês: ", Mês, "\n",
                                                        "Ocorrências: ", Ocorrências))) + 
-        # geom_point(aes(size="NA"), shape = NA, colour = "gray95")+
-        # guides(size=guide_legend("Missing values", override.aes=list(shape=15, size = 10)))+
-        geom_tile(alpha = 1, color = "white", lwd = 1.5, linetype = 1)+
-        labs(x = "Mês", y = "Ano", fill = paste("UF -", opcaoselecionadaUF))+
-        scale_fill_distiller(palette = "Spectral")+
-        theme(axis.text.x = element_text(angle = 30, vjust = 0.5, hjust=1)),
-        tooltip = 'text')
-      }
-      )
+                 # geom_point(aes(size="NA"), shape = NA, colour = "gray95")+
+                 # guides(size=guide_legend("Missing values", override.aes=list(shape=15, size = 10)))+
+                 geom_tile(alpha = 1, color = "white", lwd = 1.5, linetype = 1)+
+                 labs(x = "Mês", y = "Ano", fill = paste("UF -", opcaoselecionadaUF))+
+                 scale_fill_distiller(palette = "Spectral")+
+                 theme(axis.text.x = element_text(angle = 30, vjust = 0.5, hjust=1)),
+               tooltip = 'text')
+    }
+    )
     
-  
+    
   })
 }
