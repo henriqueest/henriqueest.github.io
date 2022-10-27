@@ -12,7 +12,7 @@ library(viridis)
 library(plotly)
 
 #lendo os dados
-dados <- read_xlsx("base_sinesp.xlsx")
+dados <- readRDS("dados.rds")
 
 dados <- as.data.frame(dados)%>%
   mutate(id = if_else(Mês == "janeiro", 1,
@@ -207,7 +207,14 @@ server <- function(input, output, session) {
     opcaoSelecionadacrime <- c(input$selectCrime)
     dadosFiltrados <- dados[dados$Crime == opcaoSelecionadacrime & dados$UF == opcaoselecionadaUF, ]
     # dadosFiltrados <- dados[dados$Crime == opcaoSelecionadacrime, ]
+    
     dadosFiltrados <- data.frame(dadosFiltrados)
+    
+    dadosFiltradossummarise <- dadosFiltrados%>%
+      group_by(Ano)%>%
+      select(UF, Ano, Ocorrências)%>%
+      summarise(Total = sum(Ocorrências),
+                Media = mean(Ocorrências))
     
     
     output$plot1 <-  renderPlotly({
@@ -242,6 +249,14 @@ server <- function(input, output, session) {
                tooltip = 'text')
     }
     )
+    
+    output$tableUF <- renderDataTable(dadosFiltrados[,1:5], 
+                                      options = list(pageLength = 5, autoWidth = TRUE, 
+                                                     rownames= FALSE))
+    
+    output$tableUF2 <- renderDataTable(dadosFiltradossummarise, 
+                                       options = list(pageLength = 5, autoWidth = TRUE, 
+                                                      rownames= FALSE))
     
     
   })
