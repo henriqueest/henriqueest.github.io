@@ -7,7 +7,7 @@ library(dplyr)
 library(readxl)
 library(ECharts2Shiny)
 library(leaflet)
-library(rgdal)
+# library(rgdal)
 library(sf)
 library(geobr)
 # install.packages('rsconnect')
@@ -64,44 +64,13 @@ colnames(dadosMUn)[25] <- "Taxamédia20182020"
 mapa <- geobr::read_municipality(year = 2015)
 colnames(mapa)[2] <- "Município"
 colnames(mapa)[4] <- "uf"
-head(dados)
+head(mapa)
 
-
-# uf <- list("AC - Acre" = 1, "AM - Amazonas" = 2,"AL - Alagoas" = 3,
-#            "AP - Amapá" = 4, "BA - Bahia" = 5, "CE - Ceará" = 6, "DF - Distrito Federal" = 7,
-#            "ES - Espírito Santo" = 8, "GO - Goiás" = 9, "MA - Maranhão" = 10, "MG - Minas Gerais" = 11,
-#            "MS - Mato Grosso do Sul" = 12, "MT - Mato Grosso" = 13, "PA - Pará" = 14, "PB - Paraíba" = 15,
-#            "PE - Pernambuco" = 16, "PI - Piauí" = 17, "PR - Paraná" = 18, "RJ - Rio de Janeiro" = 19,
-#            "RN - Rio Grande de Norte" = 20, "RO - Rondônia" = 21, "RR - Roraima" = 22,
-#            "RS - Rio Grande do Sul" = 23, "SC - Santa Catarina" = 24, "SE - Sergipe" = 25,
-#            "SP - São Paulo" = 26, "TO - Tocantins" = 27)
-
-
-# dadosmicro <- dados %>%
-#   group_by(uf, nome_munic)%>%
-#   summarise(sum(populacao.2018), sum(populacao.2019), sum(populacao.2020), sum(homicidios.2018), sum(homicidios.2019), sum(homicidios.2020),
-#             mean(Txmean201618), mean(Txmean201719), mean(Txmean201820))
-# 
-# uf <- list("AC - Acre" = 1, "AM - Amazonas" = 2,"AL - Alagoas" = 3,
-#            "AP - Amapá" = 4, "BA - Bahia" = 5, "CE - Ceará" = 6, "DF - Distrito Federal" = 7,
-#            "ES - Espírito Santo" = 8, "GO - Goiás" = 9, "MA - Maranhão" = 10, "MG - Minas Gerais" = 11,
-#            "MS - Mato Grosso do Sul" = 12, "MT - Mato Grosso" = 13, "PA - Pará" = 14, "PB - Paraíba" = 15,
-#            "PE - Pernambuco" = 16, "PI - Piauí" = 17, "PR - Paraná" = 18, "RJ - Rio de Janeiro" = 19,
-#            "RN - Rio Grande de Norte" = 20, "RO - Rondônia" = 21, "RR - Roraima" = 22, 
-#            "RS - Rio Grande do Sul" = 23, "SC - Santa Catarina" = 24, "SE - Sergipe" = 25, 
-#            "SP - São Paulo" = 26, "TO - Tocantins" = 27)
-
-# choice_mun <- dados$nome_munic
 
 choice_mun <- as.factor(levels(dados$nome_munic))
 
 choice_UF <- levels(as.factor(dados$uf))
 
-# choice_micro <- dados$Nome_Microrregião
-
-# choice_UF <- "Selecione a UF"
-
-# choice_MUN <- "Selecione o Município"
 
 choices_AC <- dados %>%
   filter(uf == "AC") %>%
@@ -219,23 +188,23 @@ server <- function(input, output, session) {
     
     switch(input$selectUF,
            "AC" = selectInput("selectMun", label = "Município",
-                             choices = choices_AC),
+                              choices = choices_AC),
            "AL" = selectInput("selectMun", label = "Município",
-                             choices = choices_AL),
+                              choices = choices_AL),
            "AM" = selectInput("selectMun", label = "Município",
-                             choices = choices_AM),
+                              choices = choices_AM),
            "AP" = selectInput("selectMun", label = "Município",
-                             choices = choices_AP),
+                              choices = choices_AP),
            "BA" = selectInput("selectMun", label = "Município",
-                             choices = choices_BA),
+                              choices = choices_BA),
            "CE" = selectInput("selectMun", label = "Município",
-                             choices = choices_CE),
+                              choices = choices_CE),
            "DF" = selectInput("selectMun", label = "Município",
-                             choices = choices_DF),
+                              choices = choices_DF),
            "ES" = selectInput("selectMun", label = "Município",
-                             choices = choices_ES),
+                              choices = choices_ES),
            "GO" = selectInput("selectMun", label = "Município",
-                             choices = choices_GO),
+                              choices = choices_GO),
            "MA" = selectInput("selectMun", label = "Município",
                               choices = choices_MA),
            "MG" = selectInput("selectMun", label = "Município",
@@ -281,6 +250,7 @@ server <- function(input, output, session) {
     opcaoSelecionadaUF <- input$selectUF
     opcaoSelecionada <- input$selectMun
     dadosFiltrados <- dados[dados$nome_munic == opcaoSelecionada & dados$uf == opcaoSelecionadaUF, ]
+    
     dadosFiltrados <- as.data.frame(dadosFiltrados)
     column2 <- c(dadosFiltrados[1,32], dadosFiltrados[1,33], dadosFiltrados[1,34], 
                  dadosFiltrados[1,35], dadosFiltrados[1,36], dadosFiltrados[1,37],
@@ -301,38 +271,10 @@ server <- function(input, output, session) {
     row.names(dat_1) <- c("2009", "2010", "2011", "2012", "2013", "2014",
                           "2015", "2016", "2017", "2018", "2019", "2020")
     
-    # output$População2018 <- renderText({
-    #   dadosFiltrados[1,29]
-    # })
-    # 
-    # output$População2019  <- renderText({ 
-    #   dadosFiltrados[1,30] 
-    # })
-    # 
-    # output$População2020 <- renderText({ 
-    #   dadosFiltrados[1,31] 
-    # })
-    # 
-    # output$Taxamedia20162018 <- renderText({ 
-    #   dadosFiltrados[1,40] 
-    # })
-    # 
-    # output$Taxamedia20172019 <- renderText({ 
-    #   dadosFiltrados[1,41] 
-    # })
-    # 
-    # output$Taxamedia20182020 <- renderText({ 
-    #   dadosFiltrados[1,42] 
-    # })
-    
-    
-    # renderBarChart(div_id = "test_1", theme = "dark-digerati", direction = "vertical", grid_left = "10%", data = dat_1,
-    #                bar.max.width = 15)
     
     renderLineChart(div_id = "test_2", theme = "dark-digerati", data = dat_2,  line.width = 10,
                     point.size = 12, point.type = "emptyCircle")
     
-    # colnames(mapa)[1] <- "Município"
     mapaFiltrado <- mapa %>%
       filter(Município == opcaoSelecionada & uf == opcaoSelecionadaUF)
     
@@ -346,5 +288,13 @@ server <- function(input, output, session) {
         addTiles()%>%
         addMiniMap()
     )
+    
+    output$tableUF <- renderDataTable(dat_2,
+                                      options = list(pageLength = 5, autoWidth = TRUE,
+                                                     rownames= FALSE))
+    
+    
+    
+    
   })
 }

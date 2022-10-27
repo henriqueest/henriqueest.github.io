@@ -16,7 +16,7 @@ library(plotly)
 # install.packages('rsconnect')
 
 #lendo os dados
-dados <- read_xlsx("base_sinesp.xlsx")
+dados <- readRDS("dados.rds")
 
 dados <- as.data.frame(dados)%>%
   mutate(id = if_else(Mês == "janeiro", 1,
@@ -31,16 +31,6 @@ dados <- as.data.frame(dados)%>%
                                                                                       if_else(Mês == "outubro", 10,
                                                                                               if_else(Mês == "novembro", 11, 12))))))))))))
 choices_UF <- levels(as.factor(dados$UF))
-
-# uf <- list("AC - Acre" = 1, "AM - Amazonas" = 2,"AL - Alagoas" = 3,
-#             "AP - Amapá" = 4, "BA - Bahia" = 5, "CE - Ceará" = 6, "DF - Distrito Federal" = 7,
-#             "ES - Espírito Santo" = 8, "GO - Goiás" = 9, "MA - Maranhão" = 10, "MG - Minas Gerais" = 11,
-#             "MS - Mato Grosso do Sul" = 12, "MT - Mato Grosso" = 13, "PA - Pará" = 14, "PB - Paraíba" = 15,
-#             "PE - Pernambuco" = 16, "PI - Piauí" = 17, "PR - Paraná" = 18, "RJ - Rio de Janeiro" = 19,
-#             "RN - Rio Grande de Norte" = 20, "RO - Rondônia" = 21, "RR - Roraima" = 22,
-#             "RS - Rio Grande do Sul" = 23, "SC - Santa Catarina" = 24, "SE - Sergipe" = 25,
-#             "SP - São Paulo" = 26, "TO - Tocantins" = 27)
-
 
 
 ui <- dashboardPage(skin = "blue", 
@@ -90,10 +80,10 @@ ui <- dashboardPage(skin = "blue",
                           # column(6,
                           box(
                             title = "Evolução mensal  - Ocorrências criminais - UF - Sinesp", status = "primary", solidHeader = TRUE, collapsible = TRUE,
-                            plotOutput("plot1")
+                            plotlyOutput("plot1")
                           )
                           # )
-                           ,
+                          ,
                           
                           # column(6,
                           box(
@@ -102,7 +92,18 @@ ui <- dashboardPage(skin = "blue",
                           # )
                           
                         )
+                        ,
                         
+                        fluidRow(
+                          column(
+                            dataTableOutput('tableUF'), width = 6)
+                          ,
+                          
+                          column(
+                            dataTableOutput('tableUF2'), width = 6)
+                          
+                          
+                        )
                       )
                     )
 )

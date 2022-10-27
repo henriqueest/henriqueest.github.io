@@ -7,7 +7,7 @@ library(dplyr)
 library(readxl)
 library(ECharts2Shiny)
 library(leaflet)
-library(rgdal)
+# library(rgdal)
 library(sf)
 library(geobr)
 # install.packages('rsconnect')
@@ -15,7 +15,7 @@ library(geobr)
 #lendo os dados
 dados <- read_xlsx(path = "Homicidios_populacao_taxa_media_2010a2020.xlsx")
 # dados <- load("~/shiny_app/my first shiny/teste/dados.RData")
-dados <- as.data.frame(dados)
+# dados <- as.data.frame(dados)
 colnames(dados)[32] <- "Txmean200810"
 colnames(dados)[33] <- "Txmean200911"
 colnames(dados)[34] <- "Txmean201012"
@@ -61,30 +61,15 @@ colnames(dadosMUn)[23] <- "Taxamédia20162018"
 colnames(dadosMUn)[24] <- "Taxamédia20172019"
 colnames(dadosMUn)[25] <- "Taxamédia20182020"
 
-# mapa <- st_read("shapefinal.shp")
 mapa <- geobr::read_municipality(year = 2015)
 colnames(mapa)[2] <- "Município"
 colnames(mapa)[4] <- "uf"
 
-head(mapa)
-head(dados)
-
-# uf <- list("AC - Acre" = 1, "AM - Amazonas" = 2,"AL - Alagoas" = 3,
-#            "AP - Amapá" = 4, "BA - Bahia" = 5, "CE - Ceará" = 6, "DF - Distrito Federal" = 7,
-#            "ES - Espírito Santo" = 8, "GO - Goiás" = 9, "MA - Maranhão" = 10, "MG - Minas Gerais" = 11,
-#            "MS - Mato Grosso do Sul" = 12, "MT - Mato Grosso" = 13, "PA - Pará" = 14, "PB - Paraíba" = 15,
-#            "PE - Pernambuco" = 16, "PI - Piauí" = 17, "PR - Paraná" = 18, "RJ - Rio de Janeiro" = 19,
-#            "RN - Rio Grande de Norte" = 20, "RO - Rondônia" = 21, "RR - Roraima" = 22, 
-#            "RS - Rio Grande do Sul" = 23, "SC - Santa Catarina" = 24, "SE - Sergipe" = 25, 
-#            "SP - São Paulo" = 26, "TO - Tocantins" = 27)
 
 choice_mun <- as.factor(levels(dados$nome_munic))
 
-# choice_micro <- dadosMUn$  $Nome_Microrregião
-
 choice_UF <- levels(as.factor(dados$uf))
 
-# choice_MUN <- "Selecione o Município"
 
 choices_AC <- dados %>%
   filter(uf == "AC") %>%
@@ -205,7 +190,7 @@ ui <- dashboardPage(skin = "blue",
                       selectInput("selectUF", label = "UF", choices = choice_UF),
                       uiOutput("ui"),
                       tags$div(class = "alinhamento",
-                               actionButton("filtrar", "filtrar"))                
+                               actionButton("filtrar", "Filtrar"))                
                     )
                     ,
                     dashboardBody(
@@ -250,33 +235,16 @@ ui <- dashboardPage(skin = "blue",
                           )
                           
                         )
-                        # ,
-                        # 
-                        # fluidRow(
-                        #   column(6,
-                        #          tags$div(id="test_2", style="width:100%;height:300px;"),
-                        #          deliverChart(div_id = "test_2")
-                        #   )
-                        #   
-                        # )
                         
-                        # fluidRow(
-                        #   column(6,
-                        #          tags$div(id="test_1", style="width:100%;height:300px;"),  # Specify the div for the chart.
-                        #          deliverChart(div_id = "test_1")  # Deliver the plotting
-                        #   ),
-                        #   column(6,
-                        #          tags$div(id="test_2", style="width:100%;height:300px;"),
-                        #          deliverChart(div_id = "test_2")
-                        #   )
-                        # ),
-                        # fluidRow(
-                        #   box(
-                        #     title = "Mapa municípios - Brasil", status = "primary", solidHeader = TRUE, collapsible = TRUE,
-                        #     leafletOutput("plot",width="700",height="235")
-                        #   )
-                        #   
-                        # )
+                        ,
+                        
+                        fluidRow(
+                          column(
+                            dataTableOutput('tableUF'), width = 6)
+                          
+                          
+                        )
+                        
                       )
                     )
 )
