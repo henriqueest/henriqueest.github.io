@@ -53,4 +53,5 @@ The areas of expertise are Spatial Statistics with emphasis on Geostatistics and
 
 <!-- hitwebcounter Code START -->
 <a href="https://www.hitwebcounter.com" target="_blank">
+Número de acessos:
 <img src="https://hitwebcounter.com/counter/counter.php?page=8146002&style=0006&nbdigits=9&type=page&initCount=0" title="Free Counter" Alt="web counter"   border="0" /></a> 
