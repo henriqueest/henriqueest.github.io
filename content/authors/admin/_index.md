@@ -19,8 +19,7 @@ interests:
 - hypothesis testing for the p-dimensional population mean vector 
 - bootstrap methods, intensive computer simulation
 organizations:
-- name: Institute of Applied Economic Research - Diest 
-  url: https://www.ipea.gov.br/portal/index.php?option=com_alphacontent&section=69&category=84&Itemid=402
+- name: Independent Researcher, Brazil 
 role: Searcher
 social:
 - icon: envelope
@@ -45,9 +44,18 @@ superuser: true
 title: Henrique José de Paula Alves
 ---
 
-Henrique José de Paula Alves holds a degree in Statistics from the Federal University of Ouro Preto (2013), a master's degree in Agricultural Statistics and Experimentation from the Federal University of Lavras (2015) and a PhD in Agricultural Statistics and Experimentation (2020).
+I am a Statistician working in Data Science and Data Analysis, focused on transforming raw data into strategic information to support decision-making.
 
-The areas of expertise are Spatial Statistics with emphasis on Geostatistics and spatio-temporal modeling, Multivariate Statistics with emphasis on hypothesis testing for the p-dimensional population mean vector, bootstrap methods, intensive computer simulation.
+I have experience in data extraction, processing, and analysis, development of management reports, and support for Business Intelligence (BI), using statistical methods and analytical tools to generate clear and actionable insights.
+
+I work with a strong results-oriented mindset, clear communication with business areas, and a focus on solving real-world problems through data.
+
+Areas of interest:
+- Data Science
+- Data Analysis
+- Business Intelligence
+- Applied Statistics
+
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/enrique.pdf" "newtab" >}}resumé{{< /staticref >}}.
 
