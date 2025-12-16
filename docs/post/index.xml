@@ -71,6 +71,77 @@
     </item>
     
     <item>
+      <title>Aula 1</title>
+      <link>https://henriqueest.github.io/post/aula2_ufop/</link>
+      <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/post/aula2_ufop/</guid>
+      <description>&lt;style&gt;
+body {
+  text-align: justify;
+  font-size: 12pt;
+  }
+&lt;/style&gt;
+&lt;h1 id=&#34;introdução-a-estatística&#34;&gt;Introdução a Estatística&lt;/h1&gt;
+&lt;h3 id=&#34;introdução&#34;&gt;Introdução&lt;/h3&gt;
+&lt;p&gt;Ao praticar a atividade científica, o pesquisador se depara com situações onde
+ele deve analisar e entender um conjunto de dados referente ao seu objeto de estudo. Assim, ele terá que manipular os dados para obter informações, compará-las com outros resultados, ou ainda, julgar sua adequação a alguma teoria. A estatística surge então como uma ferramenta que auxilia o pesquisador neste trabalho, fornecendo metodologias adequadas de coleta, redução, análise e modelagem dos dados.&lt;/p&gt;
+&lt;p&gt;Diante do exposto, podemos entender a estatística como a ciência que se ocupa
+com as técnicas de coleta, organização, análise e interpretação de dados, tendo um modelo por referência.&lt;/p&gt;
+&lt;h3 id=&#34;conceitos-básicos&#34;&gt;Conceitos básicos&lt;/h3&gt;
+&lt;p&gt;Entende-se por população ao conjunto de elementos que têm uma determinada característica em comum. Uma população pode ser finita quando esta possui um
+número limitado (ou enumerável) de indivíduos, ou infinita, quando não conseguimos enumerar os seus elementos, uma vez que temos um número ilimitado de indivíduos.&lt;/p&gt;
+&lt;h2 id=&#34;exemplos&#34;&gt;Exemplos&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Alunos matriculados na UFLA no 1º sem/2022 (POPULAÇÃO FINITA)&lt;/li&gt;
+&lt;li&gt;Peças produzidas por lote (POPULAÇÃO FINITA)&lt;/li&gt;
+&lt;li&gt;Plantas de uma espécie de Pinus (POPULAÇÃO INFINITA)&lt;/li&gt;
+&lt;li&gt;Clientes potenciais de uma empresa (POPULAÇÃO INFINITA)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Em complemento, quando coletamos informações de todos os elementos de uma
+população finita, dizemos que foi realizado um censo. Adotaremos, na disciplina, a notação N para representar a quantidade de
+elementos em uma população finita.&lt;/p&gt;
+&lt;h3 id=&#34;amostra&#34;&gt;Amostra&lt;/h3&gt;
+&lt;p&gt;Uma amostra corresponde a um subconjunto ou uma parte da população. A
+notação que representa o número de elementos de uma amostra é n. Na verdade, a grande maioria dos trabalhos de pesquisa é realizado através de amostras. Alguns dos motivos que levam os pesquisadores a trabalharem com amostras são&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;uma população infinita só pode ser estudada através de amostras&lt;/li&gt;
+&lt;li&gt;as populações finitas muito grandes também devem ser estudadas por meio de
+amostras&lt;/li&gt;
+&lt;li&gt;redução de tempo e custo da pesquisa&lt;/li&gt;
+&lt;li&gt;o estudo cuidadoso de uma amostra tem mais valor científico do que o estudo
+sumário de toda a população.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;variáveis&#34;&gt;Variáveis&lt;/h3&gt;
+&lt;p&gt;Quando realizamos um levantamento de dados, temos o interesse em conhecer
+ou avaliar uma determinada característica da população, como por exemplo, o peso, o diâmetro, o número de defeitos por peça, a produtividade de madeira de uma espécie de Pinus, a escolaridade dos indivíduos de uma comunidade, dentre outras. Essas características são chamadas de variáveis e visam descrever a população sob estudo. As variáveis podem ser classificadas em&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Qualitativas: Correspondem a atributos ou categorias. Elas são subdivididas em nominais quando suas categorias não são passíveis de ordenação, e ordinais, no caso de existir uma ordenação natural para seus atributos. Para as variáveis qualitativas nominais usaremos VQN e para as ordinais, usaremos VQO.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Exemplos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Sexo (Masculino, Feminino) – VQN&lt;/li&gt;
+&lt;li&gt;Substâncias Químicas (Ácidos, Bases, Hidrocarbonetos, etc) - VQN&lt;/li&gt;
+&lt;li&gt;Tipos de Linguagem de programação (Java, PHP, R, Delphi, MATLAB
+dentre outros) – VQN&lt;/li&gt;
+&lt;li&gt;Escolaridade (Fundamental, Médio e Superior) – VQO&lt;/li&gt;
+&lt;li&gt;Classe Social: (Alta, Média e Baixa) - VQO&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Quantitativas: Correspondem a números resultantes de contagens ou medidas.
+Quando se trata de contagens a variável é dita discreta (sendo representada por números inteiros não-negativos). No caso de medidas, a variável é classificada como contínua (sendo que seus valores podem ser representados por quaisquer números reais). Para as variáveis quantitativas discretas usaremos VQD e para as contínuas, usaremos VQC.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Exemplos:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Número de peças com defeito – VQD&lt;/li&gt;
+&lt;li&gt;Temperatura – VQC&lt;/li&gt;
+&lt;li&gt;Diâmetro de barras de aço – VQC.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Esta classificação é extremamente importante na análise de dados, uma vez que,
+o tipo de variável a ser trabalhada é um ponto de partida para se determinar os métodos de análise mais apropriados ou mesmo válidos.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Aula 1 - Introdução a Estatística</title>
       <link>https://henriqueest.github.io/post/aula1_ufop/aula1/</link>
       <pubDate>Sat, 02 Apr 2022 00:00:00 +0000</pubDate>
@@ -165,159 +236,6 @@ o tipo de variável a ser trabalhada é um ponto de partida para se determinar o
 &lt;p&gt;&lt;a href=&#34;https://dados.gov.br/dataset/sistema-nacional-de-estatisticas-de-seguranca-publica&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sinesp&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;aplicativo&#34;&gt;Aplicativo&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://jpahenrique.shinyapps.io/dados_sinesp/?_ga=2.132815818.551386921.1666349234-2114962546.1665406207&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sinesp - Ocorrências criminais&lt;/a&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Aula 2 - Apresentação de Dados</title>
-      <link>https://henriqueest.github.io/post/aula2_ufop/aula2/</link>
-      <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
-      <guid>https://henriqueest.github.io/post/aula2_ufop/aula2/</guid>
-      <description>&lt;!-- &lt;style&gt; --&gt;
-&lt;!-- body { --&gt;
-&lt;!--   text-align: justify; --&gt;
-&lt;!--   font-size: 12pt; --&gt;
-&lt;!--   } --&gt;
-&lt;!-- &lt;/style&gt; --&gt;
-&lt;p&gt;Em uma pesquisa, coletamos dados sobre a(s) variável(is) de interesse. Muitas vezes esses dados surgem de forma desordenada através do qual não conseguimos detectar, a primeira vista, um comportamento que mereça uma explicação plausível. Uma das formas de descrever o comportamento dos dados é organizá-los em tabelas ou gráficos.&lt;/p&gt;
-&lt;h2 id=&#34;tabelas-de-distribuição-de-frequências-simples&#34;&gt;Tabelas de Distribuição de Frequências Simples&lt;/h2&gt;
-&lt;h1 id=&#34;conceitos-básicos&#34;&gt;Conceitos Básicos&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;Frequência: Medida que quantifica a ocorrência dos valores de uma variável. Pode ser classificada em: absoluta (fa), relativa(fr) e percentual (fp)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;ol&gt;
-&lt;li&gt;Frequência Absoluta: para variáveis qualitativas, nada mais é do que o número de observações ocorridas em cada classe da variável sob estudo.&lt;/li&gt;
-&lt;li&gt;Frequência Relativa: é obtida pela divisão da frequência absoluta pelo número total de dados ou observações.&lt;/li&gt;
-&lt;li&gt;Frequência Percentual: é calculada multiplicando-se o valor da frequência relativa por 100.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;construção-de-tabelas-de-distribuição-de-frequências&#34;&gt;Construção de Tabelas de Distribuição de Frequências&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Variáveis Qualitativas&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;Exemplo: Em 2006 a Associação Nacional de Comerciantes de Material de Construção (ANAMACO) solicitou uma pesquisa para determinar o perfil de produtos do setor da construção civil com maior saída nas lojas. Foram visitadas 30 lojas e os produtos mais vendidos em cada uma estão no quadro abaixo.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Tintas&lt;/td&gt;
-&lt;td&gt;Tubos&lt;/td&gt;
-&lt;td&gt;Cerâmica&lt;/td&gt;
-&lt;td&gt;Cimento&lt;/td&gt;
-&lt;td&gt;Cimento&lt;/td&gt;
-&lt;td&gt;Argamassa&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Cimento&lt;/td&gt;
-&lt;td&gt;Tubos&lt;/td&gt;
-&lt;td&gt;Tintas&lt;/td&gt;
-&lt;td&gt;Tubos&lt;/td&gt;
-&lt;td&gt;Tintas&lt;/td&gt;
-&lt;td&gt;Cerâmicas&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Tubos&lt;/td&gt;
-&lt;td&gt;Cerâmca&lt;/td&gt;
-&lt;td&gt;Tintas&lt;/td&gt;
-&lt;td&gt;Cimento&lt;/td&gt;
-&lt;td&gt;Cimneto&lt;/td&gt;
-&lt;td&gt;Tintas&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Cimento&lt;/td&gt;
-&lt;td&gt;Tintas&lt;/td&gt;
-&lt;td&gt;Cimento&lt;/td&gt;
-&lt;td&gt;Cerâmica&lt;/td&gt;
-&lt;td&gt;Cimento&lt;/td&gt;
-&lt;td&gt;Tubos&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Argamassa&lt;/td&gt;
-&lt;td&gt;Cimento&lt;/td&gt;
-&lt;td&gt;Cimento&lt;/td&gt;
-&lt;td&gt;Tintas&lt;/td&gt;
-&lt;td&gt;Cimento&lt;/td&gt;
-&lt;td&gt;Cimento&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;Obter:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;as frequências absolutas;&lt;/li&gt;
-&lt;li&gt;as frequências relativas;&lt;/li&gt;
-&lt;li&gt;as frequências percentuais;&lt;/li&gt;
-&lt;li&gt;montar a tabela de distribuição de frequências.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;solução&#34;&gt;Solução&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;frequências absolutas ($ f_a $):
-cimento = 12, tintas = 7, tubos = 5, cerâmica = 4, argamassa = 2.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Tabela 1: Distribuição de frequências referente aos principais produtos comercializados em 30 lojas do setor de materiais de construção &lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Produtos&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ f_a $&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ f_r= \frac{f_a}{30} $&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ f_p= f_r \times 100 $&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Cimento&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ 12 $&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ \frac{12}{30}=0,40 $&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ 0,40 \times 100 = 40 $&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Tintas&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ 7 $&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ \frac{7}{30}=0,23 $&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ 0,23 \times 100 = 23 $&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Tubos&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ 5 $&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ \frac{5}{30}=0,17 $&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ 0,17 \times 100 = 17 $&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Cerâmica&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ 4 $&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ \frac{4}{30}=0,13 $&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ 0,13 \times 100 = 13 $&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Argamassa&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ 2 $&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ \frac{2}{30}=0,07 $&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ 0,07 \times 100 = 7 $&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Total&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ 30 $&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ 1,00 $&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;$ 100 $&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
 </description>
     </item>
     

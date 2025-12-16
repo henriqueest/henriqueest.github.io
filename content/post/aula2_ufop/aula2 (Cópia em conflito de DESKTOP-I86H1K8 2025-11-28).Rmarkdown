@@ -1,0 +1,20 @@
+---
+title: Aula 2
+date: 2022-04-03
+---
+
+<style>
+body {
+  text-align: justify;
+  font-size: 12pt;
+  }
+</style>
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Introdução a Estatística
+
+kkkkkkkkkkkkkkkk
