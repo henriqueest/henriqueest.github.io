@@ -39,7 +39,7 @@ social:
   link: https://github.com/henriqueest
 - icon: linkedin
   icon_pack: fab
-  link: https://www.linkedin.com/in/henrique-jos%C3%A9-paula-alves-90885333/
+  link: https://www.linkedin.com/in/henriquejpa/
 superuser: true
 title: Henrique José de Paula Alves
 ---
