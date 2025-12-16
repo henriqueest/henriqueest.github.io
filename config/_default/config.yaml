@@ -72,12 +72,3 @@ related:
       weight: 70
 security:
   _merge: deep
-
-############################
-## PARAMS (SEO / PREVIEW)
-############################
-
-params:
-  description: "Estatístico | Cientista de Dados | Analista de Dados"
-  images:
-    - "/img/banner.png"
