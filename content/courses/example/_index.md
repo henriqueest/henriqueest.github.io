@@ -32,7 +32,7 @@ It is desirable that the student has some knowledge of programming in R language
 {{< /spoiler >}}
 
 {{< spoiler text="How often do the courses run?" >}}
-Continuously, at your own pace.
+Continuously, at your own pace. Grate
 {{< /spoiler >}}
 
 
