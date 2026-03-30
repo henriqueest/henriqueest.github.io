@@ -1,5 +1,5 @@
 ---
-title: "Análise de dados de COVID-19 da PNAD-Contínua"
+title: "Análise de dados de COVID-19 da PNAD-Contínua usando o pacote sqldf"
 date: 2026-03-27
 draft: false
 ---

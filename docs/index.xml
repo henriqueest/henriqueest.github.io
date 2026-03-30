@@ -824,7 +824,7 @@ dados_final %&amp;gt;%
     </item>
     
     <item>
-      <title>Análise de dados de COVID-19 da PNAD-Contínua</title>
+      <title>Análise de dados de COVID-19 da PNAD-Contínua usando o pacote sqldf</title>
       <link>https://henriqueest.github.io/post/albert-einstein/</link>
       <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
       <guid>https://henriqueest.github.io/post/albert-einstein/</guid>
