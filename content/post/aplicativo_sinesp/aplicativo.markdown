@@ -44,7 +44,7 @@ Com o avanço do Sinesp Integração, espera-se que as Unidades da Federação a
 ## Aplicativo
 
 
-[Sinesp - Ocorrências criminais](https://jpahenrique.shinyapps.io/dados_sinesp/?_ga=2.132815818.551386921.1666349234-2114962546.1665406207)
+[Sinesp - Ocorrências criminais](https://jpahenrique.shinyapps.io/Shinny/)
 
 
 
