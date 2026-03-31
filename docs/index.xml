@@ -824,6 +824,3252 @@ dados_final %&amp;gt;%
     </item>
     
     <item>
+      <title>Income Inequality and Sexual Violence in Brazil (2015–2025)</title>
+      <link>https://henriqueest.github.io/post/crimes_estupro/</link>
+      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/post/crimes_estupro/</guid>
+      <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
+&lt;p&gt;This study examines the temporal and spatial dynamics of rape
+victimization rates in Brazil between 2015 and 2025, disaggregated by
+sex and Federative Units. Using standardized rates per &lt;code&gt;\(100,000\)&lt;/code&gt;
+inhabitants, the analysis integrates descriptive statistics, three-year
+weighted moving averages, consistency indicators, and Local Indicators
+of Spatial Association (LISA) to identify structural patterns, temporal
+persistence, and localized spatial dependence. The results reveal
+pronounced regional disparities, with the North and Central-West regions
+consistently exhibiting the highest levels of female victimization. The
+LISA analysis further demonstrates that these elevated rates are not
+randomly distributed but form statistically significant and persistent
+High-High spatial clusters, indicating strong geographic concentration.
+Conversely, Low-Low clusters observed in parts of the Northeast and
+Southeast suggest spatially structured areas of lower vulnerability.
+Although male victimization rates are substantially lower, partially
+similar spatial patterns emerge, albeit with weaker and more fragmented
+spatial autocorrelation. The findings also indicate that, despite
+short-term fluctuations &amp;mdash; particularly during the COVID-19 period &amp;mdash;
+several states exhibit persistent upward trends, reinforcing the
+interpretation of structural rather than episodic dynamics. The
+temporary disruption and subsequent reconfiguration of spatial clusters
+further highlight the resilience of underlying spatial processes.
+Overall, the combined use of temporal and spatial analytical tools
+provides a more nuanced understanding of sexual violence in Brazil,
+emphasizing the coexistence of regional inequality, spatial dependence,
+and trend persistence. These findings underscore the need for
+geographically targeted public policies and improvements in data quality
+and reporting systems.&lt;/p&gt;
+&lt;h4 id=&#34;keywords&#34;&gt;Keywords&lt;/h4&gt;
+&lt;h4 id=&#34;sexual-violence-spatial-autocorrelation-local-morans-i-spatial-clusters-brazil&#34;&gt;sexual violence; spatial autocorrelation; Local Moran&amp;rsquo;s I; spatial clusters; Brazil.&lt;/h4&gt;
+&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Sexual violence, particularly rape, has been widely studied across
+disciplines including public health, criminology, psychology, and
+sociology due to its profound and long‐term impacts on survivors&amp;rsquo;
+physical and mental well‐being. The World Health Organization (WHO)
+defines rape as a form of sexual assault involving non‐consensual
+penetration, and emphasizes its prevalence as a global public health
+concern .&lt;/p&gt;
+&lt;p&gt;Epidemiological studies have sought to estimate the prevalence and
+correlates of rape across populations. For example, population‐based
+surveys in high‐income and low‐income countries have documented
+significant lifetime prevalence rates, with broad variation by region
+and gender. Such cross‐national research highlights the role of social,
+economic, and cultural determinants in shaping risk environments for
+sexual violence.&lt;/p&gt;
+&lt;p&gt;Theoretical frameworks for understanding rape include feminist
+perspectives that conceptualize sexual violence as rooted in gender
+inequalities and power dynamics. Similarly, social ecological models
+situate the individual within intersecting layers of influence, from
+interpersonal relationships to broader societal norms, to explain
+vulnerability and perpetration.&lt;/p&gt;
+&lt;p&gt;From a psychological perspective, research has emphasized the impacts of
+rape on mental health outcomes, showing associations with post‐traumatic
+stress, depression, and anxiety among survivors. These studies
+underscore the need for trauma‐informed interventions and services as
+part of comprehensive public health responses.&lt;/p&gt;
+&lt;p&gt;Criminological research has examined patterns of reporting, prosecution,
+and conviction, revealing systemic barriers that survivors face within
+legal systems. Such work calls attention to both the underreporting of
+rape and the importance of policy reforms to improve access to justice.&lt;/p&gt;
+&lt;p&gt;Through these diverse approaches, the literature demonstrates that rape
+is not only a criminal act but also a complex social phenomenon with
+multifaceted determinants and consequences. An interdisciplinary
+perspective is essential for effective research, prevention, and
+response strategies.&lt;/p&gt;
+&lt;h2 id=&#34;conceptualizing-rape-as-a-complex-social-phenomenon&#34;&gt;Conceptualizing Rape as a Complex Social Phenomenon&lt;/h2&gt;
+&lt;p&gt;Rape is not merely an act of individual violence; it is widely
+understood across disciplines as a deeply entrenched social phenomenon
+influenced by intersecting cultural, structural, and institutional
+factors. Rather than occurring in isolation, sexual violence is produced
+within broader systems of gender inequality, power relations, social
+norms, and historical structures that shape both vulnerability and
+impunity.&lt;/p&gt;
+&lt;p&gt;One foundational perspective comes from feminist scholars who argue that
+rape cannot be fully understood outside the context of gendered power
+imbalances. Feminist theorists maintain that sexual violence reflects
+and reproduces patriarchal norms that subordinate women and sexual
+minorities. From this vantage, rape is not an aberration but a
+manifestation of systemic gender inequity, meaning that individual acts
+of sexual violence are rooted in social structures that legitimize
+domination and control.&lt;/p&gt;
+&lt;p&gt;Sociological frameworks extend this view by emphasizing the role of
+cultural norms and socialization processes. Social norms that tolerate
+aggression, reinforce rigid gender roles, or stigmatize victims
+contribute to environments in which sexual violence is normalized or
+minimized. These norms are often sustained through institutions such as
+media, education, and legal systems that reflect prevailing power
+dynamics.&lt;/p&gt;
+&lt;p&gt;Global public health research has further highlighted the complexity of
+sexual violence by demonstrating the interplay of individual,
+relational, community, and societal risk factors. The ecological
+framework conceptualizes sexual violence as the product of factors
+operating at multiple levels, ranging from individual history and
+behavior to cultural norms and economic inequalities.&lt;/p&gt;
+&lt;p&gt;Brazilian scholars have also contributed significantly to understanding
+sexual violence as a social phenomenon shaped by intersections of
+gender, race, class, and historical inequalities. Research in the
+Brazilian context reveals how patriarchal norms, machismo culture, and
+structural violence intersect to influence the prevalence, reporting,
+and social response to rape. Intersectionality, a framework developed to
+analyze how multiple axes of inequality (e.g., gender, race, class)
+shape experiences of violence, has been increasingly applied in
+Brazilian research to unpack how marginalized groups experience sexual
+violence differently}.&lt;/p&gt;
+&lt;p&gt;Beyond social structures, institutional responses including law
+enforcement, judicial processes, and health services play a critical
+role in shaping survivors&amp;rsquo; trajectories and societal perceptions of
+sexual violence. Studies document how legal barriers, victim‐blaming
+attitudes, and inadequate institutional support mechanisms can compound
+the harm experienced by survivors and contribute to impunity.&lt;/p&gt;
+&lt;p&gt;In summary, rape is understood in the academic literature not as an
+isolated criminal event but as a complex social phenomenon that emerges
+from and is sustained by intersecting social, cultural, economic, and
+institutional dynamics. Addressing sexual violence therefore requires
+multifaceted strategies that extend beyond criminal justice responses to
+encompass cultural change, systemic reform, and intersectional analysis.&lt;/p&gt;
+&lt;h1 id=&#34;methodology&#34;&gt;Methodology&lt;/h1&gt;
+&lt;p&gt;This study adopts a quantitative, longitudinal, and comparative approach
+to analyze the evolution of rape victimization rates across Brazilian
+Federative Units (FUs) from 2015 to 2025, disaggregated by sex. The
+methodological framework is structured around three complementary
+analytical dimensions: (i) temporal trend analysis, (ii) spatial
+heterogeneity assessment, and (iii) consistency evaluation through
+directional indicators.The primary data consist of annual rates of rape
+victims per $100,000$ inhabitants, stratified by sex and FU. These
+rates are defined as:&lt;/p&gt;
+&lt;p&gt;$$ R_{i,t} = \frac{V_{i,t}}{P_{i,t}} \times 100{,}000 $$&lt;/p&gt;
+&lt;p&gt;where $R_{i,t}$ denotes the victimization rate in Federative Unit
+$i$ at time $t$, $V_{i,t}$ represents the number of reported
+victims, and $P_{i,t}$ corresponds to the total population in the
+same unit and period. Missing values in specific years were preserved to
+avoid introducing artificial bias through imputation, given the
+descriptive and exploratory nature of the analysis. All rates were
+standardized to ensure comparability across regions and over time.To
+enhance interpretability and reduce short-term volatility, a three-year
+moving weighted average was computed for each region:&lt;/p&gt;
+&lt;p&gt;$$ \tilde{R}{r,t} = w_1 R{r,t-2} + w_2 R_{r,t-1} + w_3 R_{r,t}$$&lt;/p&gt;
+&lt;p&gt;where $\tilde{R}_{r,t}$ is the smoothed rate for region $r$ at time
+$t$, and $w_1, w_2, w_3$ are the weights assigned to each year, such
+that $w_1 + w_2 + w_3 = 1$. In this study, equal weights are assumed
+($w_1 = w_2 = w_3 = \frac{1}{3}$), ensuring a balanced contribution of
+each period.This procedure allows for the identification of medium-term
+trends while attenuating the influence of abrupt annual fluctuations.
+The regional vulnerability rankings were derived from these smoothed
+values, enabling a clearer comparison of structural patterns across
+Brazil&amp;rsquo;s macro-regions. Additionally, a consistency indicator - referred
+to as the trend score - was constructed to capture the directionality of
+year-to-year changes. For each FU and year, the indicator is defined as:&lt;/p&gt;
+&lt;p&gt;$$ S_{i,t} = \begin{cases} +1, &amp;amp; \text{if } R_{i,t} &amp;gt; R_{i,t-1} \
+0, &amp;amp; \text{if } R_{i,t} = R_{i,t-1} \ -1, &amp;amp; \text{if } R_{i,t} &amp;lt;
+R_{i,t-1} \end{cases} $$&lt;/p&gt;
+&lt;p&gt;The cumulative consistency score for each Federative Unit is then given
+by:&lt;/p&gt;
+&lt;p&gt;$$ C_i = \sum_{t=2}^{T} S_{i,t} $$&lt;/p&gt;
+&lt;p&gt;where $C_i$ represents the overall trend consistency for unit $i$,
+and $T$ is the total number of time periods. The cumulative sum of
+these scores provides a synthetic measure of temporal persistence,
+allowing the classification of FUs according to the consistency of
+upward or downward trends.At the regional level, aggregated consistency
+indicators were computed by averaging the FU-level scores:&lt;/p&gt;
+&lt;p&gt;$$ \bar{S}{r,t} = \frac{1}{N_r} \sum{i \in r} S_{i,t} $$&lt;/p&gt;
+&lt;p&gt;where $\bar{S}_{r,t}$ denotes the average trend score for region
+$r$ at time $t$, and $N_r$ is the number of Federative Units
+within region $r$. This aggregation allows the identification of
+broader spatial patterns in the evolution of victimization rates. This
+multi-layered approach-combining raw rates, smoothed indicators, and
+directional metrics-ensures a robust and comprehensive examination of
+both the magnitude and dynamics of sexual violence across Brazil. To
+investigate the presence of local spatial autocorrelation and identify
+spatial clusters, the Local Moran&amp;rsquo;s I statistic, also known as Local
+Indicators of Spatial Association (LISA), was employed. Unlike the
+global Moran&amp;rsquo;s I, which provides a single summary measure for the entire
+study area, LISA enables the decomposition of spatial dependence at the
+individual spatial unit level. Formally, the Local Moran&amp;rsquo;s I statistic
+for a given spatial unit $i$ is defined as:&lt;/p&gt;
+&lt;p&gt;$$ I_i = z_i \sum_{j=1}^{n} w_{ij} z_j $$&lt;/p&gt;
+&lt;p&gt;where $z_i = x_i - \bar{x}$ represents the deviation of the observed
+value $x_i$ from the mean $\bar{x}$, and $w_{ij}$ denotes the
+spatial weight between units $i$ and $j$, typically defined through
+a spatial weights matrix $\mathbf{W}$. The weights matrix reflects the
+spatial structure of the data, such as contiguity or distance-based
+relationships, and is often row-standardized. An alternative
+standardized formulation is given by:&lt;/p&gt;
+&lt;p&gt;$$ I_i = \frac{(x_i - \bar{x})}{S^2} \sum_{j=1}^{n} w_{ij} (x_j -
+\bar{x}) $$&lt;/p&gt;
+&lt;p&gt;where $S^2$ corresponds to the sample variance:&lt;/p&gt;
+&lt;p&gt;$$ S^2 = \frac{1}{n} \sum_{i=1}^{n} (x_i - \bar{x})^2. $$&lt;/p&gt;
+&lt;p&gt;The statistical significance of $I_i$ was assessed using permutation
+tests. A 20\ significance level was adopted to allow greater
+flexibility in the detection of statistically significant spatial
+clusters, particularly given the exploratory nature of the analysis and
+the relatively high spatial variability of the data.Based on the sign
+and magnitude of $I_i$, as well as the standardized values of $z_i$
+and the spatial lag $\sum_j w_{ij} z_j$, each spatial unit can be
+classified into one of the following cluster types&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;High-High (HH): high values surrounded by high values (hot spots)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Low-Low (LL): low values surrounded by low values (cold spots)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;High-Low (HL): high values surrounded by low values (spatial
+outliers)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Low-High (LH)}: low values surrounded by high values (spatial
+outliers).&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These classifications enable a detailed spatial interpretation of local
+clustering patterns and are commonly visualized using LISA cluster maps.
+It is important to note that the interpretation of LISA results depends
+critically on the specification of the spatial weights matrix
+$\mathbf{W}$, as different definitions of neighborhood structure may
+lead to different clustering patterns. Therefore, robustness checks
+using alternative weighting schemes are recommended. In summary, the
+Local Moran&amp;rsquo;s I provides a powerful tool for detecting localized spatial
+dependence, uncovering heterogeneity that may be obscured by global
+measures, and supporting more nuanced spatial analyses.&lt;/p&gt;
+&lt;h1 id=&#34;results-and-discussion&#34;&gt;Results and Discussion&lt;/h1&gt;
+&lt;p&gt;The results reveal substantial heterogeneity in both the magnitude and
+temporal dynamics of rape victimization rates across Brazilian federal
+units (FUs) and regions, with pronounced differences between female and
+male populations.&lt;/p&gt;
+&lt;p&gt;As shown in Table 1, the distribution of female victimization rates and
+reveals a clear spatial gradient. The North and Central-West regions
+consistently present the highest levels, with extreme values observed in
+states such as Mato Grosso do Sul (MS), Rondônia (RO), and Amapá (AP),
+where rates frequently exceed 100 cases per $100{,}000$ inhabitants.
+In contrast, Northeastern states such as Ceará (CE) and Rio Grande do
+Norte (RN) display comparatively low and more stable rates over time.
+This contrast suggests the presence of structural regional inequalities,
+potentially related to differences in socioeconomic conditions,
+institutional capacity, and reporting systems.&lt;/p&gt;
+&lt;p&gt;Table 1: Rate of female rape victims per 100,000 inhabitants, total
+variation and moving average over three consecutive years - FU {#tab-1}&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;FU&lt;/th&gt;
+&lt;th&gt;Region&lt;/th&gt;
+&lt;th&gt;2015&lt;/th&gt;
+&lt;th&gt;2016&lt;/th&gt;
+&lt;th&gt;2017&lt;/th&gt;
+&lt;th&gt;2018&lt;/th&gt;
+&lt;th&gt;2019&lt;/th&gt;
+&lt;th&gt;2020&lt;/th&gt;
+&lt;th&gt;2021&lt;/th&gt;
+&lt;th&gt;2022&lt;/th&gt;
+&lt;th&gt;2023&lt;/th&gt;
+&lt;th&gt;2024&lt;/th&gt;
+&lt;th&gt;2025&lt;/th&gt;
+&lt;th&gt;Total Var. (%)&lt;/th&gt;
+&lt;th&gt;2015&amp;ndash;2017&lt;/th&gt;
+&lt;th&gt;2016&amp;ndash;2018&lt;/th&gt;
+&lt;th&gt;2017&amp;ndash;2019&lt;/th&gt;
+&lt;th&gt;2018&amp;ndash;2020&lt;/th&gt;
+&lt;th&gt;2019&amp;ndash;2021&lt;/th&gt;
+&lt;th&gt;2020&amp;ndash;2022&lt;/th&gt;
+&lt;th&gt;2021&amp;ndash;2023&lt;/th&gt;
+&lt;th&gt;2022&amp;ndash;2024&lt;/th&gt;
+&lt;th&gt;2023&amp;ndash;2025&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;SE&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td&gt;12.7&lt;/td&gt;
+&lt;td&gt;11.9&lt;/td&gt;
+&lt;td&gt;11.7&lt;/td&gt;
+&lt;td&gt;14.2&lt;/td&gt;
+&lt;td&gt;18.2&lt;/td&gt;
+&lt;td&gt;18.0&lt;/td&gt;
+&lt;td&gt;19.7&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;0.5&lt;/td&gt;
+&lt;td&gt;4.7&lt;/td&gt;
+&lt;td&gt;8.7&lt;/td&gt;
+&lt;td&gt;12.1&lt;/td&gt;
+&lt;td&gt;12.6&lt;/td&gt;
+&lt;td&gt;14.7&lt;/td&gt;
+&lt;td&gt;16.8&lt;/td&gt;
+&lt;td&gt;18.6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AC&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;17.3&lt;/td&gt;
+&lt;td&gt;29.0&lt;/td&gt;
+&lt;td&gt;20.8&lt;/td&gt;
+&lt;td&gt;29.5&lt;/td&gt;
+&lt;td&gt;55.9&lt;/td&gt;
+&lt;td&gt;56.4&lt;/td&gt;
+&lt;td&gt;40.0&lt;/td&gt;
+&lt;td&gt;25.3&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;5.8&lt;/td&gt;
+&lt;td&gt;15.4&lt;/td&gt;
+&lt;td&gt;22.4&lt;/td&gt;
+&lt;td&gt;26.5&lt;/td&gt;
+&lt;td&gt;35.4&lt;/td&gt;
+&lt;td&gt;47.3&lt;/td&gt;
+&lt;td&gt;50.8&lt;/td&gt;
+&lt;td&gt;40.6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AL&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;9.7&lt;/td&gt;
+&lt;td&gt;9.0&lt;/td&gt;
+&lt;td&gt;13.3&lt;/td&gt;
+&lt;td&gt;9.8&lt;/td&gt;
+&lt;td&gt;11.1&lt;/td&gt;
+&lt;td&gt;8.9&lt;/td&gt;
+&lt;td&gt;13.2&lt;/td&gt;
+&lt;td&gt;13.5&lt;/td&gt;
+&lt;td&gt;13.3&lt;/td&gt;
+&lt;td&gt;15.1&lt;/td&gt;
+&lt;td&gt;10.5&lt;/td&gt;
+&lt;td&gt;7.8&lt;/td&gt;
+&lt;td&gt;10.6&lt;/td&gt;
+&lt;td&gt;10.7&lt;/td&gt;
+&lt;td&gt;11.4&lt;/td&gt;
+&lt;td&gt;9.9&lt;/td&gt;
+&lt;td&gt;11.1&lt;/td&gt;
+&lt;td&gt;11.9&lt;/td&gt;
+&lt;td&gt;13.3&lt;/td&gt;
+&lt;td&gt;14.0&lt;/td&gt;
+&lt;td&gt;13.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AM&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;12.6&lt;/td&gt;
+&lt;td&gt;17.0&lt;/td&gt;
+&lt;td&gt;15.9&lt;/td&gt;
+&lt;td&gt;13.8&lt;/td&gt;
+&lt;td&gt;13.1&lt;/td&gt;
+&lt;td&gt;10.6&lt;/td&gt;
+&lt;td&gt;9.8&lt;/td&gt;
+&lt;td&gt;12.2&lt;/td&gt;
+&lt;td&gt;12.2&lt;/td&gt;
+&lt;td&gt;16.0&lt;/td&gt;
+&lt;td&gt;17.4&lt;/td&gt;
+&lt;td&gt;37.6&lt;/td&gt;
+&lt;td&gt;15.2&lt;/td&gt;
+&lt;td&gt;15.6&lt;/td&gt;
+&lt;td&gt;14.3&lt;/td&gt;
+&lt;td&gt;12.5&lt;/td&gt;
+&lt;td&gt;11.2&lt;/td&gt;
+&lt;td&gt;10.9&lt;/td&gt;
+&lt;td&gt;11.4&lt;/td&gt;
+&lt;td&gt;13.5&lt;/td&gt;
+&lt;td&gt;15.2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AP&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;85.1&lt;/td&gt;
+&lt;td&gt;103.4&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;97.8&lt;/td&gt;
+&lt;td&gt;44.3&lt;/td&gt;
+&lt;td&gt;31.1&lt;/td&gt;
+&lt;td&gt;40.8&lt;/td&gt;
+&lt;td&gt;34.7&lt;/td&gt;
+&lt;td&gt;36.1&lt;/td&gt;
+&lt;td&gt;33.4&lt;/td&gt;
+&lt;td&gt;30.9&lt;/td&gt;
+&lt;td&gt;-63.7&lt;/td&gt;
+&lt;td&gt;62.8&lt;/td&gt;
+&lt;td&gt;67.1&lt;/td&gt;
+&lt;td&gt;47.4&lt;/td&gt;
+&lt;td&gt;57.7&lt;/td&gt;
+&lt;td&gt;38.8&lt;/td&gt;
+&lt;td&gt;35.6&lt;/td&gt;
+&lt;td&gt;37.2&lt;/td&gt;
+&lt;td&gt;34.8&lt;/td&gt;
+&lt;td&gt;33.5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BA&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;10.8&lt;/td&gt;
+&lt;td&gt;11.0&lt;/td&gt;
+&lt;td&gt;11.8&lt;/td&gt;
+&lt;td&gt;12.1&lt;/td&gt;
+&lt;td&gt;12.5&lt;/td&gt;
+&lt;td&gt;10.4&lt;/td&gt;
+&lt;td&gt;34.2&lt;/td&gt;
+&lt;td&gt;14.3&lt;/td&gt;
+&lt;td&gt;15.0&lt;/td&gt;
+&lt;td&gt;14.9&lt;/td&gt;
+&lt;td&gt;13.2&lt;/td&gt;
+&lt;td&gt;23.0&lt;/td&gt;
+&lt;td&gt;11.2&lt;/td&gt;
+&lt;td&gt;11.6&lt;/td&gt;
+&lt;td&gt;12.1&lt;/td&gt;
+&lt;td&gt;11.7&lt;/td&gt;
+&lt;td&gt;19.0&lt;/td&gt;
+&lt;td&gt;19.6&lt;/td&gt;
+&lt;td&gt;21.2&lt;/td&gt;
+&lt;td&gt;14.7&lt;/td&gt;
+&lt;td&gt;14.4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CE&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;10.1&lt;/td&gt;
+&lt;td&gt;10.6&lt;/td&gt;
+&lt;td&gt;10.4&lt;/td&gt;
+&lt;td&gt;9.1&lt;/td&gt;
+&lt;td&gt;9.7&lt;/td&gt;
+&lt;td&gt;6.8&lt;/td&gt;
+&lt;td&gt;7.0&lt;/td&gt;
+&lt;td&gt;7.6&lt;/td&gt;
+&lt;td&gt;6.9&lt;/td&gt;
+&lt;td&gt;6.5&lt;/td&gt;
+&lt;td&gt;6.3&lt;/td&gt;
+&lt;td&gt;-37.8&lt;/td&gt;
+&lt;td&gt;10.4&lt;/td&gt;
+&lt;td&gt;10.0&lt;/td&gt;
+&lt;td&gt;9.7&lt;/td&gt;
+&lt;td&gt;8.5&lt;/td&gt;
+&lt;td&gt;7.8&lt;/td&gt;
+&lt;td&gt;7.1&lt;/td&gt;
+&lt;td&gt;7.2&lt;/td&gt;
+&lt;td&gt;7.0&lt;/td&gt;
+&lt;td&gt;6.6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DF&lt;/td&gt;
+&lt;td&gt;Central-West&lt;/td&gt;
+&lt;td&gt;42.7&lt;/td&gt;
+&lt;td&gt;36.9&lt;/td&gt;
+&lt;td&gt;45.8&lt;/td&gt;
+&lt;td&gt;18.7&lt;/td&gt;
+&lt;td&gt;17.1&lt;/td&gt;
+&lt;td&gt;15.3&lt;/td&gt;
+&lt;td&gt;14.4&lt;/td&gt;
+&lt;td&gt;14.0&lt;/td&gt;
+&lt;td&gt;17.8&lt;/td&gt;
+&lt;td&gt;18.5&lt;/td&gt;
+&lt;td&gt;15.8&lt;/td&gt;
+&lt;td&gt;-62.9&lt;/td&gt;
+&lt;td&gt;41.8&lt;/td&gt;
+&lt;td&gt;33.8&lt;/td&gt;
+&lt;td&gt;27.2&lt;/td&gt;
+&lt;td&gt;17.1&lt;/td&gt;
+&lt;td&gt;15.6&lt;/td&gt;
+&lt;td&gt;14.6&lt;/td&gt;
+&lt;td&gt;15.4&lt;/td&gt;
+&lt;td&gt;16.7&lt;/td&gt;
+&lt;td&gt;17.4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ES&lt;/td&gt;
+&lt;td&gt;Southeast&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;56.7&lt;/td&gt;
+&lt;td&gt;63.2&lt;/td&gt;
+&lt;td&gt;55.4&lt;/td&gt;
+&lt;td&gt;53.7&lt;/td&gt;
+&lt;td&gt;65.9&lt;/td&gt;
+&lt;td&gt;19.0&lt;/td&gt;
+&lt;td&gt;71.2&lt;/td&gt;
+&lt;td&gt;15.7&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;18.9&lt;/td&gt;
+&lt;td&gt;40.0&lt;/td&gt;
+&lt;td&gt;58.4&lt;/td&gt;
+&lt;td&gt;57.5&lt;/td&gt;
+&lt;td&gt;58.4&lt;/td&gt;
+&lt;td&gt;46.2&lt;/td&gt;
+&lt;td&gt;52.0&lt;/td&gt;
+&lt;td&gt;35.3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;Central-West&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;15.7&lt;/td&gt;
+&lt;td&gt;19.0&lt;/td&gt;
+&lt;td&gt;21.8&lt;/td&gt;
+&lt;td&gt;24.4&lt;/td&gt;
+&lt;td&gt;18.4&lt;/td&gt;
+&lt;td&gt;22.5&lt;/td&gt;
+&lt;td&gt;20.7&lt;/td&gt;
+&lt;td&gt;19.5&lt;/td&gt;
+&lt;td&gt;19.7&lt;/td&gt;
+&lt;td&gt;18.0&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;11.6&lt;/td&gt;
+&lt;td&gt;18.9&lt;/td&gt;
+&lt;td&gt;21.8&lt;/td&gt;
+&lt;td&gt;21.6&lt;/td&gt;
+&lt;td&gt;21.8&lt;/td&gt;
+&lt;td&gt;20.5&lt;/td&gt;
+&lt;td&gt;20.9&lt;/td&gt;
+&lt;td&gt;20.0&lt;/td&gt;
+&lt;td&gt;19.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MA&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;22.0&lt;/td&gt;
+&lt;td&gt;24.0&lt;/td&gt;
+&lt;td&gt;28.0&lt;/td&gt;
+&lt;td&gt;27.7&lt;/td&gt;
+&lt;td&gt;34.0&lt;/td&gt;
+&lt;td&gt;32.2&lt;/td&gt;
+&lt;td&gt;13.3&lt;/td&gt;
+&lt;td&gt;12.1&lt;/td&gt;
+&lt;td&gt;10.5&lt;/td&gt;
+&lt;td&gt;9.8&lt;/td&gt;
+&lt;td&gt;10.9&lt;/td&gt;
+&lt;td&gt;-50.4&lt;/td&gt;
+&lt;td&gt;24.7&lt;/td&gt;
+&lt;td&gt;26.6&lt;/td&gt;
+&lt;td&gt;29.9&lt;/td&gt;
+&lt;td&gt;31.3&lt;/td&gt;
+&lt;td&gt;26.5&lt;/td&gt;
+&lt;td&gt;19.2&lt;/td&gt;
+&lt;td&gt;12.0&lt;/td&gt;
+&lt;td&gt;10.8&lt;/td&gt;
+&lt;td&gt;10.4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MG&lt;/td&gt;
+&lt;td&gt;Southeast&lt;/td&gt;
+&lt;td&gt;16.1&lt;/td&gt;
+&lt;td&gt;15.7&lt;/td&gt;
+&lt;td&gt;15.8&lt;/td&gt;
+&lt;td&gt;15.7&lt;/td&gt;
+&lt;td&gt;13.4&lt;/td&gt;
+&lt;td&gt;11.3&lt;/td&gt;
+&lt;td&gt;10.9&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
+&lt;td&gt;10.9&lt;/td&gt;
+&lt;td&gt;12.5&lt;/td&gt;
+&lt;td&gt;11.3&lt;/td&gt;
+&lt;td&gt;-29.4&lt;/td&gt;
+&lt;td&gt;15.9&lt;/td&gt;
+&lt;td&gt;15.8&lt;/td&gt;
+&lt;td&gt;15.0&lt;/td&gt;
+&lt;td&gt;13.5&lt;/td&gt;
+&lt;td&gt;11.9&lt;/td&gt;
+&lt;td&gt;10.8&lt;/td&gt;
+&lt;td&gt;10.7&lt;/td&gt;
+&lt;td&gt;11.2&lt;/td&gt;
+&lt;td&gt;11.6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MS&lt;/td&gt;
+&lt;td&gt;Central-West&lt;/td&gt;
+&lt;td&gt;41.2&lt;/td&gt;
+&lt;td&gt;50.9&lt;/td&gt;
+&lt;td&gt;60.9&lt;/td&gt;
+&lt;td&gt;142.0&lt;/td&gt;
+&lt;td&gt;154.7&lt;/td&gt;
+&lt;td&gt;141.3&lt;/td&gt;
+&lt;td&gt;138.9&lt;/td&gt;
+&lt;td&gt;132.9&lt;/td&gt;
+&lt;td&gt;162.0&lt;/td&gt;
+&lt;td&gt;133.4&lt;/td&gt;
+&lt;td&gt;86.1&lt;/td&gt;
+&lt;td&gt;108.9&lt;/td&gt;
+&lt;td&gt;51.0&lt;/td&gt;
+&lt;td&gt;84.6&lt;/td&gt;
+&lt;td&gt;119.2&lt;/td&gt;
+&lt;td&gt;146.0&lt;/td&gt;
+&lt;td&gt;145.0&lt;/td&gt;
+&lt;td&gt;137.7&lt;/td&gt;
+&lt;td&gt;144.6&lt;/td&gt;
+&lt;td&gt;142.7&lt;/td&gt;
+&lt;td&gt;127.2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MT&lt;/td&gt;
+&lt;td&gt;Central-West&lt;/td&gt;
+&lt;td&gt;28.9&lt;/td&gt;
+&lt;td&gt;39.0&lt;/td&gt;
+&lt;td&gt;41.4&lt;/td&gt;
+&lt;td&gt;37.9&lt;/td&gt;
+&lt;td&gt;38.4&lt;/td&gt;
+&lt;td&gt;35.7&lt;/td&gt;
+&lt;td&gt;32.1&lt;/td&gt;
+&lt;td&gt;33.4&lt;/td&gt;
+&lt;td&gt;34.5&lt;/td&gt;
+&lt;td&gt;33.4&lt;/td&gt;
+&lt;td&gt;34.0&lt;/td&gt;
+&lt;td&gt;17.7&lt;/td&gt;
+&lt;td&gt;36.4&lt;/td&gt;
+&lt;td&gt;39.4&lt;/td&gt;
+&lt;td&gt;39.2&lt;/td&gt;
+&lt;td&gt;37.3&lt;/td&gt;
+&lt;td&gt;35.4&lt;/td&gt;
+&lt;td&gt;33.7&lt;/td&gt;
+&lt;td&gt;33.3&lt;/td&gt;
+&lt;td&gt;33.8&lt;/td&gt;
+&lt;td&gt;33.9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PA&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;13.7&lt;/td&gt;
+&lt;td&gt;23.8&lt;/td&gt;
+&lt;td&gt;21.4&lt;/td&gt;
+&lt;td&gt;20.1&lt;/td&gt;
+&lt;td&gt;18.7&lt;/td&gt;
+&lt;td&gt;16.4&lt;/td&gt;
+&lt;td&gt;15.1&lt;/td&gt;
+&lt;td&gt;17.4&lt;/td&gt;
+&lt;td&gt;20.1&lt;/td&gt;
+&lt;td&gt;18.5&lt;/td&gt;
+&lt;td&gt;15.8&lt;/td&gt;
+&lt;td&gt;15.4&lt;/td&gt;
+&lt;td&gt;19.7&lt;/td&gt;
+&lt;td&gt;21.8&lt;/td&gt;
+&lt;td&gt;20.1&lt;/td&gt;
+&lt;td&gt;18.4&lt;/td&gt;
+&lt;td&gt;16.7&lt;/td&gt;
+&lt;td&gt;16.3&lt;/td&gt;
+&lt;td&gt;17.6&lt;/td&gt;
+&lt;td&gt;18.7&lt;/td&gt;
+&lt;td&gt;18.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PB&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;12.4&lt;/td&gt;
+&lt;td&gt;20.9&lt;/td&gt;
+&lt;td&gt;14.6&lt;/td&gt;
+&lt;td&gt;11.6&lt;/td&gt;
+&lt;td&gt;12.7&lt;/td&gt;
+&lt;td&gt;14.2&lt;/td&gt;
+&lt;td&gt;20.0&lt;/td&gt;
+&lt;td&gt;21.9&lt;/td&gt;
+&lt;td&gt;24.6&lt;/td&gt;
+&lt;td&gt;11.2&lt;/td&gt;
+&lt;td&gt;11.8&lt;/td&gt;
+&lt;td&gt;-4.1&lt;/td&gt;
+&lt;td&gt;15.9&lt;/td&gt;
+&lt;td&gt;15.7&lt;/td&gt;
+&lt;td&gt;13.0&lt;/td&gt;
+&lt;td&gt;12.8&lt;/td&gt;
+&lt;td&gt;15.6&lt;/td&gt;
+&lt;td&gt;18.7&lt;/td&gt;
+&lt;td&gt;22.2&lt;/td&gt;
+&lt;td&gt;19.2&lt;/td&gt;
+&lt;td&gt;15.9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PE&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;15.9&lt;/td&gt;
+&lt;td&gt;17.1&lt;/td&gt;
+&lt;td&gt;18.3&lt;/td&gt;
+&lt;td&gt;17.7&lt;/td&gt;
+&lt;td&gt;16.0&lt;/td&gt;
+&lt;td&gt;14.8&lt;/td&gt;
+&lt;td&gt;13.9&lt;/td&gt;
+&lt;td&gt;14.8&lt;/td&gt;
+&lt;td&gt;15.7&lt;/td&gt;
+&lt;td&gt;14.4&lt;/td&gt;
+&lt;td&gt;12.2&lt;/td&gt;
+&lt;td&gt;-23.0&lt;/td&gt;
+&lt;td&gt;17.1&lt;/td&gt;
+&lt;td&gt;17.7&lt;/td&gt;
+&lt;td&gt;17.3&lt;/td&gt;
+&lt;td&gt;16.1&lt;/td&gt;
+&lt;td&gt;14.9&lt;/td&gt;
+&lt;td&gt;14.5&lt;/td&gt;
+&lt;td&gt;14.8&lt;/td&gt;
+&lt;td&gt;15.0&lt;/td&gt;
+&lt;td&gt;14.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PI&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;7.8&lt;/td&gt;
+&lt;td&gt;10.3&lt;/td&gt;
+&lt;td&gt;11.7&lt;/td&gt;
+&lt;td&gt;13.0&lt;/td&gt;
+&lt;td&gt;14.4&lt;/td&gt;
+&lt;td&gt;10.9&lt;/td&gt;
+&lt;td&gt;11.0&lt;/td&gt;
+&lt;td&gt;15.2&lt;/td&gt;
+&lt;td&gt;17.4&lt;/td&gt;
+&lt;td&gt;13.4&lt;/td&gt;
+&lt;td&gt;14.7&lt;/td&gt;
+&lt;td&gt;89.5&lt;/td&gt;
+&lt;td&gt;9.9&lt;/td&gt;
+&lt;td&gt;11.7&lt;/td&gt;
+&lt;td&gt;13.0&lt;/td&gt;
+&lt;td&gt;12.8&lt;/td&gt;
+&lt;td&gt;12.1&lt;/td&gt;
+&lt;td&gt;12.4&lt;/td&gt;
+&lt;td&gt;14.5&lt;/td&gt;
+&lt;td&gt;15.3&lt;/td&gt;
+&lt;td&gt;15.2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PR&lt;/td&gt;
+&lt;td&gt;South&lt;/td&gt;
+&lt;td&gt;16.6&lt;/td&gt;
+&lt;td&gt;19.1&lt;/td&gt;
+&lt;td&gt;22.6&lt;/td&gt;
+&lt;td&gt;22.9&lt;/td&gt;
+&lt;td&gt;23.4&lt;/td&gt;
+&lt;td&gt;20.7&lt;/td&gt;
+&lt;td&gt;22.3&lt;/td&gt;
+&lt;td&gt;24.8&lt;/td&gt;
+&lt;td&gt;26.8&lt;/td&gt;
+&lt;td&gt;29.0&lt;/td&gt;
+&lt;td&gt;22.6&lt;/td&gt;
+&lt;td&gt;36.1&lt;/td&gt;
+&lt;td&gt;19.4&lt;/td&gt;
+&lt;td&gt;21.5&lt;/td&gt;
+&lt;td&gt;23.0&lt;/td&gt;
+&lt;td&gt;22.3&lt;/td&gt;
+&lt;td&gt;22.1&lt;/td&gt;
+&lt;td&gt;22.6&lt;/td&gt;
+&lt;td&gt;24.6&lt;/td&gt;
+&lt;td&gt;26.9&lt;/td&gt;
+&lt;td&gt;26.2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RJ&lt;/td&gt;
+&lt;td&gt;Southeast&lt;/td&gt;
+&lt;td&gt;46.9&lt;/td&gt;
+&lt;td&gt;45.3&lt;/td&gt;
+&lt;td&gt;46.9&lt;/td&gt;
+&lt;td&gt;50.7&lt;/td&gt;
+&lt;td&gt;52.0&lt;/td&gt;
+&lt;td&gt;45.1&lt;/td&gt;
+&lt;td&gt;48.6&lt;/td&gt;
+&lt;td&gt;53.6&lt;/td&gt;
+&lt;td&gt;51.7&lt;/td&gt;
+&lt;td&gt;54.3&lt;/td&gt;
+&lt;td&gt;54.6&lt;/td&gt;
+&lt;td&gt;16.4&lt;/td&gt;
+&lt;td&gt;46.4&lt;/td&gt;
+&lt;td&gt;47.6&lt;/td&gt;
+&lt;td&gt;49.9&lt;/td&gt;
+&lt;td&gt;49.3&lt;/td&gt;
+&lt;td&gt;48.6&lt;/td&gt;
+&lt;td&gt;49.1&lt;/td&gt;
+&lt;td&gt;51.3&lt;/td&gt;
+&lt;td&gt;53.2&lt;/td&gt;
+&lt;td&gt;53.5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RN&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;5.9&lt;/td&gt;
+&lt;td&gt;8.3&lt;/td&gt;
+&lt;td&gt;3.1&lt;/td&gt;
+&lt;td&gt;9.2&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
+&lt;td&gt;11.3&lt;/td&gt;
+&lt;td&gt;9.6&lt;/td&gt;
+&lt;td&gt;12.9&lt;/td&gt;
+&lt;td&gt;15.1&lt;/td&gt;
+&lt;td&gt;14.6&lt;/td&gt;
+&lt;td&gt;17.1&lt;/td&gt;
+&lt;td&gt;192.0&lt;/td&gt;
+&lt;td&gt;5.8&lt;/td&gt;
+&lt;td&gt;6.9&lt;/td&gt;
+&lt;td&gt;7.5&lt;/td&gt;
+&lt;td&gt;10.2&lt;/td&gt;
+&lt;td&gt;10.4&lt;/td&gt;
+&lt;td&gt;11.3&lt;/td&gt;
+&lt;td&gt;12.5&lt;/td&gt;
+&lt;td&gt;14.2&lt;/td&gt;
+&lt;td&gt;15.6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RO&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;53.6&lt;/td&gt;
+&lt;td&gt;65.1&lt;/td&gt;
+&lt;td&gt;100.0&lt;/td&gt;
+&lt;td&gt;122.2&lt;/td&gt;
+&lt;td&gt;125.0&lt;/td&gt;
+&lt;td&gt;104.1&lt;/td&gt;
+&lt;td&gt;108.4&lt;/td&gt;
+&lt;td&gt;108.7&lt;/td&gt;
+&lt;td&gt;166.0&lt;/td&gt;
+&lt;td&gt;157.7&lt;/td&gt;
+&lt;td&gt;27.3&lt;/td&gt;
+&lt;td&gt;-49.1&lt;/td&gt;
+&lt;td&gt;72.9&lt;/td&gt;
+&lt;td&gt;95.7&lt;/td&gt;
+&lt;td&gt;115.7&lt;/td&gt;
+&lt;td&gt;117.1&lt;/td&gt;
+&lt;td&gt;112.5&lt;/td&gt;
+&lt;td&gt;107.1&lt;/td&gt;
+&lt;td&gt;127.7&lt;/td&gt;
+&lt;td&gt;144.1&lt;/td&gt;
+&lt;td&gt;117.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RR&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;30.4&lt;/td&gt;
+&lt;td&gt;55.9&lt;/td&gt;
+&lt;td&gt;64.8&lt;/td&gt;
+&lt;td&gt;29.2&lt;/td&gt;
+&lt;td&gt;36.1&lt;/td&gt;
+&lt;td&gt;38.4&lt;/td&gt;
+&lt;td&gt;46.5&lt;/td&gt;
+&lt;td&gt;52.4&lt;/td&gt;
+&lt;td&gt;38.9&lt;/td&gt;
+&lt;td&gt;48.4&lt;/td&gt;
+&lt;td&gt;37.3&lt;/td&gt;
+&lt;td&gt;22.7&lt;/td&gt;
+&lt;td&gt;50.4&lt;/td&gt;
+&lt;td&gt;49.9&lt;/td&gt;
+&lt;td&gt;43.3&lt;/td&gt;
+&lt;td&gt;34.6&lt;/td&gt;
+&lt;td&gt;40.3&lt;/td&gt;
+&lt;td&gt;45.8&lt;/td&gt;
+&lt;td&gt;45.9&lt;/td&gt;
+&lt;td&gt;46.6&lt;/td&gt;
+&lt;td&gt;41.5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RS&lt;/td&gt;
+&lt;td&gt;South&lt;/td&gt;
+&lt;td&gt;27.7&lt;/td&gt;
+&lt;td&gt;26.8&lt;/td&gt;
+&lt;td&gt;28.2&lt;/td&gt;
+&lt;td&gt;32.7&lt;/td&gt;
+&lt;td&gt;23.8&lt;/td&gt;
+&lt;td&gt;18.6&lt;/td&gt;
+&lt;td&gt;18.5&lt;/td&gt;
+&lt;td&gt;18.8&lt;/td&gt;
+&lt;td&gt;19.5&lt;/td&gt;
+&lt;td&gt;18.3&lt;/td&gt;
+&lt;td&gt;16.3&lt;/td&gt;
+&lt;td&gt;-41.3&lt;/td&gt;
+&lt;td&gt;27.6&lt;/td&gt;
+&lt;td&gt;29.2&lt;/td&gt;
+&lt;td&gt;28.2&lt;/td&gt;
+&lt;td&gt;25.0&lt;/td&gt;
+&lt;td&gt;20.3&lt;/td&gt;
+&lt;td&gt;18.6&lt;/td&gt;
+&lt;td&gt;18.9&lt;/td&gt;
+&lt;td&gt;18.9&lt;/td&gt;
+&lt;td&gt;18.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SC&lt;/td&gt;
+&lt;td&gt;South&lt;/td&gt;
+&lt;td&gt;55.5&lt;/td&gt;
+&lt;td&gt;65.2&lt;/td&gt;
+&lt;td&gt;69.9&lt;/td&gt;
+&lt;td&gt;78.1&lt;/td&gt;
+&lt;td&gt;104.8&lt;/td&gt;
+&lt;td&gt;29.0&lt;/td&gt;
+&lt;td&gt;37.9&lt;/td&gt;
+&lt;td&gt;38.4&lt;/td&gt;
+&lt;td&gt;37.1&lt;/td&gt;
+&lt;td&gt;36.9&lt;/td&gt;
+&lt;td&gt;27.6&lt;/td&gt;
+&lt;td&gt;-50.3&lt;/td&gt;
+&lt;td&gt;63.5&lt;/td&gt;
+&lt;td&gt;71.1&lt;/td&gt;
+&lt;td&gt;84.3&lt;/td&gt;
+&lt;td&gt;70.6&lt;/td&gt;
+&lt;td&gt;57.2&lt;/td&gt;
+&lt;td&gt;35.1&lt;/td&gt;
+&lt;td&gt;37.8&lt;/td&gt;
+&lt;td&gt;37.5&lt;/td&gt;
+&lt;td&gt;33.9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SP&lt;/td&gt;
+&lt;td&gt;Southeast&lt;/td&gt;
+&lt;td&gt;40.6&lt;/td&gt;
+&lt;td&gt;34.7&lt;/td&gt;
+&lt;td&gt;15.1&lt;/td&gt;
+&lt;td&gt;14.2&lt;/td&gt;
+&lt;td&gt;13.6&lt;/td&gt;
+&lt;td&gt;11.3&lt;/td&gt;
+&lt;td&gt;10.4&lt;/td&gt;
+&lt;td&gt;11.9&lt;/td&gt;
+&lt;td&gt;13.3&lt;/td&gt;
+&lt;td&gt;13.5&lt;/td&gt;
+&lt;td&gt;13.2&lt;/td&gt;
+&lt;td&gt;-67.6&lt;/td&gt;
+&lt;td&gt;30.1&lt;/td&gt;
+&lt;td&gt;21.3&lt;/td&gt;
+&lt;td&gt;14.3&lt;/td&gt;
+&lt;td&gt;13.0&lt;/td&gt;
+&lt;td&gt;11.7&lt;/td&gt;
+&lt;td&gt;11.2&lt;/td&gt;
+&lt;td&gt;11.9&lt;/td&gt;
+&lt;td&gt;12.9&lt;/td&gt;
+&lt;td&gt;13.3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TO&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;25.7&lt;/td&gt;
+&lt;td&gt;37.3&lt;/td&gt;
+&lt;td&gt;45.8&lt;/td&gt;
+&lt;td&gt;86.9&lt;/td&gt;
+&lt;td&gt;98.1&lt;/td&gt;
+&lt;td&gt;19.5&lt;/td&gt;
+&lt;td&gt;22.7&lt;/td&gt;
+&lt;td&gt;21.9&lt;/td&gt;
+&lt;td&gt;91.0&lt;/td&gt;
+&lt;td&gt;25.7&lt;/td&gt;
+&lt;td&gt;19.9&lt;/td&gt;
+&lt;td&gt;-22.6&lt;/td&gt;
+&lt;td&gt;36.3&lt;/td&gt;
+&lt;td&gt;56.7&lt;/td&gt;
+&lt;td&gt;77.0&lt;/td&gt;
+&lt;td&gt;68.2&lt;/td&gt;
+&lt;td&gt;46.8&lt;/td&gt;
+&lt;td&gt;21.4&lt;/td&gt;
+&lt;td&gt;45.2&lt;/td&gt;
+&lt;td&gt;46.2&lt;/td&gt;
+&lt;td&gt;45.5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Beyond cross-sectional disparities, the temporal evolution of female
+victimization rates indicates important structural shifts. Several FUs
+exhibit sharp increases between 2018 and 2019, followed by partial
+declines in 2020. This pattern is consistent with disruptions associated
+with the COVID-19 pandemic, which may have affected both the incidence
+of violence and, more importantly, reporting mechanisms. Notably, the
+subsequent period (2021&amp;ndash;2025) shows renewed upward trends in multiple
+states, reinforcing the interpretation that the pandemic likely produced
+a temporary suppression of reported cases rather than a sustained
+reduction in underlying violence.&lt;/p&gt;
+&lt;p&gt;Regional heterogeneity is also evident within more developed areas. In
+the Southeast, São Paulo (SP) and Minas Gerais (MG) exhibit relatively
+low and declining trajectories, suggesting gradual improvements or
+stabilization. In contrast, Rio de Janeiro (RJ) maintains persistently
+high rates throughout the period, while Espírito Santo (ES) shows marked
+volatility, with abrupt fluctuations that may reflect inconsistencies in
+reporting or localized shocks. These intra-regional differences
+highlight that aggregate regional patterns may obscure substantial
+subnational variation.&lt;/p&gt;
+&lt;p&gt;Table 2, which presents male victimization rates, reinforces the
+strongly gendered nature of sexual violence, as levels are
+systematically lower across all FUs. However, the spatial distribution
+of male victimization partially mirrors that observed among females. The
+Central-West region, particularly Mato Grosso do Sul (MS), again stands
+out with comparatively elevated rates, suggesting that underlying
+structural risk factors &amp;mdash; such as social vulnerability, violence
+dynamics, and institutional effectiveness &amp;mdash; affect both sexes, albeit
+with different magnitudes.&lt;/p&gt;
+&lt;p&gt;Table 2: Rate of male rape victims per 100,000 inhabitants, total
+variation and moving average over three consecutive years - FU&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;FU&lt;/th&gt;
+&lt;th&gt;Region&lt;/th&gt;
+&lt;th&gt;2015&lt;/th&gt;
+&lt;th&gt;2016&lt;/th&gt;
+&lt;th&gt;2017&lt;/th&gt;
+&lt;th&gt;2018&lt;/th&gt;
+&lt;th&gt;2019&lt;/th&gt;
+&lt;th&gt;2020&lt;/th&gt;
+&lt;th&gt;2021&lt;/th&gt;
+&lt;th&gt;2022&lt;/th&gt;
+&lt;th&gt;2023&lt;/th&gt;
+&lt;th&gt;2024&lt;/th&gt;
+&lt;th&gt;2025&lt;/th&gt;
+&lt;th&gt;Total Var. (%)&lt;/th&gt;
+&lt;th&gt;2015&amp;ndash;2017&lt;/th&gt;
+&lt;th&gt;2016&amp;ndash;2018&lt;/th&gt;
+&lt;th&gt;2017&amp;ndash;2019&lt;/th&gt;
+&lt;th&gt;2018&amp;ndash;2020&lt;/th&gt;
+&lt;th&gt;2019&amp;ndash;2021&lt;/th&gt;
+&lt;th&gt;2020&amp;ndash;2022&lt;/th&gt;
+&lt;th&gt;2021&amp;ndash;2023&lt;/th&gt;
+&lt;th&gt;2022&amp;ndash;2024&lt;/th&gt;
+&lt;th&gt;2023&amp;ndash;2025&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;SE&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;0.2&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;1.9&lt;/td&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;1.8&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;0.1&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.7&lt;/td&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AC&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;1.8&lt;/td&gt;
+&lt;td&gt;2.3&lt;/td&gt;
+&lt;td&gt;1.8&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;3.5&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;4.0&lt;/td&gt;
+&lt;td&gt;0.4&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;0.6&lt;/td&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;2.4&lt;/td&gt;
+&lt;td&gt;2.3&lt;/td&gt;
+&lt;td&gt;2.9&lt;/td&gt;
+&lt;td&gt;1.9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AL&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;0.4&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;0.6&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;0.5&lt;/td&gt;
+&lt;td&gt;0.6&lt;/td&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;37.4&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AM&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;1.6&lt;/td&gt;
+&lt;td&gt;1.8&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;0.5&lt;/td&gt;
+&lt;td&gt;0.4&lt;/td&gt;
+&lt;td&gt;0.6&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;35.2&lt;/td&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;0.6&lt;/td&gt;
+&lt;td&gt;0.5&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AP&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;9.5&lt;/td&gt;
+&lt;td&gt;9.8&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;10.6&lt;/td&gt;
+&lt;td&gt;1.9&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;2.8&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;-86.5&lt;/td&gt;
+&lt;td&gt;6.4&lt;/td&gt;
+&lt;td&gt;6.8&lt;/td&gt;
+&lt;td&gt;4.2&lt;/td&gt;
+&lt;td&gt;4.5&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;1.7&lt;/td&gt;
+&lt;td&gt;1.8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BA&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;4.7&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;2.4&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;2.1&lt;/td&gt;
+&lt;td&gt;2.1&lt;/td&gt;
+&lt;td&gt;2.3&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CE&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;0.6&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;0.6&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;-43.1&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DF&lt;/td&gt;
+&lt;td&gt;Central-West&lt;/td&gt;
+&lt;td&gt;8.1&lt;/td&gt;
+&lt;td&gt;5.0&lt;/td&gt;
+&lt;td&gt;7.3&lt;/td&gt;
+&lt;td&gt;2.3&lt;/td&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td&gt;1.9&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;1.6&lt;/td&gt;
+&lt;td&gt;2.3&lt;/td&gt;
+&lt;td&gt;1.6&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;-85.0&lt;/td&gt;
+&lt;td&gt;6.8&lt;/td&gt;
+&lt;td&gt;4.9&lt;/td&gt;
+&lt;td&gt;3.7&lt;/td&gt;
+&lt;td&gt;1.9&lt;/td&gt;
+&lt;td&gt;1.8&lt;/td&gt;
+&lt;td&gt;1.8&lt;/td&gt;
+&lt;td&gt;1.9&lt;/td&gt;
+&lt;td&gt;1.8&lt;/td&gt;
+&lt;td&gt;1.7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ES&lt;/td&gt;
+&lt;td&gt;Southeast&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;8.8&lt;/td&gt;
+&lt;td&gt;11.2&lt;/td&gt;
+&lt;td&gt;7.5&lt;/td&gt;
+&lt;td&gt;8.1&lt;/td&gt;
+&lt;td&gt;8.4&lt;/td&gt;
+&lt;td&gt;1.8&lt;/td&gt;
+&lt;td&gt;12.3&lt;/td&gt;
+&lt;td&gt;1.6&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;2.9&lt;/td&gt;
+&lt;td&gt;6.7&lt;/td&gt;
+&lt;td&gt;9.2&lt;/td&gt;
+&lt;td&gt;9.0&lt;/td&gt;
+&lt;td&gt;8.0&lt;/td&gt;
+&lt;td&gt;6.1&lt;/td&gt;
+&lt;td&gt;7.5&lt;/td&gt;
+&lt;td&gt;5.2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;Central-West&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;td&gt;1.6&lt;/td&gt;
+&lt;td&gt;1.6&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;td&gt;&amp;ndash;&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MA&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;5.0&lt;/td&gt;
+&lt;td&gt;5.7&lt;/td&gt;
+&lt;td&gt;6.2&lt;/td&gt;
+&lt;td&gt;6.4&lt;/td&gt;
+&lt;td&gt;5.5&lt;/td&gt;
+&lt;td&gt;5.6&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;0.4&lt;/td&gt;
+&lt;td&gt;0.3&lt;/td&gt;
+&lt;td&gt;0.4&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;-85.9&lt;/td&gt;
+&lt;td&gt;5.6&lt;/td&gt;
+&lt;td&gt;6.1&lt;/td&gt;
+&lt;td&gt;6.0&lt;/td&gt;
+&lt;td&gt;5.8&lt;/td&gt;
+&lt;td&gt;4.0&lt;/td&gt;
+&lt;td&gt;2.3&lt;/td&gt;
+&lt;td&gt;0.6&lt;/td&gt;
+&lt;td&gt;0.4&lt;/td&gt;
+&lt;td&gt;0.5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MG&lt;/td&gt;
+&lt;td&gt;Southeast&lt;/td&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;0.5&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;-31.3&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;0.6&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MS&lt;/td&gt;
+&lt;td&gt;Central-West&lt;/td&gt;
+&lt;td&gt;4.7&lt;/td&gt;
+&lt;td&gt;5.8&lt;/td&gt;
+&lt;td&gt;8.1&lt;/td&gt;
+&lt;td&gt;21.2&lt;/td&gt;
+&lt;td&gt;22.7&lt;/td&gt;
+&lt;td&gt;18.9&lt;/td&gt;
+&lt;td&gt;17.4&lt;/td&gt;
+&lt;td&gt;15.1&lt;/td&gt;
+&lt;td&gt;19.8&lt;/td&gt;
+&lt;td&gt;17.9&lt;/td&gt;
+&lt;td&gt;12.0&lt;/td&gt;
+&lt;td&gt;156.3&lt;/td&gt;
+&lt;td&gt;6.2&lt;/td&gt;
+&lt;td&gt;11.7&lt;/td&gt;
+&lt;td&gt;17.3&lt;/td&gt;
+&lt;td&gt;20.9&lt;/td&gt;
+&lt;td&gt;19.7&lt;/td&gt;
+&lt;td&gt;17.1&lt;/td&gt;
+&lt;td&gt;17.4&lt;/td&gt;
+&lt;td&gt;17.6&lt;/td&gt;
+&lt;td&gt;16.6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MT&lt;/td&gt;
+&lt;td&gt;Central-West&lt;/td&gt;
+&lt;td&gt;2.3&lt;/td&gt;
+&lt;td&gt;3.2&lt;/td&gt;
+&lt;td&gt;3.2&lt;/td&gt;
+&lt;td&gt;3.3&lt;/td&gt;
+&lt;td&gt;2.9&lt;/td&gt;
+&lt;td&gt;2.5&lt;/td&gt;
+&lt;td&gt;3.2&lt;/td&gt;
+&lt;td&gt;3.0&lt;/td&gt;
+&lt;td&gt;2.1&lt;/td&gt;
+&lt;td&gt;3.5&lt;/td&gt;
+&lt;td&gt;2.3&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;2.9&lt;/td&gt;
+&lt;td&gt;3.2&lt;/td&gt;
+&lt;td&gt;3.2&lt;/td&gt;
+&lt;td&gt;2.9&lt;/td&gt;
+&lt;td&gt;2.9&lt;/td&gt;
+&lt;td&gt;2.9&lt;/td&gt;
+&lt;td&gt;2.8&lt;/td&gt;
+&lt;td&gt;2.9&lt;/td&gt;
+&lt;td&gt;2.6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PA&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;0.5&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;103.1&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PB&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;1.9&lt;/td&gt;
+&lt;td&gt;3.2&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;1.6&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;1.9&lt;/td&gt;
+&lt;td&gt;2.4&lt;/td&gt;
+&lt;td&gt;2.6&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;-59.8&lt;/td&gt;
+&lt;td&gt;2.4&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;1.9&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td&gt;1.7&lt;/td&gt;
+&lt;td&gt;2.3&lt;/td&gt;
+&lt;td&gt;1.9&lt;/td&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PE&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;1.7&lt;/td&gt;
+&lt;td&gt;1.8&lt;/td&gt;
+&lt;td&gt;2.1&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;-10.0&lt;/td&gt;
+&lt;td&gt;1.7&lt;/td&gt;
+&lt;td&gt;1.8&lt;/td&gt;
+&lt;td&gt;1.9&lt;/td&gt;
+&lt;td&gt;1.7&lt;/td&gt;
+&lt;td&gt;1.6&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PI&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;0.5&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;70.8&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PR&lt;/td&gt;
+&lt;td&gt;South&lt;/td&gt;
+&lt;td&gt;2.6&lt;/td&gt;
+&lt;td&gt;2.4&lt;/td&gt;
+&lt;td&gt;2.7&lt;/td&gt;
+&lt;td&gt;2.6&lt;/td&gt;
+&lt;td&gt;2.7&lt;/td&gt;
+&lt;td&gt;2.1&lt;/td&gt;
+&lt;td&gt;2.2&lt;/td&gt;
+&lt;td&gt;2.4&lt;/td&gt;
+&lt;td&gt;2.5&lt;/td&gt;
+&lt;td&gt;2.9&lt;/td&gt;
+&lt;td&gt;2.3&lt;/td&gt;
+&lt;td&gt;-9.1&lt;/td&gt;
+&lt;td&gt;2.6&lt;/td&gt;
+&lt;td&gt;2.6&lt;/td&gt;
+&lt;td&gt;2.7&lt;/td&gt;
+&lt;td&gt;2.5&lt;/td&gt;
+&lt;td&gt;2.4&lt;/td&gt;
+&lt;td&gt;2.3&lt;/td&gt;
+&lt;td&gt;2.4&lt;/td&gt;
+&lt;td&gt;2.6&lt;/td&gt;
+&lt;td&gt;2.6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RJ&lt;/td&gt;
+&lt;td&gt;Southeast&lt;/td&gt;
+&lt;td&gt;8.7&lt;/td&gt;
+&lt;td&gt;7.5&lt;/td&gt;
+&lt;td&gt;8.6&lt;/td&gt;
+&lt;td&gt;8.5&lt;/td&gt;
+&lt;td&gt;8.4&lt;/td&gt;
+&lt;td&gt;7.2&lt;/td&gt;
+&lt;td&gt;7.5&lt;/td&gt;
+&lt;td&gt;7.7&lt;/td&gt;
+&lt;td&gt;8.2&lt;/td&gt;
+&lt;td&gt;8.5&lt;/td&gt;
+&lt;td&gt;8.3&lt;/td&gt;
+&lt;td&gt;-5.0&lt;/td&gt;
+&lt;td&gt;8.3&lt;/td&gt;
+&lt;td&gt;8.2&lt;/td&gt;
+&lt;td&gt;8.5&lt;/td&gt;
+&lt;td&gt;8.1&lt;/td&gt;
+&lt;td&gt;7.7&lt;/td&gt;
+&lt;td&gt;7.5&lt;/td&gt;
+&lt;td&gt;7.8&lt;/td&gt;
+&lt;td&gt;8.2&lt;/td&gt;
+&lt;td&gt;8.3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RN&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0.2&lt;/td&gt;
+&lt;td&gt;0.6&lt;/td&gt;
+&lt;td&gt;0.1&lt;/td&gt;
+&lt;td&gt;0.4&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;0.5&lt;/td&gt;
+&lt;td&gt;0.6&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;td&gt;481.0&lt;/td&gt;
+&lt;td&gt;0.3&lt;/td&gt;
+&lt;td&gt;0.4&lt;/td&gt;
+&lt;td&gt;0.5&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;0.8&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RO&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;9.5&lt;/td&gt;
+&lt;td&gt;10.4&lt;/td&gt;
+&lt;td&gt;11.2&lt;/td&gt;
+&lt;td&gt;16.0&lt;/td&gt;
+&lt;td&gt;15.3&lt;/td&gt;
+&lt;td&gt;12.9&lt;/td&gt;
+&lt;td&gt;9.2&lt;/td&gt;
+&lt;td&gt;10.3&lt;/td&gt;
+&lt;td&gt;19.2&lt;/td&gt;
+&lt;td&gt;19.2&lt;/td&gt;
+&lt;td&gt;2.7&lt;/td&gt;
+&lt;td&gt;-71.2&lt;/td&gt;
+&lt;td&gt;10.4&lt;/td&gt;
+&lt;td&gt;12.6&lt;/td&gt;
+&lt;td&gt;14.2&lt;/td&gt;
+&lt;td&gt;14.7&lt;/td&gt;
+&lt;td&gt;12.5&lt;/td&gt;
+&lt;td&gt;10.8&lt;/td&gt;
+&lt;td&gt;12.9&lt;/td&gt;
+&lt;td&gt;16.2&lt;/td&gt;
+&lt;td&gt;13.7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RR&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;2.3&lt;/td&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td&gt;3.6&lt;/td&gt;
+&lt;td&gt;4.7&lt;/td&gt;
+&lt;td&gt;1.9&lt;/td&gt;
+&lt;td&gt;3.4&lt;/td&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;3.4&lt;/td&gt;
+&lt;td&gt;3.9&lt;/td&gt;
+&lt;td&gt;2.7&lt;/td&gt;
+&lt;td&gt;18.5&lt;/td&gt;
+&lt;td&gt;2.5&lt;/td&gt;
+&lt;td&gt;3.3&lt;/td&gt;
+&lt;td&gt;3.4&lt;/td&gt;
+&lt;td&gt;3.3&lt;/td&gt;
+&lt;td&gt;2.3&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;2.8&lt;/td&gt;
+&lt;td&gt;3.3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RS&lt;/td&gt;
+&lt;td&gt;South&lt;/td&gt;
+&lt;td&gt;3.8&lt;/td&gt;
+&lt;td&gt;3.2&lt;/td&gt;
+&lt;td&gt;3.0&lt;/td&gt;
+&lt;td&gt;3.9&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;-69.9&lt;/td&gt;
+&lt;td&gt;3.3&lt;/td&gt;
+&lt;td&gt;3.4&lt;/td&gt;
+&lt;td&gt;3.0&lt;/td&gt;
+&lt;td&gt;2.3&lt;/td&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SC&lt;/td&gt;
+&lt;td&gt;South&lt;/td&gt;
+&lt;td&gt;10.1&lt;/td&gt;
+&lt;td&gt;10.8&lt;/td&gt;
+&lt;td&gt;11.4&lt;/td&gt;
+&lt;td&gt;13.0&lt;/td&gt;
+&lt;td&gt;16.7&lt;/td&gt;
+&lt;td&gt;2.8&lt;/td&gt;
+&lt;td&gt;3.7&lt;/td&gt;
+&lt;td&gt;3.7&lt;/td&gt;
+&lt;td&gt;3.8&lt;/td&gt;
+&lt;td&gt;4.6&lt;/td&gt;
+&lt;td&gt;2.9&lt;/td&gt;
+&lt;td&gt;-71.2&lt;/td&gt;
+&lt;td&gt;10.8&lt;/td&gt;
+&lt;td&gt;11.7&lt;/td&gt;
+&lt;td&gt;13.7&lt;/td&gt;
+&lt;td&gt;10.8&lt;/td&gt;
+&lt;td&gt;7.7&lt;/td&gt;
+&lt;td&gt;3.4&lt;/td&gt;
+&lt;td&gt;3.7&lt;/td&gt;
+&lt;td&gt;4.0&lt;/td&gt;
+&lt;td&gt;3.8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SP&lt;/td&gt;
+&lt;td&gt;Southeast&lt;/td&gt;
+&lt;td&gt;10.3&lt;/td&gt;
+&lt;td&gt;8.3&lt;/td&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;-89.4&lt;/td&gt;
+&lt;td&gt;6.7&lt;/td&gt;
+&lt;td&gt;3.7&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TO&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;3.7&lt;/td&gt;
+&lt;td&gt;10.9&lt;/td&gt;
+&lt;td&gt;7.5&lt;/td&gt;
+&lt;td&gt;10.1&lt;/td&gt;
+&lt;td&gt;11.5&lt;/td&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td&gt;0.6&lt;/td&gt;
+&lt;td&gt;1.3&lt;/td&gt;
+&lt;td&gt;9.5&lt;/td&gt;
+&lt;td&gt;2.6&lt;/td&gt;
+&lt;td&gt;0.7&lt;/td&gt;
+&lt;td&gt;-80.6&lt;/td&gt;
+&lt;td&gt;7.4&lt;/td&gt;
+&lt;td&gt;9.5&lt;/td&gt;
+&lt;td&gt;9.7&lt;/td&gt;
+&lt;td&gt;7.7&lt;/td&gt;
+&lt;td&gt;4.5&lt;/td&gt;
+&lt;td&gt;1.2&lt;/td&gt;
+&lt;td&gt;3.8&lt;/td&gt;
+&lt;td&gt;4.5&lt;/td&gt;
+&lt;td&gt;4.3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;From a temporal perspective, male victimization rates exhibit lower
+volatility and a narrower dispersion across FUs when compared to female
+rates. This pattern may indicate more stable reporting dynamics,
+although it may also reflect persistent underreporting among male
+victims. Despite this overall stability, some states &amp;mdash; notably
+Rondônia (RO) and Amapá (AP) &amp;mdash; display episodic spikes, which could be
+associated with localized changes in violence patterns or improvements
+in detection and reporting systems.&lt;/p&gt;
+&lt;p&gt;Taken together, the results from both tables suggest that sexual
+violence in Brazil is characterized by strong regional inequalities,
+temporal discontinuities associated with external shocks such as the
+pandemic, and a pronounced gender asymmetry. While female victimization
+remains substantially higher, the persistence of similar spatial
+patterns across sexes points to common structural determinants that
+warrant further investigation.&lt;/p&gt;
+&lt;p&gt;The regional vulnerability rankings based on three-year weighted
+averages (Table 3 and Table 4) provide a clearer picture of structural
+inequalities. For females, the Central-West and North regions
+consistently occupy the highest positions, confirming their status as
+areas of greater vulnerability. The Northeast, while showing moderate
+levels, demonstrates relative stability over time. In contrast, the
+Southeast and South regions maintain lower averages, although not
+uniformly, as evidenced by the persistent high rates in specific states
+such as Rio de Janeiro.&lt;/p&gt;
+&lt;p&gt;Table 3: Regional female vulnerability ranking&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Region&lt;/th&gt;
+&lt;th&gt;2015&lt;/th&gt;
+&lt;th&gt;2016&lt;/th&gt;
+&lt;th&gt;2017&lt;/th&gt;
+&lt;th&gt;2018&lt;/th&gt;
+&lt;th&gt;2019&lt;/th&gt;
+&lt;th&gt;2020&lt;/th&gt;
+&lt;th&gt;2021&lt;/th&gt;
+&lt;th&gt;2022&lt;/th&gt;
+&lt;th&gt;2023&lt;/th&gt;
+&lt;th&gt;2024&lt;/th&gt;
+&lt;th&gt;2025&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;10.5&lt;/td&gt;
+&lt;td&gt;12.4&lt;/td&gt;
+&lt;td&gt;12.4&lt;/td&gt;
+&lt;td&gt;12.4&lt;/td&gt;
+&lt;td&gt;14.8&lt;/td&gt;
+&lt;td&gt;13.5&lt;/td&gt;
+&lt;td&gt;14.9&lt;/td&gt;
+&lt;td&gt;14.1&lt;/td&gt;
+&lt;td&gt;15.2&lt;/td&gt;
+&lt;td&gt;13.1&lt;/td&gt;
+&lt;td&gt;13.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;36.8&lt;/td&gt;
+&lt;td&gt;50.4&lt;/td&gt;
+&lt;td&gt;41.3&lt;/td&gt;
+&lt;td&gt;61.6&lt;/td&gt;
+&lt;td&gt;55.9&lt;/td&gt;
+&lt;td&gt;36.7&lt;/td&gt;
+&lt;td&gt;40.6&lt;/td&gt;
+&lt;td&gt;41.2&lt;/td&gt;
+&lt;td&gt;60.7&lt;/td&gt;
+&lt;td&gt;49.9&lt;/td&gt;
+&lt;td&gt;24.8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Central-West&lt;/td&gt;
+&lt;td&gt;37.6&lt;/td&gt;
+&lt;td&gt;42.3&lt;/td&gt;
+&lt;td&gt;49.4&lt;/td&gt;
+&lt;td&gt;66.2&lt;/td&gt;
+&lt;td&gt;70.1&lt;/td&gt;
+&lt;td&gt;64.1&lt;/td&gt;
+&lt;td&gt;61.8&lt;/td&gt;
+&lt;td&gt;60.1&lt;/td&gt;
+&lt;td&gt;71.4&lt;/td&gt;
+&lt;td&gt;61.7&lt;/td&gt;
+&lt;td&gt;45.3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Southeast&lt;/td&gt;
+&lt;td&gt;34.5&lt;/td&gt;
+&lt;td&gt;31.9&lt;/td&gt;
+&lt;td&gt;25.9&lt;/td&gt;
+&lt;td&gt;26.9&lt;/td&gt;
+&lt;td&gt;26.3&lt;/td&gt;
+&lt;td&gt;22.5&lt;/td&gt;
+&lt;td&gt;23.3&lt;/td&gt;
+&lt;td&gt;25.3&lt;/td&gt;
+&lt;td&gt;25.3&lt;/td&gt;
+&lt;td&gt;26.8&lt;/td&gt;
+&lt;td&gt;26.4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;South&lt;/td&gt;
+&lt;td&gt;33.3&lt;/td&gt;
+&lt;td&gt;37.0&lt;/td&gt;
+&lt;td&gt;40.2&lt;/td&gt;
+&lt;td&gt;44.5&lt;/td&gt;
+&lt;td&gt;50.7&lt;/td&gt;
+&lt;td&gt;22.8&lt;/td&gt;
+&lt;td&gt;26.2&lt;/td&gt;
+&lt;td&gt;27.3&lt;/td&gt;
+&lt;td&gt;27.8&lt;/td&gt;
+&lt;td&gt;28.1&lt;/td&gt;
+&lt;td&gt;22.2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;For males, the regional hierarchy is similar but less pronounced. The
+Central-West again emerges as the most vulnerable region, followed by
+the North, while the Northeast consistently presents the lowest
+averages. Notably, the temporal evolution suggests a general decline in
+male victimization rates after 2019, particularly in the North region,
+where the weighted average drops significantly by 2025.&lt;/p&gt;
+&lt;p&gt;Table 4: Regional male vulnerability ranking&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Region&lt;/th&gt;
+&lt;th&gt;2015&lt;/th&gt;
+&lt;th&gt;2016&lt;/th&gt;
+&lt;th&gt;2017&lt;/th&gt;
+&lt;th&gt;2018&lt;/th&gt;
+&lt;th&gt;2019&lt;/th&gt;
+&lt;th&gt;2020&lt;/th&gt;
+&lt;th&gt;2021&lt;/th&gt;
+&lt;th&gt;2022&lt;/th&gt;
+&lt;th&gt;2023&lt;/th&gt;
+&lt;th&gt;2024&lt;/th&gt;
+&lt;th&gt;2025&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td&gt;1.7&lt;/td&gt;
+&lt;td&gt;1.5&lt;/td&gt;
+&lt;td&gt;1.8&lt;/td&gt;
+&lt;td&gt;1.4&lt;/td&gt;
+&lt;td&gt;1.6&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;0.9&lt;/td&gt;
+&lt;td&gt;1.1&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;4.4&lt;/td&gt;
+&lt;td&gt;5.9&lt;/td&gt;
+&lt;td&gt;4.2&lt;/td&gt;
+&lt;td&gt;7.2&lt;/td&gt;
+&lt;td&gt;5.5&lt;/td&gt;
+&lt;td&gt;3.3&lt;/td&gt;
+&lt;td&gt;2.2&lt;/td&gt;
+&lt;td&gt;2.6&lt;/td&gt;
+&lt;td&gt;5.9&lt;/td&gt;
+&lt;td&gt;5.2&lt;/td&gt;
+&lt;td&gt;1.6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Central-West&lt;/td&gt;
+&lt;td&gt;5.0&lt;/td&gt;
+&lt;td&gt;4.7&lt;/td&gt;
+&lt;td&gt;6.2&lt;/td&gt;
+&lt;td&gt;8.9&lt;/td&gt;
+&lt;td&gt;9.0&lt;/td&gt;
+&lt;td&gt;7.8&lt;/td&gt;
+&lt;td&gt;7.5&lt;/td&gt;
+&lt;td&gt;6.6&lt;/td&gt;
+&lt;td&gt;8.0&lt;/td&gt;
+&lt;td&gt;7.7&lt;/td&gt;
+&lt;td&gt;5.2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Southeast&lt;/td&gt;
+&lt;td&gt;6.8&lt;/td&gt;
+&lt;td&gt;5.7&lt;/td&gt;
+&lt;td&gt;3.7&lt;/td&gt;
+&lt;td&gt;3.6&lt;/td&gt;
+&lt;td&gt;3.5&lt;/td&gt;
+&lt;td&gt;3.0&lt;/td&gt;
+&lt;td&gt;3.0&lt;/td&gt;
+&lt;td&gt;3.2&lt;/td&gt;
+&lt;td&gt;3.3&lt;/td&gt;
+&lt;td&gt;3.5&lt;/td&gt;
+&lt;td&gt;3.4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;South&lt;/td&gt;
+&lt;td&gt;5.5&lt;/td&gt;
+&lt;td&gt;5.5&lt;/td&gt;
+&lt;td&gt;5.7&lt;/td&gt;
+&lt;td&gt;6.5&lt;/td&gt;
+&lt;td&gt;7.1&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;td&gt;2.4&lt;/td&gt;
+&lt;td&gt;2.5&lt;/td&gt;
+&lt;td&gt;2.5&lt;/td&gt;
+&lt;td&gt;3.0&lt;/td&gt;
+&lt;td&gt;2.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The consistency indicators at the FU level (Table 5 and Table 6) offer
+further insights into the persistence of trends. Among females, states
+such as Piauí (PI) and Paraná (PR) achieve the highest scores,
+indicating a sustained upward trajectory in victimization rates.
+Conversely, states like Amapá (AP), Distrito Federal (DF), and São Paulo
+(SP) display negative scores, reflecting either declining trends or high
+volatility with frequent reversals.&lt;/p&gt;
+&lt;p&gt;Table 5: Consistency indicator (Trend score) for females by FU&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;UF&lt;/th&gt;
+&lt;th&gt;Region&lt;/th&gt;
+&lt;th&gt;2015&lt;/th&gt;
+&lt;th&gt;2016&lt;/th&gt;
+&lt;th&gt;2017&lt;/th&gt;
+&lt;th&gt;2018&lt;/th&gt;
+&lt;th&gt;2019&lt;/th&gt;
+&lt;th&gt;2020&lt;/th&gt;
+&lt;th&gt;2021&lt;/th&gt;
+&lt;th&gt;2022&lt;/th&gt;
+&lt;th&gt;2023&lt;/th&gt;
+&lt;th&gt;2024&lt;/th&gt;
+&lt;th&gt;2025&lt;/th&gt;
+&lt;th&gt;Ranking&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;SE&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AC&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;NA&lt;/td&gt;
+&lt;td&gt;NA&lt;/td&gt;
+&lt;td&gt;NA&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AL&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AM&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AP&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BA&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CE&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DF&lt;/td&gt;
+&lt;td&gt;Central-West&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ES&lt;/td&gt;
+&lt;td&gt;Southeast&lt;/td&gt;
+&lt;td&gt;NA&lt;/td&gt;
+&lt;td&gt;NA&lt;/td&gt;
+&lt;td&gt;NA&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;Central-West&lt;/td&gt;
+&lt;td&gt;NA&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MA&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MG&lt;/td&gt;
+&lt;td&gt;Southeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MS&lt;/td&gt;
+&lt;td&gt;Central-West&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MT&lt;/td&gt;
+&lt;td&gt;Central-West&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PA&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PB&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PE&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PI&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PR&lt;/td&gt;
+&lt;td&gt;South&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RJ&lt;/td&gt;
+&lt;td&gt;Southeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RN&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RO&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RR&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RS&lt;/td&gt;
+&lt;td&gt;South&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SC&lt;/td&gt;
+&lt;td&gt;South&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SP&lt;/td&gt;
+&lt;td&gt;Southeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TO&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;For males, the pattern is less consistent, with fewer states exhibiting
+strong positive or negative cumulative scores. Santa Catarina (SC)
+stands out with the highest positive ranking, suggesting a persistent
+increase, whereas Rio Grande do Sul (RS) shows the most negative score,
+indicating a consistent decline.&lt;/p&gt;
+&lt;p&gt;Table 6: Consistency indicator (Trend score) for males by FU&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;FU&lt;/th&gt;
+&lt;th&gt;Region&lt;/th&gt;
+&lt;th&gt;2015&lt;/th&gt;
+&lt;th&gt;2016&lt;/th&gt;
+&lt;th&gt;2017&lt;/th&gt;
+&lt;th&gt;2018&lt;/th&gt;
+&lt;th&gt;2019&lt;/th&gt;
+&lt;th&gt;2020&lt;/th&gt;
+&lt;th&gt;2021&lt;/th&gt;
+&lt;th&gt;2022&lt;/th&gt;
+&lt;th&gt;2023&lt;/th&gt;
+&lt;th&gt;2024&lt;/th&gt;
+&lt;th&gt;2025&lt;/th&gt;
+&lt;th&gt;Ranking&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;SE&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AC&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;NA&lt;/td&gt;
+&lt;td&gt;NA&lt;/td&gt;
+&lt;td&gt;NA&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AL&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AM&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AP&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BA&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CE&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DF&lt;/td&gt;
+&lt;td&gt;Central-West&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ES&lt;/td&gt;
+&lt;td&gt;Southeast&lt;/td&gt;
+&lt;td&gt;NA&lt;/td&gt;
+&lt;td&gt;NA&lt;/td&gt;
+&lt;td&gt;NA&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GO&lt;/td&gt;
+&lt;td&gt;Central-West&lt;/td&gt;
+&lt;td&gt;NA&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MA&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MG&lt;/td&gt;
+&lt;td&gt;Southeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MS&lt;/td&gt;
+&lt;td&gt;Central-West&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;MT&lt;/td&gt;
+&lt;td&gt;Central-West&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PA&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PB&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PE&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PI&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PR&lt;/td&gt;
+&lt;td&gt;South&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RJ&lt;/td&gt;
+&lt;td&gt;Southeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RN&lt;/td&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RO&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RR&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;RS&lt;/td&gt;
+&lt;td&gt;South&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SC&lt;/td&gt;
+&lt;td&gt;South&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;SP&lt;/td&gt;
+&lt;td&gt;Southeast&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;TO&lt;/td&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;-1&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;At the regional level, the consistency indicators (Table 7 and Table 8)
+reinforce these findings. The South region exhibits the highest positive
+score for females, indicating a relatively consistent upward trend over
+the study period. In contrast, the Southeast shows a negative cumulative
+score, suggesting either stabilization or gradual decline. For males,
+the South again stands out with a positive trend, while the Southeast
+presents the most negative score, indicating a more consistent reduction
+in rates.&lt;/p&gt;
+&lt;p&gt;Table 7: Regional consistency indicator (Trend score) for females&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Region&lt;/th&gt;
+&lt;th&gt;2015&lt;/th&gt;
+&lt;th&gt;2016&lt;/th&gt;
+&lt;th&gt;2017&lt;/th&gt;
+&lt;th&gt;2018&lt;/th&gt;
+&lt;th&gt;2019&lt;/th&gt;
+&lt;th&gt;2020&lt;/th&gt;
+&lt;th&gt;2021&lt;/th&gt;
+&lt;th&gt;2022&lt;/th&gt;
+&lt;th&gt;2023&lt;/th&gt;
+&lt;th&gt;2024&lt;/th&gt;
+&lt;th&gt;2025&lt;/th&gt;
+&lt;th&gt;Ranking&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;2.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Central-West&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Southeast&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;South&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;6.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Overall, the results highlight three key patterns. First, there is a
+clear spatial concentration of higher victimization rates in the North
+and Central-West regions. Second, female victimization rates are
+substantially higher and more volatile than male rates, underscoring the
+gendered dynamics of sexual violence. Third, the combination of
+volatility and persistence revealed by the consistency indicators
+suggests that, in many regions, increases in reported cases are not
+merely episodic but reflect sustained underlying trends.&lt;/p&gt;
+&lt;p&gt;Table 8: Regional consistency indicator (Trend score) for males&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Region&lt;/th&gt;
+&lt;th&gt;2015&lt;/th&gt;
+&lt;th&gt;2016&lt;/th&gt;
+&lt;th&gt;2017&lt;/th&gt;
+&lt;th&gt;2018&lt;/th&gt;
+&lt;th&gt;2019&lt;/th&gt;
+&lt;th&gt;2020&lt;/th&gt;
+&lt;th&gt;2021&lt;/th&gt;
+&lt;th&gt;2022&lt;/th&gt;
+&lt;th&gt;2023&lt;/th&gt;
+&lt;th&gt;2024&lt;/th&gt;
+&lt;th&gt;2025&lt;/th&gt;
+&lt;th&gt;Ranking&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Northeast&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;North&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-2.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Central-West&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-2.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Southeast&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;-5.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;South&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;0.0&lt;/td&gt;
+&lt;td&gt;1.0&lt;/td&gt;
+&lt;td&gt;-1.0&lt;/td&gt;
+&lt;td&gt;4.0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;These findings underscore the importance of region-specific policy
+interventions, as national averages may obscure critical local dynamics.
+Moreover, the coexistence of high levels and high volatility in certain
+states points to the need for improved data quality and reporting
+systems, as well as targeted prevention strategies that address the
+structural determinants of sexual violence.&lt;/p&gt;
+&lt;p&gt;The spatial distribution of Local Indicators of Spatial Association
+(LISA), presented in Figure 1 and Figure 2, provides a refined
+perspective on the geographic structure of sexual violence in Brazil by
+identifying statistically significant local clusters and spatial
+outliers.&lt;/p&gt;
+&lt;p&gt;For female victimization (Figure 1), the results reveal a persistent and
+geographically coherent pattern of spatial clustering over time.
+High-High (HH) clusters &amp;mdash; representing spatial concentrations of
+elevated rates surrounded by similarly high values &amp;mdash; are predominantly
+located in the North and Central-West regions. This pattern remains
+remarkably stable throughout the study period, suggesting the presence
+of deeply rooted structural determinants driving the spatial
+concentration of sexual violence. States such as Mato Grosso do Sul
+(MS), Rondônia (RO), and parts of the Amazon region consistently appear
+within these high-risk clusters, reinforcing the interpretation of
+spatial persistence rather than random fluctuation.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34; srcset=&#34;
+               /post/crimes_estupro/images/clipboard-4194439002_hu7ab7a0aca7b87ce0ab9dc2341cd4479f_74093_6787133469e2a6d835b6d327c10f7f90.webp 400w,
+               /post/crimes_estupro/images/clipboard-4194439002_hu7ab7a0aca7b87ce0ab9dc2341cd4479f_74093_42ee30802b6dc5b42f79ee32656995b9.webp 760w,
+               /post/crimes_estupro/images/clipboard-4194439002_hu7ab7a0aca7b87ce0ab9dc2341cd4479f_74093_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://henriqueest.github.io/post/crimes_estupro/images/clipboard-4194439002_hu7ab7a0aca7b87ce0ab9dc2341cd4479f_74093_6787133469e2a6d835b6d327c10f7f90.webp&#34;
+               width=&#34;508&#34;
+               height=&#34;747&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;em&gt;Figure 1: Local Indicators of
+Spatial Association (LISA) considering rape rates of female victims.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;In contrast, Low-Low (LL) clusters are more frequently observed in
+portions of the Northeast and Southeast regions, indicating areas where
+relatively low victimization rates are spatially reinforced by
+neighboring units with similarly low levels. This spatial configuration
+suggests the existence of protective or mitigating regional dynamics,
+potentially associated with differences in institutional capacity,
+social policies, or reporting practices.&lt;/p&gt;
+&lt;p&gt;Beyond these core clusters, the presence of High-Low (HL) and Low-High
+(LH) spatial outliers provides additional insight into localized
+anomalies. HL configurations &amp;mdash; high-rate states surrounded by low-rate
+neighbors &amp;mdash; are indicative of isolated hotspots that do not conform to
+broader regional trends, while LH patterns may signal areas of relative
+resilience embedded within high-risk regions. Although less frequent,
+these outliers are critical for identifying localized deviations that
+may be driven by specific institutional, demographic, or socioeconomic
+factors.&lt;/p&gt;
+&lt;p&gt;From a temporal perspective, the evolution of LISA clusters for females
+suggests a combination of persistence and episodic disruption. Notably,
+the period around 2020 exhibits a partial fragmentation of previously
+stable clusters, likely reflecting the impact of the COVID-19 pandemic
+on both the incidence and reporting of sexual violence. This disruption
+is followed by a reconfiguration and, in several cases, a re-emergence
+of prior clustering patterns in subsequent years (2021&amp;ndash;2025),
+reinforcing the hypothesis that the observed spatial structures are
+fundamentally structural rather than transient.&lt;/p&gt;
+&lt;p&gt;The LISA results for male victimization (Figure 2) exhibit both
+similarities and important distinctions when compared to the female
+patterns. While the overall intensity and spatial extent of clusters are
+considerably reduced &amp;mdash; consistent with the lower magnitude of male
+victimization rates &amp;mdash; the geographic distribution of clusters
+partially mirrors that observed among females. In particular, the
+Central-West region again emerges as a focal point of High-High
+clustering, suggesting that shared structural factors influence the
+spatial distribution of sexual violence across genders.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  &gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34; srcset=&#34;
+               /post/crimes_estupro/images/clipboard-3333573559_hu5e6d708ae408622dbf91346047d74871_80558_65cee24ae07ddff088582ff063c53294.webp 400w,
+               /post/crimes_estupro/images/clipboard-3333573559_hu5e6d708ae408622dbf91346047d74871_80558_7ca40686e27d001169b33f25133510af.webp 760w,
+               /post/crimes_estupro/images/clipboard-3333573559_hu5e6d708ae408622dbf91346047d74871_80558_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://henriqueest.github.io/post/crimes_estupro/images/clipboard-3333573559_hu5e6d708ae408622dbf91346047d74871_80558_65cee24ae07ddff088582ff063c53294.webp&#34;
+               width=&#34;548&#34;
+               height=&#34;760&#34;
+               loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;/figure&gt;
+&lt;em&gt;Figur 2: Local Indicators of
+Spatial Association (LISA) considering rape rates of male victims.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;However, male LISA patterns are characterized by greater spatial
+fragmentation and temporal instability. High-High clusters appear less
+consistently across years, and transitions between cluster types are
+more frequent. This volatility may reflect a combination of smaller case
+numbers, higher sensitivity to reporting fluctuations, and potentially
+greater underreporting among male victims. Consequently, while the
+spatial signal remains detectable, it is comparatively weaker and less
+stable.&lt;/p&gt;
+&lt;p&gt;Another notable feature of the male LISA maps is the more frequent
+occurrence of non-significant spatial patterns, indicating that, in many
+regions, local spatial autocorrelation is not strong enough to form
+statistically robust clusters. This contrasts with the more clearly
+defined clustering observed for females and further emphasizes the
+gendered nature of spatial dynamics in sexual violence.&lt;/p&gt;
+&lt;p&gt;Taken together, the LISA analyses highlight three central findings.
+First, there is clear evidence of spatial dependence in the distribution
+of sexual violence, particularly among females, with well-defined and
+persistent clusters in specific regions. Second, these spatial patterns
+are not static but exhibit periods of disruption and reorganization,
+reflecting the influence of external shocks such as the COVID-19
+pandemic. Third, while male victimization shares some spatial
+characteristics with female patterns, it is marked by lower intensity,
+greater instability, and weaker spatial autocorrelation.&lt;/p&gt;
+&lt;p&gt;These results underscore the importance of incorporating spatially
+explicit approaches in the analysis of sexual violence. The
+identification of persistent high-risk clusters points to the need for
+geographically targeted public policies, while the detection of spatial
+outliers highlights the relevance of localized interventions. Moreover,
+the differences observed between male and female patterns reinforce the
+necessity of gender-sensitive analytical frameworks that account for
+both shared and distinct underlying mechanisms.&lt;/p&gt;
+&lt;h1 id=&#34;conclusions&#34;&gt;Conclusions&lt;/h1&gt;
+&lt;p&gt;This study provides a comprehensive assessment of rape victimization
+patterns in Brazil over a ten-year period, highlighting substantial
+spatial and temporal heterogeneity across Federative Units and regions.
+The evidence consistently demonstrates that the North and Central-West
+regions concentrate the highest levels of vulnerability, particularly
+among females, while the Southeast and South exhibit comparatively
+lower, albeit not negligible, rates.&lt;/p&gt;
+&lt;p&gt;A key contribution of this analysis lies in the integration of magnitude
+and directionality measures. While raw rates and smoothed averages
+reveal the scale and distribution of the phenomenon, the consistency
+indicators offer critical insights into the persistence of trends. The
+results suggest that increases in victimization are not merely sporadic
+but, in several cases, reflect sustained trajectories, especially in
+specific states and regions.&lt;/p&gt;
+&lt;p&gt;Moreover, the findings reinforce the strongly gendered nature of sexual
+violence, with female victimization rates substantially exceeding those
+of males across all contexts. Nevertheless, the presence of similar
+spatial patterns in male victimization indicates that broader structural
+and regional factors &amp;mdash; such as socioeconomic conditions, institutional
+capacity, and reporting practices &amp;mdash; play a significant role in shaping
+these outcomes.&lt;/p&gt;
+&lt;p&gt;The incorporation of Local Indicators of Spatial Association (LISA)
+further strengthens the analytical framework by explicitly capturing
+localized spatial dependence. The LISA results reveal the existence of
+statistically significant and persistent spatial clusters, particularly
+High-High configurations in the North and Central-West regions,
+indicating that elevated victimization rates are not randomly
+distributed but spatially concentrated. Conversely, Low-Low clusters
+observed in parts of the Northeast and Southeast reinforce the presence
+of geographically structured areas of lower vulnerability.&lt;/p&gt;
+&lt;p&gt;Importantly, the spatial patterns identified through LISA exhibit a high
+degree of temporal persistence, suggesting that the geographic
+concentration of sexual violence is driven by structural rather than
+transitory factors. Although temporary disruptions &amp;mdash; especially during
+the COVID-19 period &amp;mdash; led to partial fragmentation of clusters, the
+subsequent re-emergence of similar spatial configurations underscores
+the resilience of these underlying spatial processes.&lt;/p&gt;
+&lt;p&gt;For male victimization, the LISA analysis reveals weaker and more
+fragmented spatial autocorrelation, reflecting both the lower magnitude
+of rates and potential issues related to underreporting. Nonetheless,
+the partial overlap in spatial clustering between male and female
+patterns suggests that common regional determinants continue to play a
+relevant role across genders.&lt;/p&gt;
+&lt;p&gt;The observed volatility in certain states also raises important concerns
+regarding data quality and reporting consistency. Abrupt fluctuations
+may reflect changes in institutional practices, awareness campaigns, or
+access to reporting mechanisms, rather than actual variations in
+incidence. Therefore, strengthening data systems and standardizing
+reporting procedures are essential steps toward more accurate monitoring
+and effective policy design.&lt;/p&gt;
+&lt;p&gt;From a policy perspective, the results underscore the inadequacy of
+uniform national strategies. Instead, targeted interventions tailored to
+regional specificities are required, particularly in high-vulnerability
+areas. Preventive measures should be complemented by investments in
+victim support services, institutional strengthening, and public
+awareness initiatives. The identification of persistent spatial clusters
+further emphasizes the need for geographically focused policies capable
+of addressing localized risk environments.&lt;/p&gt;
+&lt;p&gt;In conclusion, this study advances the empirical understanding of sexual
+violence in Brazil by combining multiple analytical dimensions and
+highlighting the importance of regional heterogeneity and spatial
+dependence. The integration of LISA-based evidence demonstrates that
+sexual violence is not only unevenly distributed but also spatially
+structured in a persistent manner. Future research should explore causal
+determinants and incorporate socioeconomic and institutional variables
+to further elucidate the mechanisms underlying the observed spatial
+patterns.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Análise de dados de COVID-19 da PNAD-Contínua usando o pacote sqldf</title>
       <link>https://henriqueest.github.io/post/albert-einstein/</link>
       <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
