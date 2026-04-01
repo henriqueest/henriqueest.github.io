@@ -10,6 +10,9 @@ main:
   - name: Publications
     url: '#publications'
     weight: 50
+  - name: Ipea
+    url: '#ipea'
+    weight: 50
   - name: Courses
     url: courses/
     weight: 60

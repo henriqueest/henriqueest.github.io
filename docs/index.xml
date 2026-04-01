@@ -829,34 +829,9 @@ dados_final %&amp;gt;%
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
       <guid>https://henriqueest.github.io/post/crimes_estupro/</guid>
       <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
-&lt;p&gt;This study examines the temporal and spatial dynamics of rape
-victimization rates in Brazil between 2015 and 2025, disaggregated by
-sex and Federative Units. Using standardized rates per $100,000$
-inhabitants, the analysis integrates descriptive statistics, three-year
-weighted moving averages, consistency indicators, and Local Indicators
-of Spatial Association (LISA) to identify structural patterns, temporal
-persistence, and localized spatial dependence. The results reveal
-pronounced regional disparities, with the North and Central-West regions
-consistently exhibiting the highest levels of female victimization. The
-LISA analysis further demonstrates that these elevated rates are not
-randomly distributed but form statistically significant and persistent
-High-High spatial clusters, indicating strong geographic concentration.
-Conversely, Low-Low clusters observed in parts of the Northeast and
-Southeast suggest spatially structured areas of lower vulnerability.
-Although male victimization rates are substantially lower, partially
-similar spatial patterns emerge, albeit with weaker and more fragmented
-spatial autocorrelation. The findings also indicate that, despite
-short-term fluctuations &amp;mdash; particularly during the COVID-19 period &amp;mdash;
-several states exhibit persistent upward trends, reinforcing the
-interpretation of structural rather than episodic dynamics. The
-temporary disruption and subsequent reconfiguration of spatial clusters
-further highlight the resilience of underlying spatial processes.
-Overall, the combined use of temporal and spatial analytical tools
-provides a more nuanced understanding of sexual violence in Brazil,
-emphasizing the coexistence of regional inequality, spatial dependence,
-and trend persistence. These findings underscore the need for
-geographically targeted public policies and improvements in data quality
-and reporting systems.&lt;/p&gt;
+&lt;p&gt;This study examines the temporal and spatial dynamics of rape victimization rates in Brazil between 2015 and 2025, disaggregated by sex and Federative Units. Using standardized rates per $100,000$ inhabitants, the analysis integrates descriptive statistics, three-year weighted moving averages, consistency indicators, and Local Indicators of Spatial Association (LISA) to identify structural patterns, temporal persistence, and localized spatial dependence. The results reveal pronounced regional disparities, with the North and Central-West regions consistently exhibiting the highest levels of female victimization. The LISA analysis further demonstrates that these elevated rates are not randomly distributed but form statistically significant and persistent High-High spatial clusters, indicating strong geographic concentration. Conversely, Low-Low clusters observed in parts of the Northeast and Southeast suggest spatially structured areas of lower vulnerability. Although male victimization rates are substantially lower, partially similar spatial patterns emerge, albeit with weaker and more fragmented spatial autocorrelation. The findings also indicate that, despite short-term fluctuations &amp;mdash; particularly during the COVID-19 period &amp;mdash; several states exhibit persistent upward trends, reinforcing the
+interpretation of structural rather than episodic dynamics. The temporary disruption and subsequent reconfiguration of spatial clusters further highlight the resilience of underlying spatial processes. Overall, the combined use of temporal and spatial analytical tools provides a more nuanced understanding of sexual violence in Brazil, emphasizing the coexistence of regional inequality, spatial dependence, and trend persistence. These findings underscore the need for
+geographically targeted public policies and improvements in data quality and reporting systems.&lt;/p&gt;
 &lt;h4 id=&#34;keywords&#34;&gt;Keywords&lt;/h4&gt;
 &lt;h4 id=&#34;sexual-violence-spatial-autocorrelation-local-morans-i-spatial-clusters-brazil&#34;&gt;sexual violence; spatial autocorrelation; Local Moran&amp;rsquo;s I; spatial clusters; Brazil.&lt;/h4&gt;
 &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
@@ -4161,12 +4136,66 @@ patterns.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Boletim de Análise Político-Institucional</title>
+      <link>https://henriqueest.github.io/ipea/bapi/</link>
+      <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/ipea/bapi/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;bapi.pdf&#34;&gt;Baixar PDF&lt;/a&gt;&lt;/p&gt;
+&lt;iframe src=&#34;bapi.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;</description>
+    </item>
+    
+    <item>
       <title>Dados de renda por sexo e cor/raça PNAD-Contínua</title>
       <link>https://henriqueest.github.io/post/pnad-continua/</link>
       <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
       <guid>https://henriqueest.github.io/post/pnad-continua/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;Projeto_Pesquisa_ABNT_Henrique.pdf&#34;&gt;Baixar PDF&lt;/a&gt;&lt;/p&gt;
 &lt;iframe src=&#34;Projeto_Pesquisa_ABNT_Henrique.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;</description>
+    </item>
+    
+    <item>
+      <title>Dados Nacionais de Segurança Pública 2022-2023</title>
+      <link>https://henriqueest.github.io/ipea/seguranca/</link>
+      <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/ipea/seguranca/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;seguranca.pdf&#34;&gt;Baixar PDF&lt;/a&gt;&lt;/p&gt;
+&lt;iframe src=&#34;seguranca.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;</description>
+    </item>
+    
+    <item>
+      <title>Dinâmica dos Homicídios na Região Norte do Brasil</title>
+      <link>https://henriqueest.github.io/ipea/dinamica/</link>
+      <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/ipea/dinamica/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;dinamica.pdf&#34;&gt;Baixar PDF&lt;/a&gt;&lt;/p&gt;
+&lt;iframe src=&#34;dinamica.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;</description>
+    </item>
+    
+    <item>
+      <title>Natureza e Quantidade de Drogas Aprrendidas nos Processos dos Tribunais Estaduais de Justiça Comum</title>
+      <link>https://henriqueest.github.io/ipea/comumri/</link>
+      <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/ipea/comumri/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;comumRI.pdf&#34;&gt;Baixar PDF&lt;/a&gt;&lt;/p&gt;
+&lt;iframe src=&#34;comumRI.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;</description>
+    </item>
+    
+    <item>
+      <title>Perfil do Processado e Produção de Provas nas Ações Criminais por Tráfico de Drogas</title>
+      <link>https://henriqueest.github.io/ipea/processadotf/</link>
+      <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/ipea/processadotf/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;processadoTF.pdf&#34;&gt;Baixar PDF&lt;/a&gt;&lt;/p&gt;
+&lt;iframe src=&#34;processadoTF.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;</description>
+    </item>
+    
+    <item>
+      <title>Relatório Analítico Nacional dos Tribunais Estaduais de Justiça Comum</title>
+      <link>https://henriqueest.github.io/ipea/comumrl/</link>
+      <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/ipea/comumrl/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;relatoriocomum.pdf&#34;&gt;Baixar PDF&lt;/a&gt;&lt;/p&gt;
+&lt;iframe src=&#34;relatoriocomum.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;</description>
     </item>
     
     <item>

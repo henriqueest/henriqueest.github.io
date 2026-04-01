@@ -7,38 +7,17 @@ editor: visual
 editor_options: 
   markdown: 
     wrap: 72
+
+header-includes:
+  - \usepackage{ragged2e}
+  - \justifying
 ---
 
 # Abstract
 
-This study examines the temporal and spatial dynamics of rape
-victimization rates in Brazil between 2015 and 2025, disaggregated by
-sex and Federative Units. Using standardized rates per \$100,000\$
-inhabitants, the analysis integrates descriptive statistics, three-year
-weighted moving averages, consistency indicators, and Local Indicators
-of Spatial Association (LISA) to identify structural patterns, temporal
-persistence, and localized spatial dependence. The results reveal
-pronounced regional disparities, with the North and Central-West regions
-consistently exhibiting the highest levels of female victimization. The
-LISA analysis further demonstrates that these elevated rates are not
-randomly distributed but form statistically significant and persistent
-High-High spatial clusters, indicating strong geographic concentration.
-Conversely, Low-Low clusters observed in parts of the Northeast and
-Southeast suggest spatially structured areas of lower vulnerability.
-Although male victimization rates are substantially lower, partially
-similar spatial patterns emerge, albeit with weaker and more fragmented
-spatial autocorrelation. The findings also indicate that, despite
-short-term fluctuations --- particularly during the COVID-19 period ---
-several states exhibit persistent upward trends, reinforcing the
-interpretation of structural rather than episodic dynamics. The
-temporary disruption and subsequent reconfiguration of spatial clusters
-further highlight the resilience of underlying spatial processes.
-Overall, the combined use of temporal and spatial analytical tools
-provides a more nuanced understanding of sexual violence in Brazil,
-emphasizing the coexistence of regional inequality, spatial dependence,
-and trend persistence. These findings underscore the need for
-geographically targeted public policies and improvements in data quality
-and reporting systems.
+This study examines the temporal and spatial dynamics of rape victimization rates in Brazil between 2015 and 2025, disaggregated by sex and Federative Units. Using standardized rates per \$100,000\$ inhabitants, the analysis integrates descriptive statistics, three-year weighted moving averages, consistency indicators, and Local Indicators of Spatial Association (LISA) to identify structural patterns, temporal persistence, and localized spatial dependence. The results reveal pronounced regional disparities, with the North and Central-West regions consistently exhibiting the highest levels of female victimization. The LISA analysis further demonstrates that these elevated rates are not randomly distributed but form statistically significant and persistent High-High spatial clusters, indicating strong geographic concentration. Conversely, Low-Low clusters observed in parts of the Northeast and Southeast suggest spatially structured areas of lower vulnerability. Although male victimization rates are substantially lower, partially similar spatial patterns emerge, albeit with weaker and more fragmented spatial autocorrelation. The findings also indicate that, despite short-term fluctuations --- particularly during the COVID-19 period --- several states exhibit persistent upward trends, reinforcing the
+interpretation of structural rather than episodic dynamics. The temporary disruption and subsequent reconfiguration of spatial clusters further highlight the resilience of underlying spatial processes. Overall, the combined use of temporal and spatial analytical tools provides a more nuanced understanding of sexual violence in Brazil, emphasizing the coexistence of regional inequality, spatial dependence, and trend persistence. These findings underscore the need for
+geographically targeted public policies and improvements in data quality and reporting systems.
 
 #### Keywords
 
