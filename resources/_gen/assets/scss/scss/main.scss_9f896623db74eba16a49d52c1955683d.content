@@ -9556,3 +9556,10 @@ div.chart {
 
 .portrait-title h2 {
   font-size: 1.5rem; }
+
+body {
+  background-color: #f5f5f5; }
+
+scss
+body {
+  background-color: #f5f5f5; }
