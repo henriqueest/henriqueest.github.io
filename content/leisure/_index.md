@@ -63,7 +63,7 @@ draft: false  <-- Garanta que esteja false ou remova a linha
 <div class="gallery">
 
   <!-- IMAGENS -->
-  <img src="/media/albums/fotos/pescaria/imag9.png" onclick="openModal(this.src)">
+  <img src="/media/albums/fotos/pescaria/img9.png" onclick="openModal(this.src)">
 
 </div>
 
