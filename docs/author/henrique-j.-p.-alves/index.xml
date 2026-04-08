@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Henrique J. P. Alves | Henrique JP Alves</title>
+    <link>https://henriqueest.github.io/author/henrique-j.-p.-alves/</link>
+      <atom:link href="https://henriqueest.github.io/author/henrique-j.-p.-alves/index.xml" rel="self" type="application/rss+xml" />
+    <description>Henrique J. P. Alves</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Fri, 09 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://henriqueest.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <title>Henrique J. P. Alves</title>
+      <link>https://henriqueest.github.io/author/henrique-j.-p.-alves/</link>
+    </image>
+    
+    <item>
+      <title>The COVID-19 pandemic in Brazil: an application of the k-means clustering method</title>
+      <link>https://henriqueest.github.io/publication/journal-article-3/</link>
+      <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/publication/journal-article-3/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Proposition of new alternative tests adapted to the traditional T2 test</title>
+      <link>https://henriqueest.github.io/publication/journal-article/</link>
+      <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/publication/journal-article/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Heart Rate Variability in Shift Workers: Responses to Orthostatism and Relationships with Anthropometry, Body Composition, and Blood Pressure</title>
+      <link>https://henriqueest.github.io/publication/journal-article-2/</link>
+      <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
+      <guid>https://henriqueest.github.io/publication/journal-article-2/</guid>
+      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
+  &lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

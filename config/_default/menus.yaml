@@ -1,0 +1,24 @@
+# Navigation Links
+#   To link a homepage widget, specify the URL as a hash `#` followed by the filename of the
+#     desired widget in your `content/home/` folder.
+#   The weight parameter defines the order that the links will appear in.
+
+main:
+  - name: Posts
+    url: '#posts'
+    weight: 60
+  - name: Publications
+    url: '#publications'
+    weight: 50
+  - name: Ipea
+    url: '#ipea'
+    weight: 50
+  - name: Courses
+    url: courses/
+    weight: 60
+  - name: Leisures
+    url: leisure/
+    weight: 60
+  - name: Contact
+    url: '#contact'
+    weight: 70

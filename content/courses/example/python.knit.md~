@@ -1,0 +1,95 @@
+---
+title: 'Pacote ggplot2: um curso introdutório'
+date: '2022-03-21'
+type: book
+output:
+  html_document:
+    df_print: paged
+weight: 20
+---
+
+Construído baseado nos pacotes tidyverse e ggplot2 do R.
+
+<!--more-->
+
+{{< icon name="clock" pack="fas" >}} 2 horas por dia, por 2 dias
+
+<style>
+body {
+  text-align: justify;
+  font-size: 12pt;
+  }
+code.r{
+  font-size: 10px;
+}
+pre {
+  font-size: 12px
+}
+</style>
+
+
+
+## **PRIMEIRA PARTE**
+
+Primeiramente, todo e qualquer resultado estatístico obtido em qualquer software estatístico deve ser bem compreendido antes de sua apresentação. As saídas gráficas desses resultados compreendem uma importante ferramenta resumidora do comportamento dos dados amostrais observados e até mesmo de poulações inteiras, envolvendo diversos fenômenos que podem ser compreendidos usando essas ferramentas estatísticas. As saídas gráficas do **R** e do **rstudio** não são diferentes. 
+
+Aqui nessas notas nós poderíamos simplesmente selecionar alguns pacotes disponíveis no **rstudio** que fornecem uma guia interativa para a produção de gráficos no pacote **ggplot2** e apresentá-los, tais como os pacotes **esquisse** e **ggplotgui**. Mas esse não é o nosso objetivo. 
+
+Portanto, nós iremos apresentar o pacote **ggplot2** de forma lenta e gradativa, apresentando o seu diferencial com relação a outros pacotes e também outras funções de saídas gráficas do **R** e do **rstudio**, além de mostrar o passo a passo de como se dá a construção de saídas gráficas desse pacote no **rstudio**, entendo suas funções internas e seus argumentos.
+
+Antes de iniciarmos a apresentação desse pacote, apresentamos um conjunto de funções que verificrá se os pacotes aqui necessários estão instalados no **rstudio** e, em seguida, fará o carregamento desses pacotes no mesmo.  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
