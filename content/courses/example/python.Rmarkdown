@@ -41,16 +41,11 @@ Portanto, nós iremos apresentar o pacote **ggplot2** de forma lenta e gradativa
 
 Antes de iniciarmos a apresentação desse pacote, apresentamos um conjunto de funções que verificrá se os pacotes aqui necessários estão instalados no **rstudio** e, em seguida, fará o carregamento desses pacotes no mesmo.  
 
-```{r , echo = TRUE, message = FALSE, warning = FALSE}
-packages <- c("dplyr","tidyverse","lattice",  "rgdal", "rgeos", "maptools", "plyr", "sf", "covid19br", "RColorBrewer")
+```{r, echo = TRUE, message = FALSE, warning = FALSE}
+# Lista de pacotes necessários para a análise espacial e manipulação
+packages <- c("dplyr", "tidyverse", "lattice", "sf", "covid19br", "RColorBrewer")
 
-# instala os pacotes que não estão instalados
-installed_packages <- packages %in% rownames(installed.packages())
-if (any(installed_packages == FALSE)) {
-  install.packages(packages[!installed_packages])
-}
-
-# carrega os pacotes
+# Apenas carrega os pacotes (certifique-se de que já estão instalados no seu RStudio)
 invisible(lapply(packages, library, character.only = TRUE))
 ```
 

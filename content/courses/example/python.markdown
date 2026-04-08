@@ -40,16 +40,11 @@ Portanto, nós iremos apresentar o pacote **ggplot2** de forma lenta e gradativa
 Antes de iniciarmos a apresentação desse pacote, apresentamos um conjunto de funções que verificrá se os pacotes aqui necessários estão instalados no **rstudio** e, em seguida, fará o carregamento desses pacotes no mesmo.  
 
 
-```r
-packages <- c("dplyr","tidyverse","lattice",  "rgdal", "rgeos", "maptools", "plyr", "sf", "covid19br", "RColorBrewer")
+``` r
+# Lista de pacotes necessários para a análise espacial e manipulação
+packages <- c("dplyr", "tidyverse", "lattice", "sf", "covid19br", "RColorBrewer")
 
-# instala os pacotes que não estão instalados
-installed_packages <- packages %in% rownames(installed.packages())
-if (any(installed_packages == FALSE)) {
-  install.packages(packages[!installed_packages])
-}
-
-# carrega os pacotes
+# Apenas carrega os pacotes (certifique-se de que já estão instalados no seu RStudio)
 invisible(lapply(packages, library, character.only = TRUE))
 ```
 
@@ -60,7 +55,7 @@ Não é incomum em qualquer análise estatítica de um conjunto de dados, nos de
 Vamos agora exemplificar como construir um histograma e um gráfico de barras utilizando as respectivas funções disponíveis na base do **R** e também o pacote mencionado utilizando o conjunto de dados [mtcars](https://gist.github.com/seankross/a412dfbd88b3db70b74b) disponível no **R**. Os dados foram coletados da revista "Motor Trend US (1974)" e diz respeito ao consumo de combustível e também outros 10 aspectos de design e desempenho de 32 modelos de automóveis compreendidos entre os anos de 1973 e 1974. 
 
 
-```r
+``` r
 mtcars <- within(mtcars, {
    vs <- factor(vs, labels = c("V", "S"))
    am <- factor(am, labels = c("automatica", "manual"))
@@ -92,15 +87,15 @@ summary(mtcars)
 Vamos escolher a variável mpg (milhas percorrida por galão de combustível), que é de natureza numérica e contínua para gerarmos um histograma (frequência absoluta) utilizando a  função *hist* da base do **R** e também utilizando o pacote **lattice**.
 
 
-```r
+``` r
 hist(mtcars$mpg, col = "lightblue", main = "Função hist (base)", 
      xlab = "Milhas por galão (mpg)", ylab = "Frequência absoluta")
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-2-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
-```r
+``` r
 library(lattice)
 histogram(~mpg,data=mtcars,
        type ="count",
@@ -111,12 +106,12 @@ histogram(~mpg,data=mtcars,
        breaks = 5)
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-3-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 Vamos agora utilizar a variável cyl (número de cilindros) para construírmos um gráfico de barras (frequência absoluta) utilizando a função *barplot* da base do **R** e também o pacote **lattice**.
 
 
-```r
+``` r
 tab <- table(mtcars$cyl)
 tab
 ```
@@ -127,14 +122,14 @@ tab
 ## 11  7 14
 ```
 
-```r
+``` r
 barplot(tab, col = "lightblue", main = "Função barplot (base)", xlab = "Número de cilindros por motor (cyl)", ylab = "Frequência absoluta")
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-4-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
-```r
+``` r
 library(lattice)
 tabela <- xtabs(~cyl, data = mtcars)
 tabela
@@ -146,7 +141,7 @@ tabela
 ## 11  7 14
 ```
 
-```r
+``` r
 barchart(tabela,
          horizontal = FALSE,
          main = "Função barchart (lattice)",
@@ -155,7 +150,7 @@ barchart(tabela,
          col = "lightblue")
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-5-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 Bastam esses dois exemplos para percebermos algumas situações: para cada tipo de gráfico escolhido de acordo com a natureza da variável, o conjunto de linhas de comandos necessários para gerá-los no **R** é único e particular; é necessário também a utilização de funções adicionais (table) e funções específicas do pacote **lattice** (xtabs) para a construção dos gráficos de barras. Essas situações forçam o usuário a ter conhecimento de cada uma dessas funções particulares e também seus argumentos. 
 
@@ -192,23 +187,23 @@ Vamos agora realizar essa construção passo a passo no **R**. Os dados devem se
 A primeira camada (layer) necessária para a criação de gráficos no **ggplot2** é dada pelo comando ggplot(dados). Neste comando, estamos criando a área onde o gráfico será construído e, ainda, informando ao **ggplot2** qual o conjunto de dados que contém as variáveis de interesse. 
 
 
-```r
+``` r
 ggplot(mtcars)
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-6-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 Nós notamos que é criado uma área (em cinza) onde será construído o gráfico. Essa área ainda não contém nenhum formato geométrico (geom\_tipo) como, por exemplo, pontos, barras, caixas, etc. Falta também a informação da estética do gráfico desejado juntamente com as variáveis de interesse aes(x,y,cores). Esse é o próximo passo. Note também que a cada acréscimo de camada utilzamos o sinal `+`. 
 
 A variável mpg já foi apresentada e utilizada nos gráficos anteriores. A variável disp significa quantas cilindradas o motor do veículo possui. Note que ainda não escolhemos a cor dos pontos do gráfico nem rotulamos seus eixos. Nosso gráfico ainda está incompleto.
 
 
-```r
+``` r
 ggplot(mtcars) +
   geom_point(mapping = aes(x= disp, y=mpg))
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-7-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 No pacote **gplot2** nós também temos a liberdade de escolher a escala de cores que iram compor o nosso gráfico. Para isso temos três argumentos: color e colour, que se diferem devido a lingua ingleza e fill. Os dois primeiros são utilizados em entes geométricos que não possuem área, tais como pontos e linhas, sendo necessário utilizar apenas um deles e a escolha fica a critério do usuário. Já o comando fill é utilizado naquele ente geométrico que possui área, sendo responsável pelo preenchimento dessa área com a cor desejada. Ambos devem ser utilizados junto ao comando geom\_tipo. 
 
@@ -216,21 +211,21 @@ Vamos agora ver dois exemplos de utilização desses argumentos.
 
 
 
-```r
+``` r
  ggplot(mtcars) +
   geom_point(mapping = aes(x= disp, y=mpg, color=as.factor(am))) +
   labs(x="Cilindradas", y="Milhas/galão")
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-8-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
-```r
+``` r
 ggplot(mtcars) +
   geom_point(mapping = aes(x= disp, y=mpg), color=c("red")) +
   labs(x="Cilindradas", y="Milhas/galão")
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-8-2.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-8-2.png" alt="" width="672" style="display: block; margin: auto;" />
 
 Nós notamos que se utilizarmos o argumento para a escolha das cores dentro da função aes, este deve estar relaciondo a alguma variável específica. No nosso exemplo, é o tipo de transmissão do carro a variável em questão. Caso esse argumento seja utilizado fora da função aes, nós temos a liberdade de escolha das cores, pois ela não estão relacionadas as variáveis em questão. 
 
@@ -239,7 +234,7 @@ Tente utilizar o argumento de cores relacionado a variávies fora da função ae
 Vamos agora apresentar um gráfico de barras onde o interesse é apresentar as frequências absolutas, relativas e percentual da quantidade de cilindros que o motor do carro possui (cyl) separados por tipo de transmissão (am) . 
 
 
-```r
+``` r
 ggplot(mtcars, aes(x = as.factor(cyl))) +
   geom_bar(aes(y = (..count..), fill=as.factor(am)), 
             position = "dodge", colour="black", alpha=0.45)+
@@ -255,9 +250,17 @@ ggplot(mtcars, aes(x = as.factor(cyl))) +
         panel.background = element_blank())
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-9-1.png" width="672" style="display: block; margin: auto;" />
+```
+## Warning: The dot-dot notation (`..count..`) was deprecated in ggplot2 3.4.0.
+## ℹ Please use `after_stat(count)` instead.
+## This warning is displayed once per session.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.
+```
 
-```r
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-9-1.png" alt="" width="672" style="display: block; margin: auto;" />
+
+``` r
 ggplot(mtcars, aes(x = as.factor(cyl))) +
   geom_bar(aes(y = (..count..)/sum(..count..), fill=as.factor(am)), 
             position = "dodge", colour="black", alpha=0.45)+
@@ -273,9 +276,9 @@ ggplot(mtcars, aes(x = as.factor(cyl))) +
         panel.background = element_blank()) 
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-9-2.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-9-2.png" alt="" width="672" style="display: block; margin: auto;" />
 
-```r
+``` r
 ggplot(mtcars, aes(x = as.factor(cyl))) +
   geom_bar(aes(y = (..count..)/sum(..count..)*100, fill=as.factor(am)), 
             position = "dodge", colour="black", alpha=0.45)+
@@ -291,12 +294,12 @@ ggplot(mtcars, aes(x = as.factor(cyl))) +
         panel.background = element_blank())
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-9-3.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-9-3.png" alt="" width="672" style="display: block; margin: auto;" />
 
 Vamos agora construir um gráfico do tipo boxplot utilizando o pacote **ggplot2**.
 
 
-```r
+``` r
  ggplot(mtcars) +
   geom_boxplot(aes(x = as.factor(cyl), y = mpg, fill=as.factor(am)), colour="brown", alpha=0.2) +
   labs(x = "Número de cilindros", y = "Milhas/galão", fill = "Tipo de transmissão") +
@@ -311,11 +314,11 @@ Vamos agora construir um gráfico do tipo boxplot utilizando o pacote **ggplot2*
         panel.background = element_blank())
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-10-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 
-```r
+``` r
  ggplot(mtcars) +
   geom_boxplot(aes(x = as.factor(cyl), y = mpg, fill=as.factor(am)), colour="brown", alpha=0.2) +
   labs(x = "Número de cilindros", y = "Milhas/galão", fill = "Tipo de transmissão") +
@@ -330,11 +333,11 @@ Vamos agora construir um gráfico do tipo boxplot utilizando o pacote **ggplot2*
         panel.background = element_blank()) 
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-11-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-11-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 
-```r
+``` r
  ggplot(mtcars) +
   geom_boxplot(aes(x = as.factor(cyl), y = mpg, fill=as.factor(am)), colour="brown", alpha=0.2) +
   labs(x = "Número de cilindros", y = "Milhas/galão") +
@@ -349,11 +352,11 @@ Vamos agora construir um gráfico do tipo boxplot utilizando o pacote **ggplot2*
         panel.background = element_blank()) 
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-12-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 
-```r
+``` r
  cor <- gray(0:2 / 2)
  ggplot(mtcars) +
   geom_boxplot(aes(x = as.factor(cyl), y = mpg, fill=as.factor(am)), colour="brown", 
@@ -371,13 +374,13 @@ Vamos agora construir um gráfico do tipo boxplot utilizando o pacote **ggplot2*
   scale_fill_manual(values=cor)
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-13-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 Vamos agora construir alguns histogramas com frequências absolutas, relativas e percentuais, nessa ordem. Note que o comando `bins` define o número de classes a ser escolhido. Neste exemplo escolhemos arbitrariamente `bins` igual a 5, mas o usuário pode fazer os cálculos manualmente e utilizá-lo. Nós também definimos a escala dos eixos `x` e `y` manualmente, através dos comandos `scale_x_continuous` e `scale_y_continuous`. 
 
 
 
-```r
+``` r
  ggplot(mtcars) +
   geom_histogram(aes(x = mpg, y = (..count..)/sum(..count..), fill=as.factor(am)), 
                  bins=5, colour="brown", alpha=0.2)+
@@ -395,11 +398,11 @@ Vamos agora construir alguns histogramas com frequências absolutas, relativas e
         panel.background = element_blank()) 
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-14-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 
-```r
+``` r
  ggplot(mtcars) +
   geom_histogram(aes(x = mpg, y = (..count..), fill=as.factor(am)), bins=5,  
                  colour="brown", alpha=0.2)+
@@ -417,11 +420,11 @@ Vamos agora construir alguns histogramas com frequências absolutas, relativas e
         panel.background = element_blank())
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-15-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 
-```r
+``` r
  ggplot(mtcars) +
   geom_histogram(aes(x = mpg, y = (..count..), fill=as.factor(am)), bins=5,  
                  colour="brown", alpha=0.2)+
@@ -439,13 +442,13 @@ Vamos agora construir alguns histogramas com frequências absolutas, relativas e
         panel.background = element_blank())
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-16-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 Antes de construírmos o próximo histograma, precisamos apresentar a função `facet` do ggplot2. Esta função permite a construção de gráficos em `facetas`. O que é isso? Suponha que estamos interessados em construírmos um histograma baseado no anteriormente apresentado. Mas o nosso interesse maior é apresentar um histograma individual para cada tipo de transmissão `am` considerando a variável contínua `mpg`. Abaixo apresentamos a construção deste histograma.
 
 
-```r
+``` r
  cor <- gray(0:1 / 2)
  ggplot(mtcars) +
   geom_histogram(aes(x = mpg, y = (..count..)/sum(..count..)*100, fill=as.factor(am)), 
@@ -467,13 +470,13 @@ Antes de construírmos o próximo histograma, precisamos apresentar a função `
         panel.background = element_blank())
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-17-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 Vamos agora apresentar um exemplo de como construir um gráfico de tendência destacando-se os pontos de dispersão dos dados.
 
 
 
-```r
+``` r
  ggplot(mtcars, aes(x = disp, y = mpg)) +
   geom_point(aes(colour=as.factor(am)), alpha=0.6, size=1.7)+
   geom_line(aes(colour=as.factor(am)), alpha=0.2, size=1.7, linetype=1)+
@@ -489,7 +492,15 @@ Vamos agora apresentar um exemplo de como construir um gráfico de tendência de
         panel.background = element_blank()) 
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" />
+```
+## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+## ℹ Please use `linewidth` instead.
+## This warning is displayed once per session.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.
+```
+
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-18-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 Como o usuário faria para construir estes histogramas e gráficos de tendência sem utilizar a classificação por níveis da variável **am**? A construção destes gráficos fica como exercício para o usuário.
 
@@ -517,41 +528,33 @@ O pacote **covid19br** foi criado por pesquisadores da UFMG e permite ao usuári
 Nós vamos aproveitar esse pacote para apresentarmos as funções do pacote **dplyr** e também construir gráficos com o pacote **ggplot2**.
 
 
-```r
+``` r
 data <- downloadCovid19("states")# dados por municípios brasileiros
 ```
 
 ```
-## Downloading COVID-19 data from the official Brazilian repository: https://covid.saude.gov.br/
+## Downloading COVID-19 data... please, be patient!
 ```
 
-```
-## Please, be patient...
-```
-
-```
-##  Done!
-```
-
-```r
+``` r
 glimpse(data)
 ```
 
 ```
-## Rows: 26,136
+## Rows: 31,428
 ## Columns: 12
-## $ region       <chr> "North", "North", "North", "North", "North", "North", "No~
-## $ state        <chr> "RO", "RO", "RO", "RO", "RO", "RO", "RO", "RO", "RO", "RO~
-## $ date         <date> 2020-02-25, 2020-02-26, 2020-02-27, 2020-02-28, 2020-02-~
-## $ epi_week     <int> 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11~
-## $ newCases     <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
-## $ accumCases   <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
-## $ newDeaths    <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
-## $ accumDeaths  <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
-## $ newRecovered <int> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
-## $ newFollowup  <int> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N~
-## $ pop          <dbl> 1777225, 1777225, 1777225, 1777225, 1777225, 1777225, 177~
-## $ state_code   <int> 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 1~
+## $ region       <chr> "North", "North", "North", "North", "North", "North", "No…
+## $ state        <chr> "RO", "AC", "AM", "RR", "PA", "AP", "TO", "MA", "PI", "CE…
+## $ date         <date> 2020-02-25, 2020-02-25, 2020-02-25, 2020-02-25, 2020-02-…
+## $ epi_week     <int> 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, …
+## $ newCases     <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
+## $ accumCases   <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
+## $ newDeaths    <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
+## $ accumDeaths  <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
+## $ newRecovered <int> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+## $ newFollowup  <int> NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+## $ pop          <dbl> 1777225, 881935, 4144597, 605761, 8602865, 845731, 157286…
+## $ state_code   <int> 11, 12, 13, 14, 15, 16, 17, 21, 22, 23, 24, 25, 26, 27, 2…
 ```
 
 Não se preocupe com a estrutura apresentada nesse conjunto de dados. Trata-se de um **tibble**, um data frame com algumas particularidades. Note que essas estrutura de data frame traz algumas informações, como a dimensão dos dados, o tipo de variável que está em cada uma das colunas (categórica, inteiro, caractere, etc.), entre outras. 
@@ -586,142 +589,163 @@ As funções do pacote **dplyr**.
 
 
 
-```r
+``` r
 filter(data, date >= "2022-02-20" & state == "SP" & epi_week == 8)
 ```
 
 ```
-##       region state       date epi_week newCases accumCases newDeaths
-## 1: Southeast    SP 2022-02-20        8     6424    4935771        26
-## 2: Southeast    SP 2022-02-21        8     2470    4938241        23
-## 3: Southeast    SP 2022-02-22        8    15999    4954240       310
-## 4: Southeast    SP 2022-02-23        8    15427    4969667       298
-## 5: Southeast    SP 2022-02-24        8    15228    4984895       303
-## 6: Southeast    SP 2022-02-25        8    14764    4999659       211
-## 7: Southeast    SP 2022-02-26        8    11290    5010949       211
-##    accumDeaths newRecovered newFollowup      pop state_code
-## 1:      163160           NA          NA 45919049         35
-## 2:      163183           NA          NA 45919049         35
-## 3:      163493           NA          NA 45919049         35
-## 4:      163791           NA          NA 45919049         35
-## 5:      164094           NA          NA 45919049         35
-## 6:      164305           NA          NA 45919049         35
-## 7:      164516           NA          NA 45919049         35
+##        region  state       date epi_week newCases accumCases newDeaths
+##        <char> <char>     <Date>    <int>    <int>      <int>     <int>
+##  1: Southeast     SP 2022-02-20        8     6424    4935771        26
+##  2: Southeast     SP 2022-02-21        8     2470    4938241        23
+##  3: Southeast     SP 2022-02-22        8    15999    4954240       310
+##  4: Southeast     SP 2022-02-23        8    15427    4969667       298
+##  5: Southeast     SP 2022-02-24        8    15228    4984895       303
+##  6: Southeast     SP 2022-02-25        8    14764    4999659       211
+##  7: Southeast     SP 2022-02-26        8    11290    5010949       211
+##  8: Southeast     SP 2023-02-19        8        0    6444454         0
+##  9: Southeast     SP 2023-02-20        8        0    6444454         0
+## 10: Southeast     SP 2023-02-21        8        0    6444454         0
+## 11: Southeast     SP 2023-02-22        8     3754    6448208        18
+## 12: Southeast     SP 2023-02-23        8     1594    6449802        14
+## 13: Southeast     SP 2023-02-24        8     2673    6452475        43
+## 14: Southeast     SP 2023-02-25        8        0    6452475         0
+##     accumDeaths newRecovered newFollowup      pop state_code
+##           <int>        <int>       <int>    <num>      <int>
+##  1:      163160           NA          NA 45919049         35
+##  2:      163183           NA          NA 45919049         35
+##  3:      163493           NA          NA 45919049         35
+##  4:      163791           NA          NA 45919049         35
+##  5:      164094           NA          NA 45919049         35
+##  6:      164305           NA          NA 45919049         35
+##  7:      164516           NA          NA 45919049         35
+##  8:      178840           NA          NA 45919049         35
+##  9:      178840           NA          NA 45919049         35
+## 10:      178840           NA          NA 45919049         35
+## 11:      178858           NA          NA 45919049         35
+## 12:      178872           NA          NA 45919049         35
+## 13:      178915           NA          NA 45919049         35
+## 14:      178915           NA          NA 45919049         35
 ```
 
-```r
+``` r
 arrange(data, state)
 ```
 
 ```
-##        region state       date epi_week newCases accumCases newDeaths
-##     1:  North    AC 2020-02-25        9        0          0         0
-##     2:  North    AC 2020-02-26        9        0          0         0
-##     3:  North    AC 2020-02-27        9        0          0         0
-##     4:  North    AC 2020-02-28        9        0          0         0
-##     5:  North    AC 2020-02-29        9        0          0         0
-##    ---                                                               
-## 26132:  North    TO 2022-10-15       41        0     344594         0
-## 26133:  North    TO 2022-10-16       42        0     344594         0
-## 26134:  North    TO 2022-10-17       42       19     344613         0
-## 26135:  North    TO 2022-10-18       42        0     344613         0
-## 26136:  North    TO 2022-10-19       42        0     344613         0
+##        region  state       date epi_week newCases accumCases newDeaths
+##        <char> <char>     <Date>    <int>    <int>      <int>     <int>
+##     1:  North     AC 2020-02-25        9        0          0         0
+##     2:  North     AC 2020-02-26        9        0          0         0
+##     3:  North     AC 2020-02-27        9        0          0         0
+##     4:  North     AC 2020-02-28        9        0          0         0
+##     5:  North     AC 2020-02-29        9        0          0         0
+##    ---                                                                
+## 31424:  North     TO 2023-04-29       17      277     367981         1
+## 31425:  North     TO 2023-04-30       18        0     367981         0
+## 31426:  North     TO 2023-05-01       18        0     367981         0
+## 31427:  North     TO 2023-05-02       18        0     367981         0
+## 31428:  North     TO 2023-05-03       18        0     367981         0
 ##        accumDeaths newRecovered newFollowup     pop state_code
+##              <int>        <int>       <int>   <num>      <int>
 ##     1:           0           NA          NA  881935         12
 ##     2:           0           NA          NA  881935         12
 ##     3:           0           NA          NA  881935         12
 ##     4:           0           NA          NA  881935         12
 ##     5:           0           NA          NA  881935         12
 ##    ---                                                        
-## 26132:        4205           NA          NA 1572866         17
-## 26133:        4205           NA          NA 1572866         17
-## 26134:        4205           NA          NA 1572866         17
-## 26135:        4205           NA          NA 1572866         17
-## 26136:        4205           NA          NA 1572866         17
+## 31424:        4239           NA          NA 1572866         17
+## 31425:        4239           NA          NA 1572866         17
+## 31426:        4239           NA          NA 1572866         17
+## 31427:        4239           NA          NA 1572866         17
+## 31428:        4239           NA          NA 1572866         17
 ```
 
-```r
+``` r
 select(data, region , date,  state, newCases, accumCases)
 ```
 
 ```
-##         region       date state newCases accumCases
-##     1:   North 2020-02-25    RO        0          0
-##     2:   North 2020-02-26    RO        0          0
-##     3:   North 2020-02-27    RO        0          0
-##     4:   North 2020-02-28    RO        0          0
-##     5:   North 2020-02-29    RO        0          0
-##    ---                                             
-## 26132: Midwest 2022-10-15    DF        0     839752
-## 26133: Midwest 2022-10-16    DF        0     839752
-## 26134: Midwest 2022-10-17    DF        0     839752
-## 26135: Midwest 2022-10-18    DF     2235     841987
-## 26136: Midwest 2022-10-19    DF       78     842065
+##         region       date  state newCases accumCases
+##         <char>     <Date> <char>    <int>      <int>
+##     1:   North 2020-02-25     RO        0          0
+##     2:   North 2020-02-25     AC        0          0
+##     3:   North 2020-02-25     AM        0          0
+##     4:   North 2020-02-25     RR        0          0
+##     5:   North 2020-02-25     PA        0          0
+##    ---                                              
+## 31424:   South 2023-05-03     RS        0    3027358
+## 31425: Midwest 2023-05-03     MS        0     611687
+## 31426: Midwest 2023-05-03     MT        0     882962
+## 31427: Midwest 2023-05-03     GO        0    1925303
+## 31428: Midwest 2023-05-03     DF        0     904980
 ```
 
-```r
+``` r
 mutate(data, rate_newcases = newCases/pop*100000)
 ```
 
 ```
-##         region state       date epi_week newCases accumCases newDeaths
-##     1:   North    RO 2020-02-25        9        0          0         0
-##     2:   North    RO 2020-02-26        9        0          0         0
-##     3:   North    RO 2020-02-27        9        0          0         0
-##     4:   North    RO 2020-02-28        9        0          0         0
-##     5:   North    RO 2020-02-29        9        0          0         0
-##    ---                                                                
-## 26132: Midwest    DF 2022-10-15       41        0     839752         0
-## 26133: Midwest    DF 2022-10-16       42        0     839752         0
-## 26134: Midwest    DF 2022-10-17       42        0     839752         0
-## 26135: Midwest    DF 2022-10-18       42     2235     841987         0
-## 26136: Midwest    DF 2022-10-19       42       78     842065         0
-##        accumDeaths newRecovered newFollowup     pop state_code rate_newcases
-##     1:           0           NA          NA 1777225         11      0.000000
-##     2:           0           NA          NA 1777225         11      0.000000
-##     3:           0           NA          NA 1777225         11      0.000000
-##     4:           0           NA          NA 1777225         11      0.000000
-##     5:           0           NA          NA 1777225         11      0.000000
-##    ---                                                                      
-## 26132:       11831           NA          NA 3015268         53      0.000000
-## 26133:       11831           NA          NA 3015268         53      0.000000
-## 26134:       11831           NA          NA 3015268         53      0.000000
-## 26135:       11831           NA          NA 3015268         53     74.122765
-## 26136:       11831           NA          NA 3015268         53      2.586835
+##         region  state       date epi_week newCases accumCases newDeaths
+##         <char> <char>     <Date>    <int>    <int>      <int>     <int>
+##     1:   North     RO 2020-02-25        9        0          0         0
+##     2:   North     AC 2020-02-25        9        0          0         0
+##     3:   North     AM 2020-02-25        9        0          0         0
+##     4:   North     RR 2020-02-25        9        0          0         0
+##     5:   North     PA 2020-02-25        9        0          0         0
+##    ---                                                                 
+## 31424:   South     RS 2023-05-03       18        0    3027358         0
+## 31425: Midwest     MS 2023-05-03       18        0     611687         0
+## 31426: Midwest     MT 2023-05-03       18        0     882962         0
+## 31427: Midwest     GO 2023-05-03       18        0    1925303         0
+## 31428: Midwest     DF 2023-05-03       18        0     904980         0
+##        accumDeaths newRecovered newFollowup      pop state_code rate_newcases
+##              <int>        <int>       <int>    <num>      <int>         <num>
+##     1:           0           NA          NA  1777225         11             0
+##     2:           0           NA          NA   881935         12             0
+##     3:           0           NA          NA  4144597         13             0
+##     4:           0           NA          NA   605761         14             0
+##     5:           0           NA          NA  8602865         15             0
+##    ---                                                                       
+## 31424:       42113           NA          NA 11377239         43             0
+## 31425:       11036           NA          NA  2778986         50             0
+## 31426:       15107           NA          NA  3484466         51             0
+## 31427:       28155           NA          NA  7018354         52             0
+## 31428:       11856           NA          NA  3015268         53             0
 ```
 
-```r
+``` r
 summarize(data, mean_newdeaths=mean(newDeaths), desv_pad= sd(newDeaths),
                   standard_error=desv_pad/sqrt(length(data)))
 ```
 
 ```
 ##   mean_newdeaths desv_pad standard_error
-## 1       26.30177 66.46069       19.18555
+## 1       22.33146 61.46893       17.74455
 ```
 
-```r
+``` r
 group_by(data, region, epi_week)
 ```
 
 ```
-## # A tibble: 26,136 x 12
+## # A tibble: 31,428 × 12
 ## # Groups:   region, epi_week [265]
-##    region state date       epi_week newCases accumCases newDea~1 accum~2 newRe~3
-##    <chr>  <chr> <date>        <int>    <int>      <int>    <int>   <int>   <int>
-##  1 North  RO    2020-02-25        9        0          0        0       0      NA
-##  2 North  RO    2020-02-26        9        0          0        0       0      NA
-##  3 North  RO    2020-02-27        9        0          0        0       0      NA
-##  4 North  RO    2020-02-28        9        0          0        0       0      NA
-##  5 North  RO    2020-02-29        9        0          0        0       0      NA
-##  6 North  RO    2020-03-01       10        0          0        0       0      NA
-##  7 North  RO    2020-03-02       10        0          0        0       0      NA
-##  8 North  RO    2020-03-03       10        0          0        0       0      NA
-##  9 North  RO    2020-03-04       10        0          0        0       0      NA
-## 10 North  RO    2020-03-05       10        0          0        0       0      NA
-## # ... with 26,126 more rows, 3 more variables: newFollowup <int>, pop <dbl>,
-## #   state_code <int>, and abbreviated variable names 1: newDeaths,
-## #   2: accumDeaths, 3: newRecovered
+##    region    state date       epi_week newCases accumCases newDeaths accumDeaths
+##    <chr>     <chr> <date>        <int>    <int>      <int>     <int>       <int>
+##  1 North     RO    2020-02-25        9        0          0         0           0
+##  2 North     AC    2020-02-25        9        0          0         0           0
+##  3 North     AM    2020-02-25        9        0          0         0           0
+##  4 North     RR    2020-02-25        9        0          0         0           0
+##  5 North     PA    2020-02-25        9        0          0         0           0
+##  6 North     AP    2020-02-25        9        0          0         0           0
+##  7 North     TO    2020-02-25        9        0          0         0           0
+##  8 Northeast MA    2020-02-25        9        0          0         0           0
+##  9 Northeast PI    2020-02-25        9        0          0         0           0
+## 10 Northeast CE    2020-02-25        9        0          0         0           0
+## # ℹ 31,418 more rows
+## # ℹ 4 more variables: newRecovered <int>, newFollowup <int>, pop <dbl>,
+## #   state_code <int>
 ```
 
 Esse pacote é muito útil quando desejamos realizar uma análise exploratória de nossos dados. Vamos então construir alguns gráficos utilizando os recursos desse pacote e também do **ggplot2**.
@@ -729,7 +753,7 @@ Esse pacote é muito útil quando desejamos realizar uma análise exploratória 
 Suponha que estamos interessados em conhecer, “a priori”, quantas mortes por COVID-19 ocorreram em cada uma das unidades federativas brasileiras, no dia 20-02-2022. Como proceder?
 
 
-```r
+``` r
 Dados <- select(data, epi_week , state, newDeaths, date)
 resultados <- filter(Dados, epi_week == 8 & date == "2022-02-20")
 ggplot(resultados)+
@@ -750,7 +774,7 @@ panel.background = element_blank())+
 scale_fill_discrete(name="UF")
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-21-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-21-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 Um fato curioso deve ser notado: quando manipulamos o conto de dados data com as funções select e filter, nós atribuímos a cada tibble gerado por essas funções um rótulo. Agora, imagine que, dentro do mesmo conjunto de dados, nós precisamos utilizar todas as seis funções do pacote **dplyr**. Seria inviável proceder como da forma anterior. Para corrigir esse problema, foi criado o pacote **magrittr** onde foi criado o operador pipe %>%. Essa ferramenta é utilizada para expressar claramente uma sequência de múltiplas operações. Este pacote já é carregado automaticamente com o **dplyr**.
 
@@ -758,7 +782,7 @@ Em nosso próximo exemplo, suponha que deseja-se conhecer a evolução diária d
 
 
 
-```r
+``` r
 cor <- heat.colors(4, rev = TRUE)
 resultados <- data %>%
 mutate(year = as.numeric(format(date, "%Y")),
@@ -783,13 +807,13 @@ panel.background = element_blank())+
 scale_fill_manual(name="UF", values = cor)
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-22-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-22-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 Nós também podemos produzir mapas utilizando o pacote **ggplot2**. Entretanto, nós precisamos de algum arquivo que contenha as coordenadas do mapa desejado em forma de polígonos ou até mesmo imagens (raster). Para tal, nós vamos utilizar o pacote **geobr**, que foi criado pelo Instituto de Pesquisa Econômica Aplicada - Ipea. Vejamos:
 
 
-```r
+``` r
 uf <- data %>%
   select(state, newDeaths, newCases, accumDeaths, accumCases, 
          pop, date)%>%
@@ -799,14 +823,21 @@ uf <- data %>%
             ratenewdeaths = newDeaths/pop*100000,
             rateaccumdeaths = accumDeaths/pop*100000)
 library(geobr)
+```
+
+```
+## Warning: package 'geobr' was built under R version 4.3.3
+```
+
+``` r
 dados_mapa <- read_state(year=2019, showProgress = FALSE)
 ```
 
 ```
-## Using year 2019
+## Using year/date 2019
 ```
 
-```r
+``` r
 colnames(dados_mapa)[2] <- "state"
 dados_final <- left_join(dados_mapa, uf, "state")
 glimpse(dados_final)
@@ -815,25 +846,25 @@ glimpse(dados_final)
 ```
 ## Rows: 27
 ## Columns: 16
-## $ code_state      <dbl> 11, 12, 13, 14, 15, 16, 17, 21, 22, 23, 24, 25, 26, 27~
-## $ state           <chr> "RO", "AC", "AM", "RR", "PA", "AP", "TO", "MA", "PI", ~
-## $ name_state      <chr> "Rondônia", "Acre", "Amazônas", "Roraima", "Pará", "Am~
-## $ code_region     <dbl> 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, ~
-## $ name_region     <chr> "Norte", "Norte", "Norte", "Norte", "Norte", "Norte", ~
-## $ newDeaths       <int> 16, 4, 3, 1, 17, 2, 2, 14, 5, 57, 7, 9, 15, 12, 4, 26,~
-## $ newCases        <int> 2741, 654, 575, 361, 2476, 52, 723, 1283, 645, 1907, 1~
-## $ accumDeaths     <int> 7036, 1966, 14101, 2126, 17716, 2100, 4095, 10739, 761~
-## $ accumCases      <int> 366864, 119090, 571174, 152146, 709489, 160025, 296677~
-## $ pop             <dbl> 1777225, 881935, 4144597, 605761, 8602865, 845731, 157~
-## $ date            <date> 2022-02-23, 2022-02-23, 2022-02-23, 2022-02-23, 2022-~
-## $ ratenewcases    <dbl> 154.229206, 74.155125, 13.873484, 59.594461, 28.781110~
-## $ rateaccumcases  <dbl> 20642.519, 13503.263, 13781.171, 25116.506, 8247.125, ~
-## $ ratenewdeaths   <dbl> 0.90027993, 0.45354816, 0.07238339, 0.16508161, 0.1976~
-## $ rateaccumdeaths <dbl> 395.8981, 222.9189, 340.2261, 350.9635, 205.9314, 248.~
-## $ geom            <MULTIPOLYGON [°]> MULTIPOLYGON (((-65.3815 -1..., MULTIPOLY~
+## $ code_state      <dbl> 11, 12, 13, 14, 15, 16, 17, 21, 22, 23, 24, 25, 26, 27…
+## $ state           <chr> "RO", "AC", "AM", "RR", "PA", "AP", "TO", "MA", "PI", …
+## $ name_state      <chr> "Rondônia", "Acre", "Amazônas", "Roraima", "Pará", "Am…
+## $ code_region     <dbl> 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, …
+## $ name_region     <chr> "Norte", "Norte", "Norte", "Norte", "Norte", "Norte", …
+## $ newDeaths       <int> 16, 4, 3, 1, 17, 2, 2, 14, 5, 57, 7, 9, 15, 12, 4, 26,…
+## $ newCases        <int> 2741, 654, 575, 361, 2476, 52, 723, 1283, 645, 1907, 1…
+## $ accumDeaths     <int> 7036, 1966, 14101, 2126, 17716, 2100, 4095, 10739, 761…
+## $ accumCases      <int> 366864, 119090, 571174, 152146, 709489, 160025, 296677…
+## $ pop             <dbl> 1777225, 881935, 4144597, 605761, 8602865, 845731, 157…
+## $ date            <date> 2022-02-23, 2022-02-23, 2022-02-23, 2022-02-23, 2022-…
+## $ ratenewcases    <dbl> 154.229206, 74.155125, 13.873484, 59.594461, 28.781110…
+## $ rateaccumcases  <dbl> 20642.519, 13503.263, 13781.171, 25116.506, 8247.125, …
+## $ ratenewdeaths   <dbl> 0.90027993, 0.45354816, 0.07238339, 0.16508161, 0.1976…
+## $ rateaccumdeaths <dbl> 395.8981, 222.9189, 340.2261, 350.9635, 205.9314, 248.…
+## $ geom            <MULTIPOLYGON [°]> MULTIPOLYGON (((-65.3815 -1..., MULTIPOLY…
 ```
 
-```r
+``` r
 #plotar os mapas
 dados_final %>%
   ggplot() +
@@ -852,11 +883,11 @@ dados_final %>%
 ## give correct results for longitude/latitude data
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-23-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-23-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 
-```r
+``` r
 dados_final %>%
   ggplot() +
   geom_sf(aes(fill = ratenewdeaths), color = "black") +
@@ -874,11 +905,11 @@ dados_final %>%
 ## give correct results for longitude/latitude data
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-24-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-24-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 
-```r
+``` r
 dados_final %>%
   ggplot() +
   geom_sf(aes(fill = rateaccumcases), color = "black") +
@@ -896,11 +927,11 @@ dados_final %>%
 ## give correct results for longitude/latitude data
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-25-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-25-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 
-```r
+``` r
 dados_final %>%
   ggplot() +
   geom_sf(aes(fill = rateaccumdeaths), color = "black") +
@@ -918,5 +949,5 @@ dados_final %>%
 ## give correct results for longitude/latitude data
 ```
 
-<img src="/courses/example/python_files/figure-html/unnamed-chunk-26-1.png" width="672" style="display: block; margin: auto;" />
+<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-26-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
