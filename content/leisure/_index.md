@@ -54,6 +54,18 @@ type: page
 
 </div>
 
+<h2>Pescaria</h2>
+
+<h3>Fotos</h3>
+
+<!-- GRID -->
+<div class="gallery">
+
+  <!-- IMAGENS -->
+  <img src="/media/albums/fotos/pescaria/img1.png" onclick="openModal(this.src)">
+  
+</div>
+
 <!-- MODAL -->
 <div id="modal" class="modal" onclick="closeModal()">
   <span class="close">&times;</span>
