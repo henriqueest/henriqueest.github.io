@@ -58,7 +58,7 @@ taxonomies:
   tag: tags
   category: categories
   publication_type: publication_types
-  author: authors
+  author: admin
 markup:
   _merge: deep
 related:
@@ -72,3 +72,11 @@ related:
       weight: 70
 security:
   _merge: deep
+  funcs:
+    getenv:
+      - '^HUGO_'
+      - '^WC_'
+    getCSV:
+      - .*
+    getJSON:
+      - .*

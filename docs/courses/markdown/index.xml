@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>📊 Rmarkdown para iniciantes | Henrique JP Alves</title>
-    <link>https://henriqueest.github.io/courses/markdown/</link>
-      <atom:link href="https://henriqueest.github.io/courses/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://henriqueest.github.io/paginapessoal/courses/markdown/</link>
+      <atom:link href="https://henriqueest.github.io/paginapessoal/courses/markdown/index.xml" rel="self" type="application/rss+xml" />
     <description>📊 Rmarkdown para iniciantes</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://henriqueest.github.io/courses/markdown/featured%20%282%29.jpg</url>
+      <url>https://henriqueest.github.io/paginapessoal/courses/markdown/featured%20%282%29.jpg</url>
       <title>📊 Rmarkdown para iniciantes</title>
-      <link>https://henriqueest.github.io/courses/markdown/</link>
+      <link>https://henriqueest.github.io/paginapessoal/courses/markdown/</link>
     </image>
     
     <item>
       <title>Rmarkdown para iniciantes</title>
-      <link>https://henriqueest.github.io/courses/markdown/curso/</link>
+      <link>https://henriqueest.github.io/paginapessoal/courses/markdown/curso/</link>
       <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>https://henriqueest.github.io/courses/markdown/curso/</guid>
+      <guid>https://henriqueest.github.io/paginapessoal/courses/markdown/curso/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://rpubs.com/Henriqueufla/apres_mark&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Curso Markdown&lt;/a&gt;&lt;/p&gt;
 &lt;!-- [Prática](https://rpubs.com/Henriqueufla/apres_mark) --&gt;
 </description>
