@@ -63,6 +63,7 @@ type: page
 
   <!-- IMAGENS -->
   <img src="/media/albums/fotos/pescaria/img1.png" onclick="openModal(this.src)">
+  <img src="/media/albums/fotos/pescaria/img1.png" onclick="openModal(this.src)">
   
 </div>
 
