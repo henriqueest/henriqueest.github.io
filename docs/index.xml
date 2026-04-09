@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Henrique JP Alves</title>
-    <link>https://github.com/henriqueest/henriqueest.github.io/</link>
-      <atom:link href="https://github.com/henriqueest/henriqueest.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://henriqueest.github.io/</link>
+      <atom:link href="https://henriqueest.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Henrique JP Alves</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://github.com/henriqueest/henriqueest.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <url>https://henriqueest.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
       <title>Henrique JP Alves</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/</link>
+      <link>https://henriqueest.github.io/</link>
     </image>
     
     <item>
       <title>Rmarkdown para iniciantes</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/courses/markdown/curso/</link>
+      <link>https://henriqueest.github.io/courses/markdown/curso/</link>
       <pubDate>Mon, 24 Oct 2022 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/courses/markdown/curso/</guid>
+      <guid>https://henriqueest.github.io/courses/markdown/curso/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://rpubs.com/Henriqueufla/apres_mark&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Curso Markdown&lt;/a&gt;&lt;/p&gt;
 &lt;!-- [Prática](https://rpubs.com/Henriqueufla/apres_mark) --&gt;
 </description>
@@ -24,9 +24,9 @@
     
     <item>
       <title>Pacote ggplot2: um curso introdutório</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/courses/example/python/</link>
+      <link>https://henriqueest.github.io/courses/example/python/</link>
       <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/courses/example/python/</guid>
+      <guid>https://henriqueest.github.io/courses/example/python/</guid>
       <description>&lt;p&gt;Construído baseado nos pacotes tidyverse e ggplot2 do R.&lt;/p&gt;
 &lt;p&gt;
   &lt;i class=&#34;fas fa-clock  pr-1 fa-fw&#34;&gt;&lt;/i&gt; 2 horas por dia, por 2 dias&lt;/p&gt;
@@ -84,7 +84,7 @@ summary(mtcars)
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;hist(mtcars$mpg, col = &amp;quot;lightblue&amp;quot;, main = &amp;quot;Função hist (base)&amp;quot;, 
      xlab = &amp;quot;Milhas por galão (mpg)&amp;quot;, ylab = &amp;quot;Frequência absoluta&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-2-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-2-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(lattice)
 histogram(~mpg,data=mtcars,
        type =&amp;quot;count&amp;quot;,
@@ -94,7 +94,7 @@ histogram(~mpg,data=mtcars,
        col = &amp;quot;lightblue&amp;quot;,
        breaks = 5)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-3-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-3-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Vamos agora utilizar a variável cyl (número de cilindros) para construírmos um gráfico de barras (frequência absoluta) utilizando a função &lt;em&gt;barplot&lt;/em&gt; da base do &lt;strong&gt;R&lt;/strong&gt; e também o pacote &lt;strong&gt;lattice&lt;/strong&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;tab &amp;lt;- table(mtcars$cyl)
 tab
@@ -105,7 +105,7 @@ tab
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;barplot(tab, col = &amp;quot;lightblue&amp;quot;, main = &amp;quot;Função barplot (base)&amp;quot;, xlab = &amp;quot;Número de cilindros por motor (cyl)&amp;quot;, ylab = &amp;quot;Frequência absoluta&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-4-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-4-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(lattice)
 tabela &amp;lt;- xtabs(~cyl, data = mtcars)
 tabela
@@ -121,7 +121,7 @@ tabela
          ylab = &amp;quot;Frequência absoluta&amp;quot;,
          col = &amp;quot;lightblue&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-5-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-5-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Bastam esses dois exemplos para percebermos algumas situações: para cada tipo de gráfico escolhido de acordo com a natureza da variável, o conjunto de linhas de comandos necessários para gerá-los no &lt;strong&gt;R&lt;/strong&gt; é único e particular; é necessário também a utilização de funções adicionais (table) e funções específicas do pacote &lt;strong&gt;lattice&lt;/strong&gt; (xtabs) para a construção dos gráficos de barras. Essas situações forçam o usuário a ter conhecimento de cada uma dessas funções particulares e também seus argumentos.&lt;/p&gt;
 &lt;p&gt;Essas justificativas são suficientes para pensarmos em algum pacote que torne mais fácil ao usuário a construção de gráficos no &lt;strong&gt;R&lt;/strong&gt;. Esse pacote existe e é o pacote &lt;strong&gt;ggplot2&lt;/strong&gt;, que é o objetivo desse curso. Vamos conhecer um pouco mais desse pacote e observar suas vantagens.&lt;/p&gt;
 &lt;h2 id=&#34;o-pacote-ggplot2&#34;&gt;&lt;em&gt;O pacote ggplot2&lt;/em&gt;&lt;/h2&gt;
@@ -170,25 +170,25 @@ tabela
 &lt;p&gt;A primeira camada (layer) necessária para a criação de gráficos no &lt;strong&gt;ggplot2&lt;/strong&gt; é dada pelo comando ggplot(dados). Neste comando, estamos criando a área onde o gráfico será construído e, ainda, informando ao &lt;strong&gt;ggplot2&lt;/strong&gt; qual o conjunto de dados que contém as variáveis de interesse.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-6-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-6-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Nós notamos que é criado uma área (em cinza) onde será construído o gráfico. Essa área ainda não contém nenhum formato geométrico (geom_tipo) como, por exemplo, pontos, barras, caixas, etc. Falta também a informação da estética do gráfico desejado juntamente com as variáveis de interesse aes(x,y,cores). Esse é o próximo passo. Note também que a cada acréscimo de camada utilzamos o sinal &lt;code&gt;+&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;A variável mpg já foi apresentada e utilizada nos gráficos anteriores. A variável disp significa quantas cilindradas o motor do veículo possui. Note que ainda não escolhemos a cor dos pontos do gráfico nem rotulamos seus eixos. Nosso gráfico ainda está incompleto.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars) +
   geom_point(mapping = aes(x= disp, y=mpg))
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-7-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-7-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;No pacote &lt;strong&gt;gplot2&lt;/strong&gt; nós também temos a liberdade de escolher a escala de cores que iram compor o nosso gráfico. Para isso temos três argumentos: color e colour, que se diferem devido a lingua ingleza e fill. Os dois primeiros são utilizados em entes geométricos que não possuem área, tais como pontos e linhas, sendo necessário utilizar apenas um deles e a escolha fica a critério do usuário. Já o comando fill é utilizado naquele ente geométrico que possui área, sendo responsável pelo preenchimento dessa área com a cor desejada. Ambos devem ser utilizados junto ao comando geom_tipo.&lt;/p&gt;
 &lt;p&gt;Vamos agora ver dois exemplos de utilização desses argumentos.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
   geom_point(mapping = aes(x= disp, y=mpg, color=as.factor(am))) +
   labs(x=&amp;quot;Cilindradas&amp;quot;, y=&amp;quot;Milhas/galão&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-8-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-8-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars) +
   geom_point(mapping = aes(x= disp, y=mpg), color=c(&amp;quot;red&amp;quot;)) +
   labs(x=&amp;quot;Cilindradas&amp;quot;, y=&amp;quot;Milhas/galão&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-8-2.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-8-2.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Nós notamos que se utilizarmos o argumento para a escolha das cores dentro da função aes, este deve estar relaciondo a alguma variável específica. No nosso exemplo, é o tipo de transmissão do carro a variável em questão. Caso esse argumento seja utilizado fora da função aes, nós temos a liberdade de escolha das cores, pois ela não estão relacionadas as variáveis em questão.&lt;/p&gt;
 &lt;p&gt;Tente utilizar o argumento de cores relacionado a variávies fora da função aes e verá que o &lt;strong&gt;R&lt;/strong&gt; retornará uma mensagem de erro, dizendo que não reconhece a variável.&lt;/p&gt;
 &lt;p&gt;Vamos agora apresentar um gráfico de barras onde o interesse é apresentar as frequências absolutas, relativas e percentual da quantidade de cilindros que o motor do carro possui (cyl) separados por tipo de transmissão (am) .&lt;/p&gt;
@@ -212,7 +212,7 @@ tabela
 ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
 ## generated.
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-9-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-9-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars, aes(x = as.factor(cyl))) +
   geom_bar(aes(y = (..count..)/sum(..count..), fill=as.factor(am)), 
             position = &amp;quot;dodge&amp;quot;, colour=&amp;quot;black&amp;quot;, alpha=0.45)+
@@ -227,7 +227,7 @@ tabela
         panel.border = element_blank(),
         panel.background = element_blank()) 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-9-2.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-9-2.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars, aes(x = as.factor(cyl))) +
   geom_bar(aes(y = (..count..)/sum(..count..)*100, fill=as.factor(am)), 
             position = &amp;quot;dodge&amp;quot;, colour=&amp;quot;black&amp;quot;, alpha=0.45)+
@@ -242,7 +242,7 @@ tabela
         panel.border = element_blank(),
         panel.background = element_blank())
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-9-3.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-9-3.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Vamos agora construir um gráfico do tipo boxplot utilizando o pacote &lt;strong&gt;ggplot2&lt;/strong&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
   geom_boxplot(aes(x = as.factor(cyl), y = mpg, fill=as.factor(am)), colour=&amp;quot;brown&amp;quot;, alpha=0.2) +
@@ -257,7 +257,7 @@ tabela
         panel.border = element_blank(),
         panel.background = element_blank())
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-10-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-10-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
   geom_boxplot(aes(x = as.factor(cyl), y = mpg, fill=as.factor(am)), colour=&amp;quot;brown&amp;quot;, alpha=0.2) +
   labs(x = &amp;quot;Número de cilindros&amp;quot;, y = &amp;quot;Milhas/galão&amp;quot;, fill = &amp;quot;Tipo de transmissão&amp;quot;) +
@@ -271,7 +271,7 @@ tabela
         panel.border = element_blank(),
         panel.background = element_blank()) 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-11-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-11-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
   geom_boxplot(aes(x = as.factor(cyl), y = mpg, fill=as.factor(am)), colour=&amp;quot;brown&amp;quot;, alpha=0.2) +
   labs(x = &amp;quot;Número de cilindros&amp;quot;, y = &amp;quot;Milhas/galão&amp;quot;) +
@@ -285,7 +285,7 @@ tabela
         panel.border = element_blank(),
         panel.background = element_blank()) 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-12-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-12-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; cor &amp;lt;- gray(0:2 / 2)
  ggplot(mtcars) +
   geom_boxplot(aes(x = as.factor(cyl), y = mpg, fill=as.factor(am)), colour=&amp;quot;brown&amp;quot;, 
@@ -302,7 +302,7 @@ tabela
         panel.background = element_blank()) +
   scale_fill_manual(values=cor)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-13-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-13-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Vamos agora construir alguns histogramas com frequências absolutas, relativas e percentuais, nessa ordem. Note que o comando &lt;code&gt;bins&lt;/code&gt; define o número de classes a ser escolhido. Neste exemplo escolhemos arbitrariamente &lt;code&gt;bins&lt;/code&gt; igual a 5, mas o usuário pode fazer os cálculos manualmente e utilizá-lo. Nós também definimos a escala dos eixos &lt;code&gt;x&lt;/code&gt; e &lt;code&gt;y&lt;/code&gt; manualmente, através dos comandos &lt;code&gt;scale_x_continuous&lt;/code&gt; e &lt;code&gt;scale_y_continuous&lt;/code&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
   geom_histogram(aes(x = mpg, y = (..count..)/sum(..count..), fill=as.factor(am)), 
@@ -320,7 +320,7 @@ tabela
         panel.border = element_blank(),
         panel.background = element_blank()) 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-14-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-14-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
   geom_histogram(aes(x = mpg, y = (..count..), fill=as.factor(am)), bins=5,  
                  colour=&amp;quot;brown&amp;quot;, alpha=0.2)+
@@ -337,7 +337,7 @@ tabela
         panel.border = element_blank(),
         panel.background = element_blank())
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-15-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-15-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
   geom_histogram(aes(x = mpg, y = (..count..), fill=as.factor(am)), bins=5,  
                  colour=&amp;quot;brown&amp;quot;, alpha=0.2)+
@@ -354,7 +354,7 @@ tabela
         panel.border = element_blank(),
         panel.background = element_blank())
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-16-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-16-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Antes de construírmos o próximo histograma, precisamos apresentar a função &lt;code&gt;facet&lt;/code&gt; do ggplot2. Esta função permite a construção de gráficos em &lt;code&gt;facetas&lt;/code&gt;. O que é isso? Suponha que estamos interessados em construírmos um histograma baseado no anteriormente apresentado. Mas o nosso interesse maior é apresentar um histograma individual para cada tipo de transmissão &lt;code&gt;am&lt;/code&gt; considerando a variável contínua &lt;code&gt;mpg&lt;/code&gt;. Abaixo apresentamos a construção deste histograma.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; cor &amp;lt;- gray(0:1 / 2)
  ggplot(mtcars) +
@@ -376,7 +376,7 @@ tabela
         panel.border = element_blank(),
         panel.background = element_blank())
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-17-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-17-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Vamos agora apresentar um exemplo de como construir um gráfico de tendência destacando-se os pontos de dispersão dos dados.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars, aes(x = disp, y = mpg)) +
   geom_point(aes(colour=as.factor(am)), alpha=0.6, size=1.7)+
@@ -398,7 +398,7 @@ tabela
 ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
 ## generated.
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-18-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-18-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Como o usuário faria para construir estes histogramas e gráficos de tendência sem utilizar a classificação por níveis da variável &lt;strong&gt;am&lt;/strong&gt;? A construção destes gráficos fica como exercício para o usuário.&lt;/p&gt;
 &lt;h2 id=&#34;segunda-parte&#34;&gt;&lt;strong&gt;Segunda parte&lt;/strong&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;construindo-gráficos-a-partir-de-um-conjunto-de-dados-original-usando-os-pacotes-tydeverse-tibble-e-dplyr-do-r&#34;&gt;Construindo gráficos a partir de um conjunto de dados original usando os pacotes tydeverse, tibble e dplyr do R.&lt;/h2&gt;
@@ -700,7 +700,7 @@ panel.border = element_blank(),
 panel.background = element_blank())+
 scale_fill_discrete(name=&amp;quot;UF&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-21-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-21-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Um fato curioso deve ser notado: quando manipulamos o conto de dados data com as funções select e filter, nós atribuímos a cada tibble gerado por essas funções um rótulo. Agora, imagine que, dentro do mesmo conjunto de dados, nós precisamos utilizar todas as seis funções do pacote &lt;strong&gt;dplyr&lt;/strong&gt;. Seria inviável proceder como da forma anterior. Para corrigir esse problema, foi criado o pacote &lt;strong&gt;magrittr&lt;/strong&gt; onde foi criado o operador pipe %&amp;gt;%. Essa ferramenta é utilizada para expressar claramente uma sequência de múltiplas operações. Este pacote já é carregado automaticamente com o &lt;strong&gt;dplyr&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Em nosso próximo exemplo, suponha que deseja-se conhecer a evolução diária das novas mortes considerando o tempo de infecção por COVID-19 da semana 1 até a semana 8 de 2021 e 2022, para as unidades federativas da região sudeste. Entretanto, para efeitos de comparação, as populações de cada uma das UF&amp;rsquo;s se difere, o que torna a comparação entre elas inviável. Esse é o motivo pelo qual calculamos algumas medidas auxiliares quando há heterogeneidade populacional. Uma dessas medidas é denominada de taxa e seu cálculo é oriundo da razão entre o número de casos favoráveis e o total de indivíduos da população de cada uma das áreas estudas, multiplicado por alguma constante de padronização. Nós vamos respeitar as regras utilizadas pelo Instituto Brasileiro de Geografia e Estatística (IBGE) e considerar essa constante igual a 100,000. Desse modo:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;cor &amp;lt;- heat.colors(4, rev = TRUE)
@@ -726,7 +726,7 @@ panel.border = element_blank(),
 panel.background = element_blank())+
 scale_fill_manual(name=&amp;quot;UF&amp;quot;, values = cor)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-22-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-22-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Nós também podemos produzir mapas utilizando o pacote &lt;strong&gt;ggplot2&lt;/strong&gt;. Entretanto, nós precisamos de algum arquivo que contenha as coordenadas do mapa desejado em forma de polígonos ou até mesmo imagens (raster). Para tal, nós vamos utilizar o pacote &lt;strong&gt;geobr&lt;/strong&gt;, que foi criado pelo Instituto de Pesquisa Econômica Aplicada - Ipea. Vejamos:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;uf &amp;lt;- data %&amp;gt;%
   select(state, newDeaths, newCases, accumDeaths, accumCases, 
@@ -782,7 +782,7 @@ dados_final %&amp;gt;%
 &lt;pre&gt;&lt;code&gt;## Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
 ## give correct results for longitude/latitude data
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-23-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-23-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dados_final %&amp;gt;%
   ggplot() +
   geom_sf(aes(fill = ratenewdeaths), color = &amp;quot;black&amp;quot;) +
@@ -797,7 +797,7 @@ dados_final %&amp;gt;%
 &lt;pre&gt;&lt;code&gt;## Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
 ## give correct results for longitude/latitude data
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-24-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-24-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dados_final %&amp;gt;%
   ggplot() +
   geom_sf(aes(fill = rateaccumcases), color = &amp;quot;black&amp;quot;) +
@@ -812,7 +812,7 @@ dados_final %&amp;gt;%
 &lt;pre&gt;&lt;code&gt;## Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
 ## give correct results for longitude/latitude data
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-25-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-25-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dados_final %&amp;gt;%
   ggplot() +
   geom_sf(aes(fill = rateaccumdeaths), color = &amp;quot;black&amp;quot;) +
@@ -827,14 +827,14 @@ dados_final %&amp;gt;%
 &lt;pre&gt;&lt;code&gt;## Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
 ## give correct results for longitude/latitude data
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-26-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;</description>
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-26-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;</description>
     </item>
     
     <item>
       <title>Example Talk</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/talk/example-talk/</link>
+      <link>https://henriqueest.github.io/talk/example-talk/</link>
       <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/talk/example-talk/</guid>
+      <guid>https://henriqueest.github.io/talk/example-talk/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
@@ -852,9 +852,9 @@ dados_final %&amp;gt;%
     
     <item>
       <title>Income Inequality and Sexual Violence in Brazil (2015–2025)</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/post/crimes_estupro/</link>
+      <link>https://henriqueest.github.io/post/crimes_estupro/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/post/crimes_estupro/</guid>
+      <guid>https://henriqueest.github.io/post/crimes_estupro/</guid>
       <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
 &lt;p&gt;This study examines the temporal and spatial dynamics of rape victimization rates in Brazil between 2015 and 2025, disaggregated by sex and Federative Units. Using standardized rates per $100,000$ inhabitants, the analysis integrates descriptive statistics, three-year weighted moving averages, consistency indicators, and Local Indicators of Spatial Association (LISA) to identify structural patterns, temporal persistence, and localized spatial dependence. The results reveal pronounced regional disparities, with the North and Central-West regions consistently exhibiting the highest levels of female victimization. The LISA analysis further demonstrates that these elevated rates are not randomly distributed but form statistically significant and persistent High-High spatial clusters, indicating strong geographic concentration. Conversely, Low-Low clusters observed in parts of the Northeast and Southeast suggest spatially structured areas of lower vulnerability. Although male victimization rates are substantially lower, partially similar spatial patterns emerge, albeit with weaker and more fragmented spatial autocorrelation. The findings also indicate that, despite short-term fluctuations &amp;mdash; particularly during the COVID-19 period &amp;mdash; several states exhibit persistent upward trends, reinforcing the
 interpretation of structural rather than episodic dynamics. The temporary disruption and subsequent reconfiguration of spatial clusters further highlight the resilience of underlying spatial processes. Overall, the combined use of temporal and spatial analytical tools provides a more nuanced understanding of sexual violence in Brazil, emphasizing the coexistence of regional inequality, spatial dependence, and trend persistence. These findings underscore the need for
@@ -3978,10 +3978,10 @@ spatial persistence rather than random fluctuation.&lt;/p&gt;
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34; srcset=&#34;
-               /henriqueest/henriqueest.github.io/post/crimes_estupro/images/clipboard-4194439002_hu7ab7a0aca7b87ce0ab9dc2341cd4479f_74093_6787133469e2a6d835b6d327c10f7f90.webp 400w,
-               /henriqueest/henriqueest.github.io/post/crimes_estupro/images/clipboard-4194439002_hu7ab7a0aca7b87ce0ab9dc2341cd4479f_74093_42ee30802b6dc5b42f79ee32656995b9.webp 760w,
-               /henriqueest/henriqueest.github.io/post/crimes_estupro/images/clipboard-4194439002_hu7ab7a0aca7b87ce0ab9dc2341cd4479f_74093_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://github.com/henriqueest/henriqueest.github.io/henriqueest/henriqueest.github.io/post/crimes_estupro/images/clipboard-4194439002_hu7ab7a0aca7b87ce0ab9dc2341cd4479f_74093_6787133469e2a6d835b6d327c10f7f90.webp&#34;
+               /post/crimes_estupro/images/clipboard-4194439002_hu7ab7a0aca7b87ce0ab9dc2341cd4479f_74093_6787133469e2a6d835b6d327c10f7f90.webp 400w,
+               /post/crimes_estupro/images/clipboard-4194439002_hu7ab7a0aca7b87ce0ab9dc2341cd4479f_74093_42ee30802b6dc5b42f79ee32656995b9.webp 760w,
+               /post/crimes_estupro/images/clipboard-4194439002_hu7ab7a0aca7b87ce0ab9dc2341cd4479f_74093_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://henriqueest.github.io/post/crimes_estupro/images/clipboard-4194439002_hu7ab7a0aca7b87ce0ab9dc2341cd4479f_74093_6787133469e2a6d835b6d327c10f7f90.webp&#34;
                width=&#34;508&#34;
                height=&#34;747&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -4041,10 +4041,10 @@ spatial distribution of sexual violence across genders.&lt;/p&gt;
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34; srcset=&#34;
-               /henriqueest/henriqueest.github.io/post/crimes_estupro/images/clipboard-3333573559_hu5e6d708ae408622dbf91346047d74871_80558_65cee24ae07ddff088582ff063c53294.webp 400w,
-               /henriqueest/henriqueest.github.io/post/crimes_estupro/images/clipboard-3333573559_hu5e6d708ae408622dbf91346047d74871_80558_7ca40686e27d001169b33f25133510af.webp 760w,
-               /henriqueest/henriqueest.github.io/post/crimes_estupro/images/clipboard-3333573559_hu5e6d708ae408622dbf91346047d74871_80558_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://github.com/henriqueest/henriqueest.github.io/henriqueest/henriqueest.github.io/post/crimes_estupro/images/clipboard-3333573559_hu5e6d708ae408622dbf91346047d74871_80558_65cee24ae07ddff088582ff063c53294.webp&#34;
+               /post/crimes_estupro/images/clipboard-3333573559_hu5e6d708ae408622dbf91346047d74871_80558_65cee24ae07ddff088582ff063c53294.webp 400w,
+               /post/crimes_estupro/images/clipboard-3333573559_hu5e6d708ae408622dbf91346047d74871_80558_7ca40686e27d001169b33f25133510af.webp 760w,
+               /post/crimes_estupro/images/clipboard-3333573559_hu5e6d708ae408622dbf91346047d74871_80558_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://henriqueest.github.io/post/crimes_estupro/images/clipboard-3333573559_hu5e6d708ae408622dbf91346047d74871_80558_65cee24ae07ddff088582ff063c53294.webp&#34;
                width=&#34;548&#34;
                height=&#34;760&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -4155,81 +4155,81 @@ patterns.&lt;/p&gt;
     
     <item>
       <title>Análise de dados de COVID-19 da PNAD-Contínua usando o pacote sqldf</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/post/albert-einstein/</link>
+      <link>https://henriqueest.github.io/post/albert-einstein/</link>
       <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/post/albert-einstein/</guid>
+      <guid>https://henriqueest.github.io/post/albert-einstein/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;Dados_pnad.pdf&#34;&gt;Baixar PDF&lt;/a&gt;&lt;/p&gt;
 &lt;iframe src=&#34;Dados_pnad.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;</description>
     </item>
     
     <item>
       <title>Boletim de Análise Político-Institucional</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/ipea/bapi/</link>
+      <link>https://henriqueest.github.io/ipea/bapi/</link>
       <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/ipea/bapi/</guid>
+      <guid>https://henriqueest.github.io/ipea/bapi/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;bapi.pdf&#34;&gt;Baixar PDF&lt;/a&gt;&lt;/p&gt;
 &lt;iframe src=&#34;bapi.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;</description>
     </item>
     
     <item>
       <title>Dados de renda por sexo e cor/raça PNAD-Contínua</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/post/pnad-continua/</link>
+      <link>https://henriqueest.github.io/post/pnad-continua/</link>
       <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/post/pnad-continua/</guid>
+      <guid>https://henriqueest.github.io/post/pnad-continua/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;Projeto_Pesquisa_ABNT_Henrique.pdf&#34;&gt;Baixar PDF&lt;/a&gt;&lt;/p&gt;
 &lt;iframe src=&#34;Projeto_Pesquisa_ABNT_Henrique.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;</description>
     </item>
     
     <item>
       <title>Dados Nacionais de Segurança Pública 2022-2023</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/ipea/seguranca/</link>
+      <link>https://henriqueest.github.io/ipea/seguranca/</link>
       <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/ipea/seguranca/</guid>
+      <guid>https://henriqueest.github.io/ipea/seguranca/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;seguranca.pdf&#34;&gt;Baixar PDF&lt;/a&gt;&lt;/p&gt;
 &lt;iframe src=&#34;seguranca.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;</description>
     </item>
     
     <item>
       <title>Dinâmica dos Homicídios na Região Norte do Brasil</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/ipea/dinamica/</link>
+      <link>https://henriqueest.github.io/ipea/dinamica/</link>
       <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/ipea/dinamica/</guid>
+      <guid>https://henriqueest.github.io/ipea/dinamica/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;dinamica.pdf&#34;&gt;Baixar PDF&lt;/a&gt;&lt;/p&gt;
 &lt;iframe src=&#34;dinamica.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;</description>
     </item>
     
     <item>
       <title>Natureza e Quantidade de Drogas Aprrendidas nos Processos dos Tribunais Estaduais de Justiça Comum</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/ipea/comumri/</link>
+      <link>https://henriqueest.github.io/ipea/comumri/</link>
       <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/ipea/comumri/</guid>
+      <guid>https://henriqueest.github.io/ipea/comumri/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;comumRI.pdf&#34;&gt;Baixar PDF&lt;/a&gt;&lt;/p&gt;
 &lt;iframe src=&#34;comumRI.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;</description>
     </item>
     
     <item>
       <title>Perfil do Processado e Produção de Provas nas Ações Criminais por Tráfico de Drogas</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/ipea/processadotf/</link>
+      <link>https://henriqueest.github.io/ipea/processadotf/</link>
       <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/ipea/processadotf/</guid>
+      <guid>https://henriqueest.github.io/ipea/processadotf/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;processadoTF.pdf&#34;&gt;Baixar PDF&lt;/a&gt;&lt;/p&gt;
 &lt;iframe src=&#34;processadoTF.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;</description>
     </item>
     
     <item>
       <title>Relatório Analítico Nacional dos Tribunais Estaduais de Justiça Comum</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/ipea/comumrl/</link>
+      <link>https://henriqueest.github.io/ipea/comumrl/</link>
       <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/ipea/comumrl/</guid>
+      <guid>https://henriqueest.github.io/ipea/comumrl/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;relatoriocomum.pdf&#34;&gt;Baixar PDF&lt;/a&gt;&lt;/p&gt;
 &lt;iframe src=&#34;relatoriocomum.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;</description>
     </item>
     
     <item>
       <title>Desigualdade de Renda e Pobreza por Raça/Etnia no Brasil: Uma Análise Estrutural (2020–2025)</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/post/estupro/</link>
+      <link>https://henriqueest.github.io/post/estupro/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/post/estupro/</guid>
+      <guid>https://henriqueest.github.io/post/estupro/</guid>
       <description>&lt;h1 id=&#34;resumo&#34;&gt;Resumo&lt;/h1&gt;
 &lt;p&gt;A análise da distribuição de renda no Brasil entre 2020 e 2025 revela a persistência de desigualdades estruturais e racialmente estratificadas. Os índices de &lt;strong&gt;Theil T e L&lt;/strong&gt; indicam que a desigualdade total é predominantemente explicada pelo componente &lt;em&gt;intra-grupos&lt;/em&gt;, refletindo disparidades de renda acentuadas dentro dos grupos de cor ou raça, com uma maior contribuição da população branca. Embora a desigualdade &lt;em&gt;entre grupos&lt;/em&gt; seja relativamente menor, os níveis de renda média revelam uma hierarquia racial estável, na qual os grupos amarelo e branco apresentam consistentemente rendimentos superiores aos dos grupos pardo, preto e indígena.
 Os indicadores de dispersão intragrupo, como o &lt;strong&gt;índice de Gini&lt;/strong&gt; e a razão $\text{P90/P10}$, apontam para uma maior desigualdade interna e maior volatilidade entre os grupos amarelo e indígena, enquanto os grupos pardo e preto exibem menor dispersão relativa na porção central da distribuição. Quanto à pobreza, os índices de &lt;strong&gt;Foster-Greer-Thorbecke (FGT)&lt;/strong&gt; ($\text{H}$, $\text{P1}$ e $\text{P2}$) revelam alta vulnerabilidade entre os grupos indígena, pardo e preto, com destaque para a severidade extrema observada entre as populações indígenas. Apesar da redução recente nos níveis de pobreza, a hierarquia racial dos indicadores de pobreza permanece inalterada.&lt;/p&gt;
@@ -4290,10 +4290,10 @@ Os indicadores de dispersão intragrupo, como o &lt;strong&gt;índice de Gini&lt
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Figura 1: Distribuição Temporal da Renda Média (R$).&#34; srcset=&#34;
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3570098504_hub4f74a9ad78ef739ee242701438db642_64713_230b42b2fc26fe26905603f33994239e.webp 400w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3570098504_hub4f74a9ad78ef739ee242701438db642_64713_a154ef5592b8060365d3e74692e66f0d.webp 760w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3570098504_hub4f74a9ad78ef739ee242701438db642_64713_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://github.com/henriqueest/henriqueest.github.io/henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3570098504_hub4f74a9ad78ef739ee242701438db642_64713_230b42b2fc26fe26905603f33994239e.webp&#34;
+               /post/estupro/images/clipboard-3570098504_hub4f74a9ad78ef739ee242701438db642_64713_230b42b2fc26fe26905603f33994239e.webp 400w,
+               /post/estupro/images/clipboard-3570098504_hub4f74a9ad78ef739ee242701438db642_64713_a154ef5592b8060365d3e74692e66f0d.webp 760w,
+               /post/estupro/images/clipboard-3570098504_hub4f74a9ad78ef739ee242701438db642_64713_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://henriqueest.github.io/post/estupro/images/clipboard-3570098504_hub4f74a9ad78ef739ee242701438db642_64713_230b42b2fc26fe26905603f33994239e.webp&#34;
                width=&#34;760&#34;
                height=&#34;250&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -4322,10 +4322,10 @@ Os indicadores de dispersão intragrupo, como o &lt;strong&gt;índice de Gini&lt
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Figura 2: Índice de Desigualdade de Gini.&#34; srcset=&#34;
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3158677898_hu1d5a1351d6340b1095ffaeda987f031f_53377_44c39d3890b8265ee2cd8460eecf6b30.webp 400w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3158677898_hu1d5a1351d6340b1095ffaeda987f031f_53377_6b7111874267f7a530bff35d5004c907.webp 760w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3158677898_hu1d5a1351d6340b1095ffaeda987f031f_53377_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://github.com/henriqueest/henriqueest.github.io/henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3158677898_hu1d5a1351d6340b1095ffaeda987f031f_53377_44c39d3890b8265ee2cd8460eecf6b30.webp&#34;
+               /post/estupro/images/clipboard-3158677898_hu1d5a1351d6340b1095ffaeda987f031f_53377_44c39d3890b8265ee2cd8460eecf6b30.webp 400w,
+               /post/estupro/images/clipboard-3158677898_hu1d5a1351d6340b1095ffaeda987f031f_53377_6b7111874267f7a530bff35d5004c907.webp 760w,
+               /post/estupro/images/clipboard-3158677898_hu1d5a1351d6340b1095ffaeda987f031f_53377_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://henriqueest.github.io/post/estupro/images/clipboard-3158677898_hu1d5a1351d6340b1095ffaeda987f031f_53377_44c39d3890b8265ee2cd8460eecf6b30.webp&#34;
                width=&#34;760&#34;
                height=&#34;247&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -4355,10 +4355,10 @@ Os indicadores de dispersão intragrupo, como o &lt;strong&gt;índice de Gini&lt
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Figura 3: Índices de Desigualdade Theil T e Theil L: entre grupos, dentro de grupos e total.&#34; srcset=&#34;
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-569021486_hu01dc4ebfec9012091a499d9bf1193cf3_79321_f2e2958a9fbfb6ae8776271741265e7b.webp 400w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-569021486_hu01dc4ebfec9012091a499d9bf1193cf3_79321_649fe33d8ec8f80503ad2c76f9a2cc10.webp 760w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-569021486_hu01dc4ebfec9012091a499d9bf1193cf3_79321_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://github.com/henriqueest/henriqueest.github.io/henriqueest/henriqueest.github.io/post/estupro/images/clipboard-569021486_hu01dc4ebfec9012091a499d9bf1193cf3_79321_f2e2958a9fbfb6ae8776271741265e7b.webp&#34;
+               /post/estupro/images/clipboard-569021486_hu01dc4ebfec9012091a499d9bf1193cf3_79321_f2e2958a9fbfb6ae8776271741265e7b.webp 400w,
+               /post/estupro/images/clipboard-569021486_hu01dc4ebfec9012091a499d9bf1193cf3_79321_649fe33d8ec8f80503ad2c76f9a2cc10.webp 760w,
+               /post/estupro/images/clipboard-569021486_hu01dc4ebfec9012091a499d9bf1193cf3_79321_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://henriqueest.github.io/post/estupro/images/clipboard-569021486_hu01dc4ebfec9012091a499d9bf1193cf3_79321_f2e2958a9fbfb6ae8776271741265e7b.webp&#34;
                width=&#34;760&#34;
                height=&#34;509&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -4387,10 +4387,10 @@ Os indicadores de dispersão intragrupo, como o &lt;strong&gt;índice de Gini&lt
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Figura 4: Contribuição dos Grupos de Raça/Cor para os Índices Theil T e Theil L.&#34; srcset=&#34;
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-2293657139_hub8f16913b10b7981c04d0f580f386407_98169_3ee8b585212ce6448fe2b10c4244cd58.webp 400w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-2293657139_hub8f16913b10b7981c04d0f580f386407_98169_a439781d6f60d7443939dc81fb0bb743.webp 760w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-2293657139_hub8f16913b10b7981c04d0f580f386407_98169_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://github.com/henriqueest/henriqueest.github.io/henriqueest/henriqueest.github.io/post/estupro/images/clipboard-2293657139_hub8f16913b10b7981c04d0f580f386407_98169_3ee8b585212ce6448fe2b10c4244cd58.webp&#34;
+               /post/estupro/images/clipboard-2293657139_hub8f16913b10b7981c04d0f580f386407_98169_3ee8b585212ce6448fe2b10c4244cd58.webp 400w,
+               /post/estupro/images/clipboard-2293657139_hub8f16913b10b7981c04d0f580f386407_98169_a439781d6f60d7443939dc81fb0bb743.webp 760w,
+               /post/estupro/images/clipboard-2293657139_hub8f16913b10b7981c04d0f580f386407_98169_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://henriqueest.github.io/post/estupro/images/clipboard-2293657139_hub8f16913b10b7981c04d0f580f386407_98169_3ee8b585212ce6448fe2b10c4244cd58.webp&#34;
                width=&#34;760&#34;
                height=&#34;503&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -4418,10 +4418,10 @@ Os indicadores de dispersão intragrupo, como o &lt;strong&gt;índice de Gini&lt
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Figura 5: Indicadores de Desigualdade Baseados em Razões de Percentis.&#34; srcset=&#34;
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-2348214895_hub119fde3a2b215657652ba68566d41ad_97148_9396706d301be0ebbf73b892dd34a7fc.webp 400w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-2348214895_hub119fde3a2b215657652ba68566d41ad_97148_3dae7eddbd1c4e7d0034332504dee7c0.webp 760w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-2348214895_hub119fde3a2b215657652ba68566d41ad_97148_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://github.com/henriqueest/henriqueest.github.io/henriqueest/henriqueest.github.io/post/estupro/images/clipboard-2348214895_hub119fde3a2b215657652ba68566d41ad_97148_9396706d301be0ebbf73b892dd34a7fc.webp&#34;
+               /post/estupro/images/clipboard-2348214895_hub119fde3a2b215657652ba68566d41ad_97148_9396706d301be0ebbf73b892dd34a7fc.webp 400w,
+               /post/estupro/images/clipboard-2348214895_hub119fde3a2b215657652ba68566d41ad_97148_3dae7eddbd1c4e7d0034332504dee7c0.webp 760w,
+               /post/estupro/images/clipboard-2348214895_hub119fde3a2b215657652ba68566d41ad_97148_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://henriqueest.github.io/post/estupro/images/clipboard-2348214895_hub119fde3a2b215657652ba68566d41ad_97148_9396706d301be0ebbf73b892dd34a7fc.webp&#34;
                width=&#34;549&#34;
                height=&#34;549&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -4451,10 +4451,10 @@ Os indicadores de dispersão intragrupo, como o &lt;strong&gt;índice de Gini&lt
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Figura 6: Indicador de Incidência de Pobreza.&#34; srcset=&#34;
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3349640886_hued3ed881b40ca93cc85c03c90d87caef_99533_29bdfcc6621901298353ab081cd0d448.webp 400w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3349640886_hued3ed881b40ca93cc85c03c90d87caef_99533_48d4dff0ede9af3c58ac0a3fbbb403dc.webp 760w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3349640886_hued3ed881b40ca93cc85c03c90d87caef_99533_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://github.com/henriqueest/henriqueest.github.io/henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3349640886_hued3ed881b40ca93cc85c03c90d87caef_99533_29bdfcc6621901298353ab081cd0d448.webp&#34;
+               /post/estupro/images/clipboard-3349640886_hued3ed881b40ca93cc85c03c90d87caef_99533_29bdfcc6621901298353ab081cd0d448.webp 400w,
+               /post/estupro/images/clipboard-3349640886_hued3ed881b40ca93cc85c03c90d87caef_99533_48d4dff0ede9af3c58ac0a3fbbb403dc.webp 760w,
+               /post/estupro/images/clipboard-3349640886_hued3ed881b40ca93cc85c03c90d87caef_99533_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://henriqueest.github.io/post/estupro/images/clipboard-3349640886_hued3ed881b40ca93cc85c03c90d87caef_99533_29bdfcc6621901298353ab081cd0d448.webp&#34;
                width=&#34;552&#34;
                height=&#34;547&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -4536,9 +4536,9 @@ North-Holland.&lt;/li&gt;
     
     <item>
       <title>Spatio-temporal geostatistical modeling of Gneiting applied to surface albedo (Brazil)</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/publication/journal-article-4/</link>
+      <link>https://henriqueest.github.io/publication/journal-article-4/</link>
       <pubDate>Mon, 15 Nov 2021 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/publication/journal-article-4/</guid>
+      <guid>https://henriqueest.github.io/publication/journal-article-4/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -4549,9 +4549,9 @@ North-Holland.&lt;/li&gt;
     
     <item>
       <title>The COVID-19 pandemic in Brazil: an application of the k-means clustering method</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/publication/journal-article-3/</link>
+      <link>https://henriqueest.github.io/publication/journal-article-3/</link>
       <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/publication/journal-article-3/</guid>
+      <guid>https://henriqueest.github.io/publication/journal-article-3/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -4562,9 +4562,9 @@ North-Holland.&lt;/li&gt;
     
     <item>
       <title>Proposition of new alternative tests adapted to the traditional T2 test</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/publication/journal-article/</link>
+      <link>https://henriqueest.github.io/publication/journal-article/</link>
       <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/publication/journal-article/</guid>
+      <guid>https://henriqueest.github.io/publication/journal-article/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -4575,9 +4575,9 @@ North-Holland.&lt;/li&gt;
     
     <item>
       <title>App - shiny - Ocorrências criminais - Sinespe</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/post/aplicativo_sinesp/aplicativo/</link>
+      <link>https://henriqueest.github.io/post/aplicativo_sinesp/aplicativo/</link>
       <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/post/aplicativo_sinesp/aplicativo/</guid>
+      <guid>https://henriqueest.github.io/post/aplicativo_sinesp/aplicativo/</guid>
       <description>&lt;!-- &lt;style&gt; --&gt;
 &lt;!-- body { --&gt;
 &lt;!--   text-align: justify; --&gt;
@@ -4604,9 +4604,9 @@ North-Holland.&lt;/li&gt;
     
     <item>
       <title>Modelos não lineares</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/post/2020-12-01-r-rmarkdown/</link>
+      <link>https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/</link>
       <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/post/2020-12-01-r-rmarkdown/</guid>
+      <guid>https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/</guid>
       <description>&lt;h2 id=&#34;modelos-não-lineares&#34;&gt;Modelos não lineares&lt;/h2&gt;
 &lt;p&gt;Modelos não lineares (NLM) geralmente são voltados a obter algumas informações sobre a relação entre as variáveis Y e X. Tais informações estão vinculadas a diferentes graus de conhecimento como&lt;/p&gt;
 &lt;ul&gt;
@@ -4681,7 +4681,7 @@ glimpse(data)
   labs(x = &amp;quot;Date (day)&amp;quot;, y = &amp;quot;Accumulated deaths&amp;quot;)+
   theme_classic()
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;
 &lt;p&gt;Sugere modelo duplo sigmóide&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(data)+
   geom_point(aes(x = as.Date(date), y = accumDeaths), colour = &amp;quot;steelblue&amp;quot;)+
@@ -4696,7 +4696,7 @@ glimpse(data)
   labs(x = &amp;quot;Date (day)&amp;quot;, y = &amp;quot;Accumulated deaths&amp;quot;)+
   theme_classic()
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;
 &lt;h3 id=&#34;ajuste-do-modelo-duplo-sigmóide&#34;&gt;Ajuste do modelo duplo sigmóide&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Criando uma variável numérica para contar o tempo&lt;/li&gt;
@@ -4745,7 +4745,7 @@ glimpse(data_mod)
   labs(x = &amp;quot;Day&amp;quot;, y = &amp;quot;Accumulated deaths corrected&amp;quot;)+
   theme_classic()
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;
 &lt;h2 id=&#34;chutes-iniciais-para-cada-sigmóide&#34;&gt;Chutes iniciais para cada sigmóide&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;modelo um: modelo logístico&lt;/li&gt;
@@ -4784,7 +4784,7 @@ geom_point(aes(x = data, y = accumDeathscorr, color = &amp;quot;blue&amp;quot;))
                      breaks = c(&amp;quot;blue&amp;quot;, &amp;quot;red&amp;quot;),
                        labels=c(&amp;quot;Observed&amp;quot;, &amp;quot;Predict&amp;quot;))
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;
 &lt;ul&gt;
 &lt;li&gt;modelo dois: modelo logístico&lt;/li&gt;
 &lt;/ul&gt;
@@ -4822,7 +4822,7 @@ geom_point(aes(x = data, y = accumDeathscorr, color = &amp;quot;blue&amp;quot;))
                      breaks = c(&amp;quot;blue&amp;quot;, &amp;quot;red&amp;quot;),
                        labels=c(&amp;quot;Observed&amp;quot;, &amp;quot;Predict&amp;quot;))
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;
 &lt;h2 id=&#34;objetivos&#34;&gt;Objetivos&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;encontre modelos que possam se ajustar a esses dados&lt;/li&gt;
@@ -4834,9 +4834,9 @@ geom_point(aes(x = data, y = accumDeathscorr, color = &amp;quot;blue&amp;quot;))
     
     <item>
       <title>Slides</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/slides/example/</link>
+      <link>https://henriqueest.github.io/slides/example/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/slides/example/</guid>
+      <guid>https://henriqueest.github.io/slides/example/</guid>
       <description>&lt;h1 id=&#34;create-slides-in-markdown-with-wowchemy&#34;&gt;Create slides in Markdown with Wowchemy&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://wowchemy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wowchemy&lt;/a&gt; | &lt;a href=&#34;https://owchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
@@ -4963,9 +4963,9 @@ $$&lt;/p&gt;
     
     <item>
       <title>Heart Rate Variability in Shift Workers: Responses to Orthostatism and Relationships with Anthropometry, Body Composition, and Blood Pressure</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/publication/journal-article-2/</link>
+      <link>https://henriqueest.github.io/publication/journal-article-2/</link>
       <pubDate>Thu, 01 Oct 2015 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/publication/journal-article-2/</guid>
+      <guid>https://henriqueest.github.io/publication/journal-article-2/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -4976,9 +4976,9 @@ $$&lt;/p&gt;
     
     <item>
       <title></title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/admin/config.yml</link>
+      <link>https://henriqueest.github.io/admin/config.yml</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/admin/config.yml</guid>
+      <guid>https://henriqueest.github.io/admin/config.yml</guid>
       <description></description>
     </item>
     

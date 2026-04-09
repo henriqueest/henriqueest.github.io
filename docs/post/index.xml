@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts | Henrique JP Alves</title>
-    <link>https://github.com/henriqueest/henriqueest.github.io/post/</link>
-      <atom:link href="https://github.com/henriqueest/henriqueest.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://henriqueest.github.io/post/</link>
+      <atom:link href="https://henriqueest.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <description>Posts</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 31 Mar 2026 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://github.com/henriqueest/henriqueest.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
+      <url>https://henriqueest.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png</url>
       <title>Posts</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/post/</link>
+      <link>https://henriqueest.github.io/post/</link>
     </image>
     
     <item>
       <title>Income Inequality and Sexual Violence in Brazil (2015–2025)</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/post/crimes_estupro/</link>
+      <link>https://henriqueest.github.io/post/crimes_estupro/</link>
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/post/crimes_estupro/</guid>
+      <guid>https://henriqueest.github.io/post/crimes_estupro/</guid>
       <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
 &lt;p&gt;This study examines the temporal and spatial dynamics of rape victimization rates in Brazil between 2015 and 2025, disaggregated by sex and Federative Units. Using standardized rates per $100,000$ inhabitants, the analysis integrates descriptive statistics, three-year weighted moving averages, consistency indicators, and Local Indicators of Spatial Association (LISA) to identify structural patterns, temporal persistence, and localized spatial dependence. The results reveal pronounced regional disparities, with the North and Central-West regions consistently exhibiting the highest levels of female victimization. The LISA analysis further demonstrates that these elevated rates are not randomly distributed but form statistically significant and persistent High-High spatial clusters, indicating strong geographic concentration. Conversely, Low-Low clusters observed in parts of the Northeast and Southeast suggest spatially structured areas of lower vulnerability. Although male victimization rates are substantially lower, partially similar spatial patterns emerge, albeit with weaker and more fragmented spatial autocorrelation. The findings also indicate that, despite short-term fluctuations &amp;mdash; particularly during the COVID-19 period &amp;mdash; several states exhibit persistent upward trends, reinforcing the
 interpretation of structural rather than episodic dynamics. The temporary disruption and subsequent reconfiguration of spatial clusters further highlight the resilience of underlying spatial processes. Overall, the combined use of temporal and spatial analytical tools provides a more nuanced understanding of sexual violence in Brazil, emphasizing the coexistence of regional inequality, spatial dependence, and trend persistence. These findings underscore the need for
@@ -3140,10 +3140,10 @@ spatial persistence rather than random fluctuation.&lt;/p&gt;
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34; srcset=&#34;
-               /henriqueest/henriqueest.github.io/post/crimes_estupro/images/clipboard-4194439002_hu7ab7a0aca7b87ce0ab9dc2341cd4479f_74093_6787133469e2a6d835b6d327c10f7f90.webp 400w,
-               /henriqueest/henriqueest.github.io/post/crimes_estupro/images/clipboard-4194439002_hu7ab7a0aca7b87ce0ab9dc2341cd4479f_74093_42ee30802b6dc5b42f79ee32656995b9.webp 760w,
-               /henriqueest/henriqueest.github.io/post/crimes_estupro/images/clipboard-4194439002_hu7ab7a0aca7b87ce0ab9dc2341cd4479f_74093_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://github.com/henriqueest/henriqueest.github.io/henriqueest/henriqueest.github.io/post/crimes_estupro/images/clipboard-4194439002_hu7ab7a0aca7b87ce0ab9dc2341cd4479f_74093_6787133469e2a6d835b6d327c10f7f90.webp&#34;
+               /post/crimes_estupro/images/clipboard-4194439002_hu7ab7a0aca7b87ce0ab9dc2341cd4479f_74093_6787133469e2a6d835b6d327c10f7f90.webp 400w,
+               /post/crimes_estupro/images/clipboard-4194439002_hu7ab7a0aca7b87ce0ab9dc2341cd4479f_74093_42ee30802b6dc5b42f79ee32656995b9.webp 760w,
+               /post/crimes_estupro/images/clipboard-4194439002_hu7ab7a0aca7b87ce0ab9dc2341cd4479f_74093_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://henriqueest.github.io/post/crimes_estupro/images/clipboard-4194439002_hu7ab7a0aca7b87ce0ab9dc2341cd4479f_74093_6787133469e2a6d835b6d327c10f7f90.webp&#34;
                width=&#34;508&#34;
                height=&#34;747&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -3203,10 +3203,10 @@ spatial distribution of sexual violence across genders.&lt;/p&gt;
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;&#34; srcset=&#34;
-               /henriqueest/henriqueest.github.io/post/crimes_estupro/images/clipboard-3333573559_hu5e6d708ae408622dbf91346047d74871_80558_65cee24ae07ddff088582ff063c53294.webp 400w,
-               /henriqueest/henriqueest.github.io/post/crimes_estupro/images/clipboard-3333573559_hu5e6d708ae408622dbf91346047d74871_80558_7ca40686e27d001169b33f25133510af.webp 760w,
-               /henriqueest/henriqueest.github.io/post/crimes_estupro/images/clipboard-3333573559_hu5e6d708ae408622dbf91346047d74871_80558_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://github.com/henriqueest/henriqueest.github.io/henriqueest/henriqueest.github.io/post/crimes_estupro/images/clipboard-3333573559_hu5e6d708ae408622dbf91346047d74871_80558_65cee24ae07ddff088582ff063c53294.webp&#34;
+               /post/crimes_estupro/images/clipboard-3333573559_hu5e6d708ae408622dbf91346047d74871_80558_65cee24ae07ddff088582ff063c53294.webp 400w,
+               /post/crimes_estupro/images/clipboard-3333573559_hu5e6d708ae408622dbf91346047d74871_80558_7ca40686e27d001169b33f25133510af.webp 760w,
+               /post/crimes_estupro/images/clipboard-3333573559_hu5e6d708ae408622dbf91346047d74871_80558_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://henriqueest.github.io/post/crimes_estupro/images/clipboard-3333573559_hu5e6d708ae408622dbf91346047d74871_80558_65cee24ae07ddff088582ff063c53294.webp&#34;
                width=&#34;548&#34;
                height=&#34;760&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -3317,27 +3317,27 @@ patterns.&lt;/p&gt;
     
     <item>
       <title>Análise de dados de COVID-19 da PNAD-Contínua usando o pacote sqldf</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/post/albert-einstein/</link>
+      <link>https://henriqueest.github.io/post/albert-einstein/</link>
       <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/post/albert-einstein/</guid>
+      <guid>https://henriqueest.github.io/post/albert-einstein/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;Dados_pnad.pdf&#34;&gt;Baixar PDF&lt;/a&gt;&lt;/p&gt;
 &lt;iframe src=&#34;Dados_pnad.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;</description>
     </item>
     
     <item>
       <title>Dados de renda por sexo e cor/raça PNAD-Contínua</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/post/pnad-continua/</link>
+      <link>https://henriqueest.github.io/post/pnad-continua/</link>
       <pubDate>Fri, 27 Mar 2026 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/post/pnad-continua/</guid>
+      <guid>https://henriqueest.github.io/post/pnad-continua/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;Projeto_Pesquisa_ABNT_Henrique.pdf&#34;&gt;Baixar PDF&lt;/a&gt;&lt;/p&gt;
 &lt;iframe src=&#34;Projeto_Pesquisa_ABNT_Henrique.pdf&#34; width=&#34;100%&#34; height=&#34;600px&#34;&gt;&lt;/iframe&gt;</description>
     </item>
     
     <item>
       <title>Desigualdade de Renda e Pobreza por Raça/Etnia no Brasil: Uma Análise Estrutural (2020–2025)</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/post/estupro/</link>
+      <link>https://henriqueest.github.io/post/estupro/</link>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/post/estupro/</guid>
+      <guid>https://henriqueest.github.io/post/estupro/</guid>
       <description>&lt;h1 id=&#34;resumo&#34;&gt;Resumo&lt;/h1&gt;
 &lt;p&gt;A análise da distribuição de renda no Brasil entre 2020 e 2025 revela a persistência de desigualdades estruturais e racialmente estratificadas. Os índices de &lt;strong&gt;Theil T e L&lt;/strong&gt; indicam que a desigualdade total é predominantemente explicada pelo componente &lt;em&gt;intra-grupos&lt;/em&gt;, refletindo disparidades de renda acentuadas dentro dos grupos de cor ou raça, com uma maior contribuição da população branca. Embora a desigualdade &lt;em&gt;entre grupos&lt;/em&gt; seja relativamente menor, os níveis de renda média revelam uma hierarquia racial estável, na qual os grupos amarelo e branco apresentam consistentemente rendimentos superiores aos dos grupos pardo, preto e indígena.
 Os indicadores de dispersão intragrupo, como o &lt;strong&gt;índice de Gini&lt;/strong&gt; e a razão $\text{P90/P10}$, apontam para uma maior desigualdade interna e maior volatilidade entre os grupos amarelo e indígena, enquanto os grupos pardo e preto exibem menor dispersão relativa na porção central da distribuição. Quanto à pobreza, os índices de &lt;strong&gt;Foster-Greer-Thorbecke (FGT)&lt;/strong&gt; ($\text{H}$, $\text{P1}$ e $\text{P2}$) revelam alta vulnerabilidade entre os grupos indígena, pardo e preto, com destaque para a severidade extrema observada entre as populações indígenas. Apesar da redução recente nos níveis de pobreza, a hierarquia racial dos indicadores de pobreza permanece inalterada.&lt;/p&gt;
@@ -3398,10 +3398,10 @@ Os indicadores de dispersão intragrupo, como o &lt;strong&gt;índice de Gini&lt
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Figura 1: Distribuição Temporal da Renda Média (R$).&#34; srcset=&#34;
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3570098504_hub4f74a9ad78ef739ee242701438db642_64713_230b42b2fc26fe26905603f33994239e.webp 400w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3570098504_hub4f74a9ad78ef739ee242701438db642_64713_a154ef5592b8060365d3e74692e66f0d.webp 760w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3570098504_hub4f74a9ad78ef739ee242701438db642_64713_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://github.com/henriqueest/henriqueest.github.io/henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3570098504_hub4f74a9ad78ef739ee242701438db642_64713_230b42b2fc26fe26905603f33994239e.webp&#34;
+               /post/estupro/images/clipboard-3570098504_hub4f74a9ad78ef739ee242701438db642_64713_230b42b2fc26fe26905603f33994239e.webp 400w,
+               /post/estupro/images/clipboard-3570098504_hub4f74a9ad78ef739ee242701438db642_64713_a154ef5592b8060365d3e74692e66f0d.webp 760w,
+               /post/estupro/images/clipboard-3570098504_hub4f74a9ad78ef739ee242701438db642_64713_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://henriqueest.github.io/post/estupro/images/clipboard-3570098504_hub4f74a9ad78ef739ee242701438db642_64713_230b42b2fc26fe26905603f33994239e.webp&#34;
                width=&#34;760&#34;
                height=&#34;250&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -3430,10 +3430,10 @@ Os indicadores de dispersão intragrupo, como o &lt;strong&gt;índice de Gini&lt
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Figura 2: Índice de Desigualdade de Gini.&#34; srcset=&#34;
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3158677898_hu1d5a1351d6340b1095ffaeda987f031f_53377_44c39d3890b8265ee2cd8460eecf6b30.webp 400w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3158677898_hu1d5a1351d6340b1095ffaeda987f031f_53377_6b7111874267f7a530bff35d5004c907.webp 760w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3158677898_hu1d5a1351d6340b1095ffaeda987f031f_53377_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://github.com/henriqueest/henriqueest.github.io/henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3158677898_hu1d5a1351d6340b1095ffaeda987f031f_53377_44c39d3890b8265ee2cd8460eecf6b30.webp&#34;
+               /post/estupro/images/clipboard-3158677898_hu1d5a1351d6340b1095ffaeda987f031f_53377_44c39d3890b8265ee2cd8460eecf6b30.webp 400w,
+               /post/estupro/images/clipboard-3158677898_hu1d5a1351d6340b1095ffaeda987f031f_53377_6b7111874267f7a530bff35d5004c907.webp 760w,
+               /post/estupro/images/clipboard-3158677898_hu1d5a1351d6340b1095ffaeda987f031f_53377_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://henriqueest.github.io/post/estupro/images/clipboard-3158677898_hu1d5a1351d6340b1095ffaeda987f031f_53377_44c39d3890b8265ee2cd8460eecf6b30.webp&#34;
                width=&#34;760&#34;
                height=&#34;247&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -3463,10 +3463,10 @@ Os indicadores de dispersão intragrupo, como o &lt;strong&gt;índice de Gini&lt
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Figura 3: Índices de Desigualdade Theil T e Theil L: entre grupos, dentro de grupos e total.&#34; srcset=&#34;
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-569021486_hu01dc4ebfec9012091a499d9bf1193cf3_79321_f2e2958a9fbfb6ae8776271741265e7b.webp 400w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-569021486_hu01dc4ebfec9012091a499d9bf1193cf3_79321_649fe33d8ec8f80503ad2c76f9a2cc10.webp 760w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-569021486_hu01dc4ebfec9012091a499d9bf1193cf3_79321_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://github.com/henriqueest/henriqueest.github.io/henriqueest/henriqueest.github.io/post/estupro/images/clipboard-569021486_hu01dc4ebfec9012091a499d9bf1193cf3_79321_f2e2958a9fbfb6ae8776271741265e7b.webp&#34;
+               /post/estupro/images/clipboard-569021486_hu01dc4ebfec9012091a499d9bf1193cf3_79321_f2e2958a9fbfb6ae8776271741265e7b.webp 400w,
+               /post/estupro/images/clipboard-569021486_hu01dc4ebfec9012091a499d9bf1193cf3_79321_649fe33d8ec8f80503ad2c76f9a2cc10.webp 760w,
+               /post/estupro/images/clipboard-569021486_hu01dc4ebfec9012091a499d9bf1193cf3_79321_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://henriqueest.github.io/post/estupro/images/clipboard-569021486_hu01dc4ebfec9012091a499d9bf1193cf3_79321_f2e2958a9fbfb6ae8776271741265e7b.webp&#34;
                width=&#34;760&#34;
                height=&#34;509&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -3495,10 +3495,10 @@ Os indicadores de dispersão intragrupo, como o &lt;strong&gt;índice de Gini&lt
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Figura 4: Contribuição dos Grupos de Raça/Cor para os Índices Theil T e Theil L.&#34; srcset=&#34;
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-2293657139_hub8f16913b10b7981c04d0f580f386407_98169_3ee8b585212ce6448fe2b10c4244cd58.webp 400w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-2293657139_hub8f16913b10b7981c04d0f580f386407_98169_a439781d6f60d7443939dc81fb0bb743.webp 760w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-2293657139_hub8f16913b10b7981c04d0f580f386407_98169_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://github.com/henriqueest/henriqueest.github.io/henriqueest/henriqueest.github.io/post/estupro/images/clipboard-2293657139_hub8f16913b10b7981c04d0f580f386407_98169_3ee8b585212ce6448fe2b10c4244cd58.webp&#34;
+               /post/estupro/images/clipboard-2293657139_hub8f16913b10b7981c04d0f580f386407_98169_3ee8b585212ce6448fe2b10c4244cd58.webp 400w,
+               /post/estupro/images/clipboard-2293657139_hub8f16913b10b7981c04d0f580f386407_98169_a439781d6f60d7443939dc81fb0bb743.webp 760w,
+               /post/estupro/images/clipboard-2293657139_hub8f16913b10b7981c04d0f580f386407_98169_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://henriqueest.github.io/post/estupro/images/clipboard-2293657139_hub8f16913b10b7981c04d0f580f386407_98169_3ee8b585212ce6448fe2b10c4244cd58.webp&#34;
                width=&#34;760&#34;
                height=&#34;503&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -3526,10 +3526,10 @@ Os indicadores de dispersão intragrupo, como o &lt;strong&gt;índice de Gini&lt
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Figura 5: Indicadores de Desigualdade Baseados em Razões de Percentis.&#34; srcset=&#34;
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-2348214895_hub119fde3a2b215657652ba68566d41ad_97148_9396706d301be0ebbf73b892dd34a7fc.webp 400w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-2348214895_hub119fde3a2b215657652ba68566d41ad_97148_3dae7eddbd1c4e7d0034332504dee7c0.webp 760w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-2348214895_hub119fde3a2b215657652ba68566d41ad_97148_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://github.com/henriqueest/henriqueest.github.io/henriqueest/henriqueest.github.io/post/estupro/images/clipboard-2348214895_hub119fde3a2b215657652ba68566d41ad_97148_9396706d301be0ebbf73b892dd34a7fc.webp&#34;
+               /post/estupro/images/clipboard-2348214895_hub119fde3a2b215657652ba68566d41ad_97148_9396706d301be0ebbf73b892dd34a7fc.webp 400w,
+               /post/estupro/images/clipboard-2348214895_hub119fde3a2b215657652ba68566d41ad_97148_3dae7eddbd1c4e7d0034332504dee7c0.webp 760w,
+               /post/estupro/images/clipboard-2348214895_hub119fde3a2b215657652ba68566d41ad_97148_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://henriqueest.github.io/post/estupro/images/clipboard-2348214895_hub119fde3a2b215657652ba68566d41ad_97148_9396706d301be0ebbf73b892dd34a7fc.webp&#34;
                width=&#34;549&#34;
                height=&#34;549&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -3559,10 +3559,10 @@ Os indicadores de dispersão intragrupo, como o &lt;strong&gt;índice de Gini&lt
 &lt;figure  &gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
     &lt;div class=&#34;w-100&#34; &gt;&lt;img alt=&#34;Figura 6: Indicador de Incidência de Pobreza.&#34; srcset=&#34;
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3349640886_hued3ed881b40ca93cc85c03c90d87caef_99533_29bdfcc6621901298353ab081cd0d448.webp 400w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3349640886_hued3ed881b40ca93cc85c03c90d87caef_99533_48d4dff0ede9af3c58ac0a3fbbb403dc.webp 760w,
-               /henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3349640886_hued3ed881b40ca93cc85c03c90d87caef_99533_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
-               src=&#34;https://github.com/henriqueest/henriqueest.github.io/henriqueest/henriqueest.github.io/post/estupro/images/clipboard-3349640886_hued3ed881b40ca93cc85c03c90d87caef_99533_29bdfcc6621901298353ab081cd0d448.webp&#34;
+               /post/estupro/images/clipboard-3349640886_hued3ed881b40ca93cc85c03c90d87caef_99533_29bdfcc6621901298353ab081cd0d448.webp 400w,
+               /post/estupro/images/clipboard-3349640886_hued3ed881b40ca93cc85c03c90d87caef_99533_48d4dff0ede9af3c58ac0a3fbbb403dc.webp 760w,
+               /post/estupro/images/clipboard-3349640886_hued3ed881b40ca93cc85c03c90d87caef_99533_1200x1200_fit_q75_h2_lanczos_3.webp 1200w&#34;
+               src=&#34;https://henriqueest.github.io/post/estupro/images/clipboard-3349640886_hued3ed881b40ca93cc85c03c90d87caef_99533_29bdfcc6621901298353ab081cd0d448.webp&#34;
                width=&#34;552&#34;
                height=&#34;547&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
@@ -3644,9 +3644,9 @@ North-Holland.&lt;/li&gt;
     
     <item>
       <title>App - shiny - Ocorrências criminais - Sinespe</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/post/aplicativo_sinesp/aplicativo/</link>
+      <link>https://henriqueest.github.io/post/aplicativo_sinesp/aplicativo/</link>
       <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/post/aplicativo_sinesp/aplicativo/</guid>
+      <guid>https://henriqueest.github.io/post/aplicativo_sinesp/aplicativo/</guid>
       <description>&lt;!-- &lt;style&gt; --&gt;
 &lt;!-- body { --&gt;
 &lt;!--   text-align: justify; --&gt;
@@ -3673,9 +3673,9 @@ North-Holland.&lt;/li&gt;
     
     <item>
       <title>Modelos não lineares</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/post/2020-12-01-r-rmarkdown/</link>
+      <link>https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/</link>
       <pubDate>Fri, 12 Jul 2019 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/post/2020-12-01-r-rmarkdown/</guid>
+      <guid>https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/</guid>
       <description>&lt;h2 id=&#34;modelos-não-lineares&#34;&gt;Modelos não lineares&lt;/h2&gt;
 &lt;p&gt;Modelos não lineares (NLM) geralmente são voltados a obter algumas informações sobre a relação entre as variáveis Y e X. Tais informações estão vinculadas a diferentes graus de conhecimento como&lt;/p&gt;
 &lt;ul&gt;
@@ -3750,7 +3750,7 @@ glimpse(data)
   labs(x = &amp;quot;Date (day)&amp;quot;, y = &amp;quot;Accumulated deaths&amp;quot;)+
   theme_classic()
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;
 &lt;p&gt;Sugere modelo duplo sigmóide&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(data)+
   geom_point(aes(x = as.Date(date), y = accumDeaths), colour = &amp;quot;steelblue&amp;quot;)+
@@ -3765,7 +3765,7 @@ glimpse(data)
   labs(x = &amp;quot;Date (day)&amp;quot;, y = &amp;quot;Accumulated deaths&amp;quot;)+
   theme_classic()
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;
 &lt;h3 id=&#34;ajuste-do-modelo-duplo-sigmóide&#34;&gt;Ajuste do modelo duplo sigmóide&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Criando uma variável numérica para contar o tempo&lt;/li&gt;
@@ -3814,7 +3814,7 @@ glimpse(data_mod)
   labs(x = &amp;quot;Day&amp;quot;, y = &amp;quot;Accumulated deaths corrected&amp;quot;)+
   theme_classic()
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;
 &lt;h2 id=&#34;chutes-iniciais-para-cada-sigmóide&#34;&gt;Chutes iniciais para cada sigmóide&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;modelo um: modelo logístico&lt;/li&gt;
@@ -3853,7 +3853,7 @@ geom_point(aes(x = data, y = accumDeathscorr, color = &amp;quot;blue&amp;quot;))
                      breaks = c(&amp;quot;blue&amp;quot;, &amp;quot;red&amp;quot;),
                        labels=c(&amp;quot;Observed&amp;quot;, &amp;quot;Predict&amp;quot;))
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;
 &lt;ul&gt;
 &lt;li&gt;modelo dois: modelo logístico&lt;/li&gt;
 &lt;/ul&gt;
@@ -3891,7 +3891,7 @@ geom_point(aes(x = data, y = accumDeathscorr, color = &amp;quot;blue&amp;quot;))
                      breaks = c(&amp;quot;blue&amp;quot;, &amp;quot;red&amp;quot;),
                        labels=c(&amp;quot;Observed&amp;quot;, &amp;quot;Predict&amp;quot;))
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;
 &lt;h2 id=&#34;objetivos&#34;&gt;Objetivos&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;encontre modelos que possam se ajustar a esses dados&lt;/li&gt;

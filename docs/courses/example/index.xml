@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>📊 Saídas gráficas no R: introdução ao pacote ggplot2 | Henrique JP Alves</title>
-    <link>https://github.com/henriqueest/henriqueest.github.io/courses/example/</link>
-      <atom:link href="https://github.com/henriqueest/henriqueest.github.io/courses/example/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://henriqueest.github.io/courses/example/</link>
+      <atom:link href="https://henriqueest.github.io/courses/example/index.xml" rel="self" type="application/rss+xml" />
     <description>📊 Saídas gráficas no R: introdução ao pacote ggplot2</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sun, 21 Mar 2021 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://github.com/henriqueest/henriqueest.github.io/courses/example/featured%20%282%29.jpg</url>
+      <url>https://henriqueest.github.io/courses/example/featured%20%282%29.jpg</url>
       <title>📊 Saídas gráficas no R: introdução ao pacote ggplot2</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/courses/example/</link>
+      <link>https://henriqueest.github.io/courses/example/</link>
     </image>
     
     <item>
       <title>Pacote ggplot2: um curso introdutório</title>
-      <link>https://github.com/henriqueest/henriqueest.github.io/courses/example/python/</link>
+      <link>https://henriqueest.github.io/courses/example/python/</link>
       <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
-      <guid>https://github.com/henriqueest/henriqueest.github.io/courses/example/python/</guid>
+      <guid>https://henriqueest.github.io/courses/example/python/</guid>
       <description>&lt;p&gt;Construído baseado nos pacotes tidyverse e ggplot2 do R.&lt;/p&gt;
 &lt;p&gt;
   &lt;i class=&#34;fas fa-clock  pr-1 fa-fw&#34;&gt;&lt;/i&gt; 2 horas por dia, por 2 dias&lt;/p&gt;
@@ -74,7 +74,7 @@ summary(mtcars)
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;hist(mtcars$mpg, col = &amp;quot;lightblue&amp;quot;, main = &amp;quot;Função hist (base)&amp;quot;, 
      xlab = &amp;quot;Milhas por galão (mpg)&amp;quot;, ylab = &amp;quot;Frequência absoluta&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-2-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-2-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(lattice)
 histogram(~mpg,data=mtcars,
        type =&amp;quot;count&amp;quot;,
@@ -84,7 +84,7 @@ histogram(~mpg,data=mtcars,
        col = &amp;quot;lightblue&amp;quot;,
        breaks = 5)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-3-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-3-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Vamos agora utilizar a variável cyl (número de cilindros) para construírmos um gráfico de barras (frequência absoluta) utilizando a função &lt;em&gt;barplot&lt;/em&gt; da base do &lt;strong&gt;R&lt;/strong&gt; e também o pacote &lt;strong&gt;lattice&lt;/strong&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;tab &amp;lt;- table(mtcars$cyl)
 tab
@@ -95,7 +95,7 @@ tab
 &lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;barplot(tab, col = &amp;quot;lightblue&amp;quot;, main = &amp;quot;Função barplot (base)&amp;quot;, xlab = &amp;quot;Número de cilindros por motor (cyl)&amp;quot;, ylab = &amp;quot;Frequência absoluta&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-4-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-4-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;library(lattice)
 tabela &amp;lt;- xtabs(~cyl, data = mtcars)
 tabela
@@ -111,7 +111,7 @@ tabela
          ylab = &amp;quot;Frequência absoluta&amp;quot;,
          col = &amp;quot;lightblue&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-5-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-5-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Bastam esses dois exemplos para percebermos algumas situações: para cada tipo de gráfico escolhido de acordo com a natureza da variável, o conjunto de linhas de comandos necessários para gerá-los no &lt;strong&gt;R&lt;/strong&gt; é único e particular; é necessário também a utilização de funções adicionais (table) e funções específicas do pacote &lt;strong&gt;lattice&lt;/strong&gt; (xtabs) para a construção dos gráficos de barras. Essas situações forçam o usuário a ter conhecimento de cada uma dessas funções particulares e também seus argumentos.&lt;/p&gt;
 &lt;p&gt;Essas justificativas são suficientes para pensarmos em algum pacote que torne mais fácil ao usuário a construção de gráficos no &lt;strong&gt;R&lt;/strong&gt;. Esse pacote existe e é o pacote &lt;strong&gt;ggplot2&lt;/strong&gt;, que é o objetivo desse curso. Vamos conhecer um pouco mais desse pacote e observar suas vantagens.&lt;/p&gt;
 &lt;h2 id=&#34;o-pacote-ggplot2&#34;&gt;&lt;em&gt;O pacote ggplot2&lt;/em&gt;&lt;/h2&gt;
@@ -160,25 +160,25 @@ tabela
 &lt;p&gt;A primeira camada (layer) necessária para a criação de gráficos no &lt;strong&gt;ggplot2&lt;/strong&gt; é dada pelo comando ggplot(dados). Neste comando, estamos criando a área onde o gráfico será construído e, ainda, informando ao &lt;strong&gt;ggplot2&lt;/strong&gt; qual o conjunto de dados que contém as variáveis de interesse.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-6-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-6-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Nós notamos que é criado uma área (em cinza) onde será construído o gráfico. Essa área ainda não contém nenhum formato geométrico (geom_tipo) como, por exemplo, pontos, barras, caixas, etc. Falta também a informação da estética do gráfico desejado juntamente com as variáveis de interesse aes(x,y,cores). Esse é o próximo passo. Note também que a cada acréscimo de camada utilzamos o sinal &lt;code&gt;+&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;A variável mpg já foi apresentada e utilizada nos gráficos anteriores. A variável disp significa quantas cilindradas o motor do veículo possui. Note que ainda não escolhemos a cor dos pontos do gráfico nem rotulamos seus eixos. Nosso gráfico ainda está incompleto.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars) +
   geom_point(mapping = aes(x= disp, y=mpg))
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-7-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-7-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;No pacote &lt;strong&gt;gplot2&lt;/strong&gt; nós também temos a liberdade de escolher a escala de cores que iram compor o nosso gráfico. Para isso temos três argumentos: color e colour, que se diferem devido a lingua ingleza e fill. Os dois primeiros são utilizados em entes geométricos que não possuem área, tais como pontos e linhas, sendo necessário utilizar apenas um deles e a escolha fica a critério do usuário. Já o comando fill é utilizado naquele ente geométrico que possui área, sendo responsável pelo preenchimento dessa área com a cor desejada. Ambos devem ser utilizados junto ao comando geom_tipo.&lt;/p&gt;
 &lt;p&gt;Vamos agora ver dois exemplos de utilização desses argumentos.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
   geom_point(mapping = aes(x= disp, y=mpg, color=as.factor(am))) +
   labs(x=&amp;quot;Cilindradas&amp;quot;, y=&amp;quot;Milhas/galão&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-8-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-8-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars) +
   geom_point(mapping = aes(x= disp, y=mpg), color=c(&amp;quot;red&amp;quot;)) +
   labs(x=&amp;quot;Cilindradas&amp;quot;, y=&amp;quot;Milhas/galão&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-8-2.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-8-2.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Nós notamos que se utilizarmos o argumento para a escolha das cores dentro da função aes, este deve estar relaciondo a alguma variável específica. No nosso exemplo, é o tipo de transmissão do carro a variável em questão. Caso esse argumento seja utilizado fora da função aes, nós temos a liberdade de escolha das cores, pois ela não estão relacionadas as variáveis em questão.&lt;/p&gt;
 &lt;p&gt;Tente utilizar o argumento de cores relacionado a variávies fora da função aes e verá que o &lt;strong&gt;R&lt;/strong&gt; retornará uma mensagem de erro, dizendo que não reconhece a variável.&lt;/p&gt;
 &lt;p&gt;Vamos agora apresentar um gráfico de barras onde o interesse é apresentar as frequências absolutas, relativas e percentual da quantidade de cilindros que o motor do carro possui (cyl) separados por tipo de transmissão (am) .&lt;/p&gt;
@@ -202,7 +202,7 @@ tabela
 ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
 ## generated.
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-9-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-9-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars, aes(x = as.factor(cyl))) +
   geom_bar(aes(y = (..count..)/sum(..count..), fill=as.factor(am)), 
             position = &amp;quot;dodge&amp;quot;, colour=&amp;quot;black&amp;quot;, alpha=0.45)+
@@ -217,7 +217,7 @@ tabela
         panel.border = element_blank(),
         panel.background = element_blank()) 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-9-2.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-9-2.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(mtcars, aes(x = as.factor(cyl))) +
   geom_bar(aes(y = (..count..)/sum(..count..)*100, fill=as.factor(am)), 
             position = &amp;quot;dodge&amp;quot;, colour=&amp;quot;black&amp;quot;, alpha=0.45)+
@@ -232,7 +232,7 @@ tabela
         panel.border = element_blank(),
         panel.background = element_blank())
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-9-3.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-9-3.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Vamos agora construir um gráfico do tipo boxplot utilizando o pacote &lt;strong&gt;ggplot2&lt;/strong&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
   geom_boxplot(aes(x = as.factor(cyl), y = mpg, fill=as.factor(am)), colour=&amp;quot;brown&amp;quot;, alpha=0.2) +
@@ -247,7 +247,7 @@ tabela
         panel.border = element_blank(),
         panel.background = element_blank())
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-10-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-10-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
   geom_boxplot(aes(x = as.factor(cyl), y = mpg, fill=as.factor(am)), colour=&amp;quot;brown&amp;quot;, alpha=0.2) +
   labs(x = &amp;quot;Número de cilindros&amp;quot;, y = &amp;quot;Milhas/galão&amp;quot;, fill = &amp;quot;Tipo de transmissão&amp;quot;) +
@@ -261,7 +261,7 @@ tabela
         panel.border = element_blank(),
         panel.background = element_blank()) 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-11-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-11-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
   geom_boxplot(aes(x = as.factor(cyl), y = mpg, fill=as.factor(am)), colour=&amp;quot;brown&amp;quot;, alpha=0.2) +
   labs(x = &amp;quot;Número de cilindros&amp;quot;, y = &amp;quot;Milhas/galão&amp;quot;) +
@@ -275,7 +275,7 @@ tabela
         panel.border = element_blank(),
         panel.background = element_blank()) 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-12-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-12-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; cor &amp;lt;- gray(0:2 / 2)
  ggplot(mtcars) +
   geom_boxplot(aes(x = as.factor(cyl), y = mpg, fill=as.factor(am)), colour=&amp;quot;brown&amp;quot;, 
@@ -292,7 +292,7 @@ tabela
         panel.background = element_blank()) +
   scale_fill_manual(values=cor)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-13-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-13-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Vamos agora construir alguns histogramas com frequências absolutas, relativas e percentuais, nessa ordem. Note que o comando &lt;code&gt;bins&lt;/code&gt; define o número de classes a ser escolhido. Neste exemplo escolhemos arbitrariamente &lt;code&gt;bins&lt;/code&gt; igual a 5, mas o usuário pode fazer os cálculos manualmente e utilizá-lo. Nós também definimos a escala dos eixos &lt;code&gt;x&lt;/code&gt; e &lt;code&gt;y&lt;/code&gt; manualmente, através dos comandos &lt;code&gt;scale_x_continuous&lt;/code&gt; e &lt;code&gt;scale_y_continuous&lt;/code&gt;.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
   geom_histogram(aes(x = mpg, y = (..count..)/sum(..count..), fill=as.factor(am)), 
@@ -310,7 +310,7 @@ tabela
         panel.border = element_blank(),
         panel.background = element_blank()) 
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-14-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-14-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
   geom_histogram(aes(x = mpg, y = (..count..), fill=as.factor(am)), bins=5,  
                  colour=&amp;quot;brown&amp;quot;, alpha=0.2)+
@@ -327,7 +327,7 @@ tabela
         panel.border = element_blank(),
         panel.background = element_blank())
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-15-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-15-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars) +
   geom_histogram(aes(x = mpg, y = (..count..), fill=as.factor(am)), bins=5,  
                  colour=&amp;quot;brown&amp;quot;, alpha=0.2)+
@@ -344,7 +344,7 @@ tabela
         panel.border = element_blank(),
         panel.background = element_blank())
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-16-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-16-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Antes de construírmos o próximo histograma, precisamos apresentar a função &lt;code&gt;facet&lt;/code&gt; do ggplot2. Esta função permite a construção de gráficos em &lt;code&gt;facetas&lt;/code&gt;. O que é isso? Suponha que estamos interessados em construírmos um histograma baseado no anteriormente apresentado. Mas o nosso interesse maior é apresentar um histograma individual para cada tipo de transmissão &lt;code&gt;am&lt;/code&gt; considerando a variável contínua &lt;code&gt;mpg&lt;/code&gt;. Abaixo apresentamos a construção deste histograma.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; cor &amp;lt;- gray(0:1 / 2)
  ggplot(mtcars) +
@@ -366,7 +366,7 @@ tabela
         panel.border = element_blank(),
         panel.background = element_blank())
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-17-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-17-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Vamos agora apresentar um exemplo de como construir um gráfico de tendência destacando-se os pontos de dispersão dos dados.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt; ggplot(mtcars, aes(x = disp, y = mpg)) +
   geom_point(aes(colour=as.factor(am)), alpha=0.6, size=1.7)+
@@ -388,7 +388,7 @@ tabela
 ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
 ## generated.
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-18-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-18-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Como o usuário faria para construir estes histogramas e gráficos de tendência sem utilizar a classificação por níveis da variável &lt;strong&gt;am&lt;/strong&gt;? A construção destes gráficos fica como exercício para o usuário.&lt;/p&gt;
 &lt;h2 id=&#34;segunda-parte&#34;&gt;&lt;strong&gt;Segunda parte&lt;/strong&gt;&lt;/h2&gt;
 &lt;h2 id=&#34;construindo-gráficos-a-partir-de-um-conjunto-de-dados-original-usando-os-pacotes-tydeverse-tibble-e-dplyr-do-r&#34;&gt;Construindo gráficos a partir de um conjunto de dados original usando os pacotes tydeverse, tibble e dplyr do R.&lt;/h2&gt;
@@ -690,7 +690,7 @@ panel.border = element_blank(),
 panel.background = element_blank())+
 scale_fill_discrete(name=&amp;quot;UF&amp;quot;)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-21-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-21-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Um fato curioso deve ser notado: quando manipulamos o conto de dados data com as funções select e filter, nós atribuímos a cada tibble gerado por essas funções um rótulo. Agora, imagine que, dentro do mesmo conjunto de dados, nós precisamos utilizar todas as seis funções do pacote &lt;strong&gt;dplyr&lt;/strong&gt;. Seria inviável proceder como da forma anterior. Para corrigir esse problema, foi criado o pacote &lt;strong&gt;magrittr&lt;/strong&gt; onde foi criado o operador pipe %&amp;gt;%. Essa ferramenta é utilizada para expressar claramente uma sequência de múltiplas operações. Este pacote já é carregado automaticamente com o &lt;strong&gt;dplyr&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Em nosso próximo exemplo, suponha que deseja-se conhecer a evolução diária das novas mortes considerando o tempo de infecção por COVID-19 da semana 1 até a semana 8 de 2021 e 2022, para as unidades federativas da região sudeste. Entretanto, para efeitos de comparação, as populações de cada uma das UF&amp;rsquo;s se difere, o que torna a comparação entre elas inviável. Esse é o motivo pelo qual calculamos algumas medidas auxiliares quando há heterogeneidade populacional. Uma dessas medidas é denominada de taxa e seu cálculo é oriundo da razão entre o número de casos favoráveis e o total de indivíduos da população de cada uma das áreas estudas, multiplicado por alguma constante de padronização. Nós vamos respeitar as regras utilizadas pelo Instituto Brasileiro de Geografia e Estatística (IBGE) e considerar essa constante igual a 100,000. Desse modo:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;cor &amp;lt;- heat.colors(4, rev = TRUE)
@@ -716,7 +716,7 @@ panel.border = element_blank(),
 panel.background = element_blank())+
 scale_fill_manual(name=&amp;quot;UF&amp;quot;, values = cor)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-22-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-22-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;p&gt;Nós também podemos produzir mapas utilizando o pacote &lt;strong&gt;ggplot2&lt;/strong&gt;. Entretanto, nós precisamos de algum arquivo que contenha as coordenadas do mapa desejado em forma de polígonos ou até mesmo imagens (raster). Para tal, nós vamos utilizar o pacote &lt;strong&gt;geobr&lt;/strong&gt;, que foi criado pelo Instituto de Pesquisa Econômica Aplicada - Ipea. Vejamos:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;uf &amp;lt;- data %&amp;gt;%
   select(state, newDeaths, newCases, accumDeaths, accumCases, 
@@ -772,7 +772,7 @@ dados_final %&amp;gt;%
 &lt;pre&gt;&lt;code&gt;## Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
 ## give correct results for longitude/latitude data
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-23-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-23-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dados_final %&amp;gt;%
   ggplot() +
   geom_sf(aes(fill = ratenewdeaths), color = &amp;quot;black&amp;quot;) +
@@ -787,7 +787,7 @@ dados_final %&amp;gt;%
 &lt;pre&gt;&lt;code&gt;## Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
 ## give correct results for longitude/latitude data
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-24-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-24-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dados_final %&amp;gt;%
   ggplot() +
   geom_sf(aes(fill = rateaccumcases), color = &amp;quot;black&amp;quot;) +
@@ -802,7 +802,7 @@ dados_final %&amp;gt;%
 &lt;pre&gt;&lt;code&gt;## Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
 ## give correct results for longitude/latitude data
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-25-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-25-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;dados_final %&amp;gt;%
   ggplot() +
   geom_sf(aes(fill = rateaccumdeaths), color = &amp;quot;black&amp;quot;) +
@@ -817,7 +817,7 @@ dados_final %&amp;gt;%
 &lt;pre&gt;&lt;code&gt;## Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
 ## give correct results for longitude/latitude data
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://github.com/henriqueest/henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-26-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;</description>
+&lt;img src=&#34;https://henriqueest.github.io/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-26-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; style=&#34;display: block; margin: auto;&#34; /&gt;</description>
     </item>
     
   </channel>
