@@ -85,7 +85,7 @@ privacy_pack: false
 edit_page:
   repo_url: ''
   content_dir: ''
-  repo_branch: master
+  repo_branch: main
   editable:
     page: false
     post: false
