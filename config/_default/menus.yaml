@@ -17,7 +17,7 @@ main:
     url: courses/
     weight: 60
   - name: Leisures
-    url: leisure/
+    url: /leisure/
     weight: 40
   - name: Contact
     url: '#contact'

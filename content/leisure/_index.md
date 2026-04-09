@@ -46,7 +46,7 @@ draft: false
   </video>
   
   <video onclick="openModal(this.querySelector('source').src)">
-    <source src="/media/albums/fotos/saobartolomeu/video5.mp4" type="video/mp4">
+    <source src="media/albums/fotos/saobartolomeu/video5.mp4" type="video/mp4">
   </video>
   
   <video onclick="openModal(this.querySelector('source').src)">
