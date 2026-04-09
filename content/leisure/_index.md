@@ -1,7 +1,7 @@
 ---
 title: "Por ai"
 type: page
-draft: false  <-- Garanta que esteja false ou remova a linha
+draft: false  
 ---
 
 <h2>São Bartolomeu - Minas Gerais</h2>
