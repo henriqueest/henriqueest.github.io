@@ -63,7 +63,7 @@ draft: false
 <div class="gallery">
 
   <!-- IMAGENS -->
-  <img src="/media/albums/fotos/saobartolomeu/img2.png" onclick="openModal(this.src)">
+  <img src="/media/albums/fotos/saobartolomeu/img3.png" onclick="openModal(this.src)">
 
 </div>
 
