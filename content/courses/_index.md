@@ -1,5 +1,5 @@
 ---
-title: "Courses taught"
+title: "Courses"
 header:
   caption: ''
   image: ''
