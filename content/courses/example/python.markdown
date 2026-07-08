@@ -92,7 +92,7 @@ hist(mtcars$mpg, col = "lightblue", main = "Função hist (base)",
      xlab = "Milhas por galão (mpg)", ylab = "Frequência absoluta")
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-2-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-2-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 ``` r
@@ -106,7 +106,7 @@ histogram(~mpg,data=mtcars,
        breaks = 5)
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-3-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-3-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 Vamos agora utilizar a variável cyl (número de cilindros) para construírmos um gráfico de barras (frequência absoluta) utilizando a função *barplot* da base do **R** e também o pacote **lattice**.
 
@@ -126,7 +126,7 @@ tab
 barplot(tab, col = "lightblue", main = "Função barplot (base)", xlab = "Número de cilindros por motor (cyl)", ylab = "Frequência absoluta")
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-4-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-4-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 ``` r
@@ -150,7 +150,7 @@ barchart(tabela,
          col = "lightblue")
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-5-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-5-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 Bastam esses dois exemplos para percebermos algumas situações: para cada tipo de gráfico escolhido de acordo com a natureza da variável, o conjunto de linhas de comandos necessários para gerá-los no **R** é único e particular; é necessário também a utilização de funções adicionais (table) e funções específicas do pacote **lattice** (xtabs) para a construção dos gráficos de barras. Essas situações forçam o usuário a ter conhecimento de cada uma dessas funções particulares e também seus argumentos. 
 
@@ -191,7 +191,7 @@ A primeira camada (layer) necessária para a criação de gráficos no **ggplot2
 ggplot(mtcars)
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-6-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-6-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 Nós notamos que é criado uma área (em cinza) onde será construído o gráfico. Essa área ainda não contém nenhum formato geométrico (geom\_tipo) como, por exemplo, pontos, barras, caixas, etc. Falta também a informação da estética do gráfico desejado juntamente com as variáveis de interesse aes(x,y,cores). Esse é o próximo passo. Note também que a cada acréscimo de camada utilzamos o sinal `+`. 
 
@@ -203,7 +203,7 @@ ggplot(mtcars) +
   geom_point(mapping = aes(x= disp, y=mpg))
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-7-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-7-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 No pacote **gplot2** nós também temos a liberdade de escolher a escala de cores que iram compor o nosso gráfico. Para isso temos três argumentos: color e colour, que se diferem devido a lingua ingleza e fill. Os dois primeiros são utilizados em entes geométricos que não possuem área, tais como pontos e linhas, sendo necessário utilizar apenas um deles e a escolha fica a critério do usuário. Já o comando fill é utilizado naquele ente geométrico que possui área, sendo responsável pelo preenchimento dessa área com a cor desejada. Ambos devem ser utilizados junto ao comando geom\_tipo. 
 
@@ -217,7 +217,7 @@ Vamos agora ver dois exemplos de utilização desses argumentos.
   labs(x="Cilindradas", y="Milhas/galão")
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-8-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-8-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 ``` r
 ggplot(mtcars) +
@@ -225,7 +225,7 @@ ggplot(mtcars) +
   labs(x="Cilindradas", y="Milhas/galão")
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-8-2.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-8-2.png" alt="" width="672" style="display: block; margin: auto;" />
 
 Nós notamos que se utilizarmos o argumento para a escolha das cores dentro da função aes, este deve estar relaciondo a alguma variável específica. No nosso exemplo, é o tipo de transmissão do carro a variável em questão. Caso esse argumento seja utilizado fora da função aes, nós temos a liberdade de escolha das cores, pois ela não estão relacionadas as variáveis em questão. 
 
@@ -258,7 +258,7 @@ ggplot(mtcars, aes(x = as.factor(cyl))) +
 ## generated.
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-9-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-9-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 ``` r
 ggplot(mtcars, aes(x = as.factor(cyl))) +
@@ -276,7 +276,7 @@ ggplot(mtcars, aes(x = as.factor(cyl))) +
         panel.background = element_blank()) 
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-9-2.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-9-2.png" alt="" width="672" style="display: block; margin: auto;" />
 
 ``` r
 ggplot(mtcars, aes(x = as.factor(cyl))) +
@@ -294,7 +294,7 @@ ggplot(mtcars, aes(x = as.factor(cyl))) +
         panel.background = element_blank())
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-9-3.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-9-3.png" alt="" width="672" style="display: block; margin: auto;" />
 
 Vamos agora construir um gráfico do tipo boxplot utilizando o pacote **ggplot2**.
 
@@ -314,7 +314,7 @@ Vamos agora construir um gráfico do tipo boxplot utilizando o pacote **ggplot2*
         panel.background = element_blank())
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-10-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-10-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 
@@ -333,7 +333,7 @@ Vamos agora construir um gráfico do tipo boxplot utilizando o pacote **ggplot2*
         panel.background = element_blank()) 
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-11-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-11-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 
@@ -352,7 +352,7 @@ Vamos agora construir um gráfico do tipo boxplot utilizando o pacote **ggplot2*
         panel.background = element_blank()) 
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-12-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-12-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 
@@ -374,7 +374,7 @@ Vamos agora construir um gráfico do tipo boxplot utilizando o pacote **ggplot2*
   scale_fill_manual(values=cor)
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-13-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-13-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 Vamos agora construir alguns histogramas com frequências absolutas, relativas e percentuais, nessa ordem. Note que o comando `bins` define o número de classes a ser escolhido. Neste exemplo escolhemos arbitrariamente `bins` igual a 5, mas o usuário pode fazer os cálculos manualmente e utilizá-lo. Nós também definimos a escala dos eixos `x` e `y` manualmente, através dos comandos `scale_x_continuous` e `scale_y_continuous`. 
 
@@ -398,7 +398,7 @@ Vamos agora construir alguns histogramas com frequências absolutas, relativas e
         panel.background = element_blank()) 
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-14-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-14-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 
@@ -420,7 +420,7 @@ Vamos agora construir alguns histogramas com frequências absolutas, relativas e
         panel.background = element_blank())
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-15-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-15-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 
@@ -442,7 +442,7 @@ Vamos agora construir alguns histogramas com frequências absolutas, relativas e
         panel.background = element_blank())
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-16-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-16-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 Antes de construírmos o próximo histograma, precisamos apresentar a função `facet` do ggplot2. Esta função permite a construção de gráficos em `facetas`. O que é isso? Suponha que estamos interessados em construírmos um histograma baseado no anteriormente apresentado. Mas o nosso interesse maior é apresentar um histograma individual para cada tipo de transmissão `am` considerando a variável contínua `mpg`. Abaixo apresentamos a construção deste histograma.
@@ -470,7 +470,7 @@ Antes de construírmos o próximo histograma, precisamos apresentar a função `
         panel.background = element_blank())
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-17-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-17-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 Vamos agora apresentar um exemplo de como construir um gráfico de tendência destacando-se os pontos de dispersão dos dados.
 
@@ -500,7 +500,7 @@ Vamos agora apresentar um exemplo de como construir um gráfico de tendência de
 ## generated.
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-18-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-18-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 Como o usuário faria para construir estes histogramas e gráficos de tendência sem utilizar a classificação por níveis da variável **am**? A construção destes gráficos fica como exercício para o usuário.
 
@@ -774,7 +774,7 @@ panel.background = element_blank())+
 scale_fill_discrete(name="UF")
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-21-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-21-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 Um fato curioso deve ser notado: quando manipulamos o conto de dados data com as funções select e filter, nós atribuímos a cada tibble gerado por essas funções um rótulo. Agora, imagine que, dentro do mesmo conjunto de dados, nós precisamos utilizar todas as seis funções do pacote **dplyr**. Seria inviável proceder como da forma anterior. Para corrigir esse problema, foi criado o pacote **magrittr** onde foi criado o operador pipe %>%. Essa ferramenta é utilizada para expressar claramente uma sequência de múltiplas operações. Este pacote já é carregado automaticamente com o **dplyr**.
 
@@ -807,7 +807,7 @@ panel.background = element_blank())+
 scale_fill_manual(name="UF", values = cor)
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-22-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-22-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 Nós também podemos produzir mapas utilizando o pacote **ggplot2**. Entretanto, nós precisamos de algum arquivo que contenha as coordenadas do mapa desejado em forma de polígonos ou até mesmo imagens (raster). Para tal, nós vamos utilizar o pacote **geobr**, que foi criado pelo Instituto de Pesquisa Econômica Aplicada - Ipea. Vejamos:
@@ -883,7 +883,7 @@ dados_final %>%
 ## give correct results for longitude/latitude data
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-23-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-23-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 
@@ -905,7 +905,7 @@ dados_final %>%
 ## give correct results for longitude/latitude data
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-24-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-24-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 
@@ -927,7 +927,7 @@ dados_final %>%
 ## give correct results for longitude/latitude data
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-25-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-25-1.png" alt="" width="672" style="display: block; margin: auto;" />
 
 
 
@@ -949,5 +949,5 @@ dados_final %>%
 ## give correct results for longitude/latitude data
 ```
 
-<img src="/paginapessoal/courses/example/python_files/figure-html/unnamed-chunk-26-1.png" alt="" width="672" style="display: block; margin: auto;" />
+<img src="/courses/example/python_files/figure-html/unnamed-chunk-26-1.png" alt="" width="672" style="display: block; margin: auto;" />
 

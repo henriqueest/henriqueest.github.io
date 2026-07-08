@@ -64,7 +64,7 @@ O símbolo para cada um desses parâmetros dependerá do modelo considerado. Às
 Para carregar os pacotes necessários nas IDE's R ou rstudio, basta executar as seguintes linhas de comando.
 
 
-```r
+``` r
 library(covid19br)
 library(tidyverse)
 library(dplyr)
@@ -72,7 +72,7 @@ library(dplyr)
 
 
 
-```r
+``` r
 data <- downloadCovid19("world") %>%
   filter(country == "Italy")%>%
   select(date, country, accumCases, accumDeaths)
@@ -80,31 +80,31 @@ glimpse(data)
 ```
 
 ```
-## Rows: 799
+## Rows: 1,143
 ## Columns: 4
-## $ date        <date> 2020-01-22, 2020-01-23, 2020-01-24, 2020-01-25, 2020-01-2~
-## $ country     <chr> "Italy", "Italy", "Italy", "Italy", "Italy", "Italy", "Ita~
-## $ accumCases  <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3~
-## $ accumDeaths <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ date        <date> 2020-01-22, 2020-01-23, 2020-01-24, 2020-01-25, 2020-01-2…
+## $ country     <chr> "Italy", "Italy", "Italy", "Italy", "Italy", "Italy", "Ita…
+## $ accumCases  <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3…
+## $ accumDeaths <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
 ```
 
 ### Comportamento das mortes acumuladas (Itália)
 
 
-```r
+``` r
 ggplot(data)+
   geom_point(aes(x = as.Date(date), y = accumDeaths), colour = "steelblue")+
   labs(x = "Date (day)", y = "Accumulated deaths")+
   theme_classic()
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" alt="" width="672" />
 
 
 Sugere modelo duplo sigmóide
 
 
-```r
+``` r
 ggplot(data)+
   geom_point(aes(x = as.Date(date), y = accumDeaths), colour = "steelblue")+
   geom_vline(aes(x = as.Date(date), y = accumDeaths, xintercept = as.Date("2020-10-20")),
@@ -119,7 +119,7 @@ ggplot(data)+
   theme_classic()
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-4-1.png" alt="" width="672" />
 
 
 ### Ajuste do modelo duplo sigmóide
@@ -127,7 +127,7 @@ ggplot(data)+
 - Criando uma variável numérica para contar o tempo
 
 
-```r
+``` r
 n <- nrow(data)
 data <- data %>%
   mutate(data = c(seq(1,n,1)))
@@ -135,20 +135,20 @@ glimpse(data)
 ```
 
 ```
-## Rows: 799
+## Rows: 1,143
 ## Columns: 5
-## $ date        <date> 2020-01-22, 2020-01-23, 2020-01-24, 2020-01-25, 2020-01-2~
-## $ country     <chr> "Italy", "Italy", "Italy", "Italy", "Italy", "Italy", "Ita~
-## $ accumCases  <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3~
-## $ accumDeaths <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
-## $ data        <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,~
+## $ date        <date> 2020-01-22, 2020-01-23, 2020-01-24, 2020-01-25, 2020-01-2…
+## $ country     <chr> "Italy", "Italy", "Italy", "Italy", "Italy", "Italy", "Ita…
+## $ accumCases  <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3…
+## $ accumDeaths <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+## $ data        <dbl> 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,…
 ```
 
 
 - Alterando a escala de dados para evitar problemas de over/under-flow.
 
 
-```r
+``` r
 data_mod <- data %>%
   select(accumDeaths, data) %>%
   mutate(accumDeathscorr = accumDeaths/10000,
@@ -157,17 +157,17 @@ glimpse(data_mod)
 ```
 
 ```
-## Rows: 799
+## Rows: 1,143
 ## Columns: 3
-## $ accumDeaths     <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
-## $ data            <dbl> 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, ~
-## $ accumDeathscorr <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ accumDeaths     <int> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
+## $ data            <dbl> 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, …
+## $ accumDeathscorr <dbl> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
 ```
 
 - Comportamento dos dados transformados
 
 
-```r
+``` r
 ggplot(data_mod)+
   geom_point(aes(x = data, y = accumDeathscorr), colour = "steelblue")+
   geom_vline(aes(x = data, y = accumDeathscorr, xintercept = 3),
@@ -182,7 +182,7 @@ ggplot(data_mod)+
   theme_classic()
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-7-1.png" alt="" width="672" />
 
 
 ## Chutes iniciais para cada sigmóide
@@ -190,7 +190,7 @@ ggplot(data_mod)+
 - modelo um: modelo logístico
 
 
-```r
+``` r
 apropos("^SS")
 ```
 
@@ -200,7 +200,7 @@ apropos("^SS")
 ## [11] "SSweibull"
 ```
 
-```r
+``` r
 n0 <- nls(accumDeathscorr ~ SSlogis(data, A, M, S), data = data_mod, 
           subset = data < 3)
 coef(n0)
@@ -213,7 +213,7 @@ coef(n0)
 
 
 
-```r
+``` r
 data_modn0 <- data_mod %>%
   filter(data < 3) %>%
   mutate(predict = predict(n0))
@@ -236,13 +236,13 @@ geom_point(aes(x = data, y = accumDeathscorr, color = "blue"))+
                        labels=c("Observed", "Predict"))
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-9-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-9-1.png" alt="" width="672" />
 
 
 - modelo dois: modelo logístico
 
 
-```r
+``` r
 apropos("^SS")
 ```
 
@@ -252,7 +252,7 @@ apropos("^SS")
 ## [11] "SSweibull"
 ```
 
-```r
+``` r
 n1 <- nls(accumDeathscorr ~ SSlogis(data, A, M, S), data = data_mod, 
           subset = data > 3 & data < 7)
 coef(n1)
@@ -265,7 +265,7 @@ coef(n1)
 
 
 
-```r
+``` r
 data_modn1 <- data_mod %>%
   filter(data > 3 & data < 7) %>%
   mutate(predict = predict(n1))
@@ -288,7 +288,7 @@ geom_point(aes(x = data, y = accumDeathscorr, color = "blue"))+
                        labels=c("Observed", "Predict"))
 ```
 
-<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-11-1.png" width="672" />
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-11-1.png" alt="" width="672" />
 
 
 ## Objetivos

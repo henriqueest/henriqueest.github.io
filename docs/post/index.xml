@@ -18,9 +18,34 @@
       <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
       <guid>https://henriqueest.github.io/post/crimes_estupro/</guid>
       <description>&lt;h1 id=&#34;abstract&#34;&gt;Abstract&lt;/h1&gt;
-&lt;p&gt;This study examines the temporal and spatial dynamics of rape victimization rates in Brazil between 2015 and 2025, disaggregated by sex and Federative Units. Using standardized rates per $100,000$ inhabitants, the analysis integrates descriptive statistics, three-year weighted moving averages, consistency indicators, and Local Indicators of Spatial Association (LISA) to identify structural patterns, temporal persistence, and localized spatial dependence. The results reveal pronounced regional disparities, with the North and Central-West regions consistently exhibiting the highest levels of female victimization. The LISA analysis further demonstrates that these elevated rates are not randomly distributed but form statistically significant and persistent High-High spatial clusters, indicating strong geographic concentration. Conversely, Low-Low clusters observed in parts of the Northeast and Southeast suggest spatially structured areas of lower vulnerability. Although male victimization rates are substantially lower, partially similar spatial patterns emerge, albeit with weaker and more fragmented spatial autocorrelation. The findings also indicate that, despite short-term fluctuations &amp;mdash; particularly during the COVID-19 period &amp;mdash; several states exhibit persistent upward trends, reinforcing the
-interpretation of structural rather than episodic dynamics. The temporary disruption and subsequent reconfiguration of spatial clusters further highlight the resilience of underlying spatial processes. Overall, the combined use of temporal and spatial analytical tools provides a more nuanced understanding of sexual violence in Brazil, emphasizing the coexistence of regional inequality, spatial dependence, and trend persistence. These findings underscore the need for
-geographically targeted public policies and improvements in data quality and reporting systems.&lt;/p&gt;
+&lt;p&gt;This study examines the temporal and spatial dynamics of rape
+victimization rates in Brazil between 2015 and 2025, disaggregated by
+sex and Federative Units. Using standardized rates per $100,000$
+inhabitants, the analysis integrates descriptive statistics, three-year
+weighted moving averages, consistency indicators, and Local Indicators
+of Spatial Association (LISA) to identify structural patterns, temporal
+persistence, and localized spatial dependence. The results reveal
+pronounced regional disparities, with the North and Central-West regions
+consistently exhibiting the highest levels of female victimization. The
+LISA analysis further demonstrates that these elevated rates are not
+randomly distributed but form statistically significant and persistent
+High-High spatial clusters, indicating strong geographic concentration.
+Conversely, Low-Low clusters observed in parts of the Northeast and
+Southeast suggest spatially structured areas of lower vulnerability.
+Although male victimization rates are substantially lower, partially
+similar spatial patterns emerge, albeit with weaker and more fragmented
+spatial autocorrelation. The findings also indicate that, despite
+short-term fluctuations &amp;mdash; particularly during the COVID-19 period &amp;mdash;
+several states exhibit persistent upward trends, reinforcing the
+interpretation of structural rather than episodic dynamics. The
+temporary disruption and subsequent reconfiguration of spatial clusters
+further highlight the resilience of underlying spatial processes.
+Overall, the combined use of temporal and spatial analytical tools
+provides a more nuanced understanding of sexual violence in Brazil,
+emphasizing the coexistence of regional inequality, spatial dependence,
+and trend persistence. These findings underscore the need for
+geographically targeted public policies and improvements in data quality
+and reporting systems.&lt;/p&gt;
 &lt;h4 id=&#34;keywords&#34;&gt;Keywords&lt;/h4&gt;
 &lt;h4 id=&#34;sexual-violence-spatial-autocorrelation-local-morans-i-spatial-clusters-brazil&#34;&gt;sexual violence; spatial autocorrelation; Local Moran&amp;rsquo;s I; spatial clusters; Brazil.&lt;/h4&gt;
 &lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
@@ -275,15 +300,15 @@ variation and moving average over three consecutive years - FU {#tab-1}&lt;/p&gt
           &lt;td&gt;2024&lt;/td&gt;
           &lt;td&gt;2025&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;2015–2017&lt;/td&gt;
-          &lt;td&gt;2016–2018&lt;/td&gt;
-          &lt;td&gt;2017–2019&lt;/td&gt;
-          &lt;td&gt;2018–2020&lt;/td&gt;
-          &lt;td&gt;2019–2021&lt;/td&gt;
-          &lt;td&gt;2020–2022&lt;/td&gt;
-          &lt;td&gt;2021–2023&lt;/td&gt;
-          &lt;td&gt;2022–2024&lt;/td&gt;
-          &lt;td&gt;2023–2025&lt;/td&gt;
+          &lt;td&gt;2015&amp;ndash;2017&lt;/td&gt;
+          &lt;td&gt;2016&amp;ndash;2018&lt;/td&gt;
+          &lt;td&gt;2017&amp;ndash;2019&lt;/td&gt;
+          &lt;td&gt;2018&amp;ndash;2020&lt;/td&gt;
+          &lt;td&gt;2019&amp;ndash;2021&lt;/td&gt;
+          &lt;td&gt;2020&amp;ndash;2022&lt;/td&gt;
+          &lt;td&gt;2021&amp;ndash;2023&lt;/td&gt;
+          &lt;td&gt;2022&amp;ndash;2024&lt;/td&gt;
+          &lt;td&gt;2023&amp;ndash;2025&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td&gt;SE&lt;/td&gt;
@@ -1036,15 +1061,15 @@ variation and moving average over three consecutive years - FU&lt;/p&gt;
           &lt;td&gt;2024&lt;/td&gt;
           &lt;td&gt;2025&lt;/td&gt;
           &lt;td&gt;&lt;/td&gt;
-          &lt;td&gt;2015–2017&lt;/td&gt;
-          &lt;td&gt;2016–2018&lt;/td&gt;
-          &lt;td&gt;2017–2019&lt;/td&gt;
-          &lt;td&gt;2018–2020&lt;/td&gt;
-          &lt;td&gt;2019–2021&lt;/td&gt;
-          &lt;td&gt;2020–2022&lt;/td&gt;
-          &lt;td&gt;2021–2023&lt;/td&gt;
-          &lt;td&gt;2022–2024&lt;/td&gt;
-          &lt;td&gt;2023–2025&lt;/td&gt;
+          &lt;td&gt;2015&amp;ndash;2017&lt;/td&gt;
+          &lt;td&gt;2016&amp;ndash;2018&lt;/td&gt;
+          &lt;td&gt;2017&amp;ndash;2019&lt;/td&gt;
+          &lt;td&gt;2018&amp;ndash;2020&lt;/td&gt;
+          &lt;td&gt;2019&amp;ndash;2021&lt;/td&gt;
+          &lt;td&gt;2020&amp;ndash;2022&lt;/td&gt;
+          &lt;td&gt;2021&amp;ndash;2023&lt;/td&gt;
+          &lt;td&gt;2022&amp;ndash;2024&lt;/td&gt;
+          &lt;td&gt;2023&amp;ndash;2025&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
           &lt;td&gt;SE&lt;/td&gt;
@@ -3211,7 +3236,7 @@ spatial distribution of sexual violence across genders.&lt;/p&gt;
                height=&#34;760&#34;
                loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;/figure&gt;
-&lt;em&gt;Figur 2: Local Indicators of
+&lt;em&gt;Figure 2: Local Indicators of
 Spatial Association (LISA) considering rape rates of male victims.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;However, male LISA patterns are characterized by greater spatial
 fragmentation and temporal instability. High-High clusters appear less
@@ -3575,7 +3600,7 @@ Os indicadores de dispersão intragrupo, como o &lt;strong&gt;índice de Gini&lt
 &lt;h1 id=&#34;conclusão-e-implicações-para-políticas-públicas&#34;&gt;Conclusão e Implicações para Políticas Públicas&lt;/h1&gt;
 &lt;p&gt;O conjunto de evidências analisadas aponta para a coexistência de dois fenômenos cruciais na estrutura de desigualdade e pobreza brasileira. Primeiro, a predominância da desigualdade intragrupo como principal motor da desigualdade agregada, reforçada pela elevada contribuição dos grupos Branco e Pardo para a dispersão interna. Segundo, a rigidez da hierarquia racial tanto na base como no topo da distribuição de renda, evidenciada por diferenças na renda média e nas taxas de pobreza.&lt;/p&gt;
 &lt;p&gt;O grupo Indígena emerge como o mais vulnerável e volátil em todos os indicadores, enfrentando os níveis mais elevados de severidade e instabilidade. Os resultados sugerem que políticas públicas focadas exclusivamente nas diferenças de renda média entre grupos raciais (desigualdade entre grupos) são insuficientes para alterar substancialmente os níveis de desigualdade agregada.&lt;/p&gt;
-&lt;p&gt;É imperativo desenvolver estratégias que operem simultaneamente em duas frentes: (1) &lt;strong&gt;Redução da desigualdade intragrupo&lt;/strong&gt;, abordando a heterogeneidade interna de renda através de medidas como formação profissional de alta qualidade e tributação progressiva; e (2) &lt;strong&gt;Combate à pobreza extrema racialmente concentrada&lt;/strong&gt;, através de políticas de apoio à renda dirigidas à cauda inferior da distribuição — particularmente para os grupos Indígenas, Pardos e Pretos — visando não apenas reduzir a incidência da pobreza (&lt;code&gt;\(H\)&lt;/code&gt;), mas também a sua profundidade ($P_1$) e severidade ($P_2$). A elevada sensibilidade dos grupos mais vulneráveis aos choques macroeconômicos reforça ainda mais a necessidade de mecanismos de proteção social permanentes e robustos.&lt;/p&gt;
+&lt;p&gt;É imperativo desenvolver estratégias que operem simultaneamente em duas frentes: (1) &lt;strong&gt;Redução da desigualdade intragrupo&lt;/strong&gt;, abordando a heterogeneidade interna de renda através de medidas como formação profissional de alta qualidade e tributação progressiva; e (2) &lt;strong&gt;Combate à pobreza extrema racialmente concentrada&lt;/strong&gt;, através de políticas de apoio à renda dirigidas à cauda inferior da distribuição — particularmente para os grupos Indígenas, Pardos e Pretos — visando não apenas reduzir a incidência da pobreza ($H$), mas também a sua profundidade ($P_1$) e severidade ($P_2$). A elevada sensibilidade dos grupos mais vulneráveis aos choques macroeconômicos reforça ainda mais a necessidade de mecanismos de proteção social permanentes e robustos.&lt;/p&gt;
 &lt;h1 id=&#34;referencias&#34;&gt;Referencias&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Akita, T.&lt;/strong&gt; (2003). Decomposing Regional Income Inequality in
@@ -3665,7 +3690,7 @@ North-Holland.&lt;/li&gt;
 &lt;p&gt;É importante ressaltar que as informações apresentadas refletem o nível de alimentação e consolidação de cada Unidade da Federação no SinespJC e Sinesp Integração na data de sua extração, podendo ocorrer atualizações posteriores à publicação. Salientamos que se considera como último período os dados consolidados que antecedem os últimos três meses, por exemplo: Em fev/2019, serão publicados os dados de jan/2015 a out/2018; em mar/2019 os dados de jan/2015 a nov/2018; e assim sucessivamente. Isso se faz necessário para que os Gestores Estaduais possam coletar, tratar e validar os dados antes do fornecimento e consolidação via SinespJC, não sendo exigido esse processo aos entes que já utilizam o Sinesp Integração e consideram os dados transmitidos como fonte para a produção das estatísticas oficiais.&lt;/p&gt;
 &lt;p&gt;Com o avanço do Sinesp Integração, espera-se que as Unidades da Federação aprimorem seus processos de coleta de dados e substituam a alimentação manual do SinespJC pelo processo automatizado. Com isso, será possível a divulgação de dados detalhados em períodos mais curtos e com mais qualidade.&lt;/p&gt;
 &lt;h2 id=&#34;fonte&#34;&gt;Fonte&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://dados.gov.br/dataset/sistema-nacional-de-estatisticas-de-seguranca-publica&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sinesp&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.gov.br/mj/pt-br/assuntos/sua-seguranca/seguranca-publica/estatistica/dados-nacionais-1/base-de-dados-e-notas-metodologicas-dos-gestores-estaduais-sinesp-vde-2022-e-2023&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sinesp&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;aplicativo&#34;&gt;Aplicativo&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://jpahenrique.shinyapps.io/Shinny/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sinesp - Ocorrências criminais&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -3737,12 +3762,12 @@ library(dplyr)
   select(date, country, accumCases, accumDeaths)
 glimpse(data)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Rows: 799
+&lt;pre&gt;&lt;code&gt;## Rows: 1,143
 ## Columns: 4
-## $ date        &amp;lt;date&amp;gt; 2020-01-22, 2020-01-23, 2020-01-24, 2020-01-25, 2020-01-2~
-## $ country     &amp;lt;chr&amp;gt; &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Ita~
-## $ accumCases  &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3~
-## $ accumDeaths &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
+## $ date        &amp;lt;date&amp;gt; 2020-01-22, 2020-01-23, 2020-01-24, 2020-01-25, 2020-01-2…
+## $ country     &amp;lt;chr&amp;gt; &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Ita…
+## $ accumCases  &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3…
+## $ accumDeaths &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
 &lt;/code&gt;&lt;/pre&gt;
 &lt;h3 id=&#34;comportamento-das-mortes-acumuladas-itália&#34;&gt;Comportamento das mortes acumuladas (Itália)&lt;/h3&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(data)+
@@ -3750,7 +3775,7 @@ glimpse(data)
   labs(x = &amp;quot;Date (day)&amp;quot;, y = &amp;quot;Accumulated deaths&amp;quot;)+
   theme_classic()
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-3-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; /&gt;
 &lt;p&gt;Sugere modelo duplo sigmóide&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-r&#34;&gt;ggplot(data)+
   geom_point(aes(x = as.Date(date), y = accumDeaths), colour = &amp;quot;steelblue&amp;quot;)+
@@ -3765,7 +3790,7 @@ glimpse(data)
   labs(x = &amp;quot;Date (day)&amp;quot;, y = &amp;quot;Accumulated deaths&amp;quot;)+
   theme_classic()
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-4-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; /&gt;
 &lt;h3 id=&#34;ajuste-do-modelo-duplo-sigmóide&#34;&gt;Ajuste do modelo duplo sigmóide&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Criando uma variável numérica para contar o tempo&lt;/li&gt;
@@ -3775,13 +3800,13 @@ data &amp;lt;- data %&amp;gt;%
   mutate(data = c(seq(1,n,1)))
 glimpse(data)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Rows: 799
+&lt;pre&gt;&lt;code&gt;## Rows: 1,143
 ## Columns: 5
-## $ date        &amp;lt;date&amp;gt; 2020-01-22, 2020-01-23, 2020-01-24, 2020-01-25, 2020-01-2~
-## $ country     &amp;lt;chr&amp;gt; &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Ita~
-## $ accumCases  &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3~
-## $ accumDeaths &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0~
-## $ data        &amp;lt;dbl&amp;gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,~
+## $ date        &amp;lt;date&amp;gt; 2020-01-22, 2020-01-23, 2020-01-24, 2020-01-25, 2020-01-2…
+## $ country     &amp;lt;chr&amp;gt; &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Italy&amp;quot;, &amp;quot;Ita…
+## $ accumCases  &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3…
+## $ accumDeaths &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…
+## $ data        &amp;lt;dbl&amp;gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,…
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;Alterando a escala de dados para evitar problemas de over/under-flow.&lt;/li&gt;
@@ -3792,11 +3817,11 @@ glimpse(data)
          data = data/100)
 glimpse(data_mod)
 &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## Rows: 799
+&lt;pre&gt;&lt;code&gt;## Rows: 1,143
 ## Columns: 3
-## $ accumDeaths     &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
-## $ data            &amp;lt;dbl&amp;gt; 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, ~
-## $ accumDeathscorr &amp;lt;dbl&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ~
+## $ accumDeaths     &amp;lt;int&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
+## $ data            &amp;lt;dbl&amp;gt; 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, …
+## $ accumDeathscorr &amp;lt;dbl&amp;gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, …
 &lt;/code&gt;&lt;/pre&gt;
 &lt;ul&gt;
 &lt;li&gt;Comportamento dos dados transformados&lt;/li&gt;
@@ -3814,7 +3839,7 @@ glimpse(data_mod)
   labs(x = &amp;quot;Day&amp;quot;, y = &amp;quot;Accumulated deaths corrected&amp;quot;)+
   theme_classic()
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-7-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; /&gt;
 &lt;h2 id=&#34;chutes-iniciais-para-cada-sigmóide&#34;&gt;Chutes iniciais para cada sigmóide&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;modelo um: modelo logístico&lt;/li&gt;
@@ -3853,7 +3878,7 @@ geom_point(aes(x = data, y = accumDeathscorr, color = &amp;quot;blue&amp;quot;))
                      breaks = c(&amp;quot;blue&amp;quot;, &amp;quot;red&amp;quot;),
                        labels=c(&amp;quot;Observed&amp;quot;, &amp;quot;Predict&amp;quot;))
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-9-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-9-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; /&gt;
 &lt;ul&gt;
 &lt;li&gt;modelo dois: modelo logístico&lt;/li&gt;
 &lt;/ul&gt;
@@ -3891,7 +3916,7 @@ geom_point(aes(x = data, y = accumDeathscorr, color = &amp;quot;blue&amp;quot;))
                      breaks = c(&amp;quot;blue&amp;quot;, &amp;quot;red&amp;quot;),
                        labels=c(&amp;quot;Observed&amp;quot;, &amp;quot;Predict&amp;quot;))
 &lt;/code&gt;&lt;/pre&gt;
-&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-11-1.png&#34; width=&#34;672&#34; /&gt;
+&lt;img src=&#34;https://henriqueest.github.io/post/2020-12-01-r-rmarkdown/index_files/figure-html/unnamed-chunk-11-1.png&#34; alt=&#34;&#34; width=&#34;672&#34; /&gt;
 &lt;h2 id=&#34;objetivos&#34;&gt;Objetivos&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;encontre modelos que possam se ajustar a esses dados&lt;/li&gt;
