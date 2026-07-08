@@ -1,6 +1,5 @@
 ---
-bio: My research interests include Spatial Statistics with an emphasis on Geostatistics, Multivariate Analysis, Bootstrap Resampling Methods, and Intensive Computational Simulation.
-  matter.
+title: "Henrique Alves"
 education:
   courses:
   - course: PhD in Agricultural Statistics and Experimentation
@@ -9,17 +8,17 @@ education:
   - course: Master's degree in Agricultural Statistics and Experimentation
     institution: Federal University of Lavras
     year: 2015
-  - course: Degree in Statistics 
+  - course: Degree in Statistics
     institution: Federal University of Ouro Preto
     year: 2013
-email: ""
+email: ''
 highlight_name: true
 interests:
-- spatio-temporal geoestatistical modeling
-- hypothesis testing for the p-dimensional population mean vector 
+- "spatio-temporal geoestatistical modeling"
+- "hypothesis testing for the p-dimensional population mean vector"
 - bootstrap methods, intensive computer simulation
 organizations:
-- name: Independent Researcher, Brazil 
+- name: Independent Researcher, Brazil
 role: Searcher
 social:
 - icon: envelope
@@ -31,9 +30,6 @@ social:
   icon_pack: fab
   label: Follow me on instagram
   link: https://www.instagram.com/henriquejosedepaulaalves/
-# - icon: graduation-cap
-#   icon_pack: fas
-#   link: https://deest.ufop.br/
 - icon: github
   icon_pack: fab
   link: https://github.com/henriqueest
@@ -41,7 +37,9 @@ social:
   icon_pack: fab
   link: https://www.linkedin.com/in/henriquejpa/
 superuser: true
-title: Henrique Alves
+bio: My research interests include Spatial Statistics with an emphasis on Geostatistics,
+  Multivariate Analysis, Bootstrap Resampling Methods, and Intensive Computational
+  Simulation. matter.
 ---
 
 I am a Statistician working in Data Science and Data Analysis, focused on transforming raw data into strategic information to support decision-making.
