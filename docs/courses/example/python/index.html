@@ -251,7 +251,7 @@
   
   
   
-  <link rel="stylesheet" href="/css/wowchemy.505f2b7d3ddf7a8b7412f8d8577fd2e3.css" />
+  <link rel="stylesheet" href="/css/wowchemy.56a55adee8770f0b59dffcb927ba1ae7.css" />
 
   
   
@@ -273,8 +273,8 @@
     <link rel="manifest" href="/manifest.webmanifest" />
   
 
-  <link rel="icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_32x32_fill_lanczos_center_3.png" />
-  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_180x180_fill_lanczos_center_3.png" />
+  <link rel="icon" type="image/png" href="/media/icon_hu_f596464ffbc9284d.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu_122c28959dc0603.png" />
 
   <link rel="canonical" href="https://henriqueest.github.io/courses/example/python/" />
 
@@ -301,8 +301,8 @@
   <meta property="og:site_name" content="Henrique JP Alves" />
   <meta property="og:url" content="https://henriqueest.github.io/courses/example/python/" />
   <meta property="og:title" content="Pacote ggplot2: um curso introdutório | Henrique JP Alves" />
-  <meta property="og:description" content="Construído baseado nos pacotes tidyverse e ggplot2 do R." /><meta property="og:image" content="https://henriqueest.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" />
-    <meta property="twitter:image" content="https://henriqueest.github.io/media/icon_hua2ec155b4296a9c9791d015323e16eb5_11927_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+  <meta property="og:description" content="Construído baseado nos pacotes tidyverse e ggplot2 do R." /><meta property="og:image" content="https://henriqueest.github.io/media/icon_hu_ec961d71fd4b62b8.png" />
+    <meta property="twitter:image" content="https://henriqueest.github.io/media/icon_hu_ec961d71fd4b62b8.png" /><meta property="og:locale" content="en-us" />
   
     
       <meta
@@ -989,38 +989,38 @@ tabela
 <p>Basicamente podemos descrever individualmente qualquer gráfico estatístico como uma combinação de um conjunto de dados, um geom, um conjunto de mapeamentos, um stat, um ajuste de posição, um sistema de coordenadas e um esquema de facetas.</p>
 <p>Abaixo apresentamos os seis elementos que envolvem a construção de gráficos estatísticos no ggplot2. Os elementos marcados com * são essenciais e obrigatórios. Os termos em negrito, como em <strong>aes</strong>, representam as funções a serem utilizadas no ggplot2 para a construção dos gráficos estatísticos.</p>
 <table>
-<thead>
-<tr>
-<th>Elementos</th>
-<th>Exemplos</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>aes</strong>tética$^*$</td>
-<td>cor, formato</td>
-</tr>
-<tr>
-<td><strong>geom</strong>etrias$^*$</td>
-<td>barra, ponto</td>
-</tr>
-<tr>
-<td>e<strong>stat</strong>ísticas (modelos)</td>
-<td>mediana, máximo</td>
-</tr>
-<tr>
-<td><strong>facet</strong>as</td>
-<td>facetas</td>
-</tr>
-<tr>
-<td><strong>coord</strong>enadas</td>
-<td>polar, cartesiana</td>
-</tr>
-<tr>
-<td><strong>them</strong>as</td>
-<td>eixos, títulos</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Elementos</th>
+          <th>Exemplos</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>aes</strong>tética$^*$</td>
+          <td>cor, formato</td>
+      </tr>
+      <tr>
+          <td><strong>geom</strong>etrias$^*$</td>
+          <td>barra, ponto</td>
+      </tr>
+      <tr>
+          <td>e<strong>stat</strong>ísticas (modelos)</td>
+          <td>mediana, máximo</td>
+      </tr>
+      <tr>
+          <td><strong>facet</strong>as</td>
+          <td>facetas</td>
+      </tr>
+      <tr>
+          <td><strong>coord</strong>enadas</td>
+          <td>polar, cartesiana</td>
+      </tr>
+      <tr>
+          <td><strong>them</strong>as</td>
+          <td>eixos, títulos</td>
+      </tr>
+  </tbody>
 </table>
 <p>Vamos agora realizar essa construção passo a passo no <strong>R</strong>. Os dados devem ser um data.frame. Essa condição é obrigatória para o uso do ggplot2. Primeiramente vamos instalar e carregar o pacote <strong>ggplot2</strong>. Depois, vamos colocar o conjunto de dados <em>mtcars</em>, disponível no <strong>R</strong>, em data.frame. Feito isso, nós estamos em condições de iniciar a construção de gráficos no <strong>ggplot2</strong>.</p>
 <p>A primeira camada (layer) necessária para a criação de gráficos no <strong>ggplot2</strong> é dada pelo comando ggplot(dados). Neste comando, estamos criando a área onde o gráfico será construído e, ainda, informando ao <strong>ggplot2</strong> qual o conjunto de dados que contém as variáveis de interesse.</p>
@@ -1260,38 +1260,38 @@ tabela
 <h2 id="construindo-gráficos-a-partir-de-um-conjunto-de-dados-original-usando-os-pacotes-tydeverse-tibble-e-dplyr-do-r">Construindo gráficos a partir de um conjunto de dados original usando os pacotes tydeverse, tibble e dplyr do R.</h2>
 <p>O que preciso saber do pacote <strong>dplyr</strong>:</p>
 <table>
-<thead>
-<tr>
-<th>Funções</th>
-<th>Resultados</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>filter()</td>
-<td>seleciona observações das variáveis por seus valores assumidos</td>
-</tr>
-<tr>
-<td>arrange()</td>
-<td>reordena as linhas (observações)</td>
-</tr>
-<tr>
-<td>select()</td>
-<td>seleciona variáveis por seus nomes (rótulos)</td>
-</tr>
-<tr>
-<td>mutate()</td>
-<td>cria novas variáveis com funções de variáveis existentes</td>
-</tr>
-<tr>
-<td>summarize()</td>
-<td>reune muitos valores em um único resumo</td>
-</tr>
-<tr>
-<td>group_by()</td>
-<td>muda o escopo de cada função anterior em todo o conjunto de dados para operar grupo por grupo.</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Funções</th>
+          <th>Resultados</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>filter()</td>
+          <td>seleciona observações das variáveis por seus valores assumidos</td>
+      </tr>
+      <tr>
+          <td>arrange()</td>
+          <td>reordena as linhas (observações)</td>
+      </tr>
+      <tr>
+          <td>select()</td>
+          <td>seleciona variáveis por seus nomes (rótulos)</td>
+      </tr>
+      <tr>
+          <td>mutate()</td>
+          <td>cria novas variáveis com funções de variáveis existentes</td>
+      </tr>
+      <tr>
+          <td>summarize()</td>
+          <td>reune muitos valores em um único resumo</td>
+      </tr>
+      <tr>
+          <td>group_by()</td>
+          <td>muda o escopo de cada função anterior em todo o conjunto de dados para operar grupo por grupo.</td>
+      </tr>
+  </tbody>
 </table>
 <p>Uma vez apresentado as funções do pacote <strong>dplyr</strong>, vamos agora apresentar os argumentos dessas funções. O primeiro argumento é um data frame. Os argumentos subsequentes descrevem o que fazer com o data frame usando os nomes das variáveis sem aspas.</p>
 <p>O pacote <strong>covid19br</strong> foi criado por pesquisadores da UFMG e permite ao usuário a coleta, em tempo real, de algumas informações sobre a doença <strong>COVID-19</strong> nas unidades de saúde do Brasil, apresentando informações como número de casos e mortes novos e acumulados, diariamente, no Brasil e no mundo. Ainda, essas informações estão separadas por estado, região, municípios, por semana epidemiológica, datas, entre outros.</p>
@@ -1319,85 +1319,85 @@ tabela
 </code></pre>
 <p>Não se preocupe com a estrutura apresentada nesse conjunto de dados. Trata-se de um <strong>tibble</strong>, um data frame com algumas particularidades. Note que essas estrutura de data frame traz algumas informações, como a dimensão dos dados, o tipo de variável que está em cada uma das colunas (categórica, inteiro, caractere, etc.), entre outras.</p>
 <table>
-<thead>
-<tr>
-<th>Representação</th>
-<th>Tipo de variável</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>int</td>
-<td>números inteiros</td>
-</tr>
-<tr>
-<td>dbl</td>
-<td>doubles (números reais)</td>
-</tr>
-<tr>
-<td>chr</td>
-<td>vetores de caracteres (strings)</td>
-</tr>
-<tr>
-<td>dttm</td>
-<td>datas-tempos (uma data + um horário)</td>
-</tr>
-<tr>
-<td>fctr</td>
-<td>valores lógicos (TRUE ou FALSE)</td>
-</tr>
-<tr>
-<td>date</td>
-<td>datas</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Representação</th>
+          <th>Tipo de variável</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>int</td>
+          <td>números inteiros</td>
+      </tr>
+      <tr>
+          <td>dbl</td>
+          <td>doubles (números reais)</td>
+      </tr>
+      <tr>
+          <td>chr</td>
+          <td>vetores de caracteres (strings)</td>
+      </tr>
+      <tr>
+          <td>dttm</td>
+          <td>datas-tempos (uma data + um horário)</td>
+      </tr>
+      <tr>
+          <td>fctr</td>
+          <td>valores lógicos (TRUE ou FALSE)</td>
+      </tr>
+      <tr>
+          <td>date</td>
+          <td>datas</td>
+      </tr>
+  </tbody>
 </table>
 <p>Antes de apresentarmos as funções do pacote <strong>dplyr</strong> precisamos conhecer alguns caracteres lógicos e suas representações.</p>
 <table>
-<thead>
-<tr>
-<th>Caractere lógico</th>
-<th>Representação</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>==</td>
-<td>igual</td>
-</tr>
-<tr>
-<td>&amp;</td>
-<td>conectivo <code>e</code> (interseção)</td>
-</tr>
-<tr>
-<td>|</td>
-<td>conectivo <code>ou</code> (união)</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>maior do que</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>menor do que</td>
-</tr>
-<tr>
-<td>&gt;=</td>
-<td>maior do que ou igual a</td>
-</tr>
-<tr>
-<td>&lt;=</td>
-<td>menor do que ou igual a</td>
-</tr>
-<tr>
-<td>!=</td>
-<td>diferente</td>
-</tr>
-<tr>
-<td>%in%</td>
-<td>concatenar</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Caractere lógico</th>
+          <th>Representação</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>==</td>
+          <td>igual</td>
+      </tr>
+      <tr>
+          <td>&amp;</td>
+          <td>conectivo <code>e</code> (interseção)</td>
+      </tr>
+      <tr>
+          <td>|</td>
+          <td>conectivo <code>ou</code> (união)</td>
+      </tr>
+      <tr>
+          <td>&gt;</td>
+          <td>maior do que</td>
+      </tr>
+      <tr>
+          <td>&lt;</td>
+          <td>menor do que</td>
+      </tr>
+      <tr>
+          <td>&gt;=</td>
+          <td>maior do que ou igual a</td>
+      </tr>
+      <tr>
+          <td>&lt;=</td>
+          <td>menor do que ou igual a</td>
+      </tr>
+      <tr>
+          <td>!=</td>
+          <td>diferente</td>
+      </tr>
+      <tr>
+          <td>%in%</td>
+          <td>concatenar</td>
+      </tr>
+  </tbody>
 </table>
 <p>As funções do pacote <strong>dplyr</strong>.</p>
 <pre><code class="language-r">filter(data, date &gt;= &quot;2022-02-20&quot; &amp; state == &quot;SP&quot; &amp; epi_week == 8)
@@ -1805,7 +1805,7 @@ dados_final %&gt;%
       
 
     
-    <script src="/js/vendor-bundle.min.5a3a4e7cbc7b4e121b2d29312cf8ad59.js"></script>
+    <script src="/js/vendor-bundle.min.b9183b5ea5238d6ed46540d9765a412d.js"></script>
 
     
     
@@ -1912,7 +1912,7 @@ dados_final %&gt;%
       
     
     
-    <script src="/en/js/wowchemy.min.f4140b8ec5a725451afc89ff5f0c8764.js"></script>
+    <script src="/en/js/wowchemy.min.1b155a180234284c2dbe58aece009f08.js"></script>
 
     
   <script async defer src="https://buttons.github.io/buttons.js"></script>
