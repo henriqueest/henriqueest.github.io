@@ -1,5 +1,5 @@
 ---
-title: "Boletim de Análise Político-Institucional"
+title: "Boletim de Análise Político-Instituciona"
 date: 2026-03-27
 draft: false
 ---
