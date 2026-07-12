@@ -16,7 +16,7 @@ subtitle:
 # - Add/remove as many `feature` blocks below as you like.
 # - For available icons, see: https://wowchemy.com/docs/page-builder/#icons
 feature:
-- description: 90%
+- description: 100%
   icon: Rlogo
   icon_pack: custom
   name: R
@@ -28,7 +28,18 @@ feature:
   icon: matematica
   icon_pack: custom
   name: Mathematic
-
+- description: 100%
+  icon: powerbi
+  icon_pack: custom
+  name: Power BI
+- description: 100%
+  icon: excel
+  icon_pack: custom
+  name: Excel
+- description: 100%
+  icon: n8n
+  icon_pack: custom
+  name: Agentes de IA - n8n
 # Uncomment to use emoji icons.
 #- icon: ':smile:'
 #  icon_pack: emoji
