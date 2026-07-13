@@ -36,10 +36,22 @@ feature:
   icon: excel
   icon_pack: custom
   name: Excel
-- description: 100%
+- description: 80%
   icon: n8n
   icon_pack: custom
   name: Agentes de IA - n8n
+- description: 80%
+  icon: sas
+  icon_pack: custom
+  name: SAS Viya
+- description: 80%
+  icon: tableau
+  icon_pack: custom
+  name: Tableau
+- description: 100%
+  icon: tidyverse
+  icon_pack: custom
+  name: Tidyverse R
 # Uncomment to use emoji icons.
 #- icon: ':smile:'
 #  icon_pack: emoji
