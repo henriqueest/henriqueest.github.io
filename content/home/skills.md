@@ -24,10 +24,10 @@ feature:
   icon: estatistica
   icon_pack: custom
   name: Statistics
-- description: 90%
-  icon: matematica
-  icon_pack: custom
-  name: Mathematic
+# - description: 90%
+#   icon: matematica
+#   icon_pack: custom
+#   name: Mathematic
 - description: 100%
   icon: powerbi
   icon_pack: custom
@@ -39,7 +39,7 @@ feature:
 - description: 80%
   icon: n8n
   icon_pack: custom
-  name: Agentes de IA - n8n
+  name: n8n
 - description: 80%
   icon: sas
   icon_pack: custom
@@ -52,6 +52,10 @@ feature:
   icon: tidyverse
   icon_pack: custom
   name: Tidyverse R
+- description: 90%
+  icon: python
+  icon_pack: custom
+  name: Python
 # Uncomment to use emoji icons.
 #- icon: ':smile:'
 #  icon_pack: emoji
