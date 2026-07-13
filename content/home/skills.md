@@ -24,10 +24,10 @@ feature:
   icon: estatistica
   icon_pack: custom
   name: Statistics
-# - description: 90%
-#   icon: matematica
-#   icon_pack: custom
-#   name: Mathematic
+- description: 90%
+  icon: matematica
+  icon_pack: custom
+  name: Mathematic
 - description: 100%
   icon: powerbi
   icon_pack: custom
