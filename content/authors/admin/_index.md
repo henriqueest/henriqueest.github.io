@@ -9,7 +9,8 @@ education:
   - course: Master's degree in Agricultural Statistics and Experimentation
     institution: Federal University of Lavras
     year: 2015
-  - course: Degree in Statistics 
+
+  - course: Degree in Statistics
     institution: Federal University of Ouro Preto
     year: 2013
 email: ""

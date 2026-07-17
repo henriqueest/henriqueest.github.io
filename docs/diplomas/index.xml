@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Academic Degrees | Henrique JP Alves</title>
+    <link>https://henriqueest.github.io/diplomas/</link>
+      <atom:link href="https://henriqueest.github.io/diplomas/index.xml" rel="self" type="application/rss+xml" />
+    <description>Academic Degrees</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language>
+    <image>
+      <url>https://henriqueest.github.io/media/icon_hu_a7cfb1dbc6e567a7.png</url>
+      <title>Academic Degrees</title>
+      <link>https://henriqueest.github.io/diplomas/</link>
+    </image>
+    
+  </channel>
+</rss>
