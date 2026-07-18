@@ -1,224 +1,78 @@
 ---
-title: "Por ai"
+title: "Por aí"
 type: page
-draft: false  
+draft: false
 ---
 
-<h2>São Bartolomeu - Minas Gerais</h2>
+<div class="albuns">
 
-<h3>Fotos</h3>
+<a class="album" href="/leisure/saobartolomeu/">
+    <img src="/media/albums/fotos/saobartolomeu/img1.png">
+    <h3>São Bartolomeu</h3>
+</a>
 
-<!-- GRID -->
-<div class="gallery">
+<a class="album" href="/leisure/brasilia/">
+    <img src="/media/albums/fotos/brasilia/img10.png">
+    <h3>Brasília</h3>
+</a>
 
-  <!-- IMAGENS -->
-  <img src="/media/albums/fotos/saobartolomeu/img1.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/saobartolomeu/img2.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/saobartolomeu/img3.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/saobartolomeu/img4.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/saobartolomeu/img5.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/saobartolomeu/img6.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/saobartolomeu/img7.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/saobartolomeu/img8.png" onclick="openModal(this.src)">
+<a class="album" href="/leisure/riodejaneiro/">
+    <img src="/media/albums/fotos/riodejaneiro/img1.png">
+    <h3>Rio de Janeiro</h3>
+</a>
 
-</div>
+<a class="album" href="/leisure/florianopolis/">
+    <img src="/media/albums/fotos/florianopolis/img1.png">
+    <h3>Florianópolis</h3>
+</a>
 
-<h3>Vídeos</h3>
+<a class="album" href="/leisure/curitiba/">
+    <img src="/media/albums/fotos/curitiba/img1.png">
+    <h3>Curitiba</h3>
+</a>
 
-<!-- GRID -->
-<div class="gallery">
-
-  <!-- VÍDEOS -->
-  <video onclick="openModal(this.querySelector('source').src)">
-    <source src="/media/albums/fotos/saobartolomeu/video1.mp4" type="video/mp4">
-  </video>
-
-  <video onclick="openModal(this.querySelector('source').src)">
-    <source src="/media/albums/fotos/saobartolomeu/video2.mp4" type="video/mp4">
-  </video>
-  
-  <video onclick="openModal(this.querySelector('source').src)">
-    <source src="/media/albums/fotos/saobartolomeu/video3.mp4" type="video/mp4">
-  </video>
-  
-  <video onclick="openModal(this.querySelector('source').src)">
-    <source src="/media/albums/fotos/saobartolomeu/video4.mp4" type="video/mp4">
-  </video>
-  
-  <video onclick="openModal(this.querySelector('source').src)">
-    <source src="media/albums/fotos/saobartolomeu/video5.mp4" type="video/mp4">
-  </video>
-  
-  <video onclick="openModal(this.querySelector('source').src)">
-    <source src="/media/albums/fotos/saobartolomeu/video6.mp4" type="video/mp4">
-  </video>
-
-</div>
-
-<h2>Pescaria</h2>
-
-<h3>Fotos</h3>
-
-<!-- GRID -->
-<div class="gallery">
-
-  <!-- IMAGENS -->
-  <img src="/media/albums/fotos/pescaria/img9.png" onclick="openModal(this.src)">
-
-</div>
-
-</div>
-
-<h2>Brasília - DF</h2>
-
-<h3>Fotos</h3>
-
-<!-- GRID -->
-<div class="gallery">
-
-  <!-- IMAGENS -->
-  <img src="/media/albums/fotos/brasilia/img10.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/brasilia/img11.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/brasilia/img12.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/brasilia/img13.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/brasilia/img14.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/brasilia/img15.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/brasilia/img16.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/brasilia/img17.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/brasilia/img18.png" onclick="openModal(this.src)">
-
-</div>
-
-</div>
-
-<h2>Rio de Janeiro</h2>
-
-<h3>Fotos</h3>
-
-<!-- GRID -->
-<div class="gallery">
-
-  <!-- IMAGENS -->
-  <img src="/media/albums/fotos/riodejaneiro/img1.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/riodejaneiro/img2.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/riodejaneiro/img3.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/riodejaneiro/img4.png" onclick="openModal(this.src)">
-
-</div>
-
-</div>
-
-<h2>Florianópolis</h2>
-
-<h3>Fotos</h3>
-
-<!-- GRID -->
-<div class="gallery">
-
-  <!-- IMAGENS -->
-  <img src="/media/albums/fotos/florianopolis/img1.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/florianopolis/img2.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/florianopolis/img3.png" onclick="openModal(this.src)">
-
-</div>
-
-</div>
-
-<h2>Curitiba</h2>
-
-<h3>Fotos</h3>
-
-<!-- GRID -->
-<div class="gallery">
-
-  <!-- IMAGENS -->
-  <img src="/media/albums/fotos/curitiba/img1.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/curitiba/img2.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/curitiba/img3.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/curitiba/img4.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/curitiba/img5.png" onclick="openModal(this.src)">
-  <img src="/media/albums/fotos/curitiba/img6.png" onclick="openModal(this.src)">
-
-</div>
-
-
-<!-- MODAL -->
-<div id="modal" class="modal" onclick="closeModal()">
-  <span class="close">&times;</span>
-  <div id="modal-content"></div>
 </div>
 
 <style>
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
+
+.albuns{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+
 }
 
-.gallery img, .gallery video {
-  width: 100%;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: transform 0.2s;
+.album{
+
+text-decoration:none;
+color:inherit;
+border-radius:15px;
+overflow:hidden;
+background:#222;
+transition:.3s;
+
 }
 
-.gallery img:hover, .gallery video:hover {
-  transform: scale(1.05);
+.album:hover{
+
+transform:translateY(-8px);
+
 }
 
-/* MODAL */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 999;
-  padding-top: 50px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.9);
+.album img{
+
+width:100%;
+height:250px;
+object-fit:cover;
+
 }
 
-#modal-content img,
-#modal-content video {
-  margin: auto;
-  display: block;
-  max-width: 90%;
-  max-height: 80vh;
+.album h3{
+
+padding:15px;
+text-align:center;
+
 }
 
-.close {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  color: white;
-  font-size: 40px;
-  cursor: pointer;
-}
 </style>
-
-<script>
-function openModal(src) {
-  var modal = document.getElementById("modal");
-  var content = document.getElementById("modal-content");
-
-  modal.style.display = "block";
-
-  if (src.endsWith(".mp4")) {
-    content.innerHTML = `<video controls autoplay style="max-width:90%"><source src="${src}" type="video/mp4"></video>`;
-  } else {
-    content.innerHTML = `<img src="${src}">`;
-  }
-}
-
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
-}
-
-// fechar com ESC
-document.addEventListener("keydown", function(event) {
-  if (event.key === "Escape") {
-    closeModal();
-  }
-});
-</script>
