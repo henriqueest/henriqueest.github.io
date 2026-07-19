@@ -1,6 +1,7 @@
 ---
 title: "Por aí"
 type: page
+layout: single
 draft: false
 ---
 
