@@ -4999,7 +4999,50 @@ $$&lt;/p&gt;
   &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/brasilia/img16.png&#34; onclick=&#34;openModal(this.src)&#34;&gt;
   &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/brasilia/img17.png&#34; onclick=&#34;openModal(this.src)&#34;&gt;
   &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/brasilia/img18.png&#34; onclick=&#34;openModal(this.src)&#34;&gt;
-&lt;/div&gt;</description>
+  &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/brasilia/img19.jpg&#34; onclick=&#34;openModal(this.src)&#34;&gt;
+  &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/brasilia/img20.jpg&#34; onclick=&#34;openModal(this.src)&#34;&gt;
+  &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/brasilia/img21.jpg&#34; onclick=&#34;openModal(this.src)&#34;&gt;
+  &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/brasilia/img22.jpg&#34; onclick=&#34;openModal(this.src)&#34;&gt;
+  &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/brasilia/img23.jpg&#34; onclick=&#34;openModal(this.src)&#34;&gt;
+  &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/brasilia/img24.jpg&#34; onclick=&#34;openModal(this.src)&#34;&gt;
+  &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/brasilia/img25.jpg&#34; onclick=&#34;openModal(this.src)&#34;&gt;
+  &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/brasilia/img26.jpg&#34; onclick=&#34;openModal(this.src)&#34;&gt;
+  &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/brasilia/img27.jpg&#34; onclick=&#34;openModal(this.src)&#34;&gt;
+&lt;/div&gt;
+&lt;style&gt;
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+@media (max-width:900px){
+    .gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media (max-width:600px){
+    .gallery{
+        grid-template-columns:1fr;
+    }
+}
+
+&lt;/style&gt;</description>
     </item>
     
     <item>
@@ -5016,7 +5059,41 @@ $$&lt;/p&gt;
   &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/curitiba/img4.png&#34; onclick=&#34;openModal(this.src)&#34;&gt;
   &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/curitiba/img5.png&#34; onclick=&#34;openModal(this.src)&#34;&gt;
   &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/curitiba/img6.png&#34; onclick=&#34;openModal(this.src)&#34;&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;
+&lt;style&gt;
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+@media (max-width:900px){
+    .gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media (max-width:600px){
+    .gallery{
+        grid-template-columns:1fr;
+    }
+}
+
+&lt;/style&gt;</description>
     </item>
     
     <item>
@@ -5030,7 +5107,41 @@ $$&lt;/p&gt;
   &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/florianopolis/img1.png&#34; onclick=&#34;openModal(this.src)&#34;&gt;
   &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/florianopolis/img2.png&#34; onclick=&#34;openModal(this.src)&#34;&gt;
   &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/florianopolis/img3.png&#34; onclick=&#34;openModal(this.src)&#34;&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;
+&lt;style&gt;
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+@media (max-width:900px){
+    .gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media (max-width:600px){
+    .gallery{
+        grid-template-columns:1fr;
+    }
+}
+
+&lt;/style&gt;</description>
     </item>
     
     <item>
@@ -5042,7 +5153,41 @@ $$&lt;/p&gt;
 &lt;div class=&#34;gallery&#34;&gt;
 &lt;!-- IMAGENS --&gt;
   &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/pescaria/img9.png&#34; onclick=&#34;openModal(this.src)&#34;&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;
+&lt;style&gt;
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+@media (max-width:900px){
+    .gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media (max-width:600px){
+    .gallery{
+        grid-template-columns:1fr;
+    }
+}
+
+&lt;/style&gt;</description>
     </item>
     
     <item>
@@ -5057,7 +5202,41 @@ $$&lt;/p&gt;
   &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/riodejaneiro/img2.png&#34; onclick=&#34;openModal(this.src)&#34;&gt;
   &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/riodejaneiro/img3.png&#34; onclick=&#34;openModal(this.src)&#34;&gt;
   &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/riodejaneiro/img4.png&#34; onclick=&#34;openModal(this.src)&#34;&gt;
-&lt;/div&gt;</description>
+&lt;/div&gt;
+&lt;style&gt;
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+@media (max-width:900px){
+    .gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media (max-width:600px){
+    .gallery{
+        grid-template-columns:1fr;
+    }
+}
+
+&lt;/style&gt;</description>
     </item>
     
     <item>
@@ -5077,6 +5256,40 @@ $$&lt;/p&gt;
   &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/saobartolomeu/img7.png&#34; onclick=&#34;openModal(this.src)&#34;&gt;
   &lt;img src=&#34;https://henriqueest.github.io/media/albums/fotos/saobartolomeu/img8.png&#34; onclick=&#34;openModal(this.src)&#34;&gt;
 &lt;/div&gt;
+&lt;style&gt;
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+@media (max-width:900px){
+    .gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media (max-width:600px){
+    .gallery{
+        grid-template-columns:1fr;
+    }
+}
+
+&lt;/style&gt;
 </description>
     </item>
     

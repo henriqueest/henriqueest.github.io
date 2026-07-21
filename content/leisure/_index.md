@@ -13,7 +13,7 @@ draft: false
 </a>
 
 <a class="album" href="/leisure/brasilia/">
-    <img src="/media/albums/fotos/brasilia/img10.png">
+    <img src="/media/albums/fotos/brasilia/img19.jpg">
     <h3>Brasília</h3>
 </a>
 
@@ -39,7 +39,7 @@ draft: false
 .albuns{
 
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(320px,4fr));
 gap:30px;
 
 }
