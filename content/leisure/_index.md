@@ -13,7 +13,7 @@ draft: false
 </a>
 
 <a class="album" href="/leisure/brasilia/">
-    <img src="/media/albums/fotos/brasilia/img19.jpg">
+    <img src="/media/albums/fotos/brasilia/img25.jpg">
     <h3>Brasília</h3>
 </a>
 
