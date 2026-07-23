@@ -51,7 +51,7 @@ experience:
       - Modelling
       - Deploying
       
-  - title: Professor Nível Superior - Substituto
+  - title: Professor de Magistério Superior - Substituto
     company: Universidade Federal de Ouro Preto - MG
     company_url: "https://www.ufop.br"
     company_logo: ""
