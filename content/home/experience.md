@@ -50,6 +50,20 @@ experience:
       - Analysing
       - Modelling
       - Deploying
+      
+  - title: Professor Nível Superior - Substituto
+    company: Universidade Federal de Ouro Preto - MG
+    company_url: "https://www.ufop.br"
+    company_logo: ""
+    location: Brasília - Brasil
+    date_start: "2022-06-01"
+    date_end: "2022-12-01"
+    description: |
+      Responsibilities include:
+      
+      - Teaching
+      - Research
+      - Extension
 
   - title: Researcher
     company: Instituto de Pesquisa Econômica Aplicada - Ipea - Diest
